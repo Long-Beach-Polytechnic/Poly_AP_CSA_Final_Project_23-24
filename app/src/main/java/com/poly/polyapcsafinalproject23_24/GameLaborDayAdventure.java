@@ -52,7 +52,7 @@ public class GameLaborDayAdventure extends GameActivity {
         ivStory.setImageResource(R.drawable.im_laborday_title);
         playAudio(R.raw.audio_laborday_bass);
 
-        tvStoryText.setText("Its labor day, lets go! Mom knows its the most important day of the year for a a high schooler, so she loaded up the car with a full tank of gas and gave you the keys. The world is your oyster. Where would you like to go?");
+        tvStoryText.setText("It's labor day, lets go! Mom knows its the most important day of the year for a a high schooler, so she loaded up the car with a full tank of gas and gave you the keys. The world is your oyster. Where would you like to go?");
 
         setAllBtnsVisible();
         btn1.setText("Go to the beach");
