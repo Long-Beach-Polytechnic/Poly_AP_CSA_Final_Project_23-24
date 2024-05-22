@@ -36,7 +36,7 @@ public class GameTrujilloJose extends GameActivity {
   {
     //start adventure here
 
-    String artText = TextColor.PURPLE + """
+    String artText = TextColor.PURPLE + """-
        _______  _______  _______  _______  _______    _______  __   __  _______  ___      _______  ______    _______  _______  ___   _______  __    _
       |       ||       ||   _   ||       ||       |  |       ||  |_|  ||       ||   |    |       ||    _ |  |   _   ||       ||   | |       ||  |  | |
       |  _____||    _  ||  |_|  ||       ||    ___|  |    ___||       ||    _  ||   |    |   _   ||   | ||  |  |_|  ||_     _||   | |   _   ||   |_| |
