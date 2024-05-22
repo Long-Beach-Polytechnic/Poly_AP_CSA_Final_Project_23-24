@@ -9,7 +9,6 @@ public class GameSengSambat extends GameActivity
 
     //instance variables
     //   variables you plan to use throughout the adventure
-    private Scanner scan;
     private int numAttempts;
     private int shootResult;
     private int leaveResult;
