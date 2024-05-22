@@ -1,5 +1,9 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import java.util.Scanner;
 
 public class GameMcGuinnessMichael extends GameActivity {
@@ -8,13 +12,26 @@ public class GameMcGuinnessMichael extends GameActivity {
     //   variables you plan to use throughout the adventure
     private Scanner scan;
     private int numLives;
-    private boolean isDude;
+
     private int points;
     //private Player player; (optional)
+    private TextView tvTitle, tvSubtitle, tvStoryText;
 
+    private ImageView ivStory;
+
+    private Button btn1, btn2, btn3;
 
     public void run()
     {
+        setContentView(R.layout.activity_game_3_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
         //initialize number of lives
         numLives = 5;
         //create a scanner object for user input
@@ -24,11 +41,11 @@ public class GameMcGuinnessMichael extends GameActivity {
         //player = new Player(...)
 
         //display project title and description
-        Util.clearConsole();
+         //util wuz hear
         System.out.println("Hit on Hot person");
-        System.out.println("You see an hot person. You think the look really good and you want to get their number. What do you do?");
+        System.out.println("You see an hot person. You think they are really good looking and you want to get their number. What do you do?");
 
-        Util.pauseConsole();
+         //util wuz hear
         start();
     }
 
@@ -39,6 +56,10 @@ public class GameMcGuinnessMichael extends GameActivity {
 
         //set points = 0      ask mr burke
 
+        tvStoryText.setText("What do you want to do?");
+        btn1.setText("Use one of your top tier pickup lines");
+        btn2.setText("Use Comedy");
+        btn3.setText("Smolder");
         System.out.println("""
     What do you want to do?
     1. Use one of your top tier pickup lines
@@ -46,7 +67,7 @@ public class GameMcGuinnessMichael extends GameActivity {
     3. Smolder
      """);
 
-        int option = Util.enterInt(1,3);
+        //util wuz hear
         if (option == 1)
         { //pickup line
             points += 100;
@@ -67,13 +88,13 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     //SMOLDER PATH
     private void smolder() {
-        Util.clearConsole();
+         //util wuz hear
         System.out.println("""
     How do you want to smolder?
     1. Smolder into the distance
     2. Smolder at them
     """);
-        int option = Util.enterInt(1,2);
+         //util wuz hear
         if (option == 2)
         { //smolder at them
             if (Math.random() > 0.5)
@@ -114,7 +135,7 @@ public class GameMcGuinnessMichael extends GameActivity {
           1. Break the stance and ask for their number
           2. Say nothing. Smolder even harder
           """);
-        int option = Util.enterInt(1,2);
+        //util wuz hear
         if (option == 1)
         {
             System.out.println("You break the look and try to ask for their number but your voice cracks and you sound like an elderly goose. They are disgusted and lose all interest in you");
@@ -132,13 +153,13 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     //comedy path
     private void comedy() {
-        Util.clearConsole();
+        //util wuz hear
         System.out.println("""
     What joke do you want to use?
       1. I just got rid of my vacuum cleaner. It sucked.
       2. Cosmetic surgery use to be such a touchy subject. Now you talk about botox and nobody raises an eyebrow.
       """);
-        int option = Util.enterInt(1,2);
+         //util wuz hear
         if (option == 1) { //vacuum
             points += 25;
             weird();
@@ -161,7 +182,7 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     private void botox() {
         System.out.println("They ask you if you think that they actually look like they have gotten work done. What do you respond? \n1. Be nice and tell them they are beautiful \n2. Tell them they look like Caitlyn Jenner");
-        int option = Util.enterInt(1,2);
+        //util wuz hear
         if (option == 1){
             System.out.println("They think you're sweet and they give you their number");
             points += 115;
@@ -183,7 +204,7 @@ public class GameMcGuinnessMichael extends GameActivity {
           1. How does a hot dog show apreciation? It franks you
           2. When does Thor like pop rap? When it's hammer time
           """);
-        int option = Util.enterInt(1,2);
+        //util wuz hear
         if (option == 1){
             System.out.println(" They feel bad for you and give you their number out of pity");
             points += 3;
@@ -202,13 +223,13 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     //Pickup Lines path
     private void lines() {
-        Util.clearConsole();
+         //util wuz hear
         System.out.println("""
     Which of your top tier pickup lines do you want to use?
     1. Do you live in a corn field? Beacuse I'm stalking you
     2. I just pooped in my bed, can I sleep in yours?
     """);
-        int option = Util.enterInt(1,2);
+          //util wuz hear
         if (option == 1) {
             color();
         }
@@ -225,7 +246,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         2. Brown
         3. Ignore the question and try another pickup line
           """);
-        int option = Util.enterInt(1,3);
+        //util wuz hear
         if (option == 1) {
             System.out.println("OMG you guessed correct! They call the cops on you and you go to prison for a long time. YOU LOSE! You don't get another chance. GAME OVER!");
             points -= 350;
@@ -252,7 +273,7 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     private void confuse() {
         System.out.println("You are wrong and they are really confused. Last chance. What do you do? \n1. Cry\n2. Tell them you love them");
-        int option = Util.enterInt(1,2);
+        //util wuz hear
         if (option == 1) {
             System.out.println("You start crying. They take pity on you and give you their number.");
             points += 7;
@@ -299,7 +320,7 @@ public class GameMcGuinnessMichael extends GameActivity {
     private void success() {
         System.out.println("You successfully go their phone number, congratulations! You Win");
         System.out.println("You got " + points + " points");
-        Util.pauseConsole();
+         //util wuz hear
         start();
     }
 
