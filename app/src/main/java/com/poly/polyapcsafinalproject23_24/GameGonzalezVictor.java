@@ -24,6 +24,7 @@ public class GameGonzalezVictor extends GameActivity{
 
 
         //display project title and description
+        Util.clearConsole();
         System.out.println("SPACE ADVENTURE");
         System.out.println();
         System.out.println("Find the key to unlock the treasure hidden in the Solar System. You have 5 lives. Good Luck!!");
