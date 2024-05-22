@@ -1,6 +1,5 @@
 package com.poly.polyapcsafinalproject23_24;
 
-import java.util.Scanner;
 public class GameLimBob extends GameActivity {
 
     private Worker player;
@@ -13,8 +12,6 @@ public class GameLimBob extends GameActivity {
 
     private void createPlayer()
     {
-        Util.clearConsole();
-        Scanner scan = new Scanner(System.in);
         System.out.println("What is your name?");
         String name = scan.nextLine();
         player = new Worker(name);
@@ -38,7 +35,6 @@ public class GameLimBob extends GameActivity {
 
     private void displayStats()
     {
-        Util.clearConsole();
         String text =
                 player.getName() +
                         "\nHours Worked:\t\t" + player.getHoursWorked() +
@@ -46,7 +42,6 @@ public class GameLimBob extends GameActivity {
                         "\nMoney Earned:\t" + player.getMoneyEarned()+
                         "\nMoney Spend:\t" + player.getMoneySpent();
         System.out.println(text);
-        Util.pauseConsole();
     }
 
     private void chooseOption()
@@ -58,7 +53,6 @@ public class GameLimBob extends GameActivity {
       3. Spend money
       """;
         System.out.println(text);
-        int option = Util.enterInt(1,3);
         if (option == 1)
         {
             player.hoursWorking();
@@ -89,12 +83,8 @@ public class GameLimBob extends GameActivity {
         {
             System.out.println("You are a spender");
         }
-        Util.pauseConsole();
-        Util.clearConsole();
         System.out.println("Congradulations, you saved " + player.getMoneySaved() + " money!");
-        Util.pauseConsole();
         System.out.println("Try again?\n1. Yes\n2. No, I save too much");
-        int option = Util.enterInt(1,3);
         if (option == 1)
         {
             player = new Worker(player.getName());
