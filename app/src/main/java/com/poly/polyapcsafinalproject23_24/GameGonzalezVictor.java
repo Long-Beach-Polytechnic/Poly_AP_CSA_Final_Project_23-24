@@ -36,7 +36,7 @@ public class GameGonzalezVictor extends GameActivity{
     private void start()
     {
         //start adventure here
-        Util.clearConsole();
+        //Util.clearConsole();
         System.out.print("COUNTDOWN! ");
         for (int i=10; i>0; i--)
         {
