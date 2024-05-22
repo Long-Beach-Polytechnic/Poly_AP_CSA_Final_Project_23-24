@@ -1,6 +1,5 @@
 package com.poly.polyapcsafinalproject23_24;
 
-import java.util.Scanner;
 
 public class GameValentineBenjaminA extends GameActivity {
 
@@ -22,7 +21,6 @@ public class GameValentineBenjaminA extends GameActivity {
 
         player.rob();
         System.out.println(player.getMoney());
-        Util.pauseConsole();
 
         startRobbing();
     }
@@ -31,7 +29,6 @@ public class GameValentineBenjaminA extends GameActivity {
     {
         while(player.getMoney() > 0)
         {
-            Util.clearConsole();
             displayStats();
             String text = """
         Options
@@ -40,7 +37,6 @@ public class GameValentineBenjaminA extends GameActivity {
         3. turn yourself in
         """;
             System.out.println(text);
-            int option = Util.enterInt(1,3);
             if (option == 1)
             {
                 player.rob();
@@ -54,7 +50,6 @@ public class GameValentineBenjaminA extends GameActivity {
                 //turnYourselfIn();
             }
 
-            Util.pauseConsole();
         }
 
     }

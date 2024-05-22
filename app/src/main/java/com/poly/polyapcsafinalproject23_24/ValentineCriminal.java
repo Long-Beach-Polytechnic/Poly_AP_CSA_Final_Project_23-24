@@ -244,8 +244,6 @@ public class valentineCriminal
         setMoney(0.00);
         setWantedLvl(0.00);
         System.out.println("You cave. Whether it was from stress, internal conflict, influence from a peer, or whatever, you turn yourself in knowing that you would recieve the consequences. You lose all your money, but on the bright side, you are at a peaceful state knowing full well that you did the right thing.");
-        Util.pauseConsole();
-        Util.clearConsole();
         System.out.println("Congrats, you got the good ending! You ended with: \n\nName: " + name + "\nMoney: " + money + "\nWanted Level: " + wantedLvl + "\nMoral Level: " + moralLvl);
         System.out.println("Restart?");
 
