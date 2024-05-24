@@ -1,5 +1,10 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.poly.polyapcsafinalproject23_24.GameActivity;
 
 import java.util.Scanner;
@@ -14,6 +19,11 @@ public class GameNuonVunly extends GameActivity {
     private int numLives;
     NuonPlayer player = new NuonPlayer("YourPlayerName");
     private int money;
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+    private Button btn1, btn2, btn3;
+    private boolean isWon;
+
 
 
 
@@ -23,25 +33,39 @@ public class GameNuonVunly extends GameActivity {
         numLives = 5;
         money = 100;
         //create a scanner object for user input
-        scan = new Scanner(System.in);
-
         //create a player object (optional)
         //player = new Person(...)
+        setContentView(R.layout.activity_game_3_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+
+        tvTitle.setText("It's HALLOWEEN!");
+        tvSubtitle.setText("For some reason in your universe, Halloween is a holiday!. You have nothing to do but play video game");
 
         //display project title and description
-        Util.clearConsole();
-        System.out.println("It's HALLOWEEN!");
-        System.out.println("For some reason in your universe, Halloween is a holiday!. You have nothing to do but play video game");
 
-        Util.pauseConsole();
         start();
+    }
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
     }
 
     private void start()
     {
         System.out.println("So....Where do you want to do?");
         System.out.println("\n1. Play Videogame...\n2. PLAY VIDEO GAME...\n3. play video games again");
-        int choice = Util.enterInt(1,3);
 
         if (choice == 1)
         {
@@ -69,11 +93,9 @@ public class GameNuonVunly extends GameActivity {
 
     public void chooseAPresent()
     {
-        Util.clearConsole();
         System.out.println("You decided to stay home and play games.");
         System.out.println("Moment later, Your uncle shown up and want to give you an early present for your birth. But He can't decide.");
         System.out.println("\"just pick one between these two\" \n1. $1,000 \n2. a blaster and a spaceship from starwar");
-        int choice = Util.enterInt(1, 2);
         if (choice == 1)
         {
             player.addMoney(1000.00);
@@ -86,7 +108,6 @@ public class GameNuonVunly extends GameActivity {
 
 
         }
-        Util.pauseConsole();
         gamingTime();
     }
 
@@ -105,7 +126,6 @@ public class GameNuonVunly extends GameActivity {
             }
 
         }
-        Util.pauseConsole();
         System.out.println(TextColor.WHITE_BACKGROUND +image());
         System.out.println(TextColor.RESET);
         System.out.println(TextColor.RED_BOLD +  image1());
@@ -119,7 +139,6 @@ public class GameNuonVunly extends GameActivity {
         System.out.println("\n \n" + TextColor.RESET + "");
         System.out.print("\"You now have " + numLives +  " lives left\"");
         System.out.println("\nThis is the moment when you realizing that your're now stuck in a game. when you respawn back, you see right in front of you two paths: \n1. Left \n2. Right");
-        int choice = Util.enterInt(1, 2);
         if (choice == 1)
         {
             left();
@@ -189,7 +208,6 @@ public class GameNuonVunly extends GameActivity {
             {
                 System.out.println();
                 System.out.println("*you continue to shoot it* \n Little did you know...The monster slowly stand up and walk toward you...all its blood start to faint out. With just a blink of an eye, it jump to you...");
-                Util.pauseConsole();
                 defeatGame();
             }
             else if (choice == 2)
@@ -228,7 +246,6 @@ public class GameNuonVunly extends GameActivity {
         {
             System.out.println();
             System.out.println("\nYou decided to continue forward, but it's seem like you have been running on a straight line forever. About 2 minute later, see somthing...behind you...and it's approaching you fast. *As It get closer and closer you realized* It's the monster. In a flash, It already catch up to you and then... ");
-            Util.pauseConsole();
             defeatGame();
         }
     }
@@ -301,7 +318,6 @@ public class GameNuonVunly extends GameActivity {
         if (choice == 1)
         {
             System.out.println("\nAs you about to slashing it, Jeff's right hand was able to move then proceed to grab your head and crush it ");
-            Util.pauseConsole();
             defeatGame();
         }
         else if (choice == 2 )
@@ -320,7 +336,6 @@ public class GameNuonVunly extends GameActivity {
         if (choice == 1)
         {
             System.out.println("\nYou were able to block the attack, but its superstrength enable it to left kick you at the stomach and start comboing you.");
-            Util.pauseConsole();
             defeatGame();
         }
         else if (choice == 2 )
@@ -330,7 +345,6 @@ public class GameNuonVunly extends GameActivity {
         else if (choice == 3)
         {
             System.out.println("\nYou're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
-            Util.pauseConsole();
             defeatGame();
         }
 
@@ -345,19 +359,16 @@ public class GameNuonVunly extends GameActivity {
         {
             System.out.println("\nIt's a battle of time. But You Won...You piered him in a throat and kill it.");
             System.out.println("Congratulation YOU WIN");
-            Util.pauseConsole();
             run();
         }
         else if (choice == 2 )
         {
             System.out.println("\nYou dodged right but Jeff swing around, back slapping you and...");
-            Util.pauseConsole();
             defeatGame();
         }
         else if (choice == 3)
         {
             System.out.println("\nYou're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
-            Util.pauseConsole();
             defeatGame();
         }
     }
@@ -442,7 +453,6 @@ public class GameNuonVunly extends GameActivity {
     private void ak_47()
     {
         System.out.println("+1 Gun, +5 Mag \nYou shoot the monster finished 1st Mag. However, AS you try to shoot try to it, The monster's regeneration power getting more stronger and stronger, to the point of bullet become useless...");
-        Util.pauseConsole();
         defeatGame();
     }
 
@@ -472,13 +482,11 @@ public class GameNuonVunly extends GameActivity {
         if (choice == 1)
         {
             System.out.println("You open the trigger and rush to the monster....");
-            Util.pauseConsole();
             defeatGame();
         }
         else if (choice == 2)
         {
             System.out.println("You throw it to the monster....It dodged.....");
-            Util.pauseConsole();
             defeatGame();
         }
     }
@@ -499,14 +507,12 @@ public class GameNuonVunly extends GameActivity {
         {
             System.out.println();
             System.out.println("The moment you turn, You see a light shine upward coming from a \"place\". unfortunately, you're too slow and the \"thing\" catch up to you....");
-            Util.pauseConsole();
             defeatGame();
         }
         else if (choice == 2)
         {
             System.out.println();
             System.out.println("You decided to continue forward, but what you don't realized is how fast the \"monster\" is. In a flash, It already catch up to you and then...");
-            Util.pauseConsole();
             defeatGame();
         }
     }
@@ -525,13 +531,11 @@ public class GameNuonVunly extends GameActivity {
         if (chances == 1 || chances == 2 || chances == 4 || chances == 5)
         {
             System.out.println("A sign placed there for a reason.... You then proceed to fall off a climb");
-            Util.pauseConsole();
             defeatGame();
         }
         else
         {
             System.out.println("WOW, NO WAY!! You actually so lucky. Congrat, You won");
-            Util.pauseConsole();
             run();
         }
     }
@@ -544,7 +548,6 @@ public class GameNuonVunly extends GameActivity {
         System.out.println();
         System.out.println("\"You're at the starting line\"");
         System.out.println("Turn out there a barrier at a starting line, unfortunate...");
-        Util.pauseConsole();
         defeatGame();
 
     }
@@ -560,7 +563,6 @@ public class GameNuonVunly extends GameActivity {
         {
             System.out.println("You're at a starting line");
             System.out.println(image());
-            Util.pauseConsole();
             defeatGame();
         }
         else if (choice == 2)
@@ -583,7 +585,6 @@ public class GameNuonVunly extends GameActivity {
         else if (choice == 2)
         {
             System.out.println("\nthe wall is too close to slide in and too small to roll over. which allow the monster to catch up");
-            Util.pauseConsole();
             defeatGame();
         }
     }
