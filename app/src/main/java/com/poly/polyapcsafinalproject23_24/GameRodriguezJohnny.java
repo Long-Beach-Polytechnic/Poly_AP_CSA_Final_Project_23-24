@@ -1,6 +1,9 @@
 package com.poly.polyapcsafinalproject23_24;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.poly.polyapcsafinalproject23_24.GameActivity;
 
@@ -10,8 +13,8 @@ import java.util.ArrayList;
 public class GameRodriguezJohnny extends GameActivity {
 
     //create variables up here
-    private TextView tvTitle, tvSubtitle, tvStoryText;
-    private ImageView ivStory;
+    private TextView tvGame;
+    private ImageView ivMain;
     private Button btn1, btn2, btn3, btn4;
     private boolean isWon;
     private int numLives;
@@ -20,14 +23,12 @@ public class GameRodriguezJohnny extends GameActivity {
     protected void run() {
         setContentView(R.layout.activity_game_4_button);
 
-        tvTitle = findViewById(R.id.tv_title_txt);
-        tvSubtitle = findViewById(R.id.tv_subtitle);
-        tvStoryText = findViewById(R.id.tv_story);
-        ivStory = findViewById(R.id.iv_story);
-        btn1 = findViewById(R.id.btn_1);
-        btn2 = findViewById(R.id.btn_2);
-        btn3 = findViewById(R.id.btn_3);
-        btn4 = findViewById(R.id.btn_4);
+        tvGame = findViewById(R.id.tv_game);
+
+
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
 
         tvTitle.setText("LABOR DAY");
         tvSubtitle.setText("High School Edition");
