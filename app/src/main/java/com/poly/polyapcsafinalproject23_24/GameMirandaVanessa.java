@@ -1,17 +1,38 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 public class GameMirandaVanessa extends GameActivity{
 
     //instance variables
     //   variables you plan to use throughout the adventure
 
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+    private Button btn1, btn2, btn3;
+    private boolean isWon;
     private int numLives;
     //private Player player; (optional)
 
-    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private void setAllBtnsVsisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
 
-    private ImageView ivStory;
+    }
+
+
+    @Override
+    protected void run()
+        setContentView(R.layout.activity_game_3_button);
+
+    tvTitle = findViewById(R.id.tv_title_txt);
+    tvSubtitle = findViewById(R.id.tv_subtitle);
+
 
     public void run()
     {
