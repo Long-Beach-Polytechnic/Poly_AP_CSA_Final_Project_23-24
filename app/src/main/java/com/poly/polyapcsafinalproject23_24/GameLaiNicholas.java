@@ -1,9 +1,21 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import java.util.Scanner;
 
 public class GameLaiNicholas extends GameActivity {
 
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+
+    private ImageView ivStory;
+
+    private Button btn1, btn2, btn3;
+
+    private boolean isWon;
     //instance variables
     //   variables you plan to use throughout the adventure
     private Scanner scan;
@@ -11,14 +23,33 @@ public class GameLaiNicholas extends GameActivity {
     //private Player player; (optional)
 
 
-    public void run()
+    @Override
+    protected void run()
     {
+        setContentView(R.layout.activity_game_3_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+        tvTitle.setText("CHRISTMAS ADVENTURE");
         //initialize number of lives
-        numLives = 5;
+        numLives = 3;
         //create a scanner object for user input
         scan = new Scanner(System.in);
 
         start();
+    }
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
     }
 
     private void start()
