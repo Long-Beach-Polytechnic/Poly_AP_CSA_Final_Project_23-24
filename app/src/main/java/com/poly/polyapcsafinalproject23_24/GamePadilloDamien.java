@@ -1,5 +1,10 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import java.util.Scanner;
 
 public class GamePadilloDamien extends GameActivity {
@@ -7,6 +12,9 @@ public class GamePadilloDamien extends GameActivity {
     //instance variables
     //   variables you plan to use throughout the adventure
     private Scanner scan;
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+    private Button btn1, btn2, btn3, btn4;
     private int playCount;
 
     public void run()
@@ -16,49 +24,144 @@ public class GamePadilloDamien extends GameActivity {
         playCount = 0;
 
         //display project title and description
+        setContentView(R.layout.activity_game_4_button);
 
-        System.out.println(TextColor.RED + "Don't Scream" + TextColor.RESET);
-        System.out.println("Play an interactive spin off version of the 'Scream' franchise... ");
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+        btn4 = findViewById(R.id.btn_4);
 
+        tvTitle.setText("LABOR DAY");
+        tvSubtitle.setText("High School Edition");
 
+        numLives = 4;
         start();
+
+
+        tvTitle.setText("Don't Scream");
+
+        tvStoryText.setText("Play an interactive spin off version of the 'Scream' franchise... ");
+
+        setAllBtnsVisible();
+        btn1.setText("Play");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
+
+    }
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
+    }
+
+    private void start()
+    {
+
+        if (playCount == 0)
+        {
+            tvStoryText.setText("First time here?");
+        }
+        else if (playCount == 1)
+        {
+            tvStoryText.setText("Play more or you're racist");
+        }
+        else if (playCount == 2)
+        {
+            tvStoryText.setText("You're not racist anymore, but you're still homophobic, keep playing to change that");
+        }
+        else if (playCount == 3)
+        {
+            tvStoryText.setText("You're still kind of homophobic... Maybe one more time?");
+        }
+        else if (playCount == 4)
+        {
+            tvStoryText.setText("Okay good job, you can keep playing though");
+        }
+
+        setAllBtnsVisible();
+        btn1.setText("Start");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                next();
+            }
+        });
+
+
     }
 
 
 
 
-    private void start()
+
+    private void next()
     {
-        beforeYouPlay();
         playCount++;
         //start adventure here
 
         String text = """
       (Your name is Blake Heaven)
       You’re in your bedroom on a FaceTime call with your best friend Luxury. (Lux for short) Suddenly the landline rings from the kitchen. “Who the hell is calling the landline?” You ask her rhetorically. “People still use landlines?” Lux asks over the phone. What do you do?
-      1. See who's calling you
-      2. Ignore the phone call
-      3. Lock your door
-      4. Leave the game (loser)
       """;
-        System.out.println(text);
+        tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            seeWhosCallingYou();
-        }
-        else if (choice == 2)
-        {
-            ignoreCall();
-        }
-        else if (choice == 3)
-        {
-            lockDoor();
-        }
-        else if (choice == 4)
-        {
-            leaveTheGame();
-        }
+        setAllBtnsVisible();
+        btn1.setText("See who's calling you");
+        btn2.setText("Ignore the phone call");
+        btn3.setText("Lock your door");
+        btn4.setText("Leave the game (loser)");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                seeWhosCallingYou();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ignoreCall();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                lockDoor();
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                leaveTheGame();
+            }
+        });
+
     }
 
 
@@ -70,11 +173,17 @@ public class GamePadilloDamien extends GameActivity {
 
         String text = """
     Yeah… That’s not happening… Anyway, you decide to go investigate. You make it to the kitchen. “Who called?” She asked confused. “I don’t know, it’s an unknown number.” You say. What next?
-    1. Pick up the phone
-    2. Don't answer the phone
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
+
+        setAllBtnsVisible();
+        btn1.setText("Pick up the phone");
+        btn2.setText("Don't answer the phone");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -99,7 +208,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Put the phone down
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -125,7 +234,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Investigate
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -151,7 +260,7 @@ public class GamePadilloDamien extends GameActivity {
     2. I'm done (You're racist)
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -191,7 +300,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No (You're homophobic against men but not women because you're one of those weird people)
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -219,7 +328,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Attack that loser
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -245,7 +354,7 @@ public class GamePadilloDamien extends GameActivity {
     2. I hate Millessa Berrera and I'm glad she was fired from Scream 7
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -271,7 +380,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No I'm sexist to women
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -323,7 +432,7 @@ public class GamePadilloDamien extends GameActivity {
     1. Continue???
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -344,7 +453,7 @@ public class GamePadilloDamien extends GameActivity {
     1. Continue???
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -365,7 +474,7 @@ public class GamePadilloDamien extends GameActivity {
     1. Check the closet
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -387,7 +496,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Run around the kitchen island
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -427,7 +536,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No (Okay then, bye lmaoo)
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -453,7 +562,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No (loser kid)
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -479,7 +588,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Run
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -505,7 +614,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Listen to Luxury
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -531,7 +640,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Leave the house
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -571,7 +680,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -597,7 +706,7 @@ public class GamePadilloDamien extends GameActivity {
     2. stayAndFight
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -623,7 +732,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Cry in real life
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -663,7 +772,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -686,7 +795,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Quit (Loser)
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -712,7 +821,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Don't answer the phone
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -738,7 +847,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Hang up
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -764,7 +873,7 @@ public class GamePadilloDamien extends GameActivity {
     2. Investigate
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -790,7 +899,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -830,7 +939,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -856,7 +965,7 @@ public class GamePadilloDamien extends GameActivity {
       2. Hide in an empty cabinet
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -896,7 +1005,7 @@ public class GamePadilloDamien extends GameActivity {
     2. No
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -936,7 +1045,7 @@ public class GamePadilloDamien extends GameActivity {
       No
       """ + TextColor.RESET;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -962,7 +1071,7 @@ public class GamePadilloDamien extends GameActivity {
       2. Investigate
       """;
 
-        System.out.println(text);
+        tvStoryText.setText(text);
 
         if (choice == 1)
         {
@@ -976,32 +1085,6 @@ public class GamePadilloDamien extends GameActivity {
     }
 
 
-    private void beforeYouPlay()
-    {
-
-        if (playCount == 0)
-        {
-            System.out.println("First time here?");
-        }
-        else if (playCount == 1)
-        {
-            System.out.println("Play more or you're racist");
-        }
-        else if (playCount == 2)
-        {
-            System.out.println("You're not racist anymore, but you're still homophobic, keep playing to change that");
-        }
-        else if (playCount == 3)
-        {
-            System.out.println("You're still kind of homophobic... Maybe one more time?");
-        }
-        else if (playCount == 4)
-        {
-            System.out.println("Okay good job, you can keep playing though");
-        }
-
-
-    }
 
 
 }
