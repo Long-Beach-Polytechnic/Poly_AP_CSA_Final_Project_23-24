@@ -6,7 +6,28 @@ import java.util.Scanner;
 
 public class GameSengSambat extends GameActivity
 {
+ private TextView tvTitle, tvSubtitle, tvStoryText;
+ private ImageView ivStory;
+ private Button btn1, btn2, btn3, btn4;
+ private boolean isWon;
+ private int numLives;
 
+ @Override
+ protected void run() {
+     setContentView(R.layout.activity_game_4_button);
+
+     tvTitle = findViewById(R.tv_title_txt);
+     tvSubtitle = findViewById(R.tv_subtitle);
+     tvStoryText = findViewById(R.tv_story);
+     ivStory = findViewById(R.id.iv_story);
+     btn1 = findViewById(R.id.btn_1);
+     btn2 = findViewById(R.id.btn_2);
+     btn3 = findViewById(R.id.btn_3);
+     btn4 = findViewById(R.id.btn_4);
+
+     tvTitle.setText("EERIE WOODLANDS");
+     tvSubtitle.setText("Made by Sambat"):
+ }
     //instance variables
     //   variables you plan to use throughout the adventure
     private int numAttempts;
@@ -50,6 +71,13 @@ public class GameSengSambat extends GameActivity
         Util.pauseConsole();
 
         start();
+    }
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
     }
 
     private void start()
