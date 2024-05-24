@@ -1,6 +1,7 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,180 +33,302 @@ public class GamePinedaJavier extends GameActivity {
         btn3 = findViewById(R.id.btn_3);
         btn4 = findViewById(R.id.btn_4);
 
+        tvTitle.setText("FIFA CAREER");
+        tvSubtitle.setText("LAFC edition");
 
-
-
-
-
-
-
-        //initialize number of lives
-        numLives = 5;
-        //create a scanner object for user input
-        //create a player object (optional)
-        //player = new Player(...)
-        //display project title and description
-
-        System.out.println("\nFIFA CAREER!");
-
-        System.out.println("Welcome to your fifa career where YOU, the player gets to choose what you do to have a succesful career. There are MULTIPLE endings to this game. Can you find them all???");
-
-        System.out.println();
-
+        numLives = 4;
         start();
     }
+
+        private void setAllBtnsVisible()
+        {
+            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.VISIBLE);
+            btn3.setVisibility(View.VISIBLE);
+            btn4.setVisibility(View.VISIBLE);
+    }
+
+
     private void start()
     {
+        isWon = false;
+        ivStory.setImageResource(R.drawable.im_laborday_title);
+
         //start adventure here
 
         //create an Adventure object
 
+        tvStoryText.setText("You just got signed to one of the newest clubs in the MLS,the Los Angeles football Club (LAFC). You worked so hard to be chosen to play for the club and everyone is so proud of you. what is your way of celebrating?");
 
-        System.out.println("\nYou just got signed to LAFC, whats your way of celebrating?");
-        System.out.println("1. Go party with fam and friends\n2. Train seriously\n3. show off on social media");
+        setAllBtnsVisible();
+        btn1.setText("Go party with friends and family");
+        btn2.setText("Start training");
+        btn3.setText("Show off on social media");
+        btn4.setVisibility(View.INVISIBLE);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                party();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        if (choice == 1)
-        {
-            party();
-        }
-        else if (choice == 2)
-        {
-            train();
-        }
-        else if (choice == 3)
-        {
-            showOff();
-        }
+                train();
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showOff();
+            }
+        });
+
 
     }
 
 
     private void party()
     {
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        System.out.println("You have a party with your loved ones and decide you want to drink. yuhhh");
-        System.out.println("\nWho are you drinking with to celebrate your achievment?");
-        System.out.println("1. Drink with fam\n2. drink with friends");
+        tvStoryText.setText("You have a party with your loved ones and decide you want to drink yuhhh. Who are you drinking with to celebrate your achievment?");
 
+        setAllBtnsVisible();
+        btn1.setText("Drink with the family");
+        btn2.setText("Drink with friends");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            drinkWithFam();
-        }
-        else if (choice == 2)
-        {
-            drinkWithFriends();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drinkWithFam();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drinkWithFriends();
+            }
+        });
     }
-
 
 
     private void drinkWithFam()
     {
 
-        System.out.println("\nYou are drinking with fam and you get very sentimental :(");
-        System.out.println("1. Give half your check to your mom\n2. tell your brother he's making it with you one day");
+        tvStoryText.setText("You are drinking with the family and you get very sentimental and can't think straight :(");
 
+        ivStory.setImageResource(R.drawable.im_laborday_swimming);
 
-        if (choice == 1)
-        {
-            momProud();
-        }
-        else if (choice == 2)
-        {
-            motivateBrother();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Give half your check to your mom");
+        btn2.setText("tell your brother he's making it with you one day");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                momProud();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                motivateBrother();
+            }
+        });
+
     }
 
     private void momProud()
     {
 
-        System.out.println("She was so proud and thankful that she brought Lionel Messi to the party!!!!!!  *GOAT ENDING* ");
+        isWon = true;
+        tvStoryText.setText("She was so proud and thankful that she brought Lionel Messi to the party!!!!!!  *GOAT ENDING* ");
 
-        defeat();
+        ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
+
     }
     private void motivateBrother()
     {
 
-        System.out.println("You mad him so happy that he brought Lionel Messi to the party yuhhhh!! *GOAT ENDING* ");
+        tvStoryText.setText("You mad him so happy that he brought Lionel Messi to the party yuhhhh!! *GOAT ENDING*");
 
-        defeat();
+        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { defeat();
+            }
+        });
     }
+
     private void drinkWithFriends()
     {
 
-        System.out.println("You decide to drink with your friends!");
-        System.out.println(" But one of your friends drank a little TOO much and is now telling you to do some weird things.");
-        System.out.println("1. Fight brother\n2. Talk smack to your brother, say that he inst going to be good as you.");
+        tvStoryText.setText("You decide to drink with your friends! But one of your friends drank a little TOO much and is now telling you to do some weird things.");
 
+        ivStory.setImageResource(R.drawable.im_laborday_arrive_at_beach);
 
-        if (choice == 1)
-        {
-            fightBrother();
-        }
-        else if (choice == 2)
-        {
-            talkSmackBrother();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Fight brother");
+        btn2.setText("Talk smack to your brother, say that he inst going to be good as you.");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fightBrother();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                talkSmackBrother();
+            }
+        });
     }
+
     private void fightBrother()
     {
 
-        System.out.println("You start fighting your brother and the fight gets intense... until bro really smacked you with a glass bottle. *DEAD ENDING* ");
+        isWon = false;
+        tvStoryText.setText("You start fighting your brother and the fight gets intense... until bro really smacked you with a glass bottle. *DEAD ENDING*");
 
-        defeat();
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void talkSmackBrother()
     {
 
-        System.out.println(" You talk smack to your brother and bro just does a finshing move on you.    You got the Dead Ending");
+        isWon = false;
+        tvStoryText.setText(" You talk smack to your brother and bro just does a finshing move on you.    You got the Dead Ending");
 
-        defeat();
+        ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
+
     }
+
     private void train()
     {
 
-        System.out.println("You decide to train hard to make it to the top.. I like it");
-        System.out.println(" You go to the training grounds and see your brother and a team member. Who do you train with?");
-        System.out.println("1. Train with Brother\n2. Train with teammate  *hint he has experience*");
+        tvStoryText.setText("You decide to train hard to make it to the top.. I like it.  You go to the training grounds and see your brother and a team member. Who do you train with?");
 
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
 
+        setAllBtnsVisible();
+        btn1.setText(" Train with Brother");
+        btn2.setText(" Train with teammate  *hint he has experience*");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            trainWithBrother();
-        }
-        else if (choice == 2)
-        {
-            trainWithMember();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { trainWithBrother();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { trainWithMember();
+            }
+        });
     }
+
+
 
 
 
     private void trainWithMember()
     {
 
-        System.out.println("You decide to train with a teammate  *good choice*");
-        System.out.println("While you were training with him, YOU get offers from international teams!!");
-        System.out.println("1. Argentina\n2. France \n3. Mexico");
+        tvStoryText.setText("You decided to train with a team member, great choice. While you were training with him, YOU get offers from international teams!! ");
+
+        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Argentina");
+        btn2.setText("France");
+        btn3.setText("Mexico");
+        btn4.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            argentina();
-        }
-        else if (choice == 2)
-        {
-            france();
-        }
-        else if (choice == 3)
-        {
-            mexico();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                argentina();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                france();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mexico();
+            }
+        });
     }
+
     private void argentina()
     {
 
