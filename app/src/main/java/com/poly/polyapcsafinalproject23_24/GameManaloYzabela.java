@@ -39,7 +39,7 @@ public class GameManaloYzabela extends GameActivity
         btn4.setVisibility(View.VISIBLE);
     }
 }
-
+//hello
 
 
     //instance variables
