@@ -1,6 +1,7 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,7 +10,7 @@ public class GameGonzalezVictor extends GameActivity{
 
     //instance variables
     //   variables you plan to use throughout the adventure
-    private Scanner scan;
+
     private int numLives;
     private int points;
     //private Player player; (optional)
@@ -33,13 +34,13 @@ public class GameGonzalezVictor extends GameActivity{
         btn3 = findViewById(R.id.btn_3);
 
         tvTitle.setText("SPACE ADVENTURE");
-        tvSubtitle.setText("Find the key to unlock the treasure hidden in the Solar System. You have 5 lives. Good Luck!!")
+        tvSubtitle.setText("Find the key to unlock the treasure hidden in the Solar System. You have 5 lives. Search at your own risk.  Good Luck!!")
 
         //initialize number of lives
         numLives = 4;
         points = 0;
         //create a scanner object for user input
-        scan = new Scanner(System.in);
+
 
         //create a player object (optional)
 
@@ -69,33 +70,38 @@ public class GameGonzalezVictor extends GameActivity{
 
     private void start()
     {
-        //start adventure here
 
-        System.out.print("COUNTDOWN! ");
-        for (int i=10; i>0; i--)
-        {
-            System.out.println();
-            System.out.print(i + " ");
-        }
-        System.out.println();
-        System.out.println("BLAST OFF!!!");
-        System.out.println();
-        System.out.println("Where would you like to search first?");
-        System.out.println("1. Mars\n2. Venus\n3. Pluto");
+        tvStoryText.setText("COUTDOWN\n10 9 8 7 6 5 4 3 2 1\nBLAST OFF!!!\n\Where would you like to search first?");
+
+        setAllbtnsVisable();
+        btn1.setText("Mars");
+        btn2.setText("Venus");
+        btn3.setText("Pluto");
 
 
-        if (choice == 1)
-        {
-            mars();
-        }
-        else if (choice == 2)
-        {
-            venus();
-        }
-        else if (choice == 3)
-        {
-            pluto();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mars();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                venus();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                pluto();
+            }
+        });
 
 
     }
@@ -105,36 +111,52 @@ public class GameGonzalezVictor extends GameActivity{
     private void mars()
     {
 
-        System.out.println("You head towards mars, Where would you like to go?");
-        System.out.println("1. Land east \n2. Land west");
+        tvStoryText.setText("You head towards mars, Where would you like to go?");
+
+        setAllbtnsVisable();
+        btn1.setText("Land east");
+        btn2.setText("Land west");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                landEast();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                landWest();
+            }
+        });
 
 
-        if (choice == 1)
-        {
-            landEast();
-        }
-        else if (choice == 2)
-        {
-            landWest();
-        }
     }
 
 
     private void landEast()
     {
+        tvStoryText.setText("So you've landed but where do you go next?");
+        setAllbtnsVisable();
+        btn1.setText("The CANYON!!");
+        btn2.setText("The river");
+        btn3.setVisibility(View.INVISIBLE);
 
-        System.out.println("So you've landed but where do you go next?");
-        System.out.println("1. The CANYON!!! \n2. the river");
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expCan();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expRiv();
+            }
+        });
 
-        if (choice == 1)
-        {
-            expCan();
-        }
-        else if (choice == 2)
-        {
-            expRiv();
-        }
     }
 
 
@@ -142,26 +164,40 @@ public class GameGonzalezVictor extends GameActivity{
     private void landWest()
     {
 
-        System.out.println("So you've landed but you see Aliens. What do you do?");
-        System.out.println("1. Say hi to them \n2. Shoot them");
+
+        tvStoryText.setText("So you've landed but you see Aliens. What do you do?");
+        setAllbtnsVisable();
+        btn1.setText("Say hi to them");
+        btn2.setText("Shoot them");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            goToAliens();
-        }
-        else if (choice == 2)
-        {
-            shootAliens();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAliens();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shootAliens();
+            }
+        });
+
+
+
     }
 
 
     private void expCan()
     {
+        //COME BACK TO THIS
+        tvStoryText.setText("Jawas gang up on you and rob everything you own including your spaceship, water and food");
+        btn1.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        System.out.println("Jawas gang up on you and rob everything you own including your spaceship, water and food");
-        System.out.println();
         defeat();
     }
 
@@ -170,42 +206,61 @@ public class GameGonzalezVictor extends GameActivity{
     {
 
 
-        System.out.println("you flow down the river and barely survived but you see Aliens. What do you do?");
-        System.out.println("1. Say hi to them \n2. Shoot them");
+        tvStoryText.setText("you flow down the river and barely survived but you see Aliens. What do you do?");
+        setAllbtnsVisable();
+        btn1.setText("Say hi to them");
+        btn2.setText("Shoot them");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            goToAliens();
-        }
-        else if (choice == 2)
-        {
-            shootAliens();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAliens();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shootAliens();
+            }
+        });
+
+
     }
 
 
     private void goToAliens()
     {
 
-        System.out.println("They are welcoming and friendly. They invite you to their spaceship");
-        System.out.println("1. accept request \n2. decline request");
+        tvStoryText.setText("They are welcoming and friendly. They invite you to their spaceship");
+        setAllbtnsVisable();
+        btn1.setText("accept request");
+        btn2.setText("decline request");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            onShip();
-        }
-        else if (choice == 2)
-        {
-            notOnShip();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onShip();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                notOnShip();
+            }
+        });
+
+
+
     }
 
 
     private void shootAliens()
     {
-
+        //COME BACK TO DEFEAT
         System.out.println("They saw your hesitation. A laser gun is aimed to your head :(");
         System.out.println();
         defeat();
@@ -214,24 +269,34 @@ public class GameGonzalezVictor extends GameActivity{
 
     private void onShip()
     {
+        tvStoryText.setText("So you're in the ship. Where would you like to go?");
+        setAllbtnsVisable();
+        btn1.setText("Venus");
+        btn2.setText("Pluto");
+        btn3.setVisibility(View.INVISIBLE);
 
-        System.out.println("So you're in the ship. Where would you like to go?");
-        System.out.println("1. Venus \n2. Pluto");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                venus();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pluto();
+            }
+        });
 
 
-        if (choice == 1)
-        {
-            venus();
-        }
-        else if (choice == 2)
-        {
-            pluto();
-        }
+
+
     }
 
     private void notOnShip()
     {
-
+        //COME BACK TO DEFEATS MESSASGE
         System.out.println("They don't like you. Pew pew!!!");
         System.out.println();
         defeat();
