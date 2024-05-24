@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,6 +21,12 @@ public class GamePokJordan extends GameActivity {
     private boolean isWon;
     private int numLives;
 
+    private void setAllBtnVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+    }
 
     public void run()
     {
@@ -38,80 +45,105 @@ public class GamePokJordan extends GameActivity {
         numLives = 5;
         //create a scanner object for user input
         //display project title and description
-        System.out.println("Protecting the container ");
-        System.out.println("There are terrorist coming to your lab to come taking your cure for cancer trying to destory it. They kill and destory all of the other labs looking for it. They then kill all the lights and it goes quiet inside the building and your the last one alive with the terrorist.");
+        tvTitle.setText("Protecting the container ");
+        tvStoryText.setText("There are terrorist coming to your lab to come taking your cure for cancer trying to destory it. They kill and destory all of the other labs looking for it. They then kill all the lights and it goes quiet inside the building and your the last one alive with the terrorist.");
 
         start();
     }
 
-    private void start()
-    {
+    private void start() {
 
-        System.out.println("Protect the cure.");
+        tvTitle.setText("Protect the cure.");
 
-        System.out.println("\nWho do you want to play as?");
-        System.out.println("1. Castle\n2. Frost\n3. Caveria");
+        tvStoryText.setText("Who do you want to play as?");
+        tvStoryText.setText("1. Castle\n2. Frost\n3. Caveria");
 
-        if (choice == 1)
-        {
-            castle();
-        }
-        else if (choice == 2)
-        {
-            frost();
-        }
-        else if (choice == 3)
-        {
-            caveria();
-        }
+        btn1.setText("Castle");
+        btn2.setText("Frost");
+        btn3.setText("Caveria");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                castle();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                frost();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caveria();
+            }
+        });
     }
 
     private void castle()
     {
-        System.out.println("\nYou have bulletproof barricades but not explosive proof. The terrorist can't shoot inside nor can you shoot outside. What do you barricade?");
-        System.out.println("1. Barricade Doors\n2. Barricade Entrances");
+        tvStoryText.setText("You have bulletproof barricades but not explosive proof. The terrorist can't shoot inside nor can you shoot outside. What do you barricade?");
 
-        if (choice == 1)
-        {
-            barricadeDoors();
-        }
-        else if (choice == 2)
-        {
-            barricadeEntrances();
-        }
+        setAllBtnVisible();
+        btn1.setText("Barricade Doors");
+        btn2.setText("Barricade Entrances");
+        btn3.setVisibility(View.INVISIBLE);
+
+
     }
 
     private void barricadeDoors()
     {
-        System.out.println("You completly barricaded off the doors to the room of the cure. Do you want to go look and take out the terrorist or stay with the cure inside the room.");
+        tvStoryText.setText("You completly barricaded off the doors to the room of the cure. Do you want to go look and take out the terrorist or stay with the cure inside the room.");
         System.out.println("1. Look for the terrorist\n2. Stay");
 
+        setAllBtnVisible();
+        btn1.setText("Look for terrorist");
+        btn2.setText("Stay");
+        btn3.setText(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            levels();
-        }
-        else if (choice == 2)
-        {
-            System.out.println("They breached in through the walls your barricades did nothing and you died.");
-            defeat();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                levels();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvStoryText.setText("They breached in through the walls your barricades did nothing and you died.");
+                defeat();
+            }
+        });
     }
 
     private void barricadeEntrances()
     {
-        System.out.println("You barricaded off all of the entrances and hear them walking down the halls. What do you do?");
+        tvStoryText.setText("You barricaded off all of the entrances and hear them walking down the halls. What do you do?");
         System.out.println("1. Surrender\n2. Look for a safer room");
 
-        if (choice == 1)
-        {
-            System.out.println("You surrendered and they demanded the cure but you were stubborn to hand it to them. They shot you.");
-            defeat();
-        }
-        else if (choice == 2)
-        {
-            saferRoom();
-        }
+        btn1.setText("Surrender");
+        btn2.setText("Safer Room");
+        btn3.setText(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvStoryText.setText("You surrendered and they demanded the cure but you were to stubborn to hand it to them. They shot you.");
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saferRoom();
+            }
+        });
     }
 
     private void saferRoom()
