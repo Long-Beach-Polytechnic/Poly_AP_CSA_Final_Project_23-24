@@ -1,8 +1,21 @@
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.poly.polyapcsafinalproject23_24.GameActivity;
 
 import java.util.Scanner;
 
 public class GameEscalanteJacqueline extends GameActivity {
+
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+
+    private Button btn1, btn2, btn3;
+
+    private boolean isWon;
+
+
 
     //instance variables
     //   variables you plan to use throughout the adventure
@@ -11,8 +24,36 @@ public class GameEscalanteJacqueline extends GameActivity {
     //private Player player; (optional)
 
 
-    public void run()
-    {
+    public void run() {
+        setContentView(R.layout.activity_game_3_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_strong);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+
+        tvTitle.setText("PATHWAYS");
+        tvSubtitle.setText("Poly Edition");
+
+
+        numLives = 4;
+        start();
+        }
+
+        private void setAllBtnsVisable()
+        {
+            btn1.setVisibility(TextView.VISIBLE);
+            btn2.setVisibility(TextView.VISIBLE);
+            btn3.setVisibility(TextView.VISIBLE);
+
+        }
+
+
+
         //initialize number of lives
         numLives = 5;
         //create a scanner object for user input
