@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,6 +34,9 @@ public class GameChavezRanses extends GameActivity {
         btn2 = findViewById(R.id.btn_2);
         btn3 = findViewById(R.id.btn_3);
 
+        tvTitle.setText("THE MATRIX");
+        tvSubtitle.setText("High School Edition");
+
         //initialize number of lives
         numLives = 5;
         //create a scanner object for user input
@@ -40,78 +44,111 @@ public class GameChavezRanses extends GameActivity {
 
         //create a player object (optional)
         //player = new Player(...)
-
-        //display project title and description
-          //Util.clearConsole was here
-        System.out.println("THE MATRIX");
-        System.out.println("In the Matrix, everyday life is like a glitchy sitcom where reality wears a tinfoil hat, dodges existential crises, and whispers conspiracy theories in binary. It's a cosmic comedy with a dash of horror-where glitches giggle, and the fear of forgetting your WI-FI password is the true terror");
-
-         //Util.pauseConsole was here
         start();
+    }
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
     }
 
     private void start()
     {
-        System.out.println("\nEscaping the Matrix, how blind are we?");
+        tvStoryText.setText("Escaping the Matrix, how blind are we?");
         System.out.println("1. Man...That's a lot of work, forget that stuff.\n2. We must go public and discover the truth.\n3. We must venture out! There’s more out there!");
         //Util.enterInt was here
 
-        if (choice == 1)
-        {
-            giveUp();
-        }
-        else if (choice == 2)
-        {
-            goPublic();
-        }
-        else if (choice == 3)
-        {
-            ventureOut();
-        }
+        setAllBtnsVisible();
+        btn1.setText(" Give up");
+        btn2.setText("Go public");
+        btn3.setText("Venture out");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                giveUp();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goPublic();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ventureOut();
+            }
+        });
+
     }
 
-    //GIVING UP PATH COMPLETED
+    //GIVING UP PATH
 
 
     private void giveUp()
     {
         //Util.clearConsole was here
-        System.out.println("\nWhat would you like to do on your free time?");
+        tvStoryText.setText("What would you like to do on your free time?");
         System.out.println("1. Stay home \n2. Go out and be a kid");
         //Util.enterInt was here
 
-        if (choice == 1)
-        {
-            stayHome();
-        }
-        else if (choice == 2)
-        {
-            goOut();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Stay home");
+        btn2.setText("Go out");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stayHome();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goOut();
+            }
+        });
+
     }
     //____STAYING HOME CHOICE____
     private void stayHome()
     {
       //Util.clearConsole was here
-        System.out.println("\nYou decide to stay home and be FAT");
+        tvStoryText.setText("You decide to stay home and be FAT");
         System.out.println("1. Go mimis \n2. Watch conspiracy theories");
          //Util.enterInt was here
 
-        if (choice == 1)
-        {
-            goMimis();
-        }
-        else if (choice == 2)
-        {
-            watchVideos();
-        }
+
+        setAllBtnsVisible();
+        btn1.setText("Go mimis, sleep is amazing");
+        btn2.setText("watch videos");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goMimis();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                watchVideos();
+            }
+        });
 
     }
     private void goMimis()  //DEFEAT
     {
-        //Util.clearConsole was here
-        System.out.println("\nAfter a long beautiful uneventful night, you wake up and see the heavenly stairs of heaven since you died in your sleep for being FAT");
-        //Util.clearConsole was here
+        tvStoryText.setText("After a long beautiful uneventful night, you wake up and see the heavenly stairs of heaven since you died in your sleep for being FAT");
         defeat();
     }
 
@@ -119,32 +156,40 @@ public class GameChavezRanses extends GameActivity {
     private void watchVideos()
     {
         //Util.clearConsole was here
-        System.out.println("\nYou decide to enjoy the rest of your night by watching conspiracy videos until you notice a man watching you through your window, what shall you do?");
-        System.out.println("1. Hide under your bed \n2. Run and get your parents, NOW!");
-
+        tvStoryText.setText("You decide to enjoy the rest of your night by watching conspiracy videos until you notice a man watching you through your window, what shall you do?");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            hideBed();
-        }
-        else if (choice == 2)
-        {
-            runToParents();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Hide under your bed");
+        btn2.setText("Run and get your parents, NOW!");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideBed();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                runToParents();
+            }
+        });
 
     }
     private void runToParents() //DEFEAT
     {
         //Util.clearConsole was here
-        System.out.println("\nIn your attempts to get your parents the man watching you appears behind you the moment you turned your back to him, you die, the matrix show their true power");
+        tvStoryText.setText("\nIn your attempts to get your parents the man watching you appears behind you the moment you turned your back to him, you die, the matrix show their true power");
         //Util.clearConsole was here
         defeat();
     }
     private void hideBed()  //SAD VICTORY
     {
         //Util.clearConsole was here
-        System.out.println("\nYou hide and close your eyes. Once you open them everything is white. You try recalling what had just happended yet cannot remember a single thing. Funny . Do I know you?");
+        tvStoryText.setText("You hide and close your eyes. Once you open them everything is white. You try recalling what had just happended yet cannot remember a single thing. Funny . Do I know you?");
         //Util.clearConsole was here
     }
 
@@ -153,23 +198,32 @@ public class GameChavezRanses extends GameActivity {
     private void goOut()
     {
         //Util.clearConsole was here
-        System.out.println("\nYou go out and have the time of your life until you notice a man starring at you");
-        System.out.println("1. Press the issue \n2. Wuss out and run away");
+        tvStoryText.setText("You go out and have the time of your life until you notice a man starring at you");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            pressIssue();
-        }
-        else if (choice == 2)
-        {
-            runAway();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Press the issue");
+        btn2.setText("Wuss out and run away");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pressIssue();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                runAway();
+            }
+        });
     }
     private void pressIssue()
     {
         //Util.clearConsole was here
-        System.out.println("\nYou run up on the man real gangsta style");
+        tvStoryText.setText("You run up on the man real gangsta style");
         //Util.clearConsole was here
         //Util.clearConsole was here
 
