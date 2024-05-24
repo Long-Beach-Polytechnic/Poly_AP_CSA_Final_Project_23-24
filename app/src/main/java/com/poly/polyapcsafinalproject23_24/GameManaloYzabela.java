@@ -1,14 +1,51 @@
+package com.poly.polyapcsafinalproject23_24;
+
+import android.view.View;
+import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.Button;
+
 import java.util.Scanner;
 
-public class Adventure
+public class GameManaloYzabela extends GameActivity
 {
+
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+    private Button btn1, btn2, btn3, btn4;
+    @Override
+    protected void run()
+    {
+        setContentView(R.layout.activity_game_4_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+        tvTitle.setText("A PATHETIC SOULMATE QUEST - TINDER EDITION");
+        tvSubtitle.setText("A complex game that will make you go \"WHAT JUST HAPPENED?\".You navigate the unpredictable world of dating as you encounter four eccentric characters on Tinder.Each potential match comes with their own quirks,challenges,and unique storylines.Your desperate quest for love leads you through a series of hilarious and unexpected scenarios,forcing you to make choices that will determine the fate of your romantic endeavors.Will you end up dead or miserably rotting in a nursing home alone? Well, Goodluck! I hope you find love.");
+        tvStoryText.setText("\nDisclaimer: VIOLENCE and NEGATIVITY\nThis game contains content that may induce frustration,disappointment,and a general sense of negativity.Player discretion is advised as you embark in a journey where challenges are designed to be relentless, and success often feels elusive.This game is not for the faint of heart and might cause emotional distress. Play at your own risk.\n\n      EVERYTHING IN THIS GAME IS SATIRE!.I BEG YOU NOT TAKE THIS GAME SERIOUSLY.")
+    }
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
+    }
+}
+
+
 
     //instance variables
     //variables you plan to use throughout the adventure
     private Scanner scan;
     private int numLives;
-    private Player player;
-    //private Player player; (optional)
 
 
     public void run()
@@ -18,15 +55,6 @@ public class Adventure
         //create a scanner object for user input
         scan = new Scanner(System.in);
 
-        //create a player object (optional)
-        //player = new Player("");
-
-
-        //display project title and description
-        Util.clearConsole();
-        System.out.println("A PATHETIC SOULMATE QUEST - TINDER EDITION");
-        System.out.println("\nA complex game that will make you go \"WHAT JUST HAPPENED?\".You navigate the unpredictable world of dating as you encounter four eccentric characters on Tinder.Each potential match comes with their own quirks,challenges,and unique storylines.Your desperate quest for love leads you through a series of hilarious and unexpected scenarios,forcing you to make choices that will determine the fate of your romantic endeavors.Will you end up dead or miserably rotting in a nursing home alone? Well, Goodluck! I hope you find love.");
-
         String yee = TextColor.RED_BACKGROUND_BRIGHT+ """
     \nDisclaimer: VIOLENCE and NEGATIVITY
 
@@ -34,16 +62,13 @@ public class Adventure
 
       EVERYTHING IN THIS GAME IS SATIRE!.I BEG YOU NOT TAKE THIS GAME SERIOUSLY.
       """;
-        System.out.println(yee);
 
-        Util.pauseConsole();
-
+        tvStoryText.setText(yee);
         start();
     }
 
     private void start()
     {
-        Util.clearConsole();
         String title = TextColor.CYAN + """
       A PATHETIC SOULMATE QUEST - TINDER EDITION
       """;
@@ -52,30 +77,47 @@ public class Adventure
 
         System.out.println("You are a pathetic lonely human being who decided to find love so you don’t end up dying alone in a nursing home.You decided to scroll through tinder hoping to find your one and only true love to be with and spend your money with during your whole pathetic lowly life. As you were hoping to find a match, you were beguiled by this one particular person and decided to swipe right.");
 
-        Util.pauseConsole();
         String ant = TextColor.BLUE + """
       Who would you want to spend the rest of your sad life with?
 
-      1.Ryan Burke
+
+        String btn1Text = """1.Ryan Burke
       -High School Teacher with very outstanding Master’s Degree
       -Lives in Long Beach
       -Less than 3 miles away
 
+      """;
+
+        btn1.setText(btn1Text);
+
+        String btn2Text = """
       2.Sofia Ramos
       -Registered Nurse
       -Lives in Long Beach
       -Less than 5 miles away
+     """;
 
+        btn2.setText(btn2Text);
+
+        String btn3Text = """
       3.Koichi Hirose
       -Head Chef
       -Lives in Carson
       -Less than 9 miles away
+     """;
 
+        btn3.setText(btn3Text);
+
+        String btn4Text = """
       4.Yara Lopez
       -Bartender
       -Lives in Lakewood
       -Less than 16 miles away
-      """;
+     """;
+
+        btn4.setText(btn4Text);
+
+
         System.out.println(ant);
         int choice = Util.enterInt(1,4);
 
