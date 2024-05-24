@@ -1,6 +1,9 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class GameGonzalezVictor extends GameActivity{
 
@@ -10,6 +13,11 @@ public class GameGonzalezVictor extends GameActivity{
     private int numLives;
     private int points;
     //private Player player; (optional)
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+
+    private ImageView ivStory;
+
+    private Button btn1, btn2, btn3;
 
 
     public void run()
@@ -18,7 +26,14 @@ public class GameGonzalezVictor extends GameActivity{
 
         tvTitle = findViewById(R.id.tv_title_txt);
         tvSubtitle = findViewById(R.id.tv_subtitle);
-        tvStoryText = findViewById(R.id.tv)
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+        tvTitle.setText("SPACE ADVENTURE");
+        tvSubtitle.setText("Find the key to unlock the treasure hidden in the Solar System. You have 5 lives. Good Luck!!")
 
         //initialize number of lives
         numLives = 4;
@@ -31,13 +46,26 @@ public class GameGonzalezVictor extends GameActivity{
 
         //display project title and description
 
-        System.out.println("SPACE ADVENTURE");
-        System.out.println();
-        System.out.println("Find the key to unlock the treasure hidden in the Solar System. You have 5 lives. Good Luck!!");
 
 
         start();
     }
+
+    private void setAllbtnsVisable()
+    {
+        btn1.setVisibility(TextView.VISIBLE);
+        btn2.setVisibility(TextView.VISIBLE);
+        btn3.setVisibility(TextView.VISIBLE);
+    }
+
+
+
+
+
+
+
+
+
 
     private void start()
     {
