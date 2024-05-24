@@ -1,18 +1,44 @@
 package com.poly.polyapcsafinalproject23_24;
 
-@Override
-protected void run() {
-    setContentView(R.layout.activity_game_4_button);
 
-    tvTitle = findViewById(R.id.tv_title_txt);
-    tvSubtitle = findViewById(R.id.tv_subtitle);
-    tvStory
-
-
-
-
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ChooseYourOwnAdventureChavezHugo extends GameActivity {
+
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+    private Button btn1, btn2, btn3;
+    private boolean isWon;
+    private int numLives;
+
+    @Override
+    protected void run() {
+        setContentView(R.layout.activity_game_4_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+        tvTitle.setText("Attack The Titans");
+        tvSubtitle.setText("Survive!!!");
+
+        numLives = 4;
+        start();
+    }
+
+
+private void setAllBtnsVisible()
+{
+    btn1.setVisibility(View.VISIBLE);
+    btn2.setVisibility(View.VISIBLE);
+    btn3.setVisibility(View.VISIBLE);
+}
 
 
 
@@ -45,16 +71,39 @@ public class Adventure{
         start();
     }
 
-    private void start()
-    {
+    private void start() {
+        isWon = false;
 
-        System.out.println("THE TITANS HAVE BREACHED THE WALL");
+        ivStory.setImageResource(R.drawable.im_laborday_title);
 
-        System.out.println("You must make the right decisions in order to survive!!!");
+        tvStoryText.setText("THE TITANS HAVE BREACHED THE WALL");
+        tvStoryText.setText("You must make the right decisions in order to survive!!!");
+        tvStoryText.setText("The titans have breached the wall and are now attacking the village, what will you do to survive?");
+        tvStoryText.setText("1. Attack the titans\n2. Watch in fear\n3. Run as fast as possible");
 
-        System.out.println("The titans have breached the wall and are now attacking the village, what will you do to survive?");
-        System.out.println("1. Attack the titans\n2. Watch in fear\n3. Run as fast as possible");
+        setAllBtnsVisible();
+        btn1.setText("Attack");
+        btn2.setText("Watch");
+        btn3.setText("Run Away");
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {attack();}
+
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {watch();}
+
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { runAway();}
+
+        });
+    }
 
         if (choice == 1)
         {
