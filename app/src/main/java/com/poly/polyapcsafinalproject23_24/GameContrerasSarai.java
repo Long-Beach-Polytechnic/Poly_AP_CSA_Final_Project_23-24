@@ -1,13 +1,11 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.view.View;
+
 public class GameContrerasSarai extends GameActivity{
 
-    //instance variables
-    //   variables you plan to use throughout the adventure
-
     private int numLives;
-    //private Player player; (optional)
 
 
     public void run()
@@ -17,57 +15,99 @@ public class GameContrerasSarai extends GameActivity{
         tvTitle = findViewById(R.id.tv_title_txt);
         tvSubtitle = findViewById(R.id.tv_subtitle);
         tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+        tvTitle.setText("VISIT TO ANIMAL SAFARI");
+        tvSubtitle.setText("High School Edition");
     }
-        //initialize number of lives
-        numLives = 5;
-
-        //create a player object (optional)
-        //player = new Player(...)
-
-
-        //display project title and description
-        System.out.println(TextColor.PURPLE + "VISIT TO ANIMAL SAFARI" + TextColor.RESET);
-        System.out.println("While visiting the safari you will be met with different situations. Hopefully you make the right choices to make this visit fun!!");
-
-        start();
-    }
-
-    private void start()
+    numLives = 5;    private void setAllBtnsVisible()
     {
-        //start adventure here
-        System.out.println("\nNow that you've entered the safari, you are introduced with your tour group. You are supposed to stay with them at all time during the visit. The guide lady asks - What animal section would you like to visit first?");
-        System.out.println("1. Lions\n2. Elephants\n3. Giraffes");
-        int choice =
-
-        if (choice == 1)
-        {
-            goToLions();
-        }
-        else if (choice == 2)
-        {
-            goToElephants();
-        }
-        else if (choice == 3)
-        {
-            goToGiraffes();
-        }
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
     }
+    start();
 
-    //LIONS!!!
-    private void goToLions()
-    {
-        System.out.println("\nYou chose the lions, you see a cute family laying by the water so you decide to take a picture with the cool lions!");
-        System.out.println("1. Just take a picture from a safe distance\n2. Go a litle closer for a much better angle");
-        int choice =
+    }
+     public void start()
+     {
+       isWon = false;
+       ivStory.setImageResource(R.drawable.im_laborday_title);
 
-        if (choice == 1)
-        {
-            safePhoto();
-        }
-        else if (choice == 2)
-        {
-            riskyPhoto();
-        }
+       tvStoryText.setText("While visiting the safari you will be met with different situations. Hopefully you make the right choices to make this visit fun!!");
+       tvStoryText.setText("Now that you've entered the safari, you are introduced with your tour group. You are supposed to stay with them at all time during the visit. The guide lady asks - What animal section would you like to visit first?");
+       setAllBtnsVisible();
+       btn1.setText("Go to the lions");
+       btn2.setText("Go to the elephants");
+       btn3.setText("Go to the giraffes");
+     {
+         btn1.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 goToLions();
+             }
+         });
+         btn2.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 goToElephants();
+             }
+         });
+
+         btn3.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 goToGiraffes();
+             }
+         });
+
+         //____LION PATH____
+      private void goToLions()
+      {
+          ivStory.setImageResource(R.drawable.im_laborday_beach);
+          tvStoryText.setText("You chose the lions, you see a cute family laying by the water so you decide to take a picture with the cool lions!");
+
+          setAllBtnsVisible();
+          btn1.setText("Just take a picture from a safe distance");
+          btn2.setText("Go a little closer for a much better angle");
+          btn3.setVisibility(View.INVISIBLE);
+
+          btn1.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  safePhoto();
+              }
+          });
+
+          btn2.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  riskyPhoto();
+              }
+          });
+      }
+
+         private void safePhoto()
+         {
+             tvStoryText.setText("You decide to just stay away, not wanting to risk it. Now how would you like this picture?");
+             ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+             setAllBtnsVisible();
+             btn1.setText("Take a selfie with them?");
+             btn2.setText("Punch it in the nose");
+             btn3.setVisibility(View.INVISIBLE);
+
+             tvStoryText.setText("You decide to just stay away, not wanting to risk it. Now how would you like this picture?");
+             ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+             setAllBtnsVisible();
+             btn1.setText("Take a selfie with them?");
+             btn2.setText("Just a picture of the lions by themselves");
+             btn3.setVisibility(View.INVISIBLE);
     }
 
     private void safePhoto()
