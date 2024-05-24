@@ -1,55 +1,93 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.widget.TextView;
+
 import com.poly.polyapcsafinalproject23_24.GameActivity;
 
 
 
 public class GameSanchezCristian extends GameActivity {
 
+
     //instance variables
     //   variables you plan to use throughout the adventure
 
     private int numLives;
+
     //private Player player; (optional)
+
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+    }
+
 
 
     public void run()
     {
      setContentView(R.layout.activity_game_3_button);
      tvTitle = findViewById(R.id.tv_title_txt);
+     tvSubtitle = findViewById(R.id.tv_subtitle);
+     tvstoryText = findViewById(R.id.tv_story);
+     iv = findViewById(R.id.iv_story);
+     btn1 = findViewById(R.id.btn_1);
+     btn2 = findViewById(R.id.btn_2);
+     btn3 = findViewById(R.id.btn_3);
+
+
+
+
+
+
+
+        tvTitle.setText("Will you survive");
+        tvSubtitle("The Not so seemly Dangerous places but they are.");
+
         numLives = 3;
-
-
-
-
-
-        System.out.println("Will you survive");
-        System.out.println("The Not so seemly Dangerous places but they are.");
-
-
         start();
     }
 
     private void start()
     {
+        isWon = false;
 
 
-        System.out.println("Its a summer break");
 
-        System.out.print("\nIts finally summer,lets get it ");
+        tvStoryText.setText("\nIts finally summer,lets get it ");
 
-        System.out.println("\nWhere do you want to go?");
-        System.out.println("1.Go to the park\n2. Go to School\n3. Go to Church");
-        int choice = Util.enterInt(1,3);
 
-        if(choice ==1)
-        {
-            goToPark();
-        }
-        else if (choice == 2)
-        {
-            goToSchool();
-        }
+        setAllBtnsVisible();
+       btn1.setText("Go to the park");
+       btn2.setText("Go to School");
+       btn3.setText("Go to Church");
+
+
+       btn1.setOnClickListener(new view.OnClickListner() {
+
+           @Override
+           public void onClick(view v) {
+               goToPark();
+           }
+       });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                goToSchool();
+            }
+        });
+
+
+
+
+
+
+
+
         else if(choice == 3)
         {
             goToChurch();
