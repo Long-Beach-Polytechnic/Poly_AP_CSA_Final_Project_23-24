@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,124 +42,133 @@ public class GameNavarreteIvan extends GameActivity {
 
         // display project title and description
 
-        System.out.println("OG FORTNITE MAP - SOLOS EDITION");
-        System.out.println("Try to get a Victory Royale");
+        tvTitle.setText("OG FORTNITE MAP - SOLOS EDITION");
+        tvSubtitle.setVisibility("Try to get a Victory Royale");
 
 
         start();
     }
 
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+    }
     private void start() {
         // start adventure here
 
-        System.out.println("Fortnite OG MAP - SOLOS EDITION");
+        tvTitle.setText("Fortnite OG MAP - SOLOS EDITION");
 
-        System.out.println("\nIts time, lets go!");
+        tvStoryText.setText("\nIts time, lets go!\nWhere would you like to land?");
 
-        System.out.println("\nWhere would you like to land?");
         System.out.println("1. Salty Springs\n2. Pleasant Park\n3. Tilted Towers");
-        int choice = Util.enterInt(1, 3);
 
-        if (choice == 1) {
-            saltySprings();
-        } else if (choice == 2) {
-            pleasantPark();
-        } else if (choice == 3) {
-            tiltedTowers();
-        }
-        // Salty path
+        setAllBtnsVisible();
+        btn1.setText("Salty Springs");
+        btn2.setText("Pleasant Park");
+        btn3.setText("Tilted Towers");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                saltySprings();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                pleasantPark();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                tiltedTowers();
+            }
+        });
     }
 
     private void saltySprings() {
 
-        System.out.println("\n You decided to go to Salty Springs");
+        tvStoryText.setText("\n You decided to go to Salty Springs");
 
-        System.out.println(" What house do you want to land at?");
-        System.out.println("1. Brick house \n2. Blue house");
+        tvStoryText.setText(" What house do you want to land at?");
 
-
-        if (choice == 1) {
-            brickHouse();
-        } else if (choice == 2) {
-            blueHouse();
-        }
+        btn1.setText("Brick house ");
+        btn2.setText("Blue house");
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void brickHouse() {
 
-        System.out.println("\n You've decided to land brick, you get contested, you have a shotgun");
+        tvStoryText.setText("\n You've decided to land brick, you get contested, you have a shotgun");
 
-        System.out.println(" Which of the following do you do?");
-        System.out.println("1. Fight the player \n2. Hide until they leave");
+        tvStoryText.setText(" Which of the following do you do?");
 
-
-        if (choice == 1) {
-            fight();
-        } else if (choice == 2) {
-            hide();
-        }
+        btn1.setText("Fight the player ");
+        btn2.setText("Hide until they leave");
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void fight() {
 
-        System.out.println("\n You fight the player and kill him, you made it out of Salty Springs alive");
+        tvStoryText.setText("\n You fight the player and kill him, you made it out of Salty Springs alive");
 
-        System.out.println(" How do you want to get to the safe zone");
+        tvStoryText.setText(" How do you want to get to the safe zone?");
         System.out.println("1. Sprint to zone\n2. Take a rift and glide to zone");
 
+        btn1.setText(" Sprint to zone");
+        btn2.setText("Take a rift and glide to zone");
+        btn3.setVisibility(View.INVISIBLE);
 
-        if (choice == 1) {
-            sprint();
-        } else if (choice == 2) {
-            rift();
-        }
     }
 
     private void hide() {
 
-        System.out.println("\n You decide to hide");
+        tvStoryText.setText("\n You decide to hide");
 
-        System.out.println(" A player finds you and 200 pumps your face you died.");
+        tvStoryText.setText(" A player finds you and 200 pumps your face you died.");
 
         defeat();
     }
 
     private void sprint() {
 
-        System.out.println("\n You decide to sprint to the safe zone all the way in Haunted hills");
+        tvStoryText.setText("\n You decide to sprint to the safe zone all the way in Haunted hills");
 
-        System.out.println(" You died to storm.");
+        tvStoryText.setText(" You died to storm.");
 
-        System.out.println("Think next time");
+        tvStoryText.setText("Think next time");
 
         defeat();
     }
 
     private void rift() {
 
-        System.out.println("\n You rift to zone, there is 1 player left");
+        tvStoryText.setText("\n You rift to zone, there is 1 player left");
 
-        System.out.println(" You kill him with a shotgun! VICTORY ROYALE");
+        tvStoryText.setText(" You kill him with a shotgun! VICTORY ROYALE");
 
-        System.out.println(" YOUR PARENT ARE FINALLY PROUD OF YOU");
+        tvStoryText.setText(" YOUR PARENT ARE FINALLY PROUD OF YOU");
 
         start();
     }
 
     private void blueHouse() {
 
-        System.out.println(
+        tvStoryText.setText(
                 "\nYou've decided to land blue house, you loot the whole house and have a blue tactical shotgun and gray AR with 50 shield");
 
-        System.out.println(" Which of the following do you do?");
-        System.out.println("1. Fight the rest of the players at salty\n2. Rift to Dusty Divot to continue looting.");
+        tvStoryText.setText(" Which of the following do you do?");
 
-
-        if (choice == 1) {
-            clearSalty();
-        } else if (choice == 2) {
-            rotateDusty();
-        }
+        btn1.setText(" Fight the rest of the players at salty");
+        btn2.setText("Rift to Dusty Divot to continue looting.");
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void clearSalty() {
