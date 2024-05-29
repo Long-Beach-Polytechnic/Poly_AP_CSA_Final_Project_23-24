@@ -5,6 +5,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.WindowDecorActionBar;
+
 import com.poly.polyapcsafinalproject23_24.GameActivity;
 
 import java.util.Scanner;
@@ -35,7 +37,7 @@ public class GameChavezRanses extends GameActivity {
         btn3 = findViewById(R.id.btn_3);
 
         tvTitle.setText("THE MATRIX");
-        tvSubtitle.setText("High School Edition");
+        tvSubTitle.setText("High School Edition");
 
         //initialize number of lives
         numLives = 5;
@@ -94,12 +96,11 @@ public class GameChavezRanses extends GameActivity {
     {
         //Util.clearConsole was here
         tvStoryText.setText("What would you like to do on your free time?");
-        System.out.println("1. Stay home \n2. Go out and be a kid");
         //Util.enterInt was here
 
         setAllBtnsVisible();
         btn1.setText("Stay home");
-        btn2.setText("Go out");
+        btn2.setText("Go out and be a kid");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +123,6 @@ public class GameChavezRanses extends GameActivity {
     {
       //Util.clearConsole was here
         tvStoryText.setText("You decide to stay home and be FAT");
-        System.out.println("1. Go mimis \n2. Watch conspiracy theories");
          //Util.enterInt was here
 
 
@@ -149,7 +149,18 @@ public class GameChavezRanses extends GameActivity {
     private void goMimis()  //DEFEAT
     {
         tvStoryText.setText("After a long beautiful uneventful night, you wake up and see the heavenly stairs of heaven since you died in your sleep for being FAT");
-        defeat();
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
 
@@ -182,14 +193,26 @@ public class GameChavezRanses extends GameActivity {
     private void runToParents() //DEFEAT
     {
         //Util.clearConsole was here
-        tvStoryText.setText("\nIn your attempts to get your parents the man watching you appears behind you the moment you turned your back to him, you die, the matrix show their true power");
+        tvStoryText.setText("In your attempts to get your parents the man watching you appears behind you the moment you turned your back to him, you die, the matrix show their true power");
         //Util.clearConsole was here
-        defeat();
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
     private void hideBed()  //SAD VICTORY
     {
         //Util.clearConsole was here
-        tvStoryText.setText("You hide and close your eyes. Once you open them everything is white. You try recalling what had just happended yet cannot remember a single thing. Funny . Do I know you?");
+        tvStoryText.setText("You hide and close your eyes. Once you open them everything is white. You try recalling what had just happened yet cannot remember a single thing. Funny . Do I know you?");
         //Util.clearConsole was here
     }
 
@@ -226,23 +249,32 @@ public class GameChavezRanses extends GameActivity {
         tvStoryText.setText("You run up on the man real gangsta style");
         //Util.clearConsole was here
         //Util.clearConsole was here
+        setAllBtnsVisible();
+        btn1.setText("Left hook to the jaw!");
+        btn2.setText("Push him");
+        btn3.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            leftHook();
-        }
-        else if (choice == 2)
-        {
-            pushHim();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                leftHook();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushHim();
+            }
+        });
     }
 
     private void leftHook() //DEFEAT
     {
         //Util.clearConsole was here
-        System.out.println("\nOnce you threw your punch, the supposed man was never a man, you turn around and BOOM.");
+        tvStoryText.setText("Once you threw your punch, the supposed man was never a man, you turn around and BOOM.");
 
-        System.out.println("\nDeath is a concept we'll never understand, except you, idiot..");
+        tvStoryText.setText("Death is a concept we'll never understand, except you, idiot..");
         //Util.clearConsole was here
         defeat();
     }
@@ -250,22 +282,22 @@ public class GameChavezRanses extends GameActivity {
     private void pushHim()  //SAD VICTORY
     {
         //Util.clearConsole was here
-        System.out.println("\nYou fall inside the man's cloak and continue falling, and falling, and falling");
+        tvStoryText.setText("You fall inside the man's cloak and continue falling, and falling, and falling");
 
-        System.out.println("\nYou are now apart of an experiment the Matrix developed, as you continue falling you accept this.");
+        tvStoryText.setText("You are now apart of an experiment the Matrix developed, as you continue falling you accept this.");
 
-        System.out.println("\nHAIL THAT WHO SEES ALL");
+        tvStoryText.setText("HAIL THAT WHO SEES ALL");
         //Util.clearConsole was here
     }
 
     private void runAway()
     {
         //Util.clearConsole was here
-        System.out.println("\nYou run away and luckily survive.");
+        tvStoryText.setText("You run away and luckily survive.");
 
-        System.out.println("\nYears pass and the insanity caused by trying to forget what happened that night as a kid forces you into a mental asylum");
+        tvStoryText.setText("Years pass and the insanity caused by trying to forget what happened that night as a kid forces you into a mental asylum");
 
-        System.out.println("\nWho knows, maybe death would've been better...");
+        tvStoryText.setText("Who knows, maybe death would've been better...");
         //Util.clearConsole was here
         defeat();
     }
@@ -277,78 +309,103 @@ public class GameChavezRanses extends GameActivity {
     //GOING PUBLIC PATH COMPLETED
 
 
-    private void goPublic()
-    {
+    private void goPublic() {
         //Util.clearConsole was here
-        System.out.println("\nYou choose to go public, how should you approach this?");
-        System.out.println("1. Conspiracy theories on youtube, that always works! \n2. Go to the mall and become one of those preaching weirdos");
+        tvStoryText.setText("You choose to go public, how should you approach this?");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            youtube();
-        }
-        else if (choice == 2)
-        {
-            preachingWeirdo();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Conspiracy theories on youtube, that always works!");
+        btn2.setText("Go to the mall and become one of those preaching weirdos");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                youtube();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                preachingWeirdo();
+            }
+        });
     }
 
     private void youtube()  //____YOUTUBE CHOICE_____
     {
         //Util.clearConsole was here
-        System.out.println("\nYou gain a mass following and are given the choice to make a deal or continue on your own");
-        System.out.println("1. Let's make this deal \n2. I work alone");
+        tvStoryText.setText("You gain a mass following and are given the choice to make a deal or continue on your own");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            deal();
-        }
-        else if (choice == 2)
-        {
-            loner();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Let's make this deal!");
+        btn2.setText(" I work alone.");
+        btn3.setVisibility(View.INVISIBLE);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deal();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loner();
+            }
+        });
     }
     private void deal() //DEFEAT
     {
         //Util.clearConsole was here
 
-        System.out.println("\nWithout reading any contracts you make this deal and realize, you made a deal with doordash...");
-
-        System.out.println("\nYou are forever known as doordash man");
+        tvStoryText.setText("Without reading any contracts you make this deal and realize, you made a deal with doordash...");
+        tvStoryText.setText("You are forever known as doordash man");
 
         //Util.clearConsole was here
         defeat();
     }
-
     private void loner()
     {
         //Util.clearConsole was here
-        System.out.println("\nWorking alone increased your following and you are now known as the MATRIX MAN. How should you continue your legacy?");
+        tvStoryText.setText("Working alone increased your following and you are now known as the MATRIX MAN. How should you continue your legacy?");
         System.out.println("1. Bob??? \n2. Enforce your power to everyone!");
         //Util.clearConsole was here
-        if (choice == 1)
-        {
-            bob();
-        }
-        else if (choice == 2)
-        {
-            matrixMan();
-        }
+
+        setAllBtnsVisible();
+        btn1.setText("BOB???");
+        btn2.setText("Enforce your power to everyone!");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bob();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                matrixMan();
+            }
+        });
     }
     private void bob() //DEFEAT
     {
         //Util.clearConsole was here
 
-        System.out.println("\nBob");
+        tvStoryText.setText("Bob");
 
-        System.out.println("\nBob");
+        tvStoryText.setText("Bob");
 
-        System.out.println("\nYour body is found in a ditch and the letters B.O.B are carved on your head");
+        tvStoryText.setText("Your body is found in a ditch and the letters B.O.B are carved on your head");
 
-        System.out.println("\nBob");
+        tvStoryText.setText("Bob");
 
         //Util.clearConsole was here
         defeat();
@@ -357,38 +414,47 @@ public class GameChavezRanses extends GameActivity {
     private void matrixMan()  //VICTORY
     {
         //Util.clearConsole was here
-        System.out.println("\nTHE WHOLE WORLD KNOWS YOUR NAME AND OBEY YOU");
+        tvStoryText.setText("THE WHOLE WORLD KNOWS YOUR NAME AND OBEY YOU");
 
-        System.out.println("\n THE GREAT PAPA MATRIX.");
+        tvStoryText.setText("THE GREAT PAPA MATRIX.");
 
-        System.out.println("\nHAIL PAPA MATRIX");
+        tvStoryText.setText("HAIL PAPA MATRIX");
         //Util.clearConsole was here
     }
 
     private void preachingWeirdo() //_____PREACHING CHOICE____
     {
         //Util.clearConsole was here
-        System.out.println("\nYou go to the mall daily and preach about the Matrix. You can either stick with malls or preach everywhere, including hospitals");
-        System.out.println("1. Malls have the most influence \n2.  Become a greater preaching weirdo");
+        tvStoryText.setText("You go to the mall daily and preach about the Matrix. You can either stick with malls or preach everywhere, including hospitals");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            malls();
-        }
-        else if (choice == 2)
-        {
-            youAreWeird();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Malls have the most influence");
+        btn2.setText("Become a greater preaching weirdo");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                malls();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                youAreWeird();
+            }
+        });
     }
 
     private void malls() //DEFEAT
     {
         //Util.clearConsole was here
 
-        System.out.println("\nAfter some time your crush sees you preaching at the mall and blocks you on all social media");
+        tvStoryText.setText("After some time your crush sees you preaching at the mall and blocks you on all social media");
 
-        System.out.println("\nYou live a sad life with the nickname Preaching Weirdo");
+        tvStoryText.setText("You live a sad life with the nickname Preaching Weirdo");
 
         //Util.clearConsole was here
         defeat();
@@ -397,11 +463,11 @@ public class GameChavezRanses extends GameActivity {
     private void youAreWeird()  //SAD VICTORY
     {
         //Util.clearConsole was here
-        System.out.println("\nSurprisingly people begin supporting you and start questioning their way of living");
+        tvStoryText.setText("Surprisingly people begin supporting you and start questioning their way of living");
 
-        System.out.println("\nThis forces global issues as people begin creating alliances in which you join against the forces trying to expose The Matrix");
+        tvStoryText.setText("This forces global issues as people begin creating alliances in which you join against the forces trying to expose The Matrix");
 
-        System.out.println("\nWW3 begins and everyone now live questioning everything.");
+        tvStoryText.setText("WW3 begins and everyone now live questioning everything.");
 
         //Util.clearConsole was here
     }
@@ -415,44 +481,63 @@ public class GameChavezRanses extends GameActivity {
     private void ventureOut()
     {
         //Util.clearConsole was here
-        System.out.println("\nYou have decided to venture out, where shall you go?");
+        tvStoryText.setText("You have decided to venture out, where shall you go?");
         System.out.println("1. Should probably stay local \n2. Across seas we go!");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            stayLocal();
-        }
-        else if (choice == 2)
-        {
-            acrossSeas();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Should probably stay local");
+        btn2.setText("Across seas we go!");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stayLocal();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                acrossSeas();
+            }
+        });
     }
 
     private void stayLocal()  //_____STAYING LOCAL CHOICE___________
     {
         //Util.clearConsole was here
-        System.out.println("\nSince you have chosen to stay local you arrive at Area 51, there are two ways to getting inside");
-        System.out.println("1. Underground path \n2. Just jump the fence");
+        tvStoryText.setText("Since you have chosen to stay local you arrive at Area 51, there are two ways to getting inside");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            underground();
-        }
-        else if (choice == 2)
-        {
-            jumpFence();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Underground path");
+        btn2.setText("Just jump the fence");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                underground();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jumpFence();
+            }
+        });
     }
     private void underground()  //SAD VICTORY
     {
         //Util.clearConsole was here
-        System.out.println("\nYou take the underground path and fall into an underground civilization called the Bombaclats");
+        tvStoryText.setText("You take the underground path and fall into an underground civilization called the Bombaclats");
 
-        System.out.println("\nA man named Boomba takes you in and you join the Boombaclat Resistance");
+        tvStoryText.setText("A man named Boomba takes you in and you join the Boombaclat Resistance");
 
-        System.out.println("\nYous a proud brotha.");
+        tvStoryText.setText("Yous a proud brotha.");
 
         //Util.clearConsole was here
     }
@@ -460,53 +545,73 @@ public class GameChavezRanses extends GameActivity {
     private void jumpFence()
     {
         //Util.clearConsole was here
-        System.out.println("\nYou're in! It's so dark...where now?");
+        tvStoryText.setText("You're in! It's so dark...where now?");
         System.out.println("1.Keep heading forward until you see something \n2. Stay near the walls and pray you find a door");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            forward();
-        }
-        else if (choice == 2)
-        {
-            wallHugger();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Keep heading forward until you see something");
+        btn2.setText("Stay near the walls and pray you find a door");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                forward();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                wallHugger();
+            }
+        });
     }
 
     private void forward()
     {
         //Util.clearConsole was here
-        System.out.println("\nYou notice a door and enter, inside the room you get hit with the presence of a contained black hole, do you touch it?");
+        tvStoryText.setText("You notice a door and enter, inside the room you get hit with the presence of a contained black hole, do you touch it?");
         System.out.println("1. yes.. \n2. Hell no");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            blackHole();
-        }
-        else if (choice == 2)
-        {
-            noTouch();
-        }
+        setAllBtnsVisible();
+        btn1.setText("yes..");
+        btn2.setText("Hello no");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blackHole();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                noTouch();
+            }
+        });
     }
     private void blackHole()  //VICTORY
     {
         //Util.clearConsole was here
-        System.out.println("\nYou get sucked in and observe knowledge no man can bare to witness");
+        tvStoryText.setText("You get sucked in and observe knowledge no man can bare to witness");
 
-        System.out.println("\nYou behold the power to travel between multiverses.");
+        tvStoryText.setText("You behold the power to travel between multiverses.");
 
-        System.out.println("\njjM4M8XtE4ChAEdXv9F5hg==");
+        tvStoryText.setText("jjM4M8XtE4ChAEdXv9F5hg==");
         //Util.clearConsole was here
     }
     private void noTouch() //DEFEAT
     {
         //Util.clearConsole was here
 
-        System.out.println("\nBecause of your fear, you try turning back yet get trapped inside and get caught");
+        tvStoryText.setText("Because of your fear, you try turning back yet get trapped inside and get caught");
 
-        System.out.println("\nYou live a sad life as you become a test dummy for multiple experiments");
+        tvStoryText.setText("You live a sad life as you become a test dummy for multiple experiments");
 
         //Util.clearConsole was here
         defeat();
@@ -516,9 +621,9 @@ public class GameChavezRanses extends GameActivity {
     {
         //Util.clearConsole was here
 
-        System.out.println("\nYou hug the wall and eventually discover a manlike figure");
+        tvStoryText.setText("You hug the wall and eventually discover a manlike figure");
 
-        System.out.println("\nAs you approach this he murders you, apparently he thought you were an ugly Alien");
+        tvStoryText.setText("As you approach this he murders you, apparently he thought you were an ugly Alien");
 
         //Util.clearConsole was here
         defeat();
@@ -527,55 +632,74 @@ public class GameChavezRanses extends GameActivity {
     private void acrossSeas()  //_____ACROSS SEAS CHOICE___________
     {
         //Util.clearConsole was here
-        System.out.println("\nACROSS SEAS WE GO! Now that your across seas you go to the one man who knows of the Matrix, Andrew Tate to ask questions.");
-        System.out.println("1. Ask him directly \n2. Try to get to know him");
+        tvStoryText.setText("ACROSS SEAS WE GO! Now that your across seas you go to the one man who knows of the Matrix, Andrew Tate to ask questions.");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            direct();
-        }
-        else if (choice == 2)
-        {
-            indirect();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Ask him directly");
+        btn2.setText("Try to get to know him");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                direct();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indirect();
+            }
+        });
     }
 
     private void direct()  //VICTORY
     {
         //Util.clearConsole was here
-        System.out.println("\nHe respects your directness and tells you everything he knows");
+        tvStoryText.setText("He respects your directness and tells you everything he knows");
 
-        System.out.println("\nYou join his undercover team and become one of the Tate's.");
+        tvStoryText.setText("You join his undercover team and become one of the Tate's.");
 
-        System.out.println("\nGod bless the future...");
+        tvStoryText.setText("God bless the future...");
         //Util.clearConsole was here
     }
 
     private void indirect() //SAD DEFEAT
     {
         //Util.clearConsole was here
-        System.out.println("\nSince you were indirect you can either choose a money distraction or physical distraction.");
+        tvStoryText.setText("Since you were indirect you can either choose a money distraction or physical distraction.");
         System.out.println("1. money talks \n2. Impress him physically");
         //Util.clearConsole was here
 
-        if (choice == 1)
-        {
-            money();
-        }
-        else if (choice == 2)
-        {
-            pushups();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Money talks");
+        btn2.setText("Impress him physically");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                money();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushups();
+            }
+        });
     }
 
     private void money() //DEFEAT
     {
         //Util.clearConsole was here
 
-        System.out.println("\nWell... you tried flexing your money");
+        tvStoryText.setText("Well... you tried flexing your money");
 
-        System.out.println("\nAndrew calls you broke, beats you up, then makes a video about how you tried flexing your EBT card and 2 bucks");
+        tvStoryText.setText("Andrew calls you broke, beats you up, then makes a video about how you tried flexing your EBT card and 2 bucks");
 
         //Util.clearConsole was here
         defeat();
@@ -584,11 +708,11 @@ public class GameChavezRanses extends GameActivity {
     {
         //Util.clearConsole was here
 
-        System.out.println("\nYou try doing 5 push-ups and eat the pavement after your third");
+        tvStoryText.setText("You try doing 5 push-ups and eat the pavement after your third");
 
-        System.out.println("\nHe calls you fat and throws a cheese burger at you");
+        tvStoryText.setText("He calls you fat and throws a cheese burger at you");
 
-        System.out.println("You eat it in shame...");
+        tvStoryText.setText("You eat it in shame...");
 
         //Util.clearConsole was here
         defeat();
@@ -605,7 +729,7 @@ public class GameChavezRanses extends GameActivity {
 
         //clear console, display text, etc
 
-        System.out.println("Maybe next time");
+        tvStoryText.setText("Maybe next time");
 
         //determine if player gets to play again
         if (numLives > 0)
@@ -616,7 +740,7 @@ public class GameChavezRanses extends GameActivity {
         else
         {
             //print game over message
-            System.out.println("WOMP WOMP GAME OVER");
+            tvStoryText.setText("WOMP WOMP GAME OVER");
 
         }
 
