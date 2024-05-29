@@ -4,8 +4,8 @@ package com.poly.polyapcsafinalproject23_24;
 public class GameValentineBenjaminA extends GameActivity {
 
     //create variables up here
-    Criminal player;
-
+    ValentineCriminal player;
+    int option;
 
 
 
@@ -14,9 +14,8 @@ public class GameValentineBenjaminA extends GameActivity {
     //  use loops as nessesary
     public void run()
     {
-        player = new Criminal();
-
-        player.setName("Bob");
+        player = new ValentineCriminal();
+   player.setName("Bob");
         System.out.println(player);
 
         player.rob();
@@ -30,12 +29,10 @@ public class GameValentineBenjaminA extends GameActivity {
         while(player.getMoney() > 0)
         {
             displayStats();
-            String text = """
-        Options
-        1. rob
-        2. turn someone else in
-        3. turn yourself in
-        """;
+            String text = "        Options\n" +
+                    "        1. rob\n" +
+                    "        2. turn someone else in\n" +
+                    "        3. turn yourself in";
             System.out.println(text);
             if (option == 1)
             {
@@ -58,7 +55,13 @@ public class GameValentineBenjaminA extends GameActivity {
     {
         System.out.println( "Name:\t" + player.getName());
         System.out.println( "Money:\t$" + player.getMoney());
-    }
-
+        System.out.println( "Name:\t" + player.getName());
+        System.out.println( "Money:\t$" + player.getMoney());    }
 
 }
+
+
+
+
+
+

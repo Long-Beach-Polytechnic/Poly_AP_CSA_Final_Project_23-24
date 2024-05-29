@@ -1,12 +1,13 @@
 package com.poly.polyapcsafinalproject23_24;
 
-public class valentineCriminal
+public class ValentineCriminal
 {
     /**
      * Name of the criminal.
      * The name of the criminal object will vary depending on what the player puts for the name.
      */
-    private String name;
+    private String
+            name;
     /**
      * How much money the criminal will own
      * will change based on what the player will spend their money on, sell, or may even gain money in robberies
@@ -40,7 +41,7 @@ public class valentineCriminal
      * default constructor
      * <br>Postconditions: name is null, money defaults at 1000.00, wanted level is 0, and moral lvl is 5
      */
-    public valentineCriminal()
+    public ValentineCriminal()
     {
         this.name = "";
         this.money = 1000.00;
@@ -58,7 +59,7 @@ public class valentineCriminal
      *                    Money set to 1k, wanted lvl at 0 and moral lvl at 5
      * @param      name    name of the criminal
      */
-    public valentineCriminal(String name)
+    public ValentineCriminal(String name)
     {
         this.name = name;
         this.money = 1000.00;
@@ -78,7 +79,7 @@ public class valentineCriminal
      * @param wantedLvl    the odds of cops coming and ending the game (maxes out at ten)
      * @param moralLvl     how morally strong the criminal is
      */
-    public valentineCriminal(String name, double money, double wantedLvl, int moralLvl)
+    public ValentineCriminal(String name, double money, double wantedLvl, int moralLvl)
     {
         this.name = name;
         this.money = money;
@@ -207,7 +208,7 @@ public class valentineCriminal
      * @param      anotherCriminal
      * @return true if criminals are equal
      */
-    public boolean equals(valentineCriminal anotherCriminal)
+    public boolean equals(ValentineCriminal anotherCriminal)
     {
         if (this.name.equals(anotherCriminal.name) &&
                 this.money == anotherCriminal.money &&
@@ -232,7 +233,7 @@ public class valentineCriminal
         System.out.println("You rob a house. Classic B&E, nobody hears you. You grab your items and leave the house. It's a shame though, the house was really nice when you arrived. Too bad you left it a mess...");
     }
 
-    public void turnInCriminal(valentineCriminal target) {
+    public void turnInCriminal(ValentineCriminal target) {
         moralLvl--;
         money += 500;
         wantedLvl -= .5;
