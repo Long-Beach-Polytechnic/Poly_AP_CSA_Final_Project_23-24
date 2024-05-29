@@ -1,6 +1,9 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.poly.polyapcsafinalproject23_24.GameActivity;
 
@@ -10,7 +13,7 @@ public class GameTayshawnReed extends GameActivity {
 
     //instance variables
     //   variables you plan to use throughout the adventure
-    private textView tvTitle, tvSubtitle, tvStoryText;
+    private TextView tvTitle, tvSubtitle, tvStoryText;
     private ImageView ivStory;
     private Button btn1, btn2, btn3, btn4;
     private boolean isWon;
@@ -18,11 +21,21 @@ public class GameTayshawnReed extends GameActivity {
     //private Player player; (optional)
 
 
-
-    public void run() {
+        @Override
+    protected void run() {
         setContentView(R.layout.activity_game_4_button);
 
         tvTitle = findViewById((R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+        btn4 = findViewById(R.id.btn_4);
+
+        tvTitle.setText("Portal Time");
+        tvSubtitle.setText("High School");
         //initialize number of lives
         numLives = 1;
         //create a scanner object for user input
@@ -35,48 +48,81 @@ public class GameTayshawnReed extends GameActivity {
         System.out.println("There are 3 portals that you can enter if you decide to, now of course if you do not choose to enter the portals you are a loser dork and yeah have fun!");
         start();
     }
+        private void setAllBtnsVisible()
+        {
+            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.VISIBLE);
+            btn3.setVisibility(View.VISIBLE);
+            btn4.setVisibility(View.VISIBLE);
 
+
+        }
     private void start()
     {
+        isWon = false;
+
+        ivStory.setImageResource(R.drawable.);
         //start adventure here
-        System.out.println("It is normal day at school and you are being nosy and you find secret tunnels under the school and they have mysterious portals");
-        System.out.println("1. Go into the red portal\n2. Go into the blue portal\n3. Go into the purple portal\n4. Become a loser and dont enter the portal");
+        tvStoryText.setText("It is normal day at school and you are being nosy and you find secret tunnels under the school and they have mysterious portals");
+        
+        SetAllBtnsVisible();
+        btn1.setText("Go into the red portal");
+        btn2.setText("Go into the blue portal");
+        btn3.setText("Go into the purple portal");
+        btn4.setText("No Portal");
 
-        if (choice == 1)
-        {
-            redPortal();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
 
-        if (choice == 2)
-        {
-            bluePortal();
-        }
+        @Override
+        public void onClick(View v) { (redPortal(); }
+    });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { bluePortal(); }
 
-        if (choice == 3)
-        {
-            purplePortal();
-        }
-        if (choice == 4)
-        {
-            noPortal();
-        }
+
+        });
+               btn3.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) { purplePortal(); }
+               });
+
+                btn4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) { noPortal();}
+
+
+                });
+
+    }
+
+    private void SetAllBtnsVisible() {
     }
 
     private void redPortal()
     {
 
-        System.out.println("You enter the red portal and you enter this super magical dimension");
-        System.out.println("1.Follow the glowing butterflies\n2. Cross the magic bridge");
+        tvStoryText.setText("You enter the red portal and you enter this super magical dimension");
+       ivStory.setImageResource(R.drawable.);
 
-        if (Choice == 1)
-        {
-            glowingButterflies();
-        }
 
-        if (Choice == 2)
-        {
-            magicBridge();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Follow the glowing butterflies");
+        btn2.setText("Cross the magic bridge");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) { glowingButterflies();}
+
+    });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { magicBridge();}
+        });
+
+
     }
 
 
@@ -420,3 +466,10 @@ public class GameTayshawnReed extends GameActivity {
         }
     }
 }
+
+    private void SetAllBtnsVisible() {
+    }
+
+    private void redPortal() {
+
+    }
