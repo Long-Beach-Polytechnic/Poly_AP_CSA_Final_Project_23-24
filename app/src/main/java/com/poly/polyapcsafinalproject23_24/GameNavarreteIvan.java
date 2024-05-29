@@ -9,7 +9,6 @@ import com.poly.polyapcsafinalproject23_24.GameActivity;
 
 import java.util.Scanner;
 
-public class
 public class GameNavarreteIvan extends GameActivity {
 
     // instance variables
@@ -17,6 +16,7 @@ public class GameNavarreteIvan extends GameActivity {
     private TextView tvTitle, tvSubtitle, tvStoryText;
     private ImageView ivStory;
     private Button btn1, btn2, btn3;
+    private boolean isWon;
     private Scanner scan;
     private int numLives;
     // private Player player; (optional)
@@ -43,7 +43,7 @@ public class GameNavarreteIvan extends GameActivity {
         // display project title and description
 
         tvTitle.setText("OG FORTNITE MAP - SOLOS EDITION");
-        tvSubtitle.setVisibility("Try to get a Victory Royale");
+        tvSubtitle.setText("Try to get a Victory Royale");
 
 
         start();
@@ -57,12 +57,11 @@ public class GameNavarreteIvan extends GameActivity {
     }
     private void start() {
         // start adventure here
+        isWon = false;
 
         tvTitle.setText("Fortnite OG MAP - SOLOS EDITION");
 
         tvStoryText.setText("\nIts time, lets go!\nWhere would you like to land?");
-
-        System.out.println("1. Salty Springs\n2. Pleasant Park\n3. Tilted Towers");
 
         setAllBtnsVisible();
         btn1.setText("Salty Springs");
@@ -120,7 +119,7 @@ public class GameNavarreteIvan extends GameActivity {
         tvStoryText.setText("\n You fight the player and kill him, you made it out of Salty Springs alive");
 
         tvStoryText.setText(" How do you want to get to the safe zone?");
-        System.out.println("1. Sprint to zone\n2. Take a rift and glide to zone");
+       tvStoryText.setText("1. Sprint to zone\n2. Take a rift and glide to zone");
 
         btn1.setText(" Sprint to zone");
         btn2.setText("Take a rift and glide to zone");
@@ -173,23 +172,23 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void clearSalty() {
 
-        System.out.println("\n You killed 3 players but were low hp.");
+       tvStoryText.setText("\n You killed 3 players but were low hp.");
 
-        System.out.println(" You get third partied after the third kill");
+       tvStoryText.setText(" You get third partied after the third kill");
 
-        System.out.println(" A controller player sprays into your box and kills you.");
+       tvStoryText.setText(" A controller player sprays into your box and kills you.");
 
         defeat();
     }
 
     private void rotateDusty() {
 
-        System.out.println(
+       tvStoryText.setText(
                 "\n While gliding to Dusty Divot you get headshot sniped mid air by a pro player and he dances on you");
 
-        System.out.println("You get mad and brake your monitor.");
+       tvStoryText.setText("You get mad and brake your monitor.");
 
-        System.out.println("LOSER");
+       tvStoryText.setText("LOSER");
 
         defeat();
     }
@@ -197,134 +196,114 @@ public class GameNavarreteIvan extends GameActivity {
     // Pleasant Path
     private void pleasantPark() {
 
-        System.out.println("\n You decided to land at Pleasant Park but what house do you want to land at?");
-        System.out.println("1. Dog house \n2. Modern house");
+       tvStoryText.setText("\n You decided to land at Pleasant Park but what house do you want to land at?");
 
-
-        if (choice == 1) {
-            dogHouse();
-        } else if (choice == 2) {
-            modernHouse();
-        }
+        btn1.setText(" Dog house");
+        btn2.setText("Modern house");
+        btn3.setText(View.INVISIBLE);
     }
 
     private void dogHouse() {
 
-        System.out.println(
+       tvStoryText.setText(
                 "\nYou've decided to land at dog house, two people landed with you, you picked up a bolt action sniper.");
 
-        System.out.println("Which of the following do you do now?");
-        System.out.println("1. Go to the gas station for more loot\n2. Try to no scope the two players");
+       tvStoryText.setText("Which of the following do you do now?");
 
-
-        if (choice == 1) {
-            gasStation();
-        } else if (choice == 2) {
-            noScope();
-        }
+        btn1.setText("Go to the gas station for more loot");
+        btn2.setText("Try to no scope the two players");
+        btn3.setText(View.INVISIBLE);
     }
 
     private void gasStation() {
 
-        System.out.println("\n You go to the gas station, a chest luckily spawned");
+       tvStoryText.setText("\n You go to the gas station, a chest luckily spawned");
 
-        System.out.println("YOU GOT A PURPLE PUMP FROM THE CHEST and MINIS!");
+       tvStoryText.setText("YOU GOT A PURPLE PUMP FROM THE CHEST and MINIS!");
 
-        System.out.println("What do you do now?");
-        System.out.println("1. Run away and hide until few people are left standing\n2. Fight everyone left at Pleasant");
+       tvStoryText.setText("What do you do now?");
 
-
-        if (choice == 1) {
-            runHide();
-        } else if (choice == 2) {
-            youVsPleasant();
-        }
+        btn1.setText("Run away and hide until few people are left standing");
+        btn2.setText("Fight everyone left at Pleasant");
+        btn3.setText(View.INVISIBLE);
     }
 
     private void noScope() {
 
-        System.out.println("\n You decide to no scope the other players");
+       tvStoryText.setText("\n You decide to no scope the other players");
 
-        System.out.println("YOU DIE BACK TO THE LOBBY LOSER");
+       tvStoryText.setText("YOU DIE BACK TO THE LOBBY LOSER");
 
         defeat();
     }
 
     private void runHide() {
 
-        System.out.println(
+       tvStoryText.setText(
                 "\n You decide to run and hide from the players, while looking for a place to hide you encounter a bush, you decide to hide in it.");
 
-        System.out.println(" While hiding in the bush someone saw your big head and sniped you.");
+       tvStoryText.setText(" While hiding in the bush someone saw your big head and sniped you.");
 
         defeat();
     }
 
     private void youVsPleasant() {
 
-        System.out.println(
+       tvStoryText.setText(
                 "\n You wipe all of the players in Pleasant, you now have all the best loot, Scar, chug jug, you name it.");
 
-        System.out.println(" Which of the following do you do now?");
-        System.out.println("1. Push the 10 remaining players left\n2. Camp in your 1x1 waiting for players to die.");
+       tvStoryText.setText(" Which of the following do you do now?");
+       tvStoryText.setText("1. Push the 10 remaining players left\n2. Camp in your 1x1 waiting for players to die.");
 
-
-        if (choice == 1) {
-            push();
-        } else if (choice == 2) {
-            camp();
-        }
+        btn1.setText("Push the 10 remaining players left");
+        btn2.setText("Camp in your 1x1 waiting for players to die");
+        btn3.setText(View.INVISIBLE);
     }
 
     private void camp() {
 
-        System.out.println("\n You decide to camp in your 1x1");
+       tvStoryText.setText("\n You decide to camp in your 1x1");
 
-        System.out.println(" you get focused by the lobby and every player remaining wants you dead. YOU DIE");
+       tvStoryText.setText(" you get focused by the lobby and every player remaining wants you dead. YOU DIE");
 
         defeat();
     }
 
     private void push() {
 
-        System.out.println("\n You decide to Push everyone in the lobby because your good at the game.");
+       tvStoryText.setText("\n You decide to Push everyone in the lobby because your good at the game.");
 
-        System.out.println("you kill 5 out of the 10 players remaining and get the VICTORY ROYALE.");
+       tvStoryText.setText("you kill 5 out of the 10 players remaining and get the VICTORY ROYALE.");
 
         start();
     }
 
     private void modernHouse() {
 
-        System.out.println("\n You decided to land modern house.");
+       tvStoryText.setText("\n You decided to land modern house.");
 
-        System.out.println(
+       tvStoryText.setText(
                 "\n You looted all of modern, you have 50 shield, a gray AR, and a green pump, you want to push the guy in basement house. Which of the following do you do now?");
-        System.out
-                .println("1. Go to the roof and wait for him to come out.\n2. Go inside the basement and try to kill him");
 
-
-        if (choice == 1) {
-            roof();
-        } else if (choice == 2) {
-            basement();
-        }
+        btn1.setText("Go to the roof and wait for him to come out");
+        btn2.setText("Go inside the basement and try to kill him");
+        btn3.setText(View.INVISIBLE);
     }
 
     private void roof() {
 
-        System.out.println("\n You decide to wait on top of the roof for the player to come out.");
+       tvStoryText.setText("\n You decide to wait on top of the roof for the player to come out.");
 
-        System.out.println("\n You got sniped by a player at tree house.");
+       tvStoryText.setText("\n You got sniped by a player at tree house.");
 
         defeat();
     }
 
     private void basement() {
 
-        System.out.println("\n You decide to push the guy in the basement");
+       tvStoryText.setText("\n You decide to push the guy in the basement");
 
-        System.out.println("\n You got 200 pumped by a purple pump, YOU DIED");
+       tvStoryText.setText("\n You got 200 pumped by a purple pump, YOU DIED");
 
         defeat();
     }
@@ -336,7 +315,7 @@ public class GameNavarreteIvan extends GameActivity {
         numLives--;
 
         // clear console, display text, etc
-        System.out.println("You lost the game, ready up to continue playing solos.");
+       tvStoryText.setText("You lost the game, ready up to continue playing solos.");
 
         // determine if player gets to play again
         if (numLives > 0) {
@@ -344,7 +323,7 @@ public class GameNavarreteIvan extends GameActivity {
             start();
         } else {
             // print game over message
-            System.out.println("GAME OVER");
+           tvStoryText.setText("GAME OVER");
         }
 
     }
@@ -352,103 +331,93 @@ public class GameNavarreteIvan extends GameActivity {
     // Tilted Path
     private void tiltedTowers() {
 
-        System.out.println("\n You decided to land at Tilted Towers");
+       tvStoryText.setText("\n You decided to land at Tilted Towers");
 
-        System.out.println(" Where in Tilted do you want to land?");
-        System.out.println("1. Clock Tower \n2. Garage");
+       tvStoryText.setText(" Where in Tilted do you want to land?");
 
-
-        if (choice == 1) {
-            clockTower();
-        } else if (choice == 2) {
-            garage();
-        }
+        btn1.setText("Clock Tower");
+        btn2.setText(" Garage");
+        btn3.setText(View.INVISIBLE);
     }
 
     private void clockTower() {
 
-        System.out.println("\n You decide to land at Clock Tower, You get both chests.");
+       tvStoryText.setText("\n You decide to land at Clock Tower, You get both chests.");
 
-        System.out.println(" You now have 50 shield from the big pot and a Green SMG.");
+       tvStoryText.setText(" You now have 50 shield from the big pot and a Green SMG.");
 
-        System.out.println("Which of the following do you do now?");
-        System.out.println("1. Loot Pawn Shop \n2. Loot the Park");
+       tvStoryText.setText("Which of the following do you do now?");
+       tvStoryText.setText("1. Loot Pawn Shop \n2. Loot the Park");
 
 
-        if (choice == 1) {
-            pawnShop();
-        } else if (choice == 2) {
-            lootPark();
-        }
+        btn1.setText("Loot Pawn Shop");
+        btn2.setText("Loot the Park");
+        btn3.setText(View.INVISIBLE);
     }
 
     private void garage() {
 
-        System.out.println("\n You decided to land at garage.");
+       tvStoryText.setText("\n You decided to land at garage.");
 
-        System.out.println(" Someone lands with you.");
+       tvStoryText.setText(" Someone lands with you.");
 
-        System.out.println(" You didn't get the chest...");
+       tvStoryText.setText(" You didn't get the chest...");
 
-        System.out.println("YOU DIED BACK TO THE LOBBY!");
+       tvStoryText.setText("YOU DIED BACK TO THE LOBBY!");
 
         defeat();
     }
 
     private void pawnShop() {
 
-        System.out.println("\n You decide to rotate to Pawn Shop.");
+       tvStoryText.setText("\n You decide to rotate to Pawn Shop.");
 
-        System.out.println("\n You loot both chests that spawned.");
+       tvStoryText.setText("\n You loot both chests that spawned.");
 
-        System.out.println(" You now have 100 shield, minis, a blue pump and a Green SMG.");
+       tvStoryText.setText(" You now have 100 shield, minis, a blue pump and a Green SMG.");
 
-        System.out.println("\n You have to go Pee IRL...");
+       tvStoryText.setText("\n You have to go Pee IRL...");
 
-        System.out.println("Which of the following do you do now?");
-        System.out.println("1. Hide in a cone a go pee \n2. keep playing");
+       tvStoryText.setText("Which of the following do you do now?");
 
-
-        if (choice == 1) {
-            pee();
-        } else if (choice == 2) {
-            holdIt();
-        }
+        btn1.setText("Hide in a cone a go pee");
+        btn2.setText("keep playing");
+        btn3.setText(View.INVISIBLE);
     }
 
     private void lootPark() {
 
-        System.out.println("\n You decided to land at garage.");
+       tvStoryText.setText("\n You decided to land at garage.");
 
-        System.out.println(" Someone lands with you.");
+       tvStoryText.setText(" Someone lands with you.");
 
-        System.out.println(" You didn't get the chest...");
+       tvStoryText.setText(" You didn't get the chest...");
 
-        System.out.println("YOU DIED BACK TO THE LOBBY!");
+       tvStoryText.setText("YOU DIED BACK TO THE LOBBY!");
 
         defeat();
     }
 
     private void pee() {
 
-        System.out.println("\n You decide to go pee IRL...");
+       tvStoryText.setText("\n You decide to go pee IRL...");
 
-        System.out.println("\n Someone came and killed you");
+       tvStoryText.setText("\n Someone came and killed you");
 
-        System.out.println("\n You didn't win the game but you feel better rather than holding it.");
+       tvStoryText.setText("\n You didn't win the game but you feel better rather than holding it.");
 
         start();
     }
 
     private void holdIt() {
 
-        System.out.println("\n You decided to Hold it in.");
+       tvStoryText.setText("\n You decided to Hold it in.");
 
-        System.out.println(" While fighting someone you have to go so bad.");
+       tvStoryText.setText(" While fighting someone you have to go so bad.");
 
-        System.out.println(" You pee your pants");
+       tvStoryText.setText(" You pee your pants");
 
-        System.out.println(" You Died and you peed yourself.");
+       tvStoryText.setText(" You Died and you peed yourself.");
 
         defeat();
     }
