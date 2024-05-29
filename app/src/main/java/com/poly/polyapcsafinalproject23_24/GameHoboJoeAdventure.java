@@ -5,7 +5,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class GameChinJeremy extends GameActivity {
+public class GameHoboJoeAdventure extends GameActivity {
 
         //instance variables
         //   variables you plan to use throughout the adventure
@@ -29,7 +29,7 @@ public class GameChinJeremy extends GameActivity {
         btn3 = findViewById(R.id.btn_3);
         btn4 = findViewById(R.id.btn_4);
 
-        tvTitle.setText("Hobo Joes Adventure");
+        tvTitle.setText("Hobo Joe Adventure");
         tvSubtitle.setText("Master the dark arts of the homeless");
 
         numLives = 5;
@@ -49,85 +49,210 @@ public class GameChinJeremy extends GameActivity {
 
         private void start() {
 
+            isWon = false;
+
+            ivStory.setImageResource(R.drawable.im_laborday_title);
+            playAudio(R.raw.audio_laborday_bass);
+
+            tvStoryText.setText("You are Hobo Joe decide what to do");
+
+            setAllBtnsVisible();
+            btn1.setText("Fight another homeless person for their cheese pizza");
+            btn2.setText("Go dumpster diving");
+            btn3.setText("Put on hobo ski mask and rob something");
+            btn4.setVisibility(View.INVISIBLE);
+
             System.out.println("Hobo Adventure");
             System.out.println("You are homeless decide what you want to do");
             System.out.println("1. Fight another homeless person for their cheese pizza\n2. Go dumpster diving\n3. Put on hobo ski mask and rob something");
 
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    cheesePizza();
+                }
+            });
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dumpster();
+                }
+            });
 
-            if (choice == 1) {
-                cheesePizza();
-            } else if (choice == 2) {
-                dumpster();
-            } else if (choice == 3) {
-                hoboRob();
-            }
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    hoboRob();
+                }
+            });
         }
 
         //Cheese pizza path
         private void cheesePizza() {
 
-            System.out.println("You chose to fight another homeless man for the pizza what do you do");
-            System.out.println("1. Hit him with the 3 piece combo\n2. Grab the pizza and run");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+            tvStoryText.setText("You chose to fight another homeless man for the pizza what do you do");
 
-            if (choice == 1) {
-                threeHit();
-            } else if (choice == 2) {
-                grabPizza();
-            }
+            setAllBtnsVisible();
+            btn1.setText("Hit him with the 3 piece combo");
+            btn2.setText("Grab the pizza and run");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    threeHit();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    grabPizza();
+                }
+            });
 
         }
 
         //choice 1
         private void threeHit() {
 
-            System.out.println("Your attack was successful but it barely phased him You also remember you had white powder in your pocket what do you do");
-            System.out.println("1. Trade him the powder for the pizza\n2. Use the powder to fight back");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+            tvStoryText.setText("Your attack was successful but it barely phased him You also remember you had white powder in your pocket what do you do");
 
-            if (choice == 1) {
-                tradePowder();
-            } else if (choice == 2) {
-                usePowder();
-            }
+            setAllBtnsVisible();
+            btn1.setText("Trade him the powder for the pizza");
+            btn2.setText("Use the powder to fight back");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tradePowder();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    usePowder();
+                }
+            });
         }
 
         private void usePowder() {
 
-            System.out.println("You felt like you had super powers but the effects wore off and you died");
+                isWon = false;
+                tvStoryText.setText("You used the powder and gained powers you beat up the homeless and ate the pizza but it was laced with fentanyl you died");
 
-            defeat();
+                ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+                setAllBtnsVisible();
+                btn1.setText("Play again");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+                btn4.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
+
         }
 
         private void tradePowder() {
 
-            System.out.println("You decide to trade the powder for the pizza he gladly accepts nice you dont starve and made a new crack friend");
+            isWon = true;
+            tvStoryText.setText("You decide to trade the powder for the pizza he gladly accepts nice you don't starve and made a new crack friend");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {defeat();}
+            });
+
         }
 
         //choice 2
         private void grabPizza() {
 
-            System.out.println("You rush in and grab his pizza what do you do next");
-            System.out.println("1. Dont stop and keep running\n2. Throw it at his face");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+            tvStoryText.setText("You rush in and grab his pizza what do you do next");
 
-            if (choice == 1) {
-                keepRunning();
-            } else if (choice == 2) {
-                throwFace();
-            }
+            setAllBtnsVisible();
+            btn1.setText("Don't stop and keep running");
+            btn2.setText("Throw it at his face");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    keepRunning();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    throwFace();
+                }
+            });
+
         }
 
         private void keepRunning() {
 
-            System.out.println("You ran into a dead end and he catches up and you died");
+            isWon = false;
+            tvStoryText.setText("You ran into a dead end and he catches up and you died");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+            });
         }
 
         private void throwFace() {
+
+            isWon = false;
+            tvStoryText.setText("You successfully escape but you starve to death after");
+
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) { defeat();}
+
 
             System.out.println("You successfully escape but you starve to death after");
 
