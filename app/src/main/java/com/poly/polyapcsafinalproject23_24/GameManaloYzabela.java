@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class GameManaloYzabela extends GameActivity
 {
+    private int numLives;
 
     private TextView tvTitle, tvSubtitle, tvStoryText;
     private ImageView ivStory;
@@ -25,10 +26,59 @@ public class GameManaloYzabela extends GameActivity
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
         btn3 = findViewById(R.id.btn_3);
+        btn4 = findViewById(R.id.btn_4)
 
-        tvTitle.setText("A PATHETIC SOULMATE QUEST - TINDER EDITION");
-        tvSubtitle.setText("A complex game that will make you go \"WHAT JUST HAPPENED?\".You navigate the unpredictable world of dating as you encounter four eccentric characters on Tinder.Each potential match comes with their own quirks,challenges,and unique storylines.Your desperate quest for love leads you through a series of hilarious and unexpected scenarios,forcing you to make choices that will determine the fate of your romantic endeavors.Will you end up dead or miserably rotting in a nursing home alone? Well, Goodluck! I hope you find love.");
-        tvStoryText.setText("\nDisclaimer: VIOLENCE and NEGATIVITY\nThis game contains content that may induce frustration,disappointment,and a general sense of negativity.Player discretion is advised as you embark in a journey where challenges are designed to be relentless, and success often feels elusive.This game is not for the faint of heart and might cause emotional distress. Play at your own risk.\n\n      EVERYTHING IN THIS GAME IS SATIRE!.I BEG YOU NOT TAKE THIS GAME SERIOUSLY.")
+        tvTitle.setText("A PATHETIC SOULMATE QUEST");
+        tvSubtitle.setText("TINDER EDITION");
+
+        String text = "A complex game that will make you go \"WHAT JUST HAPPENED?\"." +
+                "You navigate the unpredictable world of dating as you encounter four eccentric characters on Tinder." +
+                " Each potential match comes with their own quirks,challenges,and unique storylines.Your desperate quest for love leads you through a series of hilarious and unexpected scenarios,forcing you to make choices that will determine the fate of your romantic endeavors. " +
+                "Will you end up dead or miserably rotting in a nursing home alone? " +
+                "Well, Goodluck! I hope you find love.";
+        tvStoryText.setText(text);
+
+
+        numLives = 5;
+
+        setAllBtnsVisible();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                disclaimer();
+            }
+        });
+
+    }
+
+    private void disclaimer()
+    {
+        String text = "\nDisclaimer: VIOLENCE and NEGATIVITY\nThis game contains content that may induce frustration,disappointment,and a general sense of negativity. " +
+                "Player discretion is advised as you embark in a journey where challenges are designed to be relentless, and success often feels elusive. " +
+                "This game is not for the faint of heart and might cause emotional distress. " +
+                "Play at your own risk.\n\n      " +
+                "EVERYTHING IN THIS GAME IS SATIRE!. " +
+                "I BEG YOU NOT TAKE THIS GAME SERIOUSLY.";
+
+        tvStoryText.setText(text);
+        setAllBtnsVisible();
+        btn1.setText("START");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
     }
 
     private void setAllBtnsVisible()
@@ -38,47 +88,23 @@ public class GameManaloYzabela extends GameActivity
         btn3.setVisibility(View.VISIBLE);
         btn4.setVisibility(View.VISIBLE);
     }
-}
-//hello
 
-
-    //instance variables
-    //variables you plan to use throughout the adventure
-    private Scanner scan;
-    private int numLives;
-
-
-    public void run()
-    {
-        //initialize number of lives
-        numLives = 5;
-        //create a scanner object for user input
-        scan = new Scanner(System.in);
-
-        String yee = TextColor.RED_BACKGROUND_BRIGHT+ """
-    \nDisclaimer: VIOLENCE and NEGATIVITY
-
-      This game contains content that may induce frustration,disappointment,and a general sense of negativity.Player discretion is advised as you embark in a journey where challenges are designed to be relentless, and success often feels elusive.This game is not for the faint of heart and might cause emotional distress. Play at your own risk.
-
-      EVERYTHING IN THIS GAME IS SATIRE!.I BEG YOU NOT TAKE THIS GAME SERIOUSLY.
-      """;
-
-        tvStoryText.setText(yee);
-        start();
-    }
 
     private void start()
     {
-        String title = TextColor.CYAN + """
+        String title = """
       A PATHETIC SOULMATE QUEST - TINDER EDITION
       """;
-        System.out.println(title);
+        tvStoryTitle.setText(title);
 
 
         System.out.println("You are a pathetic lonely human being who decided to find love so you don’t end up dying alone in a nursing home.You decided to scroll through tinder hoping to find your one and only true love to be with and spend your money with during your whole pathetic lowly life. As you were hoping to find a match, you were beguiled by this one particular person and decided to swipe right.");
 
-        String ant = TextColor.BLUE + """
+        String ant = """
       Who would you want to spend the rest of your sad life with?
+      """;
+
+      tvStoryText.setText(ant);
 
 
         String btn1Text = """1.Ryan Burke
@@ -117,435 +143,650 @@ public class GameManaloYzabela extends GameActivity
 
         btn4.setText(btn4Text);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ryanBurke();
 
-        System.out.println(ant);
-        int choice = Util.enterInt(1,4);
+            }
+        });
 
-        if (choice == 1)
-        {
-            ryanBurke();
-        }
-        else if (choice == 2)
-        {
-            sofiaRamos();
-        }
-        else if (choice == 3)
-        {
-            koichiHirose();
-        }
-        else if (choice == 4)
-        {
-            yaraLopez();
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sofiaRamos();
+
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                koichiHirose();
+
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                yaraLopez();
+
+            }
+        });
     }
 
-    //..........RYAN BURKE PATH...............
+    //..........RYAN BURKE PATH..............................................................
     private void ryanBurke()
     {
-        Util.clearConsole();
-        String butterfly = TextColor.YELLOW + """
+
+        String butterfly =  """
       You saw his profile picture and you were like OMG with a shocked face. How could God let a perfect creature like this roam around. He looked like the perfect match for you and you decided to give it all your shot to make him yours. He messaged you “Good morning, How’s your weekend?”. Your heart skipped a beat and you panicked like a shy anime girl. What should you say back?
-
-      1.Send him a very cute pick up line.
-
-      2.Tell him “Bad, because you weren’t with me”. He’ll definitely feel flustered,loved, and wanted.
-
-      3.Ask him if he wants to go to the movies with you.(Be wild, Be straightforward, and Shoot your shot.“He who is not courageous enough to take risks will accomplish nothing in life” - Muhammad Ali.)
-
       """;
-        System.out.println(butterfly);
-        int choice = Util.enterInt(1,3);
+        tvStoryText.setText(butterfly);
 
-        if (choice == 1)
-        {
-            pickUpLine();
-        }
-        else if (choice == 2)
-        {
-            badWeekend();
-        }
-        else if (choice == 3)
-        {
-            goMovies();
-        }
+        String btn1Text = "1.Send him a very cute pick up line.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.Tell him “Bad, because you weren’t with me”. He’ll definitely feel flustered,loved, and wanted.";
+        btn2.setText(btn2Text);
+
+        String btn3Text = "3.Ask him if he wants to go to the movies with you.(Be wild, Be straightforward, and Shoot your shot.“He who is not courageous enough to take risks will accomplish nothing in life” - Muhammad Ali.)";
+        btn3.setText(btn3Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pickUpLine();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                badWeekend();
+
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goMovies();
+
+            }
+        });
     }
-    //........PICK UP LINE PATH...............
+
+    //........PICK UP LINE PATH..............................................................
     private void pickUpLine()
     {
-        Util.clearConsole();
-        String cat = TextColor.YELLOW + """
+
+        String cat = """
       What pick up line should you send him?
-
-      1.“You look so fine up close than through my binoculars”.
-
-      2.“Baby, my love for you is like diarrhea, I just cannot hold it in”.
-
       """;
-        System.out.println(cat);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(cat);
 
-        if (choice == 1)
-        {
-            binoculars();
-        }
-        else if (choice == 2)
-        {
-            diarrhea();
-        }
+        String btn1Text = "1.“You look so fine up close than through my binoculars”.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.“Baby, my love for you is like diarrhea, I just cannot hold it in”.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binoculars();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                diarrhea();
+
+            }
+        });
+
     }
     //..........BAD WEEKEND PATH..............
     private void badWeekend()
     {
-        Util.clearConsole();
-        String dog = TextColor.YELLOW + """
+
+        String dog = """
       He felt shy when you said that and told you he blushed, What is your next step?
-
-      1.Bribe him to fall in love with you using a pack of dried seaweed.
-
-      2.Bribe him to fall in love with you using dino nuggets.
       """;
-        System.out.println(dog);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(dog);
 
-        if (choice == 1)
-        {
-            giveSeaweed();
-        }
-        else if (choice == 2)
-        {
-            giveDinoNuggets();
-        }
+        String btn1Text = "1.Bribe him to fall in love with you using a pack of dried seaweed.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = " 2.Bribe him to fall in love with you using dino nuggets.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                giveSeaweed();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                giveDinoNuggets();
+
+            }
+        });
     }
+
     //..........GO TO THE MOVIES PATH.........
     private void goMovies()
     {
-        Util.clearConsole();
-        String dog = TextColor.YELLOW + """
+
+        String dog = """
       He agreed to go to the movies with you but you will have to wait outside for him.
-
-      1.Agree to it, Anything for my pretty pink princess.
-
-      2.Disagree to it and know your worth. You don’t deserve to be treated like that.
       """;
-        System.out.println(dog);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(dog);
 
-        if (choice == 1)
-        {
-            agree();
-        }
-        else if (choice == 2)
-        {
-            disagree();
-        }
+        String btn1Text = "1.Agree to it, Anything for my pretty pink princess.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.Disagree to it and know your worth. You don’t deserve to be treated like that.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                agree();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                disagree();
+
+            }
+        });
     }
     //.........BINOCULARS PATH................
     private void binoculars()
     {
-        Util.clearConsole();
-        String elephant = TextColor.YELLOW + """
+
+        String elephant = """
       What's your next step?
       Pick a scenario:)
-
-      1.He felt threatened like “OMG! For real?” when you told him that. Tell him it’s just a joke.
-
-      2.He got attracted to you and filed a restraining order. Tell him he can’t do that because why would he? Its extra work.
       """;
-        System.out.println(elephant);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(elephant);
 
-        if (choice == 1)
-        {
-            justJoking();
-        }
-        else if (choice == 2)
-        {
-            restrainingOrder();
-        }
+        String btn1Text = "1.He felt threatened like “OMG! For real?” when you told him that. Tell him it’s just a joke.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.He got attracted to you and filed a restraining order. Tell him he can’t do that because why would he? Its extra work.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                justJoking();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                restrainingOrder();
+
+            }
+        });
     }
     //.........DIARRHEA PATH...............
     private void diarrhea()
     {
-        Util.clearConsole();
-        String fish = TextColor.YELLOW + """
+
+        String fish =  """
       What's your next step?
       Pick a scenario:)
-
-      1.He got attracted to you and filed a restraining order. Tell him he can’t do that because why would he? Its extra work.
-
-      2.He asked you to send proof. You forced yourself to have diarrhea.
       """;
-        System.out.println(fish);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(fish);
 
-        if (choice == 1)
-        {
-            restrainingOrder();
-        }
-        else if (choice == 2)
-        {
-            sendProof();
-        }
+        String btn1Text = "1.He got attracted to you and filed a restraining order. Tell him he can’t do that because why would he? Its extra work.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.He asked you to send proof. You forced yourself to have diarrhea.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                restrainingOrder();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendProof();
+
+            }
+        });
     }
     //.........GIVING SEAWEED PATH............
     private void giveSeaweed()
     {
         {
-            Util.clearConsole();
-            String iguana = TextColor.GREEN_BOLD_BRIGHT + """
+
+            String iguana = """
         CONGRATULATIONS! You two are instantly married. Obviously not rotting in a nursing home because seaweed is LIFE!.
 
-        Press \"Enter\" to play again (definetely try to see other outcomes,It's obviously great)
+        Press \"Play Again\" to play again (definetely try to see other outcomes,It's obviously great)
         """;
-            System.out.println(iguana);
-            Util.pauseConsole();
-            start();
+          tvStoryText.setText(iguana);
+
+            setAllBtnsVisible();
+            btn1.setText("Play Again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    start();
+                }
+            });
         }
     }
     //.........GIVING DINO NUGGETS.............
     private void giveDinoNuggets()
     {
-        Util.clearConsole();
-        String jaguar = TextColor.YELLOW + """
+
+        String jaguar =  """
       What's your next step?
       Pick a scenario:)
-
-      1.He said “aww sure”. Give the Dino Nuggets but bite all the heads off to assert dominance.
-
-      2.He said “yayyy”. Give the Dino nuggets because he’s gonna die of hunger already.
-
       """;
-        System.out.println(jaguar);
-        int choice = Util.enterInt(1,2);
 
-        if (choice == 1)
-        {
-            biteHead();
-        }
-        else if (choice == 2)
-        {
-            giveDinoNuggetsAlready();
-        }
+        String btn1Text = "1.He said “aww sure”. Give the Dino Nuggets but bite all the heads off to assert dominance.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.He said “yayyy”. Give the Dino nuggets because he’s gonna die of hunger already.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                biteHead();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                giveDinoNuggetsAlready();
+
+            }
+        });
     }
     //.........AGREE TO THE MOVIES PATH........
     private void agree()
     {
-        Util.clearConsole();
-        String kangaroo = TextColor.YELLOW + """
+
+        String kangaroo = """
       He admired your desperation for his love.
-
-      1.You approached him and decided to buy popcorn and drinks.
-
-
-      2.You meet up with him and instantly fainted because you want him to give you a CPR.
-
       """;
-        System.out.println(kangaroo);
-        int choice = Util.enterInt(1,2);
 
-        if (choice == 1)
-        {
-            buyPopcorn();
-        }
-        else if (choice == 2)
-        {
-            youFainted();
-        }
+        String btn1Text = "1.You approached him and decided to buy popcorn and drinks.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.You meet up with him and instantly fainted because you want him to give you a CPR.";
+        btn2.setText(btn2Text);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buyPopcorn();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youFainted();
+
+            }
+        });
+
     }
     //.......DISAGREE TO THE MOVIES PATH.......
     private void disagree()
     {
-        Util.clearConsole();
-        String lion = TextColor.RED_BOLD_BRIGHT + "It did not went great, He got furious and told you “Never settling for less,organisms like me deserve princess treatment only” with a smug looking emoji then he blocked you. Obviously rotting in a nursing home because you respect yourself too much.";
-        System.out.println(lion);
-        Util.pauseConsole();
-        youSuck();
+
+        String lion = "It did not went great, He got furious and told you “Never settling for less,organisms like me deserve princess treatment only” with a smug looking emoji then he blocked you. Obviously rotting in a nursing home because you respect yourself too much.";
+        tvStoryText.setText(lion);
+
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //......JUST JOKING PATH..................
     private void justJoking()
     {
-        Util.clearConsole();
-        String monkey = TextColor.RED_BOLD_BRIGHT + "He took it seriously and he flew to Alaska. You got heartbroken and decided you are going to change for the better. So you followed him to Alaska to be a full-time stalker. Obviously not rotting in a nursing home because you’re ending up in jail.";
-        System.out.println(monkey);
-        Util.pauseConsole();
-        youSuck();
+
+        String monkey = "He took it seriously and he flew to Alaska. You got heartbroken and decided you are going to change for the better. So you followed him to Alaska to be a full-time stalker. Obviously not rotting in a nursing home because you’re ending up in jail.";
+        tvStoryText.setText(monkey);
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //.......RESTRAINING ORDER PATH...........
     private void restrainingOrder()
     {
-        Util.clearConsole();
-        String nightingale = TextColor.RED_BOLD_BRIGHT + "He did it anyways and said \"Haha Deserve\". You are now rotting in jail and when your sentence is finished, you are now obviously rotting in a nursing home single and sad.";
 
-        System.out.println(nightingale);
-        Util.pauseConsole();
-        youSuck();
+        String nightingale = TextColor.RED_BOLD_BRIGHT + "He did it anyways and said \"Haha Deserve\". You are now rotting in jail and when your sentence is finished, you are now obviously rotting in a nursing home single and sad.";
+        tvStoryText.setText(nightingale);
+
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //........SEND PROOF PATH.................
     private void sendProof()
     {
-        Util.clearConsole();
-        String octopus = TextColor.RED_BOLD_BRIGHT + "He sold it online to creeps and made money out of it. Later on you realize he’s just taking advantage of you because of your poop. Obviously rotting pathetically in a nursing home.";
 
-        System.out.println(octopus);
-        Util.pauseConsole();
-        youSuck();
+        String octopus = TextColor.RED_BOLD_BRIGHT + "He sold it online to creeps and made money out of it. Later on you realize he’s just taking advantage of you because of your poop. Obviously rotting pathetically in a nursing home.";
+        tvStoryText.setText(octopus);
+
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //.........BITE HEAD PATH.............
     private void biteHead()
     {
-        Util.clearConsole();
-        String penguin = TextColor.RED_BOLD_BRIGHT + "You are a horrible cook but he ignored that because he thought the way you asserted dominance over him was hot. You got weirded out by his behavior and decided you’d rather be single and rotting in a nursing home.";
 
-        System.out.println(penguin);
-        Util.pauseConsole();
-        youSuck();
+        String penguin = TextColor.RED_BOLD_BRIGHT + "You are a horrible cook but he ignored that because he thought the way you asserted dominance over him was hot. You got weirded out by his behavior and decided you’d rather be single and rotting in a nursing home.";
+        tvStoryText.setText(penguin);
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //.....GIVE DINO NUGGETS ALREADY PATH.....
     private void giveDinoNuggetsAlready()
     {
-        Util.clearConsole();
-        String quail = TextColor.RED_BOLD_BRIGHT + "You are a bad cook. It tasted horrible and he made sure to run to your bed and carpet to vomit. Obviously rotting in a nursing home.";
 
-        System.out.println(quail);
-        Util.pauseConsole();
-        youSuck();
+        String quail = TextColor.RED_BOLD_BRIGHT + "You are a bad cook. It tasted horrible and he made sure to run to your bed and carpet to vomit. Obviously rotting in a nursing home.";
+        tvStoryText.setText(quail);
+
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //.......BUY POPCORN PATH...............
     private void buyPopcorn()
     {
-        Util.clearConsole();
+
         String rat = TextColor.GREEN_BOLD_BRIGHT + """
       You were waiting for him patiently for 2 hours and he came out jolly. He told you “The plot twist was so good, Wish you could’ve seen it haha”. He told you afterwards that he could not see anyone as his future partner other than you. Obviously not rotting in a nursing home because you succeed.
 
-      Press \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)
+      Press \"Play again\" to play again (definitely try to see other outcomes,It's obviously great)
       """;
-        System.out.println(rat);
-        Util.pauseConsole();
-        start();
+        tvStoryText.setText(rat);
+        setAllBtnsVisible();
+        btn1.setText("Play again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
     }
     //.........YOU FAINTED PATH...............
     private void youFainted()
     {
-        Util.clearConsole();
-        String quail = TextColor.RED_BOLD_BRIGHT + "He forgot to brush his teeth so he refused to do it and called 911 instead. Turns out you got diagnosed with Leukemia. You only have 5 years left to live,very sad.Obviously not rotting in a nursing home because you won’t make it. ( Additional 1 live earned because I pity you )";
 
+        String quail = TextColor.RED_BOLD_BRIGHT + "He forgot to brush his teeth so he refused to do it and called 911 instead. Turns out you got diagnosed with Leukemia. You only have 5 years left to live,very sad.Obviously not rotting in a nursing home because you won’t make it. ( Additional 1 live earned because I pity you )";
+        tvStoryText.setText(quail);
         numLives++;
 
-        System.out.println(quail);
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        Util.pauseConsole();
-        youSuck();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //........................................
     //........................................
     //..........SOFIA RAMOS PATH..............
     private void sofiaRamos()
     {
-        Util.clearConsole();
-        String A = TextColor.PURPLE + """
 
-      PLEASE READ THE FOLLOWING TRIGGERS FOR SOFIA
-      (Remember the following hints:This will help you win her heart)
-      -Loves the color red
-      -Hates going out
-      -Hates Rebecca
-      -Has shrimp allergy
-      -Loves Strawberries
+        String A = """
 
-      You are currently chatting with Sofia and you want to her to  fall in love with you, What should you do?
+                PLEASE READ THE FOLLOWING TRIGGERS FOR SOFIA
+                (Remember the following hints:This will help you win her heart)
+                -Loves the color red
+                -Hates going out
+                -Hates Rebecca
+                -Has shrimp allergy
+                -Loves Strawberries
+                """;
+        tvStoryText.setText(A);
 
-      1.Tell her you look ugly all the time (She will definitely compliment you more and fall in love with how humble you are).
+        String yay = """
+                You are currently chatting with Sofia and you want to her to  fall in love with you, What should you do?
+                """;
+        tvStoryText.setText(yay);
 
-      2.Tell her you have an orange cat.
+        String btn1Text = "1.Tell her you look ugly all the time (She will definitely compliment you more and fall in love with how humble you are).";
+        btn1.setText(btn1Text);
 
-      3.Tell her your great great great great grandmother’s tempura recipe.
-      """;
-        System.out.println(A);
-        int choice = Util.enterInt(1,3);
+        String btn2Text = "2.Tell her you have an orange cat.";
+        btn2.setText(btn2Text);
 
-        if (choice == 1)
-        {
-            imSoUgly();
-        }
-        else if (choice == 2)
-        {
-            orangeCat();
-        }
-        else if (choice == 3)
-        {
-            tempuraRecipe();
-        }
+        String btn3Text = "3.Tell her your great great great great grandmother’s tempura recipe.";
+        btn3.setText(btn3Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imSoUgly();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                orangeCat();
+
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tempuraRecipe();
+
+            }
+        });
     }
     //.........IM SO UGLY PATH...............
     private void imSoUgly()
     {
-        Util.clearConsole();
-        String B = TextColor.RED_BOLD_BRIGHT + "She got icked by you and decided to block you, You are now single and ugly, waiting for the time you’re going to rot alone in a nursing home.You suck. Obviously rotting in a nursing home.";
 
-        System.out.println(B);
+        String B = "She got icked by you and decided to block you, You are now single and ugly, waiting for the time you’re going to rot alone in a nursing home.You suck. Obviously rotting in a nursing home.";
+        tvStoryText.setText(B);
 
-        Util.pauseConsole();
-        youSuck();
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //........ORANGE CAT PATH................
     private void orangeCat()
     {
-        Util.clearConsole();
-        String C = TextColor.PURPLE + """
+        String C = """
       What's your next step?
       Pick a scenario:)
-
-      1.She loves you instantly and invites you over to her house.
-
-      2.You piqued her interest and you decided to ask her if she wants to go out for dinner.
-
       """;
-        System.out.println(C);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(C);
 
-        if (choice == 1)
-        {
-            invitesYouOver();
-        }
-        else if (choice == 2)
-        {
-            goOutDinner();
-        }
+        String btn1Text = "1.She loves you instantly and invites you over to her house.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.You piqued her interest and you decided to ask her if she wants to go out for dinner.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                invitesYouOver();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goOutDinner();
+
+            }
+        });
     }
     //.........INVITES YOU OVER PATH.........
     private void invitesYouOver()
     {
-        Util.clearConsole();
-        String D = TextColor.PURPLE + """
+
+        String D = """
       What's your next step?
       Pick a scenario:)
-
-      1.Bring over fresh strawberries you stole from the Grocery outlet, dipped in white chocolate.
-
-      2.Surprise her with white roses because you are so the most romantic person in the world.
       """;
-        System.out.println(D);
-        int choice = Util.enterInt(1,2);
 
-        if (choice == 1)
-        {
-            strawberries();
-        }
-        else if (choice == 2)
-        {
-            whiteRoses();
-        }
+        String btn1Text = "1.Bring over fresh strawberries you stole from the Grocery outlet, dipped in white chocolate.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.Surprise her with white roses because you are so the most romantic person in the world.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                strawberries();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                whiteRoses();
+
+            }
+        });
     }
     //.........GO OUT DINNER PATH.............
     private void goOutDinner()
     {
-        Util.clearConsole();
-        String E = TextColor.RED_BOLD_BRIGHT + "She hates going out for dinner but she said sure and ditched you.Obviously rotting in a nursing home.";
 
-        System.out.println(E);
+        String E =  "She hates going out for dinner but she said sure and ditched you.Obviously rotting in a nursing home.";
+        tvStoryText.setText(E);
 
-        Util.pauseConsole();
-        youSuck();
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
+
     }
     //..........STRAWBERRIES PATH.............
     private void strawberries()
