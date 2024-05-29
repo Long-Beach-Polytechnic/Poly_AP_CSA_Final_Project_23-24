@@ -45,6 +45,7 @@ public class GameGaelAngeles extends GameActivity{
             btn1.setVisibility(View.VISIBLE);
             btn2.setVisibility(View.VISIBLE);
             btn3.setVisibility(View.VISIBLE);
+            btn4.setVisibility(View.VISIBLE);
         }
 
 
@@ -69,6 +70,24 @@ public class GameGaelAngeles extends GameActivity{
 
         private void start()
         {
+            isWon = false;
+
+            ivStory.setImageResource(R.drawable.im_laborday_title);
+            playAudio(R.raw.audio_bass);
+
+            tvStoryText.setText("");
+
+            setAllBtnsVisible();
+            btn1.setText("Richard Nixon");
+            btn2.setText("John F Kennedy");
+            btn3.setText("William McKinley");
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) { richardNixon(); }
+                                    });
             //start adventure here
             System.out.println("Story");
             System.out.println("options\n1. Richard Nixon\n2. John F Kennedy\n3. William McKinley");
