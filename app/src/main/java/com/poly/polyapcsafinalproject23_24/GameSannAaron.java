@@ -1,17 +1,50 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 public class GameSannAaron extends GameActivity {
 
         private SannPokemon playerPokemon;
         private int choice;
+        private TextView tvTitle, tvSubtitle, tvStoryText;
+        private ImageView ivStory;
+        private Button btn1, btn2, btn3;
 
-        public void startGame()
+        public void run()
         {
-            choosePlayerStarter();
-            run();
-            pathToPewterCityGym();
-            viridianForest();
+            setContentView(R.layout.activity_game_3_button);
+
+            tvTitle = findViewById(R.id.tv_title_txt);
+            tvSubtitle = findViewById(R.id.tv_subtitle);
+            tvStoryText = findViewById(R.id.tv_story);
+            ivStory = findViewById(R.id.iv_story);
+            btn1 = findViewById(R.id.btn_1);
+            btn2 = findViewById(R.id.btn_2);
+            btn3 = findViewById(R.id.btn_3);
+
+            setAllBtnsVisible();
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    choosePlayerStarter();
+                }
+            });
         }
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+    }
+
 
 
 
@@ -22,49 +55,67 @@ public class GameSannAaron extends GameActivity {
          */
         private void choosePlayerStarter()
         {
-            System.out.println("Hello there! Welcome to the world of Pokemon! My name is Burke! People call me the Pokemon Prof! This world is inhabited by creatures called Pokemon! For some people, Pokemon are pets. Others use them for fights. Myself...I study Pokemon as a profession.\n");
+            String text = "\"Hello there! Welcome to the world of Pokemon! " +
+                    "My name is Burke! People call me the Pokemon Prof! This world is inhabited by creatures called Pokemon! " +
+                    "For some people, Pokemon are pets. Others use them for fights. Myself...I study Pokemon as a profession." +
+                    "\nNow this is the time you have been waiting for, choose your starter Pokemon!:";
 
-            System.out.println("Hello, " + "!\n");
+            tvStoryText.setText(text);
 
-            System.out.println("Now this is the time you have been waiting for, choose your starter Pokemon!:");
-            System.out.println("1. Bulbasaur");
-            System.out.println("2. Charmander");
-            System.out.println("3. Squirtle");
+            setAllBtnsVisible();
 
-            choice = scanner.nextInt();
+            btn1.setText("Bulbasaur");
+            btn2.setText("Charmander");
+            btn3.setText("Squirtle");
 
-            if (choice == 1)
-            {
-                playerPokemon = SannPokemonFactory.bulbasaur();
-            }
-            else if (choice == 2)
-            {
-                playerPokemon = SannPokemonFactory.charmander();
-            }
-            else if (choice == 3)
-            {
-                playerPokemon = SannPokemonFactory.squirtle();
-            }
-            else
-            {
-                System.out.println("Wow nice, you got a secret Pikachu instead.");
-                playerPokemon = SannPokemonFactory.pickachu();
-            }
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    playerPokemon = SannPokemonFactory.bulbasaur();
+                    start();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    playerPokemon = SannPokemonFactory.charmander();
+                    start();
+                }
+            });
+
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    playerPokemon = SannPokemonFactory.squirtle();
+                    start();
+                }
+            });
+
         }
 
-
-
-        /**
-         * Displays a welcome message to the player.
-         * <br> Preconditions: The game has started, and the player has chosen a starter Pokemon.
-         * <br> Postconditions: The player is welcomed to the game world.
-         */
-        public void run()
+        public void start()
         {
-            System.out.println("Welcome to the world of Pokemon!");
-            System.out.println("You have recieved a starter Pokemon: " + playerPokemon.getName());
-            System.out.println("Now it is time to start your Pokemon adventure and become a Pokemon Master!");
+
+            String text1 = "Welcome to the world of Pokemon!" + "You have recieved a starter Pokemon: " + playerPokemon.getName() +
+                    "Now it is time to start your Pokemon adventure and become a Pokemon Master!";
+
+            tvStoryText.setText(text1);
+
+            setAllBtnsVisible();
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    pathToPewterCityGym();
+                }
+            });
         }
+
+
 
 
 
@@ -75,8 +126,36 @@ public class GameSannAaron extends GameActivity {
          */
         public void pathToPewterCityGym()
         {
-            System.out.println("After receiving " + playerPokemon.getName() + " we must make our way to Pewter City Gym, but we have to go through Viridian Forest");
+            String text3 = "After receiving " + playerPokemon.getName() +
+                    " we must make our way to Pewter City Gym, but we have to go through Viridian Forest";
 
+            tvStoryText.setText(text3);
+
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startViridianForest();
+                }
+            });
+        }
+
+        public void startViridianForest()
+        {
+            setAllBtnsVisible();
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    viridianForest();
+                }
+            });
         }
 
 
@@ -87,27 +166,29 @@ public class GameSannAaron extends GameActivity {
          */
         public void viridianForest()
         {
-            Scanner scanner = new Scanner(System.in);
+            String text4 = "Brock, the Gym Leader of Pewter City, has really strong and high-leveled Pokemon"
+                    + "What do you decide to do?"
+                    + "1. Train in Viridian Forest"
+                    + "2. It doesn't matter, let's just go face Brock";
 
-            System.out.println("Brock, the Gym Leader of Pewter City, has really strong and high-leveled Pokemon");
-            System.out.println("What do you decide to do?");
-            System.out.println("1. Train in Viridian Forest");
-            System.out.println("2. It doesn't matter, let's just go face Brock");
+            tvStoryText.setText(text4);
 
-            int choice = scanner.nextInt();
+            btn1.setText("Level Pokemon");
+            btn2.setText("Battle Brock");
 
-            if (choice == 1)
-            {
-                levelPokemon();
-            }
-            else if (choice == 2)
-            {
-                battleBrock();
-            }
-            else
-            {
-                System.out.println("Invalid choice. Please choose 1 or 2.");
-            }
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    levelPokemon();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    battleBrock();
+                }
+            });
         }
 
 
@@ -121,51 +202,69 @@ public class GameSannAaron extends GameActivity {
          */
         private void initiateBattle(SannPokemon playerPokemon, SannPokemon wildPokemon)
         {
-            System.out.println("A " + wildPokemon.getName() + " appeared!");
 
-            Scanner scanner = new Scanner(System.in);
+            String text5 = "A " + wildPokemon.getName() + " appeared!";
+            tvStoryText.setText(text5);
+
             boolean battleOver = false;
 
             while (playerPokemon.getHealth() > 0 && wildPokemon.getHealth() > 0 && !battleOver)
             {
                 // Player's turn
-                System.out.println("What will " + playerPokemon.getName() + " do?");
-                System.out.println("1. Attack");
-                System.out.println("2. Run");
+                String text6 = "What will " + playerPokemon.getName() + " do?"
+                        + "1. Attack"
+                        + "2. Run";
+                tvStoryText.setText(text6);
 
-                int playerChoice = scanner.nextInt();
+                btn1.setText("Attack");
+                btn2.setText("Run");
 
-                if (playerChoice == 1)
-                {
-                    int playerDamage = playerPokemon.calculateDamage(wildPokemon);
-                    wildPokemon.takeDamage(playerDamage);
-                    System.out.println(playerPokemon.getName() + " dealt " + playerDamage + " damage to " + wildPokemon.getName());
-                }
-                else if (playerChoice == 2)
-                {
-                    System.out.println("You successfully ran away!");
-                    battleOver = true;
-                }
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int playerDamage = playerPokemon.calculateDamage(wildPokemon);
+                        wildPokemon.takeDamage(playerDamage);
+
+                        String text7 = playerPokemon.getName() + " dealt " + playerDamage + " damage to " + wildPokemon.getName();
+                        tvStoryText.setText(text7);
+                    }
+                });
+
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String text8 = "You successfully ran away!";
+                        tvStoryText.setText(text8);
+                        boolean battleOver = true;
+                    }
+                });
+
 
                 if (!battleOver)
                 {
                     int wildDamage = wildPokemon.calculateDamage(playerPokemon);
                     playerPokemon.takeDamage(wildDamage);
-                    System.out.println(wildPokemon.getName() + " dealt " + wildDamage + " damage to " + playerPokemon.getName());
+                    String text9 = wildPokemon.getName() + " dealt " + wildDamage + " damage to " + playerPokemon.getName();
+                    tvStoryText.setText(text9);
 
-                    System.out.println(playerPokemon.getName() + " HP: " + playerPokemon.getHealth());
-                    System.out.println(wildPokemon.getName() + " HP: " + wildPokemon.getHealth());
+                    String text10 = playerPokemon.getName() + " HP: " + playerPokemon.getHealth();
+                    tvStoryText.setText(text10);
+
+                    String text11 = wildPokemon.getName() + " HP: " + wildPokemon.getHealth();
+                    tvStoryText.setText(text11);
 
                     if (playerPokemon.getHealth() <= 0)
                     {
-                        System.out.println(playerPokemon.getName() + " fainted. You ran to the nearest Pokemon Center to heal your Pokémon.");
+                        String text12 = playerPokemon.getName() + " fainted. You ran to the nearest Pokemon Center to heal your Pokémon.";
+                        tvStoryText.setText(text12);
                         viridianForest();
                         return;
                     }
                 }
                 else if (wildPokemon.getHealth() <= 0)
                 {
-                    System.out.println("You defeated the " + wildPokemon.getName() + "!");
+                    String text13 = "You defeated the " + wildPokemon.getName() + "!";
+                    tvStoryText.setText(text13);
                 }
             }
         }
@@ -179,9 +278,8 @@ public class GameSannAaron extends GameActivity {
          */
         public void levelPokemon()
         {
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.println("You're in Viridian Forest and find a wild Caterpie.");
+            String text14 = "You're in Viridian Forest and find a wild Caterpie.";
+            tvStoryText.setText(text14);
 
             boolean continueLeveling = true;
             boolean shouldLevelUp = false;
@@ -190,7 +288,8 @@ public class GameSannAaron extends GameActivity {
                 SannPokemon wildCaterpie = SannPokemonFactory.caterpie();
                 SannPokemon wildPokemon = SannPokemonFactory.caterpie();
 
-                System.out.println("A " + wildPokemon.getName() + " appeared!");
+                String text15 = "A " + wildPokemon.getName() + " appeared!";
+                tvStoryText.setText(text15);
 
                 initiateBattle(playerPokemon, wildPokemon);
 
@@ -202,33 +301,50 @@ public class GameSannAaron extends GameActivity {
                     System.out.println("Pokemon:\t" + playerPokemon.getName() + "\n" + "Level:\t" + playerPokemon.getLevel() + "\n" + "Health:\t" + playerPokemon.getHealth() + "\n" + "Attack:\t" + playerPokemon.getAttack() + "\n" + "Defense:\t" + playerPokemon.getDefense());
                 }
 
-                System.out.println("Do you want to train more? (1. Yes / 2. No)");
-                int choice = scanner.nextInt();
+                String text16 = "Do you want to train more? (1. Yes / 2. No)";
+                tvStoryText.setText(text16);
 
-                if (choice != 1)
-                {
-                    continueLeveling = false;
-                    shouldLevelUp = false;
-                }
-                else
-                {
-                    shouldLevelUp = true;
-                }
+                btn1.setText("Yes");
+                btn2.setText("No");
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        boolean continueLeveling = false;
+                        boolean shouldLevelUp = false;
+                    }
+                });
+
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        boolean shouldLevelUp = true;
+                    }
+                });
+
             }
 
-            System.out.println("What do you decide to do now?");
-            System.out.println("1. Continue leveling up");
-            System.out.println("2. Go face Brock");
+            String text17 = "What do you decide to do now?"
+                    + "1. Continue leveling up"
+                    + "2. Go face Brock";
+            tvStoryText.setText(text17);
 
-            int choice = scanner.nextInt();
+            btn1.setText("Continue leveling up");
+            btn2.setText("Go face Brock");
 
-            if (choice == 1) {
-                levelPokemon();
-            } else if (choice == 2) {
-                pewterCityGym();
-            } else {
-                System.out.println("Invalid choice. Please choose 1 or 2.");
-            }
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    levelPokemon();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    pewterCityGym();
+                }
+            });
         }
 
 
@@ -240,9 +356,11 @@ public class GameSannAaron extends GameActivity {
          */
         public void battleBrock()
         {
-            System.out.println("You've decided to challenge Brock in the Pewter City Gym!");
-            System.out.println("Brock says, 'I accept your challenge!'");
-            System.out.println("Brock sends out his Pokémon!");
+
+            String text18 = "You've decided to challenge Brock in the Pewter City Gym!"
+                    + "Brock says, 'I accept your challenge!"
+                    + "Brock sends out his Pokémon!";
+            tvStoryText.setText(text18);
 
             SannPokemon brocksOnix = SannPokemonFactory.onix();
 
@@ -264,28 +382,29 @@ public class GameSannAaron extends GameActivity {
          * <br> Postconditions: The player may choose to challenge Brock or return to Viridian Forest.
          */
         public void pewterCityGym() {
-            Scanner scanner = new Scanner(System.in);
 
-            System.out.println("You enter the Pewter City Gym, and Brock is there waiting.\n");
-            System.out.println("He says, 'Are you sure you want to face me right now?");
-            System.out.println("1. Yes");
-            System.out.println("2. No");
+            String text19 = "You enter the Pewter City Gym, and Brock is there waiting.\n"
+                    + "He says, 'Are you sure you want to face me right now?"
+                    + "1. Yes"
+                    + "2. No";
+            tvStoryText.setText(text19);
 
-            int selectedOption = scanner.nextInt();
+            btn1.setText("Yes");
+            btn2.setText("No");
 
-            if (selectedOption == 1)
-            {
-                battleBrock();
-            }
-            else if (selectedOption == 2)
-            {
-                viridianForest();
-            }
-            else
-            {
-                System.out.println("Invalid choice. Please choose 1 or 2.");
-                pewterCityGym(); // Ask again if the choice is invalid
-            }
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    battleBrock();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    viridianForest();
+                }
+            });
         }
 
 
