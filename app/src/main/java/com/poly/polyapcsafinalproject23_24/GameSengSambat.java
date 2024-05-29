@@ -1,5 +1,9 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.poly.polyapcsafinalproject23_24.GameActivity;
 
 import java.util.Scanner;
@@ -8,47 +12,35 @@ public class GameSengSambat extends GameActivity
 {
  private TextView tvTitle, tvSubtitle, tvStoryText;
  private ImageView ivStory;
- private Button btn1, btn2, btn3, btn4;
+ private Button btn1, btn2, btn3;
  private boolean isWon;
  private int numLives;
 
  @Override
  protected void run() {
-     setContentView(R.layout.activity_game_4_button);
+     setContentView(R.layout.activity_game_3_button);
 
-     tvTitle = findViewById(R.tv_title_txt);
-     tvSubtitle = findViewById(R.tv_subtitle);
-     tvStoryText = findViewById(R.tv_story);
+     tvTitle = findViewById(R.id.tv_title_txt);
+     tvSubtitle = findViewById(R.id.tv_subtitle);
+     tvStoryText = findViewById(R.id.tv_story);
      ivStory = findViewById(R.id.iv_story);
      btn1 = findViewById(R.id.btn_1);
      btn2 = findViewById(R.id.btn_2);
      btn3 = findViewById(R.id.btn_3);
-     btn4 = findViewById(R.id.btn_4);
 
      tvTitle.setText("EERIE WOODLANDS");
-     tvSubtitle.setText("Made by Sambat"):
- }
-    //instance variables
-    //   variables you plan to use throughout the adventure
-    private int numAttempts;
-    private int shootResult;
-    private int leaveResult;
-    //private Player player; (optional)
+     tvSubtitle.setText("Made by Sambat");
 
+     //initialize number of lives
+     numAttempts = 3;
+     //create a scanner object for user input
+     scan = new Scanner(System.in);
 
-    public void run()
-    {
-        //initialize number of lives
-        numAttempts = 3;
-        //create a scanner object for user input
-        scan = new Scanner(System.in);
+     //create a player object (optional)
+     //player = new Player(...)
 
-        //create a player object (optional)
-        //player = new Player(...)
-
-        //display project title and description
-        Util.clearConsole();
-        String text = """
+     //display project title and description
+     String text = """
 
       ███████╗███████╗██████╗ ██╗███████╗    ██╗    ██╗ ██████╗  ██████╗ ██████╗ ██╗      █████╗ ███╗   ██╗██████╗ ███████╗
       ██╔════╝██╔════╝██╔══██╗██║██╔════╝    ██║    ██║██╔═══██╗██╔═══██╗██╔══██╗██║     ██╔══██╗████╗  ██║██╔══██╗██╔════╝
@@ -60,18 +52,25 @@ public class GameSengSambat extends GameActivity
 
 
       """;
-        System.out.print(TextColor.YELLOW + (text) + TextColor.RESET);
+     System.out.print(TextColor.YELLOW + (text) + TextColor.RESET);
 
-        System.out.println("You currently have " +  numAttempts + " attempts. You have " + numAttempts + " attempts left to survive the forest");
+     System.out.println("You currently have " +  numAttempts + " attempts. You have " + numAttempts + " attempts left to survive the forest");
 
-        System.out.println("\nTime: 11:07 PM Location: Somewhere in Alberta, Canada \n \nIt's getting dark and you're in the woods trying to get to a campsite. While navigating your way through the forest you hear a screech that creeps you out. What do you do?");
+     System.out.println("\nTime: 11:07 PM Location: Somewhere in Alberta, Canada \n \nIt's getting dark and you're in the woods trying to get to a campsite. While navigating your way through the forest you hear a screech that creeps you out. What do you do?");
 
-        System.out.println( );
+     System.out.println( );
 
-        Util.pauseConsole();
 
-        start();
-    }
+     start();
+ }
+    //instance variables
+    //   variables you plan to use throughout the adventure
+    private int numAttempts;
+    private int shootResult;
+    private int leaveResult;
+    //private Player player; (optional)
+
+
     private void setAllBtnsVisible()
     {
         btn1.setVisibility(View.VISIBLE);
@@ -87,7 +86,6 @@ public class GameSengSambat extends GameActivity
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,3);
 
         if (choice == 1)
         {
@@ -105,14 +103,12 @@ public class GameSengSambat extends GameActivity
 
     private void goForward()
     {
-        Util.clearConsole();
         System.out.println("You keep walking forward hoping to find a way out of the forest, but you see an eyeless monster, he notices your footsteps and walks towards you. What do you do?");
 
         System.out.println("1. Hide in a bush\n2. Keep walking forward");
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,2);
 
         if (choice == 1)
         {
@@ -125,14 +121,12 @@ public class GameSengSambat extends GameActivity
     }
     private void hideInBush()
     {
-        Util.clearConsole();
         System.out.println("You hide in the bush for a while and it seems like the monster has wandered off somewhere close. What do you do?");
 
         System.out.println("1. Wait longer\n2. Try to leave");
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             waitLonger();
@@ -144,11 +138,9 @@ public class GameSengSambat extends GameActivity
     }
     private void waitLonger()
     {
-        Util.clearConsole();
 
         System.out.println("You wait longer and the monster eventually wanders off somewhere far, you left the forest surviving");
 
-        Util.pauseConsole();
 
         endAdventure();
 
@@ -156,7 +148,6 @@ public class GameSengSambat extends GameActivity
 
     private void tryToLeave()
     {
-        Util.clearConsole();
 
         System.out.println("Choose a direction to walk towards");
 
@@ -166,7 +157,6 @@ public class GameSengSambat extends GameActivity
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,3);
         if (choice == 1)
         {
             goNorth();
@@ -182,34 +172,30 @@ public class GameSengSambat extends GameActivity
     private void goNorth()
 
     {
-        Util.clearConsole();
         System.out.println("After heading north you walk into a bear and it ends up eating you. You died");
-        Util.pauseConsole();
         defeat();
     }
 
     private void goSouth()
     {
-        Util.clearConsole();
         System.out.println("After heading south, you end up walking into the monster again and it eats you. You died");
-        Util.pauseConsole();
         defeat();
     }
 
     private void goEast()
     {
-        Util.clearConsole();
+
 
         System.out.println("After heading east you walk into a group of hikers and they take you somewhere safe. You lived");
 
-        Util.pauseConsole();
+
 
         endAdventure();
     }
 
     private void keepWalkingForward()
     {
-        Util.clearConsole();
+
         System.out.println("You keep walking forward but at this point the monster finds where you are and is very near. What do you do?");
 
         System.out.println("1. Attack the monster\n2. Stay still and be quiet\n3. Run away as fast as you can");
@@ -217,7 +203,7 @@ public class GameSengSambat extends GameActivity
         System.out.println( );
 
 
-        int choice = Util.enterInt(1,3);
+
         if (choice == 1)
         {
             attackMonster();
@@ -233,7 +219,7 @@ public class GameSengSambat extends GameActivity
     }
     private void beQuiet()
     {
-        Util.clearConsole();
+
 
         System.out.println("You stay stil without making a noise, the monster can't detect you and eventually wanders off. What do you do?");
 
@@ -241,7 +227,7 @@ public class GameSengSambat extends GameActivity
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,2);
+
         if (choice == 1)
         {
             waitLonger();
@@ -253,14 +239,14 @@ public class GameSengSambat extends GameActivity
 
     private void investigateNoise()
     {
-        Util.clearConsole();
+
         System.out.println("\nYou investigate the noise and see a horrific eyeless monster in front of you. What do you do?");
 
         System.out.println("1. Stay still and don't make a noise\n2. Try to run away\n3. Throw a rock at it");
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,3);
+
         if (choice == 1)
         {
             beQuiet();
@@ -277,18 +263,18 @@ public class GameSengSambat extends GameActivity
 
     private void throwRock()
     {
-        Util.clearConsole();
 
-        System.out.println("You throw a rock at the monster, he responds by brutually beating you to death");
 
-        Util.pauseConsole();
+        System.out.println("You throw a rock at the monster, he responds by brutally beating you to death");
+
+
 
         defeat();
     }
 
     private void runAway()
     {
-        Util.clearConsole();
+
 
         System.out.println("\nWhile you're running away you notice the monster catching up. What do you do?");
 
@@ -296,7 +282,7 @@ public class GameSengSambat extends GameActivity
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,3);
+
         if (choice == 1)
         {
             attackMonster();
@@ -313,59 +299,29 @@ public class GameSengSambat extends GameActivity
 
     private void keepRunning()
     {
-        Util.clearConsole();
+
 
         System.out.println("The monster catches up and kills you. You died");
 
-        Util.pauseConsole();
+
 
         defeat();
     }
 
     private void runWest()
     {
-        Util.clearConsole();
+
+        ivStory.setImageResource(R.drawable.im_sengsambat_tunnel);
+
         String text = """
       You run west and find a cave, there are two tunnels in front of you. What do you do
       1. Hide in left tunnel
       2. Hide in right tunnel
       3. Hide behind a rock
-      .....,,,,,,,,,,,,,,.................,,,*....,,,,,..,,.,,,,,**////(////*#,*/,,*,,
-      ,...,...,***,,.,............,....,,,*,*,.,......*,,,..,.,*,,,*/##(/(//**,**(/**,
-      .....,.,,,,,,*,....,.......,,..............,,,.,...,*.,,,,,,..,,/#%(#((((/**(/*,
-      ......,.,.,**...,.,..,,....,,,...,..........,,,,,,,,,,*,,*,*,*,,,,/%#(//#/**/#/*
-      ......,.,*(/..............,........,/*,,,,,,****,,,,,,,,,,,,,,,,,,,,,%%##(%,*#%(
-      .,...,,**(..,,,,....,.,,..,,,,,,,,,,,.,..,,,,,**,,,,,,,..,,,,,,,,,*/*,,*&##**/(#
-      .....,*/*...,.,,.,.,,,,,,.,,,,.,.,,,,*,,,,**,,,,,,,,*,,,,,,,,,,,,*(*/**,/%&(/&##
-      ,,.,,,/,..,,,,,,,.,,*,,,,,,..,,,,,,,,,,,*,****,,,***,,,,.,,,,.,*//#%##*%%%%#(%%(
-      ,**,**,,.,.,,**,...,,,*,,,,.,*****,***,,,.,//**/,,,/**,,,,...//((&%&(&(%%&@&(*&#
-      ,,*,*//.,,,,/**......,*,*****//*,,**,*,,*,,**(/*##*//,,,,.....,*/#%%@&(%#%@&&#**
-      ,,,,/##.,**//,.......,,,**,*****,,.,***/*/****####**/**,*...,.,,,/##&%#%##@%##(/
-      .,,,*/#(#*/(/......,,**/**//**/**,,,.//*//(/*((%%%((*(***.......,,%%&&%&&((#%#((
-      .,,/,*#/#%&//......,**,(/**********,,/(/(//**#&%%&&#((/,.....,....*%%%&%#//...%/
-      .*,,**/(#&%%*....,,*///*//(/***,*/*,,*((/((///#&#@&%&%.......,.....,%%%%(/,....*
-      ,,,.,*,*((#//*....,**/*/*      ,,//*,/#(*/%(/*/%&&@#(/......,,,,.....%%#((,,....
-      ,,,*.,/***%#%*...,,,/*(.        ,***((/(//(((#*(%##/(/,...,,,,,,,,...,%%%/*....,
-      ,,,,,,,*/*#%#/...,,,*(/.        ,,*/((/((((#((*(&#/%/(,,,,,**,,*,,,.,.#%#/,....(
-      ..,,,,,,**/%/##...*,/(/         ,,,///*(((/(/#(%(/%/#(#/,*/*(#(((/****(%/*,,.*%#
-      .*.....,.**/%/%,....,//        .,,,(//*(((/**(//#**/(/(#(#%(##%#%(%#(///(**,(((*
-      *,.......,**(*((...,,**.      ,,,,//(*//*/*(#//(#(((/(/*#%#(###%*(((#(//#/(%&/(%
-      ..........,/##/*,*/**/(#(((((/*//**(#**/((#(/*#%&%//(%/(((((((((##&%%%%%%#%(%#((
-      .,,........,/*//***/(//(////(//(/(//#*#(#//*(//%&%#/#(/((#((/(((#%%#%%&(#%&(*///
-      *..,.......,*,,**//*/*/##%####%%#%#(#//,#%#*/(/(/#/*/#(/(/((####%@%%(////(((///(
-      **..,*,.....*,,,#(/(######(((#((/*/#%**,/********//((#%&%%%&&%&&@%&#(%#(#((((***
-      ,,,...*//,,,,,**/*////*#%%%#%&%(/#*(///(%*////(&&%%&&%%%%&%%#//(%/(((/%@%/*/(***
-      ..,,....,*(,**,,,*/(((#/**//****//%%%&%/(/(#(*/#%%%##((%%&(%%&&*(#%@@%%/(&%%(&*/
-      ,*,,**/*.,*,*,,,,,,,*****///*****//*,*,***********////#*********%%#(((**/@&&**//
-      *,.*/**/***.,*(****/*,**********/****/*******(*,((/(#((#(%&%%/%%%/*****(##/%#**/
-      ,*,,,,**,,,,(%%,,,,****///(((//((#/*/####/*,*,**,,/(#%#&#******,***(%%(/(#/#****
-      .,*,*/(((*((%#*/%%#(###(/**********,,,,,***,,,,,,*,,********/#(/**//***(((*,,,,,
-      ,//,.,,**,////*#/**(/%&&%##%#(#%%&&%%#//***/(**/#(/,/,,,*/****,,***///****,,,,,*
-      ***,......,,**,///&&////###%##%#*,***/(((////**((((((*//(((((//(/*/***,,,,,*#(//
       """;
         System.out.println(TextColor.YELLOW + (text) + TextColor.RESET);
 
-        int choice = Util.enterInt(1,3);
+
         if (choice == 1)
         {
             leftTunnel();
@@ -383,13 +339,13 @@ public class GameSengSambat extends GameActivity
     private void hideBehindRock()
     {
 
-        Util.clearConsole();
+
 
         System.out.println("You hide behind the rock and see it walk past you, you can use this as your chance to escape. What do you do?");
 
         System.out.println("1. Make a run for it\n2. Walk silently out\n3. Attack the monster");
 
-        int choice = Util.enterInt(1,3);
+
         if (choice == 1)
         {
             runOut();
@@ -406,32 +362,32 @@ public class GameSengSambat extends GameActivity
 
     private void runOut()
     {
-        Util.clearConsole();
+
 
         System.out.println("You try to run out of the cave but the monster chases you and kills you. You died");
 
-        Util.pauseConsole();
+
 
         defeat();
     }
     private void walkSilently()
     {
-        Util.clearConsole();
+
         System.out.println("You walk silently out of the cave and make it out the forest without the monster noticing");
-        Util.pauseConsole();
+
 
         endAdventure();
     }
     private void leftTunnel()
     {
-        Util.clearConsole();
+
         System.out.println("The monster headed to the right tunnel and couldn't find you. What do you do?");
 
         System.out.println("1. Stop hiding and try to leave\n2. Hide for longer");
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,2);
+
         if (choice == 1)
         {
             stopHiding();
@@ -441,34 +397,34 @@ public class GameSengSambat extends GameActivity
     }
     private void rightTunnel()
     {
-        Util.clearConsole();
+
 
         System.out.println("The monster headed to the right tunnel and found you. You died");
 
-        Util.pauseConsole();
+
 
         defeat();
     }
     private void hideForLonger()
     {
-        Util.clearConsole();
+
 
         System.out.println("The monster wanders off somewhere far and you leave safely");
 
-        Util.pauseConsole();
+
 
         endAdventure();
     }
     private void stopHiding()
     {
-        Util.clearConsole();
+
 
         int leaveResult = (int) (1 + Math.random()*100);
         if (leaveResult <= 50)
         {
             System.out.println("The monster wanders off somewhere far and you leave safely");
 
-            Util.pauseConsole();
+
 
             endAdventure();
 
@@ -477,7 +433,7 @@ public class GameSengSambat extends GameActivity
         {
             System.out.println("You walk into the monster again and it eats you.  You died.");
 
-            Util.pauseConsole();
+
 
             defeat();
 
@@ -485,7 +441,7 @@ public class GameSengSambat extends GameActivity
     }
     private void attackMonster()
     {
-        Util.clearConsole();
+
 
         System.out.println("What will will you attack it with");
 
@@ -493,7 +449,7 @@ public class GameSengSambat extends GameActivity
 
         System.out.println( );
 
-        int choice = Util.enterInt(1,2);
+
         if (choice == 1)
         {
             useGun();
@@ -506,14 +462,13 @@ public class GameSengSambat extends GameActivity
 
     private void useGun()
     {
-        Util.clearConsole();
+
 
         int shootResult = (int) (1 + Math.random()*100);
         if (shootResult <= 50)
         {
             System.out.println("You shoot the monster and it dies. You escaped the forest");
 
-            Util.pauseConsole();
 
             endAdventure();
 
@@ -522,7 +477,7 @@ public class GameSengSambat extends GameActivity
         {
             System.out.println("Oh no! your gun ends up jamming and the monster eats you.");
 
-            Util.pauseConsole();
+
 
             defeat();
         }
@@ -531,11 +486,11 @@ public class GameSengSambat extends GameActivity
 
     private void useKnife()
     {
-        Util.clearConsole();
+
 
         System.out.println("You try to attack it with a knife but it isn't very effective, it angers the monster and you die a horrible painful death");
 
-        Util.pauseConsole();
+
 
         defeat();
     }
@@ -547,7 +502,7 @@ public class GameSengSambat extends GameActivity
 
     private void endAdventure()
     {
-        Util.clearConsole();
+
 
         System.out.println(TextColor.GREEN + "You have won! Play again?" + TextColor.RESET);
 
@@ -566,7 +521,7 @@ public class GameSengSambat extends GameActivity
 
 
         //clear console, display text, etc
-        Util.clearConsole();
+
 
         //System.out.println(...)
         System.out.println(TextColor.YELLOW + "You failed to survive, you now have " + numAttempts + " attempts left" + TextColor.RESET);
