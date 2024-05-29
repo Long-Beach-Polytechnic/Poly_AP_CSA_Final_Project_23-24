@@ -1,8 +1,10 @@
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.poly.polyapcsafinalproject23_24.GameActivity;
+import com.poly.polyapcsafinalproject23_24.R;
 
 import java.util.Scanner;
 
@@ -12,16 +14,10 @@ public class GameEscalanteJacqueline extends GameActivity {
     private ImageView ivStory;
 
     private Button btn1, btn2, btn3;
+    private int numLives;
 
     private boolean isWon;
 
-
-
-    //instance variables
-    //   variables you plan to use throughout the adventure
-    private Scanner scan;
-    private int numLives;
-    //private Player player; (optional)
 
 
     public void run() {
@@ -29,7 +25,7 @@ public class GameEscalanteJacqueline extends GameActivity {
 
         tvTitle = findViewById(R.id.tv_title_txt);
         tvSubtitle = findViewById(R.id.tv_subtitle);
-        tvStoryText = findViewById(R.id.tv_strong);
+        tvStoryText = findViewById(R.id.tv_story);
         ivStory = findViewById(R.id.iv_story);
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
@@ -44,7 +40,7 @@ public class GameEscalanteJacqueline extends GameActivity {
         start();
         }
 
-        private void setAllBtnsVisable()
+        private void setAllBtnsVisible()
         {
             btn1.setVisibility(TextView.VISIBLE);
             btn2.setVisibility(TextView.VISIBLE);
@@ -53,181 +49,210 @@ public class GameEscalanteJacqueline extends GameActivity {
         }
 
 
-
-        //initialize number of lives
-        numLives = 5;
-        //create a scanner object for user input
-        scan = new Scanner(System.in);
-
-        //create a player object (optional)
-        //player = new Person(...)
-
-        //display project title and description
-        Util.clearConsole();
-        System.out.println("---PATHWAY CHOICE FAIR---");
-        System.out.println("...Poly's annual choice fair for pathways that are looking for you !...");
-
-        Util.pauseConsole();
-        start();
-    }
-
     private void start()
     {
-        Util.clearConsole();
-        System.out.println(" PATHWAYS -  POLY EDITION");
+        tvStoryText.setText(" PATHWAYS -  POLY EDITION\nIts Choice Fair day, lets go!\nWhat pathway would you like to go to?");
 
-        System.out.println("\nIts Choice Fair day, lets go!");
-        Util.pauseConsole();
-        System.out.println("What pathway would you like to go to?");
-        System.out.println("1. BEACH\n2. PARTS\n3. MEDS");
-        int choice = Util.enterInt(1,3);
+        setAllBtnsVisible();
+        btn1.setText("BEACH");
+        btn2.setText("PARTS");
+        btn3.setText("MEDS");
 
-        if(choice ==1)
-        {
-            goToBeach();
-        }
-        else if (choice == 2)
-        {
-            goToPARTS();
-        }
-        else if(choice == 3)
-        {
-            goToMeds();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToBeach();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToPARTS();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToMeds();
+            }
+        });
+
+
 
     }
     //BEACH PATHWAY PATH
     private void goToBeach()
     {
-        Util.clearConsole();
-        System.out.println("\nWhat Beach Strand would you like to enroll in?");
-        System.out.println("1. Enroll in Engineering\n2. Enroll in Computer Science");
-        int choice = Util.enterInt(1,2);
 
-        if (choice == 1)
-        {
-            enrollinEngineering();
-        }
-        else if(choice == 2);
-        {
-            enrollinComputerScience();
-        }
+        tvStoryText.setText("\nWhat Beach Strand would you like to enroll in?");
+       btn1.setText(" Enroll in Engineering");
+       btn2.setText("Enroll in Computer Science");
+       btn3.setVisibility(View.INVISIBLE);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enrollinEngineering();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enrollinComputerScience();
+            }
+        });
+
     }
 
     private void enrollinEngineering()
     {
-        Util.clearConsole();
-        System.out.println("\nYou have a choice, what do you do?");
-        System.out.println("1. Go to EDD\n2. Go to Intro to design");
-        int choice = Util.enterInt(1,2);
 
-        if(choice == 1)
-        {
-            gotoEdd();
-        }
-        else if (choice == 2)
-        {
-            gotoIntrotoDesign();
-        }
+        tvStoryText.setTex("\nYou have a choice, what do you do?");
+        btn1.setText("  Go to EDD");
+        btn2.setText("Go to Intro to design");
+        btn3.setVisibility(View.INVISIBLE);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoEdd();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoIntrotoDesign();
+            }
+        });
+
+
+
     }
     private void gotoEdd()
     {
-        Util.clearConsole();
-        System.out.println(" You go to EDD with Ms.Echerri but you can't draw.You fail the class");
-        Util.pauseConsole();
+
+        tvStoryText.setText(" You go to EDD with Ms.Echerri but you can't draw.You fail the class");
+
         defeat();
     }
     private void gotoIntrotoDesign()
     {
-        Util.clearConsole();
-        System.out.println(" You go to Intro to Design with Ms.Mulvaney, She loves you! but you never do the work.");
-        Util.pauseConsole();
+
+        tvStoryText.setText(" You go to Intro to Design with Ms.Mulvaney, She loves you! but you never do the work.");
+
         defeat();
     }
     private void enrollinComputerScience()
     {
-        Util.clearConsole();
-        System.out.println("\n You have a choice, what do you do?");
-        System.out.println("1. Go to AP CSA\n2. Go to Intro to Computer Science");
-        int choice = Util.enterInt(1,2);
 
-        if(choice == 1)
-        {
-            gotoAPCSA();
-        }
-        else if (choice == 2)
-        {
-            gotoIntroToCS();
-        }
+        tvStoryText.setText("\n You have a choice, what do you do?");
+        btn1.setText("  Go to AP CSA");
+        btn2.setText("Go to Intro to Computer Science");
+        btn3.setVisibility(View.INVISIBLE);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoAPCSA();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoIntroToCS();
+            }
+        });
+
     }
     private void gotoIntroToCS()
     {
-        Util.clearConsole();
-        System.out.println(" You go to Intro to Computer Science with Mr.LaVecchio. You hate doing scratch and never attend class.");
-        Util.pauseConsole();
+
+        tvStoryText.setText(" You go to Intro to Computer Science with Mr.LaVecchio. You hate doing scratch and never attend class.");
+
         defeat();
     }
     private void gotoAPCSA()
     {
-        Util.clearConsole();
-        System.out.println(" Your in AP CSA with Mr.Burke. You dont want to do the Choose you adventure project, so he calls Campus Security to kick you out.");
-        Util.pauseConsole();
+
+        tvStoryText.setText(" Your in AP CSA with Mr.Burke. You dont want to do the Choose you adventure project, so he calls Campus Security to kick you out.");
+
         defeat();
     }
 
     //PArts PATHWAY PATH
     private void goToPARTS()
     {
-        Util.clearConsole();
-        System.out.println("\nWhat PArts Strand would you like to enroll in?");
-        System.out.println("1. Enroll in Video and Photography\n2. Enroll in Digital Arts");
-        int choice = Util.enterInt(1,2);
 
-        if (choice == 1)
-        {
-            enrollinVideoandPhoto();
-        }
-        else if(choice == 2);
-        {
-            enrollinDigitalArts();
-        }
+        tvStoryText.setText("\nWhat PArts Strand would you like to enroll in?");
+        btn1.setText("  Enroll in Video and Photography");
+        btn2.setText("Enroll in Digital Arts");
+        btn3.setVisibility(View.INVISIBLE);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enrollinVideoandPhoto();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enrollinDigitalArts();
+            }
+        });
+
     }
     private void enrollinVideoandPhoto()
     {
-        Util.clearConsole();
-        System.out.println("\nYou have a choice, what do you do?");
-        System.out.println("1. Go to Intro to Video\n2. Go to Theatre Arts");
-        int choice = Util.enterInt(1,2);
 
-        if(choice == 1)
-        {
-            gotoIntrotoVideo();
-        }
-        else if (choice == 2)
-        {
-            gotoTheatreArts();
-        }
+        tvStoryText.setText("\nYou have a choice, what do you do?");
+
+        tvStoryText.setText("\nWhat PArts Strand would you like to enroll in?");
+        btn1.setText("   Go to Intro to Video");
+        btn2.setText("Go to Theatre Arts");
+        btn3.setVisibility(View.INVISIBLE);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoIntrotoVideo();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoTheatreArts();
+            }
+        });
+
+
     }
     private void gotoIntrotoVideo()
     {
-        Util.clearConsole();
-        System.out.println(" You go to Intro to Video with Ms.Stringer, but you don't own a camera");
-        Util.pauseConsole();
+
+        tvStoryText.setText(" You go to Intro to Video with Ms.Stringer, but you don't own a camera");
+
         defeat();
     }
     private void gotoTheatreArts()
     {
-        Util.clearConsole();
-        System.out.println(" You go to Theatre Arts with Ms.Bon but dont like improv");
-        Util.pauseConsole();
+
+        tvStoryText.setText(" You go to Theatre Arts with Ms.Bon but dont like improv");
+
         defeat();
     }
     private void enrollinDigitalArts()
     {
-        Util.clearConsole();
-        System.out.println("\nYou have a choice, what do you do?");
+
+        tvStoryText.setText("\nYou have a choice, what do you do?");
         System.out.println("1. Go to Ms.Vang\n2. Go to Ms.Laztin");
-        int choice = Util.enterInt(1,2);
+
 
         if(choice == 1)
         {
@@ -240,26 +265,26 @@ public class GameEscalanteJacqueline extends GameActivity {
     }
     private void gotoIntrotoDrawing()
     {
-        Util.clearConsole();
-        System.out.println(" You are in Intro to Drawing,but you always color outside the lines :(" );
-        Util.pauseConsole();
+
+        tvStoryText.setText(" You are in Intro to Drawing,but you always color outside the lines :(" );
+
         defeat();
     }
     private void gotoCeramics()
     {
-        Util.clearConsole();
-        System.out.println(" Welcome to Ceramics with Laztin, You suck at Pottery...BYEEEEE FELISHAAAA" );
-        Util.pauseConsole();
+
+        tvStoryText.setText(" Welcome to Ceramics with Laztin, You suck at Pottery...BYEEEEE FELISHAAAA" );
+
         defeat();
     }
 
     //MEDS PATHWAY PATH
     private void goToMeds()
     {
-        Util.clearConsole();
-        System.out.println("\nWhat MEDS Strand would you like to enroll in?");
+
+        tvStoryText.setText("\nWhat MEDS Strand would you like to enroll in?");
         System.out.println("1 .Enroll in Patient Mental Health\n2. Enroll in Patient Physical Health");
-        int choice = Util.enterInt(1,2);
+
 
         if (choice == 1)
         {
@@ -272,10 +297,10 @@ public class GameEscalanteJacqueline extends GameActivity {
     }
     private void enrollinPMH()
     {
-        Util.clearConsole();
-        System.out.println("\nYou have a choice, what do you do?");
+
+        tvStoryText.setText("\nYou have a choice, what do you do?");
         System.out.println("1. Go to Health and Career Exploration\n2. Go to Mental and Behavioral Health Pro INT");
-        int choice = Util.enterInt(1,2);
+
 
         if(choice == 1)
         {
@@ -288,24 +313,24 @@ public class GameEscalanteJacqueline extends GameActivity {
     }
     private void gotoHCE()
     {
-        Util.clearConsole();
-        System.out.println(" You are in Health and Career Exploration, but Mr.Gray wants you to leave because your a class clown" );
-        Util.pauseConsole();
+
+        tvStoryText.setText(" You are in Health and Career Exploration, but Mr.Gray wants you to leave because your a class clown" );
+
         defeat();
     }
     private void gotoMBHPI()
     {
-        Util.clearConsole();
-        System.out.println(" Welcome to MBHPI! You intern at a PSYCH WARD, but the patient is BFFS with Chucky" );
-        Util.pauseConsole();
+
+        tvStoryText.setText(" Welcome to MBHPI! You intern at a PSYCH WARD, but the patient is BFFS with Chucky" );
+
         defeat();
     }
     private void enrollinPPH()
     {
-        Util.clearConsole();
-        System.out.println("\nYou have a choice, what do you do?");
+
+        tvStoryText.setText("\nYou have a choice, what do you do?");
         System.out.println("1. Go to Healthcare Admin Tech\n2. Go to Medical Occuption");
-        int choice = Util.enterInt(1,2);
+
 
         if(choice == 1)
         {
@@ -318,16 +343,16 @@ public class GameEscalanteJacqueline extends GameActivity {
     }
     private void gotoHAT()
     {
-        Util.clearConsole();
-        System.out.println(" You are in Healthcare Admin Tech!!! You think you are getting a raise from the hospital you intern at but you get fired!!!" );
-        Util.pauseConsole();
+
+        tvStoryText.setText(" You are in Healthcare Admin Tech!!! You think you are getting a raise from the hospital you intern at but you get fired!!!" );
+
         defeat();
     }
     private void gotoMO()
     {
-        Util.clearConsole();
-        System.out.println(" Welcome to Medical Occupation! You are working with Ms.Sawyer to get your CNA certifcate but you dropped out." );
-        Util.pauseConsole();
+
+        tvStoryText.setText(" Welcome to Medical Occupation! You are working with Ms.Sawyer to get your CNA certifcate but you dropped out." );
+
         defeat();
     }
 
@@ -353,7 +378,7 @@ public class GameEscalanteJacqueline extends GameActivity {
         else
         {
             //print game over message
-            System.out.println("TRY A NEW PATHWAY");
+            tvStoryText.setText("TRY A NEW PATHWAY");
         }
 
     }
