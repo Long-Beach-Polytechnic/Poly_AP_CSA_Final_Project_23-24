@@ -1,3 +1,7 @@
+package com.poly.polyapcsafinalproject23_24;
+
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,116 +13,143 @@ public class GamePerezAdan extends GameActivity {
 
     //instance variables
     //   variables you plan to use throughout the adventure
-    private Scanner scan;
     private int numLives;
     //private Player player; (optional)
-    private TextView tvtitle, tvSubtitle, tvStoryText;
+    private TextView tvTitle, tvSubtitle, tvStoryText;
     private ImageView ivStory;
     private Button btn1, btn2, btn3;
     private boolean isWon;
     private int numLives;
 
     @Override
-    protected void run() {}
+    protected void run() {
         setContentView(R.layout.activity_game_3_button);
 
         tvTitle = findViewById(R.id.tv_title_txt);
         tvSubtitle = findViewById(R.id.tv_subtitle);
         tvStoryText = findViewById(R.id.tv_story);
-        ivstory = findviewById(R.id.iv_story);
+        ivStory = findViewById(R.id.iv_story);
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
-        btn3 = findviewById(R.id.btn_3);
+        btn3 = findViewById(R.id.btn_3);
 
-        tvtitle.setText("")
+        tvTitle.setText("LIFE AFTER GRADUATION");
+        tvSubtitle.setText("")
 
 
-    public void run()
-    {
-        //initialize number of lives
         numLives = 5;
-        //create a scanner object for user input
-        scan = new Scanner(System.in);
-
-        //create a player object (optional)
-        //player = new Person(...)
         start();
+    }
+
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
     }
 
     private void start()
     {
+        tvTitle.setText("GRADUATED");
+        tvSubtitle.setText("HIGH SCHOOL EDITION");
 
-        Util.clearConsole();
-        String text = """
-      GRADUATED HIGH SCHOOL EDITION
+        String text = "We graduated high school, lets go!" +
+                "Where would you like to go?";
 
-      We graduated high school, lets go!
-      """;
-        System.out.println(text);
+        tvStoryText.setText(text);
 
-        Util.pauseConsole();
+        setAllBtnsVisible();
 
-        text = """
-      Where would you like to go?
-      1. College
-      2. Get a job
-      3. Stay at parent's house
-      """;
-        System.out.println(text);
-        int choice = Util.enterInt(1,3);
+        btn1.setText("College");
+        btn2.setText("Get a job");
+        btn3.setText("Stay at parent's house");
 
-        if (choice == 1)
-        {
-            college();
-        }
-        else if (choice == 2)
-        {
-            getJob();//getJob();
-        }
-        else if (choice == 3)
-        {
-            stayAtParents();//stayAtParents();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                college();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getJob();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stayAtParents();
+            }
+        });
+
     }
 
     private void college()
     {
-        Util.clearConsole();
         String text = """
       How are you doing in your classes?
       1. You are doing very well.
       2. You are struggling.
       """;
-        System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            veryWell();
-        }
-        else if (choice == 2)
-        {
-            struggle();//struggle();
-        }
+
+        tvStoryText.setText("What are you doing in your classes?");
+
+        setAllBtnsVisible();
+        btn1.setText("You are doing very well");
+        btn2.setText("You are struggling");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                veryWell();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                struggle();
+
+            }
+        });
     }
 
     private void veryWell()
     {
-        Util.clearConsole();
+
         String text = """
       Do you keep on doing well in your classes?
       1. Keep doing well.
       2. Lose motivation.
       """;
+
+        tvStoryText.setText("Do you keep on doing well in your classes?");
+
+        setAllBtnsVisible();
+        btn1.setText("Keep doing well");
+        btn1.setText("Lose motivation");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            graduate();
-        }
-        else if (choice == 2)
-        {
-            loseMotivation();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                graduate();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loseMotivation();
+            }
+        });
     }
 
     private void loseMotivation()
