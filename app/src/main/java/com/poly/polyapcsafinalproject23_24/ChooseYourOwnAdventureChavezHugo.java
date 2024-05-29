@@ -1,6 +1,7 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -105,100 +106,104 @@ public class Adventure{
         });
     }
 
-        if (choice == 1)
-        {
-            attack();
-        }
-        else if (choice == 2)
-        {
-            watch();
-        }
-        else if (choice == 3)
-        {
-            runAway();
-        }
-    }
 
 
-    private void attack()
-    {
-        System.out.println();
+    private void attack() {
+
+        tvStoryText.setText("So you have chosen to ATTACK the titans!, You are either very brave or very stupid, lets see how you will survive, TIME TO ATTACK, CHOOSE YOUR WEAPON");
+
+        setAllBtnsVisible();
+        btn1.setText("Sword");
+        btn2.setText("Gun");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickerListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { sword() {
+            });
 
 
-        System.out.println("So you have chosen to ATTACK the titans!, You are either very brave or very stupid, lets see how you will survive, TIME TO ATTACK, CHOOSE YOUR WEAPON");
-        System.out.println("1. Sword \n2. Gun");
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { gun(); {
+            });
+
+            }
 
 
-        if (choice == 1)
-        {
-            sword();
-        }
-        else if (choice == 2)
-        {
-            gun();
-        }
-    }
-
-    private void sword()
-    {
-
-        System.out.println();
+    private void sword() {
 
 
-        System.out.println("You have chosen the sword, you have found that titans are vulnerable to swords, Now its time for you to kill the titan. Where would you attack?");
-        System.out.println("1. Chest \n2. Head \n3. Neck");
+        tvStoryText.setText("You have chosen the sword, you have found that titans are vulnerable to swords, Now its time for you to kill the titan. Where would you attack?");
+        tvStoryText.setText("1. Chest \n2. Head \n3. Neck");
+
+        setAllBtnsVisible();
+        btn1.setText("Chest");
+        btn2.setText("Head");
+        btn3.setText("Neck");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { chest(); {
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { head(); {
+            });
 
 
-        if (choice == 1)
-        {
-            chest();
-        }
-        else if (choice == 2)
-        {
-            head();
-        }
-        else if (choice == 3)
-        {
-            neck();
-        }
-    }
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { neck(); {
+            });
+            }
+
+
 
     private void chest()
     {
 
-        System.out.println("YOU LOST!!! You got eaten by the titan!. The titans chest are very resistant, and tough against attacks, try again...");
+        tvStoryText.setText("YOU LOST!!! You got eaten by the titan!. The titans chest are very resistant, and tough against attacks, try again...");
         defeat();
     }
 
     private void head()
     {
 
-        System.out.println("YOU LOST!!! You got eaten by the titan!. The titans head are very alert, and can see your movements with great accuracy, try again...");
+        tvStoryText.setText("YOU LOST!!! You got eaten by the titan!. The titans head are very alert, and can see your movements with great accuracy, try again...");
         defeat();
     }
 
     private void neck()
     {
 
-        System.out.println("You found out their weakness! Now how will you attack the neck?");
-        System.out.println("1. FULL STRENGTH \n2. NO STRENGTH.......");
+        tvStoryText.setText("You found out their weakness! Now how will you attack the neck?");
+        tvStoryText.setText("1. FULL STRENGTH \n2. NO STRENGTH.......");
+
+        setAllBtnsVisible();
+        btn1.setText("FULL STRENGTH");
+        btn2.setText("No strength...");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { fullstrength(); {
+            });
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { nostrength(); {
+            });
+            }
 
 
-        if (choice == 1)
-        {
-            fullstrength();
-        }
-        else if (choice == 2)
-        {
-            nostrength();
-        }
 
-    }
+
 
     private void fullstrength()
     {
 
-        System.out.println("YOU WIN!! YOU WENT ALL IN WITH FULL STRENGTH AND DEFEATED THE TITANS!!! CONGRATS!!");
+        tvStoryText.setText("YOU WIN!! YOU WENT ALL IN WITH FULL STRENGTH AND DEFEATED THE TITANS!!! CONGRATS!!");
 
         start();
     }
@@ -206,25 +211,25 @@ public class Adventure{
     private void nostrength()
     {
 
-        System.out.println("YOU LOST!!! Come on, you really thought you were gonna win without putting in strength? ._. try again...");
+        tvStoryText.setText("YOU LOST!!! Come on, you really thought you were gonna win without putting in strength? ._. try again...");
         defeat();
     }
 
     private void gun()
     {
 
-        System.out.println("YOU LOST!!! Guns are not effective towards titans! try again...");
+        tvStoryText.setText("YOU LOST!!! Guns are not effective towards titans! try again...");
         defeat();
     }
 
     private void watch()
     {
 
-        System.out.println();
+        tvStoryText.setText();
 
 
-        System.out.println("You watch as the titans breach the wall, and you just keep watching... Whats your next move?");
-        System.out.println("1. You watch them \n 2. You keep watching \n 3. You watch them even more...");
+        tvStoryText.setText("You watch as the titans breach the wall, and you just keep watching... Whats your next move?");
+        tvStoryText.setText("1. You watch them \n 2. You keep watching \n 3. You watch them even more...");
 
 
         if (choice == 1)
@@ -244,19 +249,19 @@ public class Adventure{
     private void watchThem()
     {
 
-        System.out.println("YOU LOST!!! What? you thought just staring at them would make you win? try again...");
+        tvStoryText.setText("YOU LOST!!! What? you thought just staring at them would make you win? try again...");
         defeat();
     }
     private void keepWatching()
     {
 
-        System.out.println("YOU LOST!!! Why do you wanna watch them? you are just a sitting duck, try again...");
+        tvStoryText.setText("YOU LOST!!! Why do you wanna watch them? you are just a sitting duck, try again...");
         defeat();
     }
     private void watchThemMore()
     {
 
-        System.out.println("YOU LOST!!! Why the hell do you just wanna watcn them? you like how the look? Whats wrong with you, do something else, try again...");
+        tvStoryText.setText("YOU LOST!!! Why the hell do you just wanna watcn them? you like how the look? Whats wrong with you, do something else, try again...");
         defeat();
     }
 
@@ -264,8 +269,8 @@ public class Adventure{
 
     {
 
-        System.out.println("You have chosen to run away, you are either a coward, or your thinking strategically, and with logic, now... make a decision!");
-        System.out.println("1. Run as fast as possible \n2. Try to save your family ");
+        tvStoryText.setText("You have chosen to run away, you are either a coward, or your thinking strategically, and with logic, now... make a decision!");
+        tvStoryText.setText("1. Run as fast as possible \n2. Try to save your family ");
 
 
         if (choice == 1)
@@ -282,8 +287,8 @@ public class Adventure{
 
     {
 
-        System.out.println("You are still running and are looking for a place to hide, choose quick!");
-        System.out.println("1. Hide in a building \n2. Hide in a tree");
+        tvStoryText.setText("You are still running and are looking for a place to hide, choose quick!");
+        tvStoryText.setText("1. Hide in a building \n2. Hide in a tree");
 
 
         if (choice == 1)
@@ -299,7 +304,7 @@ public class Adventure{
     private void hideBuilding()
     {
 
-        System.out.println("YOU LOST!!! The titans can smell you! ");
+        tvStoryText.setText("YOU LOST!!! The titans can smell you! ");
         defeat();
     }
 
