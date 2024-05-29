@@ -25,10 +25,7 @@ public class GameNuonVunly extends GameActivity {
     private boolean isWon;
 
 
-
-
-    public void run()
-    {
+    public void run() {
         //initialize number of lives
         numLives = 5;
         money = 100;
@@ -55,167 +52,211 @@ public class GameNuonVunly extends GameActivity {
         start();
     }
 
-    private void setAllBtnsVisible()
-    {
+    private void setAllBtnsVisible() {
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
     }
 
-    private void start()
-    {
-        System.out.println("So....Where do you want to do?");
-        System.out.println("\n1. Play Videogame...\n2. PLAY VIDEO GAME...\n3. play video games again");
+    private void start() {
+        tvStoryText.setText("So....Where do you want to do?");
 
-        if (choice == 1)
-        {
-            videoGame();
-        }
-        else if (choice == 2)
-        {
-            videoGame();
-        }
-        else if (choice == 3)
-        {
-            videoGame();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Play Videogame");
+        btn2.setText("PLAY VIDEO GAME");
+        btn3.setText("play videogame again");
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoGame();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoGame();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoGame();
+            }
+        });
+
 
     }
 
 
-    public void videoGame()
-    {
+    public void videoGame() {
         chooseAPresent();
     }
 
 
+    public void chooseAPresent() {
+        tvStoryText.setText("You decided to stay home and play games. Moment later, Your uncle shown up and want to give you an early present for your birth. But He can't decide.");
+        btn1.setText("$1,000");
+        btn2.setText("a blaster and a spaceship from starwar");
+        btn3.setVisibility(View.INVISIBLE);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player.addMoney(1000.00);
+                tvStoryText.setText("You get $1,000 from your uncle, Now you have $" + player.getMoney());
+                gamingTime();
 
-    public void chooseAPresent()
-    {
-        System.out.println("You decided to stay home and play games.");
-        System.out.println("Moment later, Your uncle shown up and want to give you an early present for your birth. But He can't decide.");
-        System.out.println("\"just pick one between these two\" \n1. $1,000 \n2. a blaster and a spaceship from starwar");
-        if (choice == 1)
-        {
-            player.addMoney(1000.00);
-            System.out.println("You get $1,000 from your uncle, Now you have $" + player.getMoney());
-        }
-        else if (choice == 2)
-        {
-            player.getGift();
-            System.out.println("You received a blaster and a spaceship from Star Wars.");
+            }
+        });
 
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player.getGift();
+                tvStoryText.setText("You get $1,000 from your uncle, Now you have $" + player.getMoney());
+                gamingTime();
 
-        }
-        gamingTime();
+            }
+        });
+
     }
 
 
-    private void gamingTime()
-    {
-        System.out.println("After that, you hop on a new game...similar to detroit become human.");
-        System.out.println("However! AS soon as you open it, Your Monitor START FLASHIN-----");
+    private void gamingTime() {
+        tvStoryText.setText("After that, you hop on a new game...similar to detroit become human.");
+        tvStoryText.setText("However! AS soon as you open it, Your Monitor START FLASHIN-----");
         final int ROWS = 10;
         final int COLS = 40;
-        for (int row=0; row<ROWS; row++)
-        {
-            for (int col=0; col<COLS; col++)
-            {
+        for (int row = 0; row < ROWS; row++) {
+            for (int col = 0; col < COLS; col++) {
                 System.out.print(TextColor.WHITE_BACKGROUND + " ");
             }
 
         }
-        System.out.println(TextColor.WHITE_BACKGROUND +image());
-        System.out.println(TextColor.RESET);
-        System.out.println(TextColor.RED_BOLD +  image1());
+        tvStoryText.setText(TextColor.WHITE_BACKGROUND + image());
+        tvStoryText.setText(TextColor.RESET);
+        tvStoryText.setText(TextColor.RED_BOLD + image1());
         glichingMetrex();
     }
 
 
+    private void glichingMetrex() {
+        tvStoryText.setText(TextColor.RESET);
+        tvStoryText.setText("You now have " + numLives + " lives left");
+        tvStoryText.setText("This is the moment when you realizing that your're now stuck in a game. when you respawn back, you see right in front of you two paths:");
 
-    private void glichingMetrex()
-    {
-        System.out.println("\n \n" + TextColor.RESET + "");
-        System.out.print("\"You now have " + numLives +  " lives left\"");
-        System.out.println("\nThis is the moment when you realizing that your're now stuck in a game. when you respawn back, you see right in front of you two paths: \n1. Left \n2. Right");
-        if (choice == 1)
-        {
-            left();
-        }
-        else
-        {
-            right();
-        }
+        btn1.setText("left");
+        btn2.setText("right");
+        btn3.setVisibility(View.INVISIBLE);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                left();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                right();
+            }
+        });
+
 
     }
 
 
+    private void right() {
+        tvStoryText.setText("As soon as you turn right, You see 3 three path:");
 
+        btn1.setText("A small alleyway to your left");
+        btn2.setText("A road infront of you with sign saying \"DO NOT ENTER\"");
+        btn3.setText("a road to the right");
 
-    private void right()
-    {
-        System.out.println("As soon as you turn right, You see 3 three path:\n1. A small alleyway to your left. \n2. A road infront of you with sign \"DO NOT ENTER\". \n3. a road to the right");
-        int choice = Util.enterInt(1, 3);
-        if (choice == 1)
-        {
-            itemDrop();
-        }
-        else if (choice == 2)
-        {
-            jumpOverFence();
-        }
-        else if (choice == 3)
-        {
-            rightToDead();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemDrop();
+            }
+        });
 
-    }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jumpOverFence();
+            }
+        });
 
-
-
-    private void itemDrop()
-    {
-        System.out.println();
-        System.out.println("*DING* you recieved:");
-        System.out.println("+1 Dessert Engle, +2 magazine (30 ammos)");
-        System.out.println("As soon as you pick up the items, The monster is about 30 feet away and going to charge on you");
-        System.out.println("\n1. Are you gonna shoot it. \n2. continue to run");
-        int choice = Util.enterInt(1, 2);
-        if (choice == 1)
-        {
-            continueToShoot();
-        }
-        else if (choice == 2)
-        {
-            continueToRun();
-        }
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rightToDead();
+            }
+        });
 
     }
 
 
+    private void itemDrop() {
+
+        tvStoryText.setText("*DING* you recieved:");
+        tvStoryText.setText("+1 Dessert Engle, +2 magazine (30 ammos)");
+        tvStoryText.setText("As soon as you pick up the items, The monster is about 30 feet away and going to charge on you");
+
+        btn1.setText("Are you gonna shoot it");
+        btn2.setText("continue to run");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                continueToShoot();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                continueToRun();
+            }
+        });
+
+    }
 
 
+    private void continueToShoot() {
 
-    private void continueToShoot()
-    {
-        System.out.println();
-        System.out.println("*BANG* *BANG* *BANG* *BANG*.....");
-        System.out.println("You shot the \"Monster\" until you ran out of the 1st magazine. but It's seem to work because it has that thing SCREAMING screaming. While it stay still and screaming and bleeding, what would you dodnext? \n1. Shoot again \n2. Runaway");
-        int choice = Util.enterInt(1, 2);
-        {
-            if (choice == 1)
-            {
-                System.out.println();
-                System.out.println("*you continue to shoot it* \n Little did you know...The monster slowly stand up and walk toward you...all its blood start to faint out. With just a blink of an eye, it jump to you...");
+        tvStoryText.setText("*BANG* *BANG* *BANG* *BANG*.....");
+        tvStoryText.setText("You shot the \"Monster\" until you ran out of the 1st magazine. but It's seem to work because it has that thing SCREAMING screaming. While it stay still and screaming and bleeding, what would you dodnext?");
+
+        btn1.setText("shoot again");
+        btn2.setText("runaway");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("*you continue to shoot it* Little did you know...The monster slowly stand up and walk toward you...all its blood start to faint out. With just a blink of an eye, it jump to you...");
                 defeatGame();
             }
-            else if (choice == 2)
-            {
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 runAway();
             }
-        }
+        });
+
+
     }
+
 
 
 
@@ -223,31 +264,37 @@ public class GameNuonVunly extends GameActivity {
 
     private void runAway()
     {
-        System.out.println();
-        System.out.println("You decided not to shoot it because you thought that you might miss it");
-        System.out.println("After you took about 4 steps, you see a left turn next to you. What would you do? \n1. turn left \n2. continue straight");
-        int choice = Util.enterInt(1, 2);
-        if (choice == 1)
-        {
-            System.out.println();
-            System.out.println("The moment you turn, You see a light shine upward coming from a \"place\". fortunately, The monster is still stationary, allowing to get to there. It's a shop");
-            if (player.showGift())
-            {
-                lightSaberAndShip();
-            }
-            else
-            {
-                store();
-            }
 
+        tvStoryText.setText("You decided not to shoot it because you thought that you might miss it");
+        tvStoryText.setText("After you took about 4 steps, you see a left turn next to you. What would you do?");
 
-        }
-        else if (choice == 2)
-        {
-            System.out.println();
-            System.out.println("\nYou decided to continue forward, but it's seem like you have been running on a straight line forever. About 2 minute later, see somthing...behind you...and it's approaching you fast. *As It get closer and closer you realized* It's the monster. In a flash, It already catch up to you and then... ");
-            defeatGame();
-        }
+        btn1.setText("turn left");
+        btn2.setText("continue straight");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("The moment you turn, You see a light shine upward coming from a \"place\". fortunately, The monster is still stationary, allowing to get to there. It's a shop");
+                if (player.showGift())
+                {
+                    lightSaberAndShip();
+                }
+                else
+                {
+                    store();
+                }
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You decided to continue forward, but it's seem like you have been running on a straight line forever. About 2 minute later, see somthing...behind you...and it's approaching you fast. *As It get closer and closer you realized* It's the monster. In a flash, It already catch up to you and then... ");
+                defeatGame();
+            }
+        });
+
     }
 
 
@@ -256,41 +303,62 @@ public class GameNuonVunly extends GameActivity {
 
     private void lightSaberAndShip()
     {
-        System.out.println("\n \" You got a starter pack. a light saber and a spaceship. but you can only choose one of these. SO? \" \n1. Light Saber \n2. SpaceShip ");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            bossFight();
-        }
-        else if (choice == 2 )
-        {
-            gotTelepot();
-        }
+        tvStoryText.setText("\" You got a starter pack. a light saber and a spaceship. but you can only choose one of these. SO? \"");
+        btn1.setText("Light Saber");
+        btn2.setText("SpaceShip");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bossFight();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotTelepot();
+            }
+        });
     }
 
     private void gotTelepot()
     {
-        System.out.println(" \nThought a spaceship going to spawn? \nA light coming from above and shine dirctly at you. and the closer you look, You realized a ship coming down and abducting you");
-        System.out.println("*CONGRATULATION YOU WIN* \nThe moment you open your eye again, you'll forget everything.");
+        tvStoryText.setText(" Thought a spaceship going to spawn?");
+        tvStoryText.setText("A light coming from above and shine dirctly at you. and the closer you look, You realized a ship coming down and abducting you")
+        tvStoryText.setText("*CONGRATULATION YOU WIN* The moment you open your eye again, you'll forget everything.");
     }
 
 
     private void bossFight()
     {
-        System.out.println("\n *+1 light saber* *change scene to arena* *telepot Jeff*");
-        System.out.println("Jeff, the Monster appear to have human-like body with superhuman-strength. Its right arm is long and big hand, similar to the normal devil arm usually see in game, skinny and flesh skin, and small left arm");
-        System.out.println("FIGHT");
-        System.out.println("\nImmediately, Jeff approach at you in fast pace and about to swing right ");
-        System.out.println("1. block \n2. dodge");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            defeatGame();
-        }
-        else if (choice == 2 )
-        {
-            piercingIt();
-        }
+        tvStoryText.setText(" *+1 light saber*    *change scene to arena* *telepot Jeff*");
+        tvStoryText.setText("Jeff, the Monster appear to have human-like body with superhuman-strength. Its right arm is long and big hand, similar to the normal devil arm usually see in game, skinny and flesh skin, and small left arm");
+        tvStoryText.setText("FIGHT");
+        tvStoryText.setText("Immediately, Jeff approach at you in fast pace and about to swing right ");
+        tvStoryText.setText("1. block \n2. dodge");
+
+
+        btn1.setText("block");
+        btn2.setText("dodge");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeatGame();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                piercingIt();
+            }
+        });
+
+
     }
 
 
@@ -298,32 +366,52 @@ public class GameNuonVunly extends GameActivity {
 
     private void piercingIt()
     {
-        System.out.println("\n *Dodge forward* \n1. stab \n2. move");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            stabJeff();
-        }
-        else if (choice == 2 )
-        {
-            defeatGame();
-        }
+
+        btn1.setText("stab");
+        btn2.setText("move");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stabJeff();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeatGame();
+            }
+        });
+
 
     }
 
     private void stabJeff()
     {
-        System.out.println("\nYou stabbed it in the stomach, lashing out a loud scream. \n*see the opportunity to hit it again...* \n1. pull out and slash it \n2. dodge back");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            System.out.println("\nAs you about to slashing it, Jeff's right hand was able to move then proceed to grab your head and crush it ");
-            defeatGame();
-        }
-        else if (choice == 2 )
-        {
-            backward();
-        }
+        tvStoryText.setText("You stabbed it in the stomach, lashing out a loud scream. \n*see the opportunity to hit it again...* \n1. pull out and slash it \n2. dodge back");
+
+
+        btn1.setText("pull out and slash it");
+        btn2.setText("dodge back");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("As you about to slashing it, Jeff's right hand was able to move then proceed to grab your head and crush it ");
+                defeatGame();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backward();
+            }
+        });
+
 
     }
 
@@ -331,22 +419,35 @@ public class GameNuonVunly extends GameActivity {
 
     private void backward()
     {
-        System.out.print("\n*Take steps back to give more space* not even a second later, Jeff rushing at you about swing right again, but this time slower and seem weaker than last time....however it still fast.\n1. try to block...\n2. dodge again...\n3. rush at him and try to slashing its stomach");
-        int choice = Util.enterInt(1,3);
-        if (choice == 1)
-        {
-            System.out.println("\nYou were able to block the attack, but its superstrength enable it to left kick you at the stomach and start comboing you.");
-            defeatGame();
-        }
-        else if (choice == 2 )
-        {
-            dodgeAgain();
-        }
-        else if (choice == 3)
-        {
-            System.out.println("\nYou're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
-            defeatGame();
-        }
+        tvStoryText.setText("*Take steps back to give more space* not even a second later, Jeff rushing at you about swing right again, but this time slower and seem weaker than last time....however it still fast.\n1. try to block...\n2. dodge again...\n3. rush at him and try to slashing its stomach");
+
+        btn1.setText("try to block...");
+        btn2.setText("dodge again...");
+        btn3.setText("rush at him and try to slashing its stomach");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You were able to block the attack, but its superstrength enable it to left kick you at the stomach and start comboing you.");
+                defeatGame();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dodgeAgain();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
+                defeatGame();
+            }
+        });
+
 
     }
 
