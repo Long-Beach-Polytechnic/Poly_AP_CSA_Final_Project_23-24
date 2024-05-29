@@ -83,87 +83,121 @@ public class GameSanchezCristian extends GameActivity {
 
 
 
+        btn3.setOnClickListener(new view.OnClickListner() {
 
+            @Override
+            public void onClick(view v) {
+                goToChurch();
+            }
+        });
 
-
-
-
-        else if(choice == 3)
-        {
-            goToChurch();
-        }
     }
 
     private void goToPark()
     {
 
-        System.out.println("\nHow do you want to go to the Park?");
-        System.out.println("1. Do you want to go walking\n2. Do you want to go on a uber ");
+        tvStoryText.setText("\nHow do you want to go to the Park?");
 
+        setAllBtnsVisible();
+        btn1.setText("Go Walking");
+        btn2.setText("Go in the uber");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            goWalking();
-        }
-        else if (choice == 2)
-        {
-            uber();
-        }
+        btn1.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                goWalking();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                uber();
+            }
+        });
 
     }
 
     private void goWalking()
     {
+        tvStoryText.setText("1.Do you want to take the shortcut 2. Do you want to take the longway");
 
-        System.out.println("\n Sense you chose walking what way do you want to take?");
-        System.out.println("1.Do you want to take the shortcut\n2. Do you want to take the longway  ");
+      setAllBtnsVisible();
+        btn1.setText("Take shortcut");
+        btn2.setText("Take longway");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
+        btn1.setOnClickListener(new view.OnClickListner() {
 
-        if (choice == 1)
-        {
-            shortCut();
-        }
-        else if (choice == 2)
-        {
-            longWay();
-        }
+            @Override
+            public void onClick(view v) {
+                shortCut();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                longWay();
+            }
+        });
+
     }
 
     private void shortCut()
     {
 
-        System.out.println("\n Sense you chose the shortcut this is the consequence There was gangmembers in and Ali and they got you");
+        tvStoryText.setText(" Sense you chose the shortcut this is the consequence There was gangmembers in and Ali and they got you");
 
         defeat();
     }
 
     private void longWay()
     {
-
-        System.out.println("\n Sense you chose the longway this is the consequence You made it to the park but you lost because some thugs saw you and shot at you ");
+        tvStoryText.setText(" Sense you chose the longway this is the consequence You made it to the park but you lost because some thugs saw you and shot at you ");
 
         defeat();
     }
     private void uber()
     {
 
-        System.out.println("\n Sense you chose an uber what uber would you like to take to the park?");
-        System.out.println("1.Do you want to take a nice luxury car\n2. Do you want to take the average car  ");
+        tvStoryText.setText(" Sense you chose an uber what uber would you like to take to the park?");
 
-        if (choice == 1)
-        {
-            niceCar();
-        }
-        else if (choice == 2)
-        {
-            regularCar();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Take nice car");
+        btn2.setText("Take regular car");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                niceCar();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                regularCar();
+            }
+        });
+
+
     }
 
     private void niceCar()
     {
 
-        System.out.println("\nThe nice luxurious car owner is a kidnapper and he takes you");
+        tvStoryText.setText("The nice luxurious car owner is a kidnapper and he takes you");
 
         defeat();
     }
@@ -171,7 +205,7 @@ public class GameSanchezCristian extends GameActivity {
     private void regularCar()
     {
 
-        System.out.println("\nThe regular average person was a serial killer and murder you.");
+        tvStoryText.setText("The regular average person was a serial killer and murder you.");
 
         defeat();
     }
@@ -179,44 +213,65 @@ public class GameSanchezCristian extends GameActivity {
     private void goToSchool()
     {
 
-        System.out.println("\nHow do you want to go to school?");
-        System.out.println("1.Do you want to bike ride\n2. Do you want to take parents Car");
+        tvStoryText.setText("How do you want to go to school?");
 
 
-        if (choice == 1)
-        {
-            bikeRide();
-        }
-        else if (choice == 2)
-        {
-            take();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Take a bike ride");
+        btn2.setText("Take the car");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
+        btn1.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                bikeRide();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                take();
+            }
+        });
     }
 
 
     private void bikeRide()
     {
 
-        System.out.println("\nHow do you want to go to school?");
-        System.out.println("1.Do you want to Take the Sidewalk\n2. Do you want to take the road");
+        tvStoryText.setText("How do you want to go to school?");
 
+        setAllBtnsVisible();
+        btn1.setText("Take the side walk");
+        btn2.setText("Take the road");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            sideWalk();
-        }
-        else if (choice == 2)
-        {
-            road();
-        }
+        btn1.setOnClickListener(new view.OnClickListner() {
 
+            @Override
+            public void onClick(view v) {
+                sideWalk();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                road();
+            }
+        });
     }
 
     private void sideWalk()
     {
 
-        System.out.println("\nPeople in the sidewalk stop you and steal your bike and beat you up");
+        tvStoryText.setText("People in the sidewalk stop you and steal your bike and beat you up");
 
         defeat();
     }
@@ -224,7 +279,7 @@ public class GameSanchezCristian extends GameActivity {
     private void road()
     {
 
-        System.out.println("\nYou get ran over at the coner of the school");
+        tvStoryText.setText("You get ran over at the coner of the school");
 
         defeat();
     }
