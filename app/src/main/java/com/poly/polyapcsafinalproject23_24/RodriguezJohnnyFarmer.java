@@ -1,4 +1,6 @@
-public class Farmer {
+package com.poly.polyapcsafinalproject23_24;
+
+public class RodriguezJohnnyFarmer {
 
     /**
      * Name of the farmer
@@ -29,6 +31,8 @@ public class Farmer {
         this.health = 100;
         this.isPoisoned = false;
     }
+
+
 
     /**
      * gets the farmer's name

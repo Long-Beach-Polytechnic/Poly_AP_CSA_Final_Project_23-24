@@ -21,7 +21,7 @@ public class GameRodriguezJohnny extends GameActivity {
 
     @Override
     protected void run() {
-        setContentView(R.layout.activity_game_4_button);
+        setContentView(R.layout.activity_rodriguezjohnny_main);
 
         tvGame = findViewById(R.id.tv_game);
 
@@ -30,14 +30,12 @@ public class GameRodriguezJohnny extends GameActivity {
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
 
-        tvTitle.setText("LABOR DAY");
-        tvSubtitle.setText("High School Edition");
     }
     protected void onCreate(Bundle savedInstanceState){
     }
 
-    private Farmer player;
-    private ArrayList<Crop> crops = new ArrayList<Crop>();
+    private RodriguezJohnnyFarmer player;
+    private ArrayList<RodriguezJohnnyCrop> crops = new ArrayList<RodriguezJohnnyCrop>();
 
     private int daysSurvived;
 
@@ -97,7 +95,7 @@ public class GameRodriguezJohnny extends GameActivity {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter your name: ");
         String name = scan.nextLine();
-        player = new Farmer(name);
+        player = new RodriguezJohnnyFarmer(name);
     }
 
     private void displayStats()
@@ -144,7 +142,7 @@ public class GameRodriguezJohnny extends GameActivity {
 
             int daysOld = (int) (0 + Math.random() * 6);
             boolean isRipe = (daysOld > 5);
-            Crop crop = new Crop(name,category,isRipe, daysOld, 20);
+            RodriguezJohnnyCrop crop = new RodriguezJohnnyCrop(name,category,isRipe, daysOld, 20);
             crops.add(crop);
             daysSurvived ++;
 
@@ -195,7 +193,7 @@ public class GameRodriguezJohnny extends GameActivity {
             System.out.println("Crop " + (i+1) + ": " + crops.get(i).getName());
         }
 
-        Crop currentCrop = crops.get(option);
+        RodriguezJohnnyCrop currentCrop = crops.get(option);
         crops.remove(option);
 
 

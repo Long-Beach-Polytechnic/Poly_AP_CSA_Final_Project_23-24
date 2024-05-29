@@ -1,4 +1,6 @@
-public class Crop {
+package com.poly.polyapcsafinalproject23_24;
+
+public class RodriguezJohnnyCrop {
 
     /**
      * Name of the crops
@@ -203,7 +205,7 @@ public class Crop {
      * @param    anotherCrop    another Crop object
      * @return   true if crops are equal
      */
-    public boolean equals(Crop anotherCrop)
+    public boolean equals(RodriguezJohnnyCrop anotherCrop)
     {
         if(this.name.equals(anotherCrop.name) &&
                 this.category == anotherCrop.category &&
