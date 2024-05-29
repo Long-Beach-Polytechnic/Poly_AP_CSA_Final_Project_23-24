@@ -1,6 +1,7 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,6 +18,24 @@ public class GameMirandaVanessa extends GameActivity{
     private int numLives;
     //private Player player; (optional)
 
+    @Override
+    protected void run() {
+        setContentView(R.layout.activity_game_3_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+        tvTitle.setText("Choose your superpower.");
+
+        numLives = 5;
+
+        start();
+    }
+
     private void setAllBtnsVsisible()
     {
         btn1.setVisibility(View.VISIBLE);
@@ -25,168 +44,307 @@ public class GameMirandaVanessa extends GameActivity{
 
     }
 
+    private void start() {
 
-    @Override
-    protected void run()
-        setContentView(R.layout.activity_game_3_button);
+    isWon = false;
 
-    tvTitle = findViewById(R.id.tv_title_txt);
-    tvSubtitle = findViewById(R.id.tv_subtitle);
+        ivStory.setImageResource(R.drawable.im_superpower_title);
+    playAudio(R.raw.audio_superpower_bass);
 
+        tvStoryText.setText("You get to choose a superpower between three. Hope you make the right choice!");
+        tvStoryText.setText("Whcih power are willing to choose between these three?");
 
-    public void run()
-    {
-        //initialize number of lives
-        numLives = 5;
-        //create a scanner object for user input
+        setAllBtnsVisible();
+        btn1.setText("Ice powers");
+        btn2.setText("Fire powers");
+        btn3.setText("Electric powers");
 
-        //create a player object (optional)
-        //player = new Player(...)
+        btn1.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {icePowers();}
+    });
+        btn2.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {firePowers();}
+    });
 
-        //display project title and description
-        System.out.println("Choose Your Superpower");
-        System.out.println("You get to chose a superpower between three. Hope you make the right choice and have fun!");
-
-        start();
-
-    }
-
-    private void start()
-    {
-        System.out.println("\n Which superpower are you choosing between these three?");
-        System.out.println("1. Ice Powers \n2. Fire Powers \n3. Electric Powers");
+        btn3.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {electricPowers();}
+    });
 
 
-        if(choice == 1)
-        {
-            icePowers();
-        }
-        else if(choice == 2)
-        {
-            firePowers();
-        }
-        else if(choice == 3)
-        {
-            electricPowers();
-        }
+}
 
-    }
 
     private void icePowers()
     {
-        System.out.println("\n.Whare are you doing with your powers?");
-        System.out.println("1. Stay in your room \n2. Go with your friend to the store");
+        ivStory.setImageResource(R.drawable.im_superpower_ice);
 
-        if(choice == 1)
-        {
-            stayInRoom();
-        }
-        else if (choice == 2)
-        {
-            goToStore();
-        }
+        tvStoryText.setText("What are you doing with your powers?");
 
+        setAllBtnsVisible();
+        btn1.setText("stay in your room");
+        btn2.setText("go with your friend to the store");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stayInRoom();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToStore();
+            }
+        });
     }
 
     private void goToStore()
     {
 
-        System.out.println("You are out with your friend at the liquor store buying drinks and ice cream. When you guys get out of the store what happens?");
-        System.out.println("1. The ice cream starts to melt because you guys were fooling around but you try to freeze it \n2. Your friend asks you to turn all the drinks into slushies");
+        tvStoryText.setText("You are out with your friend at the liquor store buying drinks and ice cream. When you guys leave the store what happens?");
 
-        if(choice == 1)
-        {
-            freezeIceCream();
-        }
-        else if(choice == 2)
-        {
-            slushieDrinks();
-        }
+        ivStory.setImageResource(R.drawable.im_superpowers_store);
+
+        setAllBtnsVisible();
+        btn1.setText("The ice cream starts to melt because you guys were playing, but you try to freeze it.");
+        btn2.setText("Your friend asks you to turn the drinks into slushies.");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                freezeIceCream();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slushieDrinks();
+            }
+        });
+
     }
 
     private void freezeIceCream()
     {
-        System.out.println("You get home with good cold ice cream and drinks, you win!");
-        win();
+
+        isWon = true;
+        tvStoryText.setText("You get home with good cold ice cream and drinks. Yay!");
+
+        ivStory.setImageResource(R.drawable.im_superpowers_icecream_slushies);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
+
     }
 
     private void slushieDrinks()
     {
-        System.out.println("Your friend chugs the drinks and gets a bad brain freeze. They need to go to the doctor, you lose.");
-        defeat();
-    }
 
+        tvStoryText.setText("Your friend chugs the drinks and gets a bad brain freeze. They need to go the hospital. You loose.");
+
+        ivStory.setImageResource(R.drawable.im_superpowers_slushie_drinks);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
+    }
     private void stayInRoom()
     {
-        System.out.println("You stay in your room playing with snow but you hear someone. What are you doing?");
-        System.out.println("1. blast them with snow and make them fall \n2. Wait and see who it is");
 
-        if (choice == 1)
-        {
-            snowBlast();
-        }
-        else if (choice == 2)
-        {
-            waitAndSee();
-        }
+        tvStoryText.setText("You stay in your room playing with snow but you hear someone. What are you doing?");
+
+        ivStory.setImageResource(R.drawable.im_superpowers_stay_in_room);
+
+        setAllBtnsVisible();
+        btn1.setText("Blast them with snow and make them fall");
+        btn2.setText("Wait and see who it is.");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snowBlast();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                waitAndSee();
+            }
+        });
     }
 
     private void snowBlast()
     {
-        System.out.println("It was your sibling and you made them hit the wall, you lose.");
-        defeat();
+
+        isWon = false;
+        tvStoryText.setText("It was your sibling and you made them hit the wall. You loose.");
+
+        ivStory.setImageResource(R.drawable.im_superpowers_snowblast);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
-    private void waitAndSee()
+    private void tan5Hours()
     {
-        System.out.println("It was just a ball, you win!");
-        win();
+        isWon = false;
+        tvStoryText.setText("You are burned. Too much of a good thing is bad. Learn from this experience. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
 
     }
 
     private void firePowers()
     {
-        System.out.println("YO you chosed fire!! What are you going to do first?");
-        System.out.println("1. You go outside and sit on the grass \n2. You go to a flower shop");
 
-        if(choice == 1)
-        {
-            sitOnGrass();
-        }
-        else if (choice == 2)
-        {
-            flowerShop();
-        }
+        tvStoryText.setText("Yo you chose fire! What are you doing first?");
+
+        ivStory.setImageResource(R.drawable.im_superpowers_fire_powers);
+
+        setAllBtnsVisible();
+        btn1.setText("You go outside and sit on the grass");
+        btn2.setText("You go to a flower shop");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sitOnGrass();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flowerShop();
+            }
+        });
     }
 
     private void sitOnGrass()
     {
-        System.out.println("you are now sitting at the grass but you see a dog get chased by a snake! What do you do??");
-        System.out.println("1. you just stay in your spot for real \n2. You help the dog like the nice person you are");
 
-        if(choice == 1)
-        {
-            stayInPlace();
-        }
-        else if(choice == 2)
-        {
-            helpDog();
-        }
+        tvStoryText.setText("You are now sitting on the grass, but you see a dog get chased by a snake! Wha do you do? ");
+
+        ivStory.setImageResource(R.drawable.im_superpowers_sit_on_grass);
+
+        setAllBtnsVisible();
+        btn1.setText("You stay in your spot anf mind your own business.");
+        btn2.setText("You help the dog like the nice person you are.");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stayInPlace();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helpDog();
+            }
+        });
     }
 
     private void stayInPlace()
     {
-        System.out.println("\n The snake follows you instead and it bites you, you lose.");
-        defeat();
+
+        isWon = true;
+        tvStoryText.setText("The mom gives you the baby, you are a parent now, congrats. You win.T");
+
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
-    private void helpDog()
+    private void dontCallMom()
     {
-        System.out.println("\n You blast a small fire ball at the snake and killed it. You accidentally burned the dog though, you lose.");
-        defeat();
-    }
 
-    private void flowerShop()
+        isWon = false;
+        tvStoryText.setText("The baby cries, your team loses from distraction. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_baby_lose_game);
+
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
+
+
+
+        private void flowerShop()
     {
         System.out.println("You made it inside the flower shop! You want to buy a few flowers for your house. Which ones do you want to pick?");
         System.out.println("1. Sunflowers that are in a vase \n2. Fresh cut roses");
