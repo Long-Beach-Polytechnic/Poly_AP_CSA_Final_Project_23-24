@@ -57,6 +57,8 @@ public class GameBautistaCarolina extends GameActivity
         btn1.setText("Clean the restroom");
         btn2.setText("Cook dinner");
         btn3.setText("Clean the living room");
+        btn4.setVisibility(View.INVISIBLE);
+
 
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +84,9 @@ public class GameBautistaCarolina extends GameActivity
     });
 
     }
+
+
+
 
     //CLEAN THE RESTROOM
     private void cleanRestroom()
@@ -226,45 +231,93 @@ public class GameBautistaCarolina extends GameActivity
 
     private void useHands()
     {
-        Util.clearConsole();
-        System.out.println("\nYou decided to go and use your hands to clean the toilet, but your hands got so much germs and you gave up, your no longer allowed to clean the restroom, you suck loser!! ");
-        Util.pauseConsole();
-        Util.clearConsole();
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You decided to go and use your hands to clean the toilet, but your hands got so much germs and you gave up, your no longer allowed to clean the restroom, you suck loser!!");
+
+        ivStory.setImageResource(R.drawable.im_dailylifechores_useHands);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void newGloves()
     {
-        Util.clearConsole();
-        System.out.println("\nYayyy!!! you decided to go get new gloves and  you are ready to clean the rest of the restroom, you win");
-        Util.pauseConsole();
-        Util.clearConsole();
+
+        isWon = true;
+        tvStoryText.setText("Yayyy!!! you decided to go get new gloves and  you are ready to clean the rest of the restroom, you win");
+
+        ivStory.setImageResource(R.drawable.im_dailylifechores_useGloves);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void dirtyGloves()
     {
-        Util.clearConsole();
-        System.out.println("DANGGGG, you were to lazy to go get new gloves now you cant clean the rest of the toilet because the other gloves are too dirty");
-        Util.pauseConsole();
-        defeat();
+        isWon = false;
+        tvStoryText.setText("DANGGGG, you were to lazy to go get new gloves now you cant clean the rest of the toilet because the other gloves are too dirty");
+
+        ivStory.setImageResource(R.drawable.im_dailylifechores_dirtyGloves);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     // COOK DINNER
     private void cookDinner()
     {
-        Util.clearConsole();
-        System.out.println("\nCooking dinner is not easy but you are willing to give it a try for one of your chores, what are you going to cook first?");
-        System.out.println("1. Make sushi\n2. Cook Chicken");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("nCooking dinner is not easy but you are willing to give it a try for one of your chores, what are you going to cook first?\");System.out.println(\"1. Make sushi\\n2. Cook Chicken?");
 
-        if (choice ==1)
-        {
-            makeSushi();
-        }
-        else if (choice ==2)
-        {
-            cookChicken();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+
+        setAllBtnsVisible();
+        btn1.setText("makeSushi");
+        btn2.setText("cookChicken");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeSushi();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)k{cookChicken();
+            }
+        });
     }
 
     private void makeSushi()
