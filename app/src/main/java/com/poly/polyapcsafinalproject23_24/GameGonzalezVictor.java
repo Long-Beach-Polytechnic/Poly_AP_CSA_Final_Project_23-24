@@ -263,7 +263,19 @@ public class GameGonzalezVictor extends GameActivity{
         //COME BACK TO DEFEAT
         System.out.println("They saw your hesitation. A laser gun is aimed to your head :(");
         System.out.println();
-        defeat();
+
+        setAllbtnsVisable();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
     }
 
 
@@ -298,8 +310,20 @@ public class GameGonzalezVictor extends GameActivity{
     {
         //COME BACK TO DEFEATS MESSASGE
         System.out.println("They don't like you. Pew pew!!!");
-        System.out.println();
-        defeat();
+
+
+        setAllbtnsVisable();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
     }
 
     //__PLUTO__________________________________________________________________________________________
@@ -307,18 +331,26 @@ public class GameGonzalezVictor extends GameActivity{
     private void pluto()
     {
 
-        System.out.println("So you've landed on Pluto. Before u exit into the extreme cold. What should you wear?");
-        System.out.println("1. Pajamas \n2. Space suit");
+        tvStoryText.setText("So you've landed on Pluto. Before u exit into the extreme cold. What should you wear?");
+        setAllbtnsVisable();
+        btn1.setText("Pajamas");
+        btn2.setText("Space suit");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            pajamas();
-        }
-        else if (choice == 2)
-        {
-            spacesuit();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pajamas();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                spacesuit();
+            }
+        });
+
     }
 
 
@@ -333,73 +365,108 @@ public class GameGonzalezVictor extends GameActivity{
     private void pajamas()
     {
 
-        System.out.println("You find a frozen ship. Search it?");
-        System.out.println("1. YESSS \n2. HELL NAH");
+
+        tvStoryText.setText("You find a frozen ship. Search it?");
+        setAllbtnsVisable();
+        btn1.setText("YESSS");
+        btn2.setText("HELL NAH");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            searchShip();
-        }
-        else if (choice == 2)
-        {
-            notSearchShip();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchShip();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                notSearchShip();
+            }
+        });
+
     }
 
     private void notSearchShip()
     {
 
-        System.out.println("Are you sure you do't wanna go into the ship?");
-        System.out.println("1. Fine I'll go in \n2. No I don't wanna go in");
+        tvStoryText.setText("Are you sure you don't wanna go into the ship?");
+        setAllbtnsVisable();
+        btn1.setText("Fine I'll go in");
+        btn2.setText("No I don't wanna go in");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            searchShip();
-        }
-        else if (choice == 2)
-        {
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchShip();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("Well your going into the ship whether you like it or not.");
+                searchShip();
+            }
+        });
 
-            System.out.println("Well your going into the ship whether you like it or not.");
 
-            searchShip();
-        }
     }
 
     private void searchShip()
     {
 
-        System.out.println("U step in, you walk towards the kitchen");
-        System.out.println("1. check the fridge \n2. check the microwave");
+
+        tvStoryText.setText("You step in, you walk towards the kitchen");
+        setAllbtnsVisable();
+        btn1.setText("check the fridge");
+        btn2.setText("check the microwave");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            checkFridge();
-        }
-        else if (choice == 2)
-        {
-            checkMicrowave();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkFridge();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("Well your going into the ship whether you like it or not.");
+                checkMicrowave();
+            }
+        });
+
     }
 
     private void checkFridge()
     {
 
         points++;
-        System.out.println("You found a key");
-        System.out.println("1. go back to ship \n2. check the microwave");
+        tvStoryText.setText("You found a key");
+        setAllbtnsVisable();
+        btn1.setText("go back to ship");
+        btn2.setText("check the microwave");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            goBack();
-        }
-        else if (choice == 2)
-        {
-            checkMicrowave();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("Well your going into the ship whether you like it or not.");
+                checkMicrowave();
+            }
+        });
+
     }
 
     private void checkMicrowave()
@@ -414,18 +481,27 @@ public class GameGonzalezVictor extends GameActivity{
     private void goBack()
     {
 
-        System.out.println("So you're in the ship. Where would you like to go?");
-        System.out.println("1. Mars \n2. Venus");
+        tvStoryText.setText("So you're in the ship. Where would you like to go?");
+        setAllbtnsVisable();
+        btn1.setText("Mars");
+        btn2.setText("Venus");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            mars();
-        }
-        else if (choice == 2)
-        {
-            venus();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mars();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("Well your going into the ship whether you like it or not.");
+                venus();
+            }
+        });
+
     }
     //__VENUS__________________________________________________________________________________________
 
@@ -452,18 +528,27 @@ public class GameGonzalezVictor extends GameActivity{
     private void landSafe()
     {
 
-        System.out.println("Wow, you landed safely avoiding the crazy weather.");
-        System.out.println("1. explore cave \n2. explore volcano");
+        tvStoryText.setText("Wow, you landed safely avoiding the crazy weather.");
+        setAllbtnsVisable();
+        btn1.setText("explore cave");
+        btn2.setText("explore volcano");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            expCave();
-        }
-        else if (choice == 2)
-        {
-            expVolcano();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expCave();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("Well your going into the ship whether you like it or not.");
+                expVolcano();
+            }
+        });
+
     }
 
 
@@ -491,18 +576,27 @@ public class GameGonzalezVictor extends GameActivity{
     private void expVolcano()
     {
 
-        System.out.println("THE VOLCANOS ERUPTING! RUNN!!!");
-        System.out.println("1. run to cave \n2. take high ground on mountain");
+        tvStoryText.setText("THE VOLCANOS ERUPTING! RUNN!!!");
+        setAllbtnsVisable();
+        btn1.setText("run to cave");
+        btn2.setText("take high ground on mountain");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            expCave();
-        }
-        else if (choice == 2)
-        {
-            runToMt();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expCave();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("Well your going into the ship whether you like it or not.");
+                runToMt();
+            }
+        });
+
     }
 
 
