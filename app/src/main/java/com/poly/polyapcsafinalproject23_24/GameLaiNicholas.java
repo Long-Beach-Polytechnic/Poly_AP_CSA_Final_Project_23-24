@@ -55,6 +55,17 @@ public class GameLaiNicholas extends GameActivity {
     private void start()
     {
         //start adventure here
+
+        isWon = false;
+
+        ivStory.setImageResource(R.drawable.im_christmasadventure_title);
+
+        tv.Story.Text.setText("It's Christmas! Let's go on a Christmas Adventure!");
+
+        setAllBtnsVisible();
+        btn1.setText("Go to the North Pole");
+        btn2.setText("Go Ice Skating");
+        btn3.setText("Go See Christmas Lights");
         Util.clearConsole();
         System.out.println("CHRISTMAS ADVENTURE");
 
