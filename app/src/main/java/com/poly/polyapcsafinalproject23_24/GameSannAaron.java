@@ -55,12 +55,19 @@ public class GameSannAaron extends GameActivity {
          */
         private void choosePlayerStarter()
         {
-            String text = "\"Hello there! Welcome to the world of Pokemon! " +
-                    "My name is Burke! People call me the Pokemon Prof! This world is inhabited by creatures called Pokemon! " +
-                    "For some people, Pokemon are pets. Others use them for fights. Myself...I study Pokemon as a profession." +
-                    "\nNow this is the time you have been waiting for, choose your starter Pokemon!:";
+            String text = "\"Hello there! Welcome to the world of Pokemon! ";
+
+            String text2 = "My name is Burke! People call me the Pokemon Prof! This world is inhabited by creatures called Pokemon! ";
+
+            String text3 = "For some people, Pokemon are pets. Others use them for fights. Myself...I study Pokemon as a profession.";
+
+            String text4 = "\nNow this is the time you have been waiting for, choose your starter Pokemon!:";
+
 
             tvStoryText.setText(text);
+            tvStoryText.setText(text2);
+            tvStoryText.setText(text3);
+            tvStoryText.setText(text4);
 
             setAllBtnsVisible();
 
@@ -97,10 +104,13 @@ public class GameSannAaron extends GameActivity {
         public void start()
         {
 
-            String text1 = "Welcome to the world of Pokemon!" + "You have recieved a starter Pokemon: " + playerPokemon.getName() +
-                    "Now it is time to start your Pokemon adventure and become a Pokemon Master!";
+            String text5 = "Welcome to the world of Pokemon!";
+            String text6 = "You have received a starter Pokemon: " + playerPokemon.getName();
+            String text7 = "Now it is time to start your Pokemon adventure and become a Pokemon Master!";
 
-            tvStoryText.setText(text1);
+            tvStoryText.setText(text5);
+            tvStoryText.setText(text6);
+            tvStoryText.setText(text7);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -126,10 +136,11 @@ public class GameSannAaron extends GameActivity {
          */
         public void pathToPewterCityGym()
         {
-            String text3 = "After receiving " + playerPokemon.getName() +
-                    " we must make our way to Pewter City Gym, but we have to go through Viridian Forest";
+            String text8 = "After receiving " + playerPokemon.getName();
+            String text9 = " we must make our way to Pewter City Gym, but we have to go through Viridian Forest";
 
-            tvStoryText.setText(text3);
+            tvStoryText.setText(text8);
+            tvStoryText.setText(text9);
 
             btn1.setText("Continue");
             btn2.setVisibility(View.INVISIBLE);
@@ -166,12 +177,15 @@ public class GameSannAaron extends GameActivity {
          */
         public void viridianForest()
         {
-            String text4 = "Brock, the Gym Leader of Pewter City, has really strong and high-leveled Pokemon"
-                    + "What do you decide to do?"
-                    + "1. Train in Viridian Forest"
-                    + "2. It doesn't matter, let's just go face Brock";
+            String text10 = "Brock, the Gym Leader of Pewter City, has really strong and high-leveled Pokemon";
+            String text11 = "What do you decide to do?";
+            String text12 = "1. Train in Viridian Forest";
+            String text13 = "2. It doesn't matter, let's just go face Brock";
 
-            tvStoryText.setText(text4);
+            tvStoryText.setText(text10);
+            tvStoryText.setText(text11);
+            tvStoryText.setText(text12);
+            tvStoryText.setText(text13);
 
             btn1.setText("Level Pokemon");
             btn2.setText("Battle Brock");
@@ -203,18 +217,20 @@ public class GameSannAaron extends GameActivity {
         private void initiateBattle(SannPokemon playerPokemon, SannPokemon wildPokemon)
         {
 
-            String text5 = "A " + wildPokemon.getName() + " appeared!";
-            tvStoryText.setText(text5);
+            String text14 = "A " + wildPokemon.getName() + " appeared!";
+            tvStoryText.setText(text14);
 
             boolean battleOver = false;
 
             while (playerPokemon.getHealth() > 0 && wildPokemon.getHealth() > 0 && !battleOver)
             {
                 // Player's turn
-                String text6 = "What will " + playerPokemon.getName() + " do?"
-                        + "1. Attack"
-                        + "2. Run";
-                tvStoryText.setText(text6);
+                String text15 = "What will " + playerPokemon.getName() + " do?";
+                String text16 = "1. Attack";
+                String text17 = "2. Run";
+                tvStoryText.setText(text15);
+                tvStoryText.setText(text16);
+                tvStoryText.setText(text17);
 
                 btn1.setText("Attack");
                 btn2.setText("Run");
@@ -225,16 +241,16 @@ public class GameSannAaron extends GameActivity {
                         int playerDamage = playerPokemon.calculateDamage(wildPokemon);
                         wildPokemon.takeDamage(playerDamage);
 
-                        String text7 = playerPokemon.getName() + " dealt " + playerDamage + " damage to " + wildPokemon.getName();
-                        tvStoryText.setText(text7);
+                        String text18 = playerPokemon.getName() + " dealt " + playerDamage + " damage to " + wildPokemon.getName();
+                        tvStoryText.setText(text18);
                     }
                 });
 
                 btn2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String text8 = "You successfully ran away!";
-                        tvStoryText.setText(text8);
+                        String text19 = "You successfully ran away!";
+                        tvStoryText.setText(text19);
                         boolean battleOver = true;
                     }
                 });
@@ -244,27 +260,27 @@ public class GameSannAaron extends GameActivity {
                 {
                     int wildDamage = wildPokemon.calculateDamage(playerPokemon);
                     playerPokemon.takeDamage(wildDamage);
-                    String text9 = wildPokemon.getName() + " dealt " + wildDamage + " damage to " + playerPokemon.getName();
-                    tvStoryText.setText(text9);
+                    String text20 = wildPokemon.getName() + " dealt " + wildDamage + " damage to " + playerPokemon.getName();
+                    tvStoryText.setText(text20);
 
-                    String text10 = playerPokemon.getName() + " HP: " + playerPokemon.getHealth();
-                    tvStoryText.setText(text10);
+                    String text21 = playerPokemon.getName() + " HP: " + playerPokemon.getHealth();
+                    tvStoryText.setText(text21);
 
-                    String text11 = wildPokemon.getName() + " HP: " + wildPokemon.getHealth();
-                    tvStoryText.setText(text11);
+                    String text22 = wildPokemon.getName() + " HP: " + wildPokemon.getHealth();
+                    tvStoryText.setText(text22);
 
                     if (playerPokemon.getHealth() <= 0)
                     {
-                        String text12 = playerPokemon.getName() + " fainted. You ran to the nearest Pokemon Center to heal your Pokémon.";
-                        tvStoryText.setText(text12);
+                        String text23 = playerPokemon.getName() + " fainted. You ran to the nearest Pokemon Center to heal your Pokémon.";
+                        tvStoryText.setText(text23);
                         viridianForest();
                         return;
                     }
                 }
                 else if (wildPokemon.getHealth() <= 0)
                 {
-                    String text13 = "You defeated the " + wildPokemon.getName() + "!";
-                    tvStoryText.setText(text13);
+                    String text24 = "You defeated the " + wildPokemon.getName() + "!";
+                    tvStoryText.setText(text24);
                 }
             }
         }
@@ -278,8 +294,8 @@ public class GameSannAaron extends GameActivity {
          */
         public void levelPokemon()
         {
-            String text14 = "You're in Viridian Forest and find a wild Caterpie.";
-            tvStoryText.setText(text14);
+            String text25 = "You're in Viridian Forest and find a wild Caterpie.";
+            tvStoryText.setText(text25);
 
             boolean continueLeveling = true;
             boolean shouldLevelUp = false;
@@ -288,21 +304,24 @@ public class GameSannAaron extends GameActivity {
                 SannPokemon wildCaterpie = SannPokemonFactory.caterpie();
                 SannPokemon wildPokemon = SannPokemonFactory.caterpie();
 
-                String text15 = "A " + wildPokemon.getName() + " appeared!";
-                tvStoryText.setText(text15);
+                String text26 = "A " + wildPokemon.getName() + " appeared!";
+                tvStoryText.setText(text26);
 
                 initiateBattle(playerPokemon, wildPokemon);
 
                 if (shouldLevelUp)
                 {
                     playerPokemon.levelUp();
-                    System.out.println(playerPokemon.getName() + " leveled up!");
-                    System.out.println("Current stats:");
-                    System.out.println("Pokemon:\t" + playerPokemon.getName() + "\n" + "Level:\t" + playerPokemon.getLevel() + "\n" + "Health:\t" + playerPokemon.getHealth() + "\n" + "Attack:\t" + playerPokemon.getAttack() + "\n" + "Defense:\t" + playerPokemon.getDefense());
+                    String text27 = playerPokemon.getName() + " leveled up!";
+                    tvStoryText.setText(text27);
+                    String text28 = "Current stats: ";
+                    tvStoryText.setText(text28);
+                    String text29 = "Pokemon:\t" + playerPokemon.getName() + "\n" + "Level:\t" + playerPokemon.getLevel() + "\n" + "Health:\t" + playerPokemon.getHealth() + "\n" + "Attack:\t" + playerPokemon.getAttack() + "\n" + "Defense:\t" + playerPokemon.getDefense();
+                    tvStoryText.setText(text29);
                 }
 
-                String text16 = "Do you want to train more? (1. Yes / 2. No)";
-                tvStoryText.setText(text16);
+                String text30 = "Do you want to train more? (1. Yes / 2. No)";
+                tvStoryText.setText(text30);
 
                 btn1.setText("Yes");
                 btn2.setText("No");
@@ -324,10 +343,12 @@ public class GameSannAaron extends GameActivity {
 
             }
 
-            String text17 = "What do you decide to do now?"
-                    + "1. Continue leveling up"
-                    + "2. Go face Brock";
-            tvStoryText.setText(text17);
+            String text31 = "What do you decide to do now?";
+            String text32 = "1. Continue leveling up";
+            String text33 = "2. Go face Brock";
+            tvStoryText.setText(text31);
+            tvStoryText.setText(text32);
+            tvStoryText.setText(text33);
 
             btn1.setText("Continue leveling up");
             btn2.setText("Go face Brock");
@@ -357,10 +378,12 @@ public class GameSannAaron extends GameActivity {
         public void battleBrock()
         {
 
-            String text18 = "You've decided to challenge Brock in the Pewter City Gym!"
-                    + "Brock says, 'I accept your challenge!"
-                    + "Brock sends out his Pokémon!";
-            tvStoryText.setText(text18);
+            String text34 = "You've decided to challenge Brock in the Pewter City Gym!";
+            String text35 = "Brock says, 'I accept your challenge!";
+            String text36 = "Brock sends out his Pokémon!";
+            tvStoryText.setText(text34);
+            tvStoryText.setText(text35);
+            tvStoryText.setText(text36);
 
             SannPokemon brocksOnix = SannPokemonFactory.onix();
 
@@ -368,9 +391,12 @@ public class GameSannAaron extends GameActivity {
 
             if (playerPokemon.getHealth() > 0)
             {
-                System.out.println("Nice job! You defeated Brock!");
-                System.out.println("You should level up more and get ready for the next Gym.");
-                System.out.println("Heading back to Viridian Forest to level up... and you can face Brock again to test your Pokemon skills");
+                String text37 = "Nice job! You defeated Brock!";
+                tvStoryText.setText(text37);
+                String text38 = "You should level up more and get ready for the next Gym.";
+                tvStoryText.setText(text38);
+                String text39 = "Heading back to Viridian Forest to level up... and you can face Brock again to test your Pokemon skills";
+                tvStoryText.setText(text39);
                 viridianForest(); // Loop back to Brock
             }
         }
@@ -383,11 +409,14 @@ public class GameSannAaron extends GameActivity {
          */
         public void pewterCityGym() {
 
-            String text19 = "You enter the Pewter City Gym, and Brock is there waiting.\n"
-                    + "He says, 'Are you sure you want to face me right now?"
-                    + "1. Yes"
-                    + "2. No";
-            tvStoryText.setText(text19);
+            String text40 = "You enter the Pewter City Gym, and Brock is there waiting.\n";
+            String text41 = "He says, 'Are you sure you want to face me right now?";
+            String text42 = "1. Yes";
+            String text43 = "2. No";
+            tvStoryText.setText(text40);
+            tvStoryText.setText(text41);
+            tvStoryText.setText(text42);
+            tvStoryText.setText(text43);
 
             btn1.setText("Yes");
             btn2.setText("No");
