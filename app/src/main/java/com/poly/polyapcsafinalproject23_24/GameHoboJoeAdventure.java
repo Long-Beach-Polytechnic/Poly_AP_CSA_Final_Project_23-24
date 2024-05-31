@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -251,27 +252,43 @@ public class GameHoboJoeAdventure extends GameActivity {
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) { defeat();}
+                public void onClick(View v) {
+                    defeat();
+                }
 
+            });
 
-            System.out.println("You successfully escape but you starve to death after");
-
-            defeat();
         }
+
 
 
         //dumpster diving path
         private void dumpster() {
 
-            System.out.println("Dumpster diving what do you do");
-            System.out.println("1. Belly flop in\n2. Flip the dumpster over");
+                ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+                tvStoryText.setText("Dumpster diving what do you do");
 
-            if (choice == 1) {
-                bellyFlop();
-            } else if (choice == 2) {
-                flipDumpster();
-            }
+                setAllBtnsVisible();
+                btn1.setText("Belly flop in");
+                btn2.setText("Flip the dumpster over");
+                btn3.setVisibility(View.INVISIBLE);
+                btn4.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bellyFlop();
+                    }
+                });
+
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        flipDumpster();
+                    }
+                });
+
 
 
         }
@@ -279,143 +296,365 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         private void bellyFlop() {
 
-            System.out.println("You dive in and get cut up bad what do you do");
-            System.out.println("1. Cover your wonds with dirty rags\n2. Thug it out and keep searching");
 
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-            if (choice == 1) {
-                coverWound();
-            } else if (choice == 2) {
-                keepSearching();
-            }
+            tvStoryText.setText("You dive in and get cut up bad what do you do");
+
+            setAllBtnsVisible();
+            btn1.setText("Cover your wounds with dirty rags");
+            btn2.setText("Thug it out and keep searching");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    bellyFlop();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flipDumpster();
+                }
+            });
+
         }
 
         private void coverWound() {
 
-            System.out.println("Rip you have Aids, Hiv, Stds and herpes worst than death");
+            isWon = false;
+            tvStoryText.setText("Rip you have Aids, Hiv, Stds and herpes worst than death");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
         private void keepSearching() {
 
-            System.out.println("You found a medkit and some white stuff what do you use");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
+
+            tvStoryText.setText("You found a med kit and some white stuff what do you use");
+
+            setAllBtnsVisible();
+            btn1.setText("Cover your wounds with dirty rags");
+            btn2.setText("Thug it out and keep searching");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    useMedkit();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    takeWhite();
+                }
+            });
 
 
-            if (choice == 1) {
-                useMedkit();
-            } else if (choice == 2) {
-                takeWhite();
-            }
         }
 
         private void useMedkit() {
 
-            System.out.println("You used the medkit but it was dirty used for drugs you died");
+                isWon = false;
+                tvStoryText.setText("You used the med kit but it was dirty used for drugs you died");
 
-            defeat();
+                ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+                setAllBtnsVisible();
+                btn1.setText("Play again");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+                btn4.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+
+                });
+
+
         }
 
         private void takeWhite() {
 
-            System.out.println("You take the white stuff but later on you get more addicted to it and spend every last penny for more eventually you couldnt handle it and died");
+            isWon = false;
+            tvStoryText.setText("You take the white stuff but later on you get more addicted to it and spend every last penny for more eventually you couldn't handle it and died");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
 
         //choice 2
         private void flipDumpster() {
 
-            System.out.println("You flipped the dumpster and see a glowing green rat and a honey bun pick one up");
-            System.out.println("1. Pick up the glowing green rat\n2. Pick up the honey bun");
+                ivStory.setImageResource(R.drawable.im_laborday_beach);
+
+                tvStoryText.setText("You flipped the dumpster and see a glowing green rat and a honey bun pick one up");
+
+                setAllBtnsVisible();
+                btn1.setText("Pick up the glowing green rat");
+                btn2.setText("Pick up the honey bun");
+                btn3.setVisibility(View.INVISIBLE);
+                btn4.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        greenRat();
+                    }
+                });
+
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        honeyBun();
+                    }
+                });
 
 
-            if (choice == 1) {
-                greenRat();
-            } else if (choice == 2) {
-                honeyBun();
-            }
         }
 
         private void greenRat() {
 
-            System.out.println("The rat was radioactive and you picked it up and died");
-            defeat();
+            isWon = false;
+            tvStoryText.setText("The rat was radioactive and you picked it up and died");
+
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
         private void honeyBun() {
 
-            System.out.println("It was hot like a volcano you gain powers to create a domain over 400 meter radius and you obliterated shibuya you mastered the homeless powers to its fullest");
+            isWon = false;
+            tvStoryText.setText("It was hot like a volcano you gain powers to create a domain iron coffin meter and you are able obliterated the city you mastered the homeless powers to its fullest");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
         //robbing path
         private void hoboRob() {
 
-            System.out.println("Put on hobo ski mask what do you rob");
-            System.out.println("1. Rob a bank\n2. Rob the local crackhead");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+            tvStoryText.setText("Put on hobo ski mask what do you rob");
 
-            if (choice == 1) {
-                robBank();
-            } else if (choice == 2) {
-                robCracked();
-            }
+            setAllBtnsVisible();
+            btn1.setText("Rob a bank");
+            btn2.setText("Rob the local crackhead");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    robBank();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    robCracked();
+                }
+            });
+
         }
 
         //choice 1
         private void robBank() {
 
-            System.out.println("You get in the bank decide what you wanna do");
-            System.out.println("1. Take off hobo mask\n2. Rush inside the vault");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+            tvStoryText.setText("You get in the bank decide what you wanna do");
 
-            if (choice == 1) {
-                maskOff();
-            } else if (choice == 2) {
-                rushVault();
-            }
+            setAllBtnsVisible();
+            btn1.setText("Take off hobo mask");
+            btn2.setText("Rush inside the vault");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    robBank();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    robCracked();
+                }
+            });
+
         }
 
         private void maskOff() {
 
-            System.out.println("Your face is so hideous it breaks everything around you except the free money that was easy");
+            isWon = false;
+            tvStoryText.setText("Your face is so hideous it breaks everything around you except the free money that was easy");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
         private void rushVault(){
 
-            System.out.println("Who that dumb to leave the vault open but it closes shut on you what do you do");
-            System.out.println("1. Take out the white powder in your pocket and use\n2. Eat the money inside");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+            tvStoryText.setText("Who that dumb to leave the vault open but it closes shut on you what do you do");
 
-            if (choice == 1)
-            {
-                pocketPowder();
-            }
-            else if (choice == 2)
-            {
-                eatMoney();
-            }
+            setAllBtnsVisible();
+            btn1.setText("Take out the white powder in your pocket and use");
+            btn2.setText("Eat the money inside");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    pocketPowder();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    eatMoney();
+                }
+            });
+
         }
 
         private void pocketPowder()
         {
 
-            System.out.println("You broke out with the strength but died after effects wore off");
+            isWon = false;
+            tvStoryText.setText("You broke out with the strength but died after effects wore off");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
         private void eatMoney()
         {
 
-            System.out.println("You ate the money but the cops arrested you but they believed you had a mental disabilty and let you go after you poop the money out light work no reaction easy money");
 
-            defeat();
+            isWon = false;
+            tvStoryText.setText("You ate the money but the cops arrested you but they believed you had a mental disability and let you go after you poop the money out light work no reaction easy money");
+
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
 
@@ -423,59 +662,131 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void robCracked()
         {
 
-            System.out.println("");
-            System.out.println("1. Do a hit and run grab the powder\n2. Heat up a honey bun");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+            tvStoryText.setText("You decide to rob the local crackhead what do you do");
 
-            if (choice == 1)
-            {
-                snatchPowder();
-            }
-            else if (choice == 2)
-            {
-                hotHoneyBun();
-            }
+            setAllBtnsVisible();
+            btn1.setText("Do a hit and run grab the powder");
+            btn2.setText("Heat up a honey bun\"");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    snatchPowder();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    hotHoneyBun();
+                }
+            });
+
         }
 
         private void snatchPowder()
         {
 
-            System.out.println("Rip it did not phase him and he channeled his crackhead energy into one attack and blasts you to oblivioun");
+            isWon = false;
+            tvStoryText.setText("Rip it did not phase him and he channeled his crackhead energy into one attack and blasts you to oblivion");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
         private void hotHoneyBun()
         {
 
-            System.out.println("The honey bun is steaming hot do something quick");
-            System.out.println("1. Eat the honey bun\n2. Throw it at the local crackhead");
+            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
+            tvStoryText.setText("The honey bun is steaming hot do something quick");
 
-            if (choice == 1)
-            {
-                eatHoneyBun();
-            }
-            else if (choice == 2)
-            {
-                throwHoneyBun();
-            }
+            setAllBtnsVisible();
+            btn1.setText("Eat the honey bun");
+            btn2.setText("Throw it at the local crackhead");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    eatHoneyBun();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    throwHoneyBun();
+                }
+            });
+
         }
 
         private void eatHoneyBun()
         {
 
-            System.out.println("You ate the honey bun but something feels off you are now a vessle for the strongest curse and he takes control and destroyed half the city");
+            isWon = true;
+            tvStoryText.setText("You ate the honey bun but something feels off you are now a vessel for the strongest curse and he takes control and destroyed half the city");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
         private void throwHoneyBun()
         {
 
-            System.out.println("You threw the honey bun at him but the crackhead had a trick of his sleeve and countered with a domain expnasion your dead");
+            isWon = false;
+            tvStoryText.setText("You threw the honey bun at him but the crackhead had a trick of his sleeve and countered with a domain expnasion your dead");
 
-            defeat();
+            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
+            setAllBtnsVisible();
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+
+            });
+
         }
 
 
@@ -491,17 +802,48 @@ public class GameHoboJoeAdventure extends GameActivity {
             //System.out.println(...)
 
             //determine if player gets to play again
-            if (numLives > 0)
+
+            if (isWon)
             {
-                //if you still have lives, return to start()
-                start();
+                tvStoryText.setText("You have mastered the homeless ways and ancient techniques");
+
+                ivStory.setImageResource(R.drawable.im_laborday_miracle);
             }
             else
             {
-                System.out.println("Try again to become a homeless master");
+                String text = "You failed to learn the ways of the homeless try again";
+                tvStoryText.setText(text);
             }
 
+            if (numLives > 0)
+            {
+                btn1.setText("Play again!");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        start();
+                    }
+                });
+            }
+            else
+            {
+                tvStoryText.setText("Try again to become a homeless master.");
+                btn1.setText("Play again");
+
+                ivStory.setImageResource(R.drawable.im_laborday_high_school_over);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(GameHoboJoeAdventure.this, MainActivity.class));
+                    }
+                });
+            }
         }
-    }
 
 }
+
+
+
+
+
