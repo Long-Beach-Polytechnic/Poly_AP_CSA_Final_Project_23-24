@@ -381,7 +381,7 @@ public class GameManaloYzabela extends GameActivity
     //.........GIVING SEAWEED PATH............
     private void giveSeaweed()
     {
-        {
+
 
             String iguana = """
         CONGRATULATIONS! You two are instantly married. Obviously not rotting in a nursing home because seaweed is LIFE!.
@@ -402,7 +402,7 @@ public class GameManaloYzabela extends GameActivity
                     start();
                 }
             });
-        }
+
     }
     //.........GIVING DINO NUGGETS.............
     private void giveDinoNuggets()
@@ -791,79 +791,132 @@ public class GameManaloYzabela extends GameActivity
     //..........STRAWBERRIES PATH.............
     private void strawberries()
     {
-        Util.clearConsole();
-        String F = TextColor.GREEN_BOLD_BRIGHT + """
+        String F =  """
       She liked the strawberries and gave you your first kiss, You win. Obviously not rotting in a nursing home.
 
       Press \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)
       """;
-        System.out.println(F);
-        Util.pauseConsole();
-        start();
+
+        tvStoryText.setText(F);
+
+        setAllBtnsVisible();
+        btn1.setText("Play Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
     }
     //..........WHITE ROSES PATH..............
     private void whiteRoses()
     {
-        Util.clearConsole();
-        String G = TextColor.RED_BOLD_BRIGHT + "She did not like the white roses because red is her favorite color, She buried you in her backyard. Obviously not rotting in a nursing home because you’re dead.";
 
-        System.out.println(G);
+        String G =  "She did not like the white roses because red is her favorite color, She buried you in her backyard. Obviously not rotting in a nursing home because you’re dead.";
+        tvStoryText.setText(G);
+        numLives--;
 
-        Util.pauseConsole();
-        youSuck();
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
+
+
+
     }
     //..........TEMPURA RECIPE PATH...........
     private void tempuraRecipe()
     {
-        Util.clearConsole();
-        String H = TextColor.PURPLE + """
+
+        String H = """
       She got mad because she can’t eat shrimp. You try changing the topic and decided to talk about your:
-
-      1.beloved great great great great great great grandmother.
-
-      2.first crush on kindergarten.
       """;
-        System.out.println(H);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(H);
 
-        if (choice == 1)
-        {
-            greatGrandma();
-        }
-        else if (choice == 2)
-        {
-            aboutCrush();
-        }
+        String btn1Text = "beloved great great great great great great grandmother.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "first crush on kindergarten.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                greatGrandma();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                aboutCrush();
+
+            }
+        });
     }
     //...........GREAT GRANDMA PATH............
     private void greatGrandma()
     {
-        Util.clearConsole();
-        String I = TextColor.RED_BOLD_BRIGHT + "Your great great great great great great grandma’s name is REBECCA!. She poisoned you because she hates Rebecca.Obviously not rotting in a nursing home because you’re dead.";
 
-        System.out.println(I);
+        String I ="Your great great great great great great grandma’s name is REBECCA!. She poisoned you because she hates Rebecca.Obviously not rotting in a nursing home because you’re dead.";
+        tvStoryText.setText(I);
+        numLives--;
 
-        Util.pauseConsole();
-        youSuck();
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //...........ABOUT CRUSH PATH...............
     private void aboutCrush()
     {
-        Util.clearConsole();
-        String J = TextColor.RED_BOLD_BRIGHT + "She got jealous and devastated when she heard that your crush’s name is REBECCA! She stabbed your kindergarten crush and blamed it on you.Obviously not rotting in a nursing home because you are in jail.";
 
-        System.out.println(J);
+        String J =  "She got jealous and devastated when she heard that your crush’s name is REBECCA! She stabbed your kindergarten crush and blamed it on you.Obviously not rotting in a nursing home because you are in jail.";
+        tvStoryText.setText(J);
+        numLives--;
 
-        Util.pauseConsole();
-        youSuck();
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
+
     }
     //........................................
     //........................................
     //.........KOICHI HIROSE PATH.............
     private void koichiHirose()
     {
-        Util.clearConsole();
-        String Aaa = TextColor.BLUE + """
+        String Aaa = """
 
       PLEASE READ THE FOLLOWING TRIGGERS FOR KOICHI
       (Remember the following hints:This will help you win his heart)
@@ -873,195 +926,297 @@ public class GameManaloYzabela extends GameActivity
       -Scared of heights
       -Always goes to the gym
       -Loves blue
-
-      You like him and wants to impress him, What should you do?
-
-      1.Tell him you like \"My Hero Academia\" and he looks so Kawaii desu, Also randomly slip \"Arigatou Gozaimasu Senpai\" during the conversation. (He needs to know that you appreciate his culture).
-
-      2.Tell him you have 10 sacks of rice in your home. (Bribe him with rice and he’ll definitely fall in love with you, with how much rice you have in your home)
-
       """;
-        System.out.println(Aaa);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(Aaa);
 
-        if (choice == 1)
-        {
-            kawaiiDesu();
-        }
-        else if (choice == 2)
-        {
-            rice();
-        }
+        String yayyay = "You like him and wants to impress him, What should you do?";
+        tvStoryText.setText(yayyay);
+
+        String btn1Text = "1.Tell him you like \\\"My Hero Academia\\\" and he looks so Kawaii desu, Also randomly slip \\\"Arigatou Gozaimasu Senpai\\\" during the conversation. (He needs to know that you appreciate his culture).";
+        btn1.setText(btn1Text);
+
+        String btn2Text = " 2.Tell him you have 10 sacks of rice in your home. (Bribe him with rice and he’ll definitely fall in love with you, with how much rice you have in your home)";
+        btn2.setText(btn2Text);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                kawaiiDesu();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rice();
+
+            }
+        });
     }
     //..........KAWAII DESU PATH.............
     private void kawaiiDesu()
     {
-        Util.clearConsole();
-        String Bbb = TextColor.BLUE + """
+
+        String Bbb = """
       He got icked by you but decided to still give you a chance.What should you ask him?
-
-      1.Ask him if he wants to go to a rock climbing gym.
-
-      2.Ask him if he wants to eat sushi with maple syrup while watching K-dramas.
       """;
-        System.out.println(Bbb);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(Bbb);
 
-        if (choice == 1)
-        {
-            rockClimbing();
-        }
-        else if (choice == 2)
-        {
-            sushi();
-        }
+        String btn1Text = "1.Ask him if he wants to go to a rock climbing gym.";
+        btn1.setText(btn1Text);
+
+        String btn2Text = "2.Ask him if he wants to eat sushi with maple syrup while watching K-dramas.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rockClimbing();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sushi();
+
+            }
+        });
     }
+
     //...........ROCK CLIMBING PATH...........
     private void rockClimbing()
     {
-        Util.clearConsole();
-        String Ccc = TextColor.RED_BOLD_BRIGHT + "He agreed and once you started climbing he cut your rope off and you had a concussion. He managed to make everyone believe that it's your fault somehow because he hates his father. Obviously rotting in a nursing home.";
+        String Ccc = "He agreed and once you started climbing he cut your rope off and you had a concussion. He managed to make everyone believe that it's your fault somehow because he hates his father. Obviously rotting in a nursing home.";
+        tvStoryText.setText(Ccc);
+        numLives--;
 
-        System.out.println(Ccc);
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        Util.pauseConsole();
-        youSuck();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //..........SUSHI PATH...................
     private void sushi()
     {
-        Util.clearConsole();
-        String Ddd = TextColor.BLUE + """
+
+        String Ddd = """
       He got disappointed about watching K-dramas but decided to give it a chance, Which K-drama should you pick?
-
-      1.Watch "Love in the moonlight"
-
-      2.Watch "Come and Hug Me"
       """;
-        System.out.println(Ddd);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(Ddd);
 
-        if (choice == 1)
-        {
-            loveInTheMoonlight();
-        }
-        else if (choice == 2)
-        {
-            comeAndHugMe();
-        }
+        String btn1Text = "1.Watch \"Love in the moonlight\"";
+        btn1.setText(btn1Text);
+
+        String btn2Text = " 2.Watch \"Come and Hug Me\"";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loveInTheMoonlight();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                comeAndHugMe();
+
+            }
+        });
     }
+
     //.......LOVE IN THE MOONLIGHT PATH.......
     private void loveInTheMoonlight()
     {
-        Util.clearConsole();
-        String Eee = TextColor.RED_BOLD_BRIGHT + "He got mad about the girl not choosing the second lead. He cried for days straight and refused to eat. He eventually died of hunger and its your fault. Obviously rotting in a nursing home with guilt in your heart.";
 
-        System.out.println(Eee);
+        String Eee = "He got mad about the girl not choosing the second lead. He cried for days straight and refused to eat. He eventually died of hunger and its your fault. Obviously rotting in a nursing home with guilt in your heart.";
+        tvStoryText.setText(Eee);
+        numLives--;
 
-        Util.pauseConsole();
-        youSuck();
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //........COME AND HUG ME PATH............
     private void comeAndHugMe()
     {
-        Util.clearConsole();
-        String Fff = TextColor.RED_BOLD_BRIGHT + "He has Daddy Issues and got enraged with how the father loves his son. He fed you a tube of wasabi as revenge and you ended up in the hospital. Obviously rotting in a nursing home.";
+        String Fff = "He has Daddy Issues and got enraged with how the father loves his son. He fed you a tube of wasabi as revenge and you ended up in the hospital. Obviously rotting in a nursing home.";
+        tvStoryText.setText(Fff);
+        numLives--;
 
-        System.out.println(Fff);
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        Util.pauseConsole();
-        youSuck();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
+
     }
     //.........RICE PATH......................
-    private void rice()
-    {
-        Util.clearConsole();
-        String Ggg = TextColor.BLUE + """
-      He fell in love with you instantly because you have so much rice in your house and called you the most attractive person he met.What should you ask him?
+    private void rice() {
 
-      1.Ask him if he wants to go to the gym with you.
+        String Ggg = """
+        He fell in love with you instantly because you have so much rice in your house and called you the most attractive person he met.What should you ask him?
+        """;
 
-      2.Ask him how his family is.
-      """;
-        System.out.println(Ggg);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(Ggg);
+        String btn1Text = "1.Ask him if he wants to go to the gym with you.";
+        btn1.setText(btn1Text);
 
-        if (choice == 1)
-        {
-            goGym();
-        }
-        else if (choice == 2)
-        {
-            family();
-        }
-    }
-    //.........GO GYM PATH....................
-    private void goGym()
-    {
-        Util.clearConsole();
-        String Hhh = TextColor.BLUE + """
+        String btn2Text = "2.Ask him how his family is.";
+        btn2.setText(btn2Text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goGym();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                family();
+            }
+        });
+      }
+
+      //.........GO GYM PATH....................
+      private void goGym()
+      {
+
+          String Hhh = """
       You two had fun helping each other.He wants to go on a second date. He asked you to wear red on the second date.
-
-      1.Say "Sure,I will".
-
-      2.Say you'll wear something else.
       """;
-        System.out.println(Hhh);
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText(Hhh);
 
-        if (choice == 1)
-        {
-            saySure();
-        }
-        else if (choice == 2)
-        {
-            somethingElse();
-        }
+          String btn1Text = "1.Say \"Sure,I will\".";
+          btn1.setText(btn1Text);
+
+          String btn2Text = "2.Say you'll wear something else.";
+          btn2.setText(btn2Text);
+
+          btn1.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  saySure();
+
+              }
+          });
+
+          btn2.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  somethingElse();
+
+              }
+          });
     }
     //..........FAMILY PATH..................
     private void family()
     {
-        Util.clearConsole();
-        String Iii = TextColor.RED_BOLD_BRIGHT + "He got furious that you asked about his family and his father came jumping out of nowhere and overfed you with uncooked rice and you choked.Obviously not rotting in a nursing home because you’re six feet underground.";
 
-        System.out.println(Iii);
+        String Iii = "He got furious that you asked about his family and his father came jumping out of nowhere and overfed you with uncooked rice and you choked.Obviously not rotting in a nursing home because you’re six feet underground.";
+        tvStoryText.setText(Iii);
+        numLives--;
 
-        Util.pauseConsole();
-        youSuck();
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
     }
     //........SAY SURE PATH...................
     private void saySure()
     {
-        Util.clearConsole();
-        String Jjj = TextColor.RED_BOLD_BRIGHT + "He lifted a 100 kg plate and it accidentally fell into your head. Obviously not rotting in a nursing home because you’re dead.";
 
-        System.out.println(Jjj);
+        String Jjj = "He lifted a 100 kg plate and it accidentally fell into your head. Obviously not rotting in a nursing home because you’re dead.";
+        tvStoryText.setText(Jjj);
+        numLives--;
 
-        Util.pauseConsole();
-        youSuck();
+        setAllBtnsVisible();
+        btn1.setText("you Suck");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                youSuck();
+            }
+        });
+
     }
     //.......SOMETHING ELSE PATH..............
     private void somethingElse()
     {
-        Util.clearConsole();
-        String Kkk = TextColor.GREEN_BOLD_BRIGHT + """
+
+        String Kkk = """
       He appreciates that you remembered his favorite color is blue. He smelled your armpits and declared you two are officially dating. Obviously not rotting in a nursing home.
 
       Press \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)
       """;
-        System.out.println(Kkk);
-        Util.pauseConsole();
-        start();
+        tvStoryText.setText(Kkk);
+
+        setAllBtnsVisible();
+        btn1.setText("Play Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
     }
     //........................................
     //........................................
     //.........YARA LOPEZ PATH................
     private void yaraLopez()
     {
-        Util.clearConsole();
-        String Antartica = TextColor.CYAN + """
-
+        String Antartica = """
       Long story short, you like her and you want to go on a date with her.You want to get closer with her, What should you do?
+      """;
+
+       tvStoryText.setText(Antartica);
 
       1.Ask her about how her day went and before she says something rant to her about how annoying your day was and tell her “Wish you were beside me to comfort me rn” with a cringe pouting emoji.
 
