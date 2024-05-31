@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -76,70 +77,89 @@ public class GameSengSambat extends GameActivity
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
-        btn4.setVisibility(View.VISIBLE);
+
     }
 
     private void start()
     {
         //start adventure here
-        System.out.println("1. Keep walking forward\n2. Investigate the noise \n3. Turn around and run away");
-
+        setAllBtnsVisible();
+        btn1.setText("Keep walking forward");
+        btn2.setText("Investigate the noise");
+        btn3.setText("Turn around and run away");
         System.out.println( );
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goForward(); }
+        });
 
-        if (choice == 1)
-        {
-            goForward();
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                investigateNoise();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                runAway();
+            }
+
+
+            });
         }
-        else if (choice == 2)
-        {
-            investigateNoise();
-        }
-        else if (choice == 3)
-        {
-            runAway();
-        }
-    }
+
 
     private void goForward()
     {
-        System.out.println("You keep walking forward hoping to find a way out of the forest, but you see an eyeless monster, he notices your footsteps and walks towards you. What do you do?");
+        tvStoryText.setText("You keep walking forward hoping to find a way out of the forest, but you see an eyeless monster, he notices your footsteps and walks towards you. What do you do?");
+        setAllBtnsVisible();
+        setAllBtnsVisible();
+        btn1.setText("Hide in a bush");
+        btn2.setText("Keep walking forward");
+        btn3.setVisibility(View.INVISIBLE);
 
-        System.out.println("1. Hide in a bush\n2. Keep walking forward");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { hideInBush(); }
+        });
 
-        System.out.println( );
-
-
-        if (choice == 1)
-        {
-            hideInBush();
-        }
-        else if (choice == 2)
-        {
-            keepWalkingForward();
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                keepWalkingForward();
+            }
+        });
     }
     private void hideInBush()
     {
-        System.out.println("You hide in the bush for a while and it seems like the monster has wandered off somewhere close. What do you do?");
+        tvStoryText.setText("You hide in the bush for a while and it seems like the monster has wandered off somewhere close. What do you do?");
 
-        System.out.println("1. Wait longer\n2. Try to leave");
+        setAllBtnsVisible();
+        btn1.setText("Wait longer");
+        btn2.setText("Try to leave");
+        btn3.setVisibility(View.INVISIBLE);
 
-        System.out.println( );
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { waitLonger(); }
+        });
 
-        if (choice == 1)
-        {
-            waitLonger();
-        }
-        else if (choice == 2)
-        {
-            tryToLeave();
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tryToLeave();
+            }
+        });
+
     }
     private void waitLonger()
     {
 
-        System.out.println("You wait longer and the monster eventually wanders off somewhere far, you left the forest surviving");
+        tvStoryText.setText("You wait longer and the monster eventually wanders off somewhere far, you left the forest surviving");
 
 
         endAdventure();
@@ -148,37 +168,44 @@ public class GameSengSambat extends GameActivity
 
     private void tryToLeave()
     {
+        tvStoryText.setText("Choose a direction to walk towards");
+        btn1.setText("North");
+        btn2.setText("South");
+        btn3.setText("East");
 
-        System.out.println("Choose a direction to walk towards");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goNorth(); }
+        });
 
-        System.out.println( );
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goSouth();
+            }
+        });
 
-        System.out.println("1. North\n2. South\n3. East");
+        btn3.setOnClickListener(new View.OnClickListener() {
 
-        System.out.println( );
+            @Override
+            public void onClick(View v) {
+                goEast();
+            }
 
-        if (choice == 1)
-        {
-            goNorth();
-        }
-        else if (choice == 2)
-        {
-            goSouth();
-        }
-        else if (choice == 3)
-            goEast();
+
+        });
     }
 
     private void goNorth()
 
     {
-        System.out.println("After heading north you walk into a bear and it ends up eating you. You died");
+        tvStoryText.setText("After heading north you walk into a bear and it ends up eating you. You died");
         defeat();
     }
 
     private void goSouth()
     {
-        System.out.println("After heading south, you end up walking into the monster again and it eats you. You died");
+        tvStoryText.setText("After heading south, you end up walking into the monster again and it eats you. You died");
         defeat();
     }
 
