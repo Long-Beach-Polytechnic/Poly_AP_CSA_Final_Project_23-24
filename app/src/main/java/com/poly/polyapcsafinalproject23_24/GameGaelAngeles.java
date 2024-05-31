@@ -73,9 +73,8 @@ public class GameGaelAngeles extends GameActivity{
             isWon = false;
 
             ivStory.setImageResource(R.drawable.im_laborday_title);
-            playAudio(R.raw.audio_bass);
 
-            tvStoryText.setText("");
+            tvStoryText.setText("There is a killer on the loose protect the president!!");
 
             setAllBtnsVisible();
             btn1.setText("Richard Nixon");
@@ -83,11 +82,24 @@ public class GameGaelAngeles extends GameActivity{
             btn3.setText("William McKinley");
             btn4.setVisibility(View.INVISIBLE);
 
-            btn1.setOnClickListener(new View.OnClickListener(){
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
 
                 @Override
-                public void onClick(View v) { richardNixon(); }
-                                    });
+                public void onClick(View v) { nixon(); }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { kennedy(); }
+            });
+
+            btn3.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { william(); }
+            });
             //start adventure here
             System.out.println("Story");
             System.out.println("options\n1. Richard Nixon\n2. John F Kennedy\n3. William McKinley");
@@ -112,6 +124,28 @@ public class GameGaelAngeles extends GameActivity{
         //______Nixon Path________
         private void nixon()
         {
+            tvStoryText.setText("You chose President Richard Nixon. Choose the best place were Nixon is safe at.");
+
+            ivStory.setImageResource(R.drawable.im_laborday_title);
+
+            setAllBtnsVisible();
+            btn1.setText("Go to Back Alley way");
+            btn2.setText("Go to a police station");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { backAlley(); }
+            });
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { policeStation(); }
+            });
+
             Util.clearConsole();
             System.out.println("\nYou chose President Richard Nixon. Choose the best place were Nixon is at.");
             System.out.println("1. Go to a Back Alley way \n2. Go to a police station");
@@ -130,6 +164,28 @@ public class GameGaelAngeles extends GameActivity{
         //______Police Statiion Path______
         private void policeStation()
         {
+            tvStoryText.setText("You chose to go to a police station you stay there until back up arives. But there is a officer that wants to help. What should you do?");
+
+            ivStory.setImageResource(R.drawable.im_laborday_title);
+
+            setAllBtnsVisible();
+            btn1.setText("Stay at the police station");
+            btn2.setText("Talk to a officer");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { safe(); }
+            });
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { officer(); }
+            });
+
             Util.clearConsole();
             System.out.println("\nYou chose to go to a police station you stay there until back up arives. But there is a officer that wants to help. What should you do?");
             System.out.println("1. Stay at the police station \n2. Talk to a officer");
@@ -164,6 +220,27 @@ public class GameGaelAngeles extends GameActivity{
         //______Back Alley Path______
         private void backAlley()
         {
+            tvStoryText.setText("You see a harmless homeless guy seem nice. Then next to him there is a sketchy guy near him. Go up to one of them if they could help you out.");
+
+            ivStory.setImageResource(R.drawable.im_laborday_title);
+
+            setAllBtnsVisible();
+            btn1.setText("Go up to the Homeless Guy");
+            btn2.setText(" Go up to the Skechy Guy");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { homelessGuy(); }
+            });
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { sketchyGuy(); }
+            });
             Util.clearConsole();
             System.out.println("\nYou see a harmless homeless guy seem nice. Then next to him there is a sketchy guy near him. Go up to one of them if they could help you out.");
             System.out.println("1. Go up to the Homeless Guy \n2. Go up to the Skechy Guy");
@@ -205,6 +282,27 @@ public class GameGaelAngeles extends GameActivity{
         //______Kennedy Path______
         private void kennedy()
         {
+            tvStoryText.setText("You chose John F Kennedy protect him. Choose the right path and he lives");
+
+            ivStory.setImageResource(R.drawable.im_laborday_title);
+
+            setAllBtnsVisible();
+            btn1.setText("Go Through a nieghborhood");
+            btn2.setText("Go through a city");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { neighborhood(); }
+            });
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { city(); }
+            });
             Util.clearConsole();
             System.out.println("You chose John F Kennedy protect him. Choose the right path and he lives.");
             System.out.println("1. Go Through a nieghborhood \n2. Go through a city");
@@ -243,6 +341,27 @@ public class GameGaelAngeles extends GameActivity{
         //______William Path______
         private void william()
         {
+            tvStoryText.setText("You chose William McKinley protect him. A man walks up to the president he wants to shake his hand. Choose if the president should shake his hand or not.");
+
+            ivStory.setImageResource(R.drawable.im_laborday_title);
+
+            setAllBtnsVisible();
+            btn1.setText("Shake the mans hand");
+            btn2.setText("Don't shake the mans hand");
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { dontShakeManHand(); }
+            });
+
+            btn1.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v) { shakeManHand(); }
+            });
             Util.clearConsole();
             System.out.println("You chose William McKinley protect him. A man walks up to the president he wants to shake his hand. Choose if the president should shake his hand or not.");
             System.out.println("1. Shake the mans hand \n2. Don't shake the mans hand");
