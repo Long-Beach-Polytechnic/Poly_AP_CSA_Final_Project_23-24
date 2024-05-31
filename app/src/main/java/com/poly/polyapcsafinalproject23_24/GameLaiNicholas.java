@@ -66,6 +66,24 @@ public class GameLaiNicholas extends GameActivity {
         btn1.setText("Go to the North Pole");
         btn2.setText("Go Ice Skating");
         btn3.setText("Go See Christmas Lights");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){goToNorthPole();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){goIceSkating();}
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){goSeeChristmasLights(); }
+        });
         Util.clearConsole();
         System.out.println("CHRISTMAS ADVENTURE");
 
