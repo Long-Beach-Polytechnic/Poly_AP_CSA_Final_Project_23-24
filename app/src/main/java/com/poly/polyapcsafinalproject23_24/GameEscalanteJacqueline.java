@@ -378,6 +378,7 @@ public class GameEscalanteJacqueline extends GameActivity {
 
         defeat();
     }
+
     private void gotoMO()
     {
 
