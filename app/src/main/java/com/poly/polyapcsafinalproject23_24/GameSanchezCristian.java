@@ -279,31 +279,40 @@ public class GameSanchezCristian extends GameActivity {
     private void road()
     {
 
-        tvStoryText.setText("You get ran over at the coner of the school");
+        tvStoryText.setText("You get ran over at the corner of the school");
 
         defeat();
     }
     private void take()
     {
 
-        System.out.println("\nWhat type of car do you want to take?");
-        System.out.println("1.Sports car\n2. Old Car");
+        tvStoryText.setText("What type of car do you want to take?");
 
+        setAllBtnsVisible();
+        btn1.setText("Take the sports Car");
+        btn2.setText("Take the old Car");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            sportCar();
-        }
-        else if (choice == 2)
-        {
-            oldCar();
-        }
+        btn1.setOnClickListener(new view.OnClickListner() {
 
+            @Override
+            public void onClick(view v) {
+                sportCar();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                oldCar();
+            }
+        });
     }
     private void  sportCar()
     {
-
-        System.out.println("\nYou go so fast and the breaks werent working that caused you to crash into a tree");
+        tvStoryText.setText("You go so fast and the breaks werent working that caused you to crash into a tree");
 
         defeat();
     }
@@ -311,7 +320,7 @@ public class GameSanchezCristian extends GameActivity {
     private void  oldCar()
     {
 
-        System.out.println("\nThat car has been there for years that your own parents don’t even know where the keys are.");
+        tvStoryText.setText("That car has been there for years that your own parents don’t even know where the keys are.");
 
         defeat();
     }
@@ -319,66 +328,96 @@ public class GameSanchezCristian extends GameActivity {
     private void goToChurch()
     {
 
-        System.out.println("\nWhat church do you want to go too ");
-        System.out.println("1.Old Looking church\n2. Nice fancy looking chuch");
+        tvStoryText.setText("What church do you want to go too ");
 
+        etAllBtnsVisible();
+        btn1.setText("Old Looking church");
+        btn2.setText("Nice fancy looking church");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            old();
-        }
-        else if (choice == 2)
-        {
-            fancy();
-        }
+        btn1.setOnClickListener(new view.OnClickListner() {
 
+            @Override
+            public void onClick(view v) {
+                old();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                fancy();
+            }
+        });
     }
     private void old()
     {
 
-        System.out.println("\nWhat color do you want to wear to Church?");
-        System.out.println("1.Wear red\n2. Wear blue");
+        tvStoryText.setText("\nWhat color do you want to wear to Church?");
 
+        etAllBtnsVisible();
+        btn1.setText("Wear red");
+        btn2.setText("Wear blue");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            red();
-        }
-        else if (choice == 2)
-        {
-            blue();
-        }
+        btn1.setOnClickListener(new view.OnClickListner() {
 
+            @Override
+            public void onClick(view v) {
+                red();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                blue();
+            }
+        });
     }
     private void  red()
     {
 
-        System.out.println("\nThe pastor is fake and doesnt like the color red");
+        tvStoryText.setText("The pastor is fake and doesn't like the color red");
 
         defeat();
     }
 
     private void blue()
     {
-
-        System.out.println("\nYou are the winner nice your a champ.");
+        tvStoryText.setText("You are the winner nice your a champ.");
     }
 
     private void fancy()
     {
 
-        System.out.println("\nWhere do you want to sit at the Church?");
-        System.out.println("1.Sit in the Front were it is empty.\n2. Sit in the Back were it is empty.");
+        tvStoryText.setText("Where do you want to sit at the Church?");
 
+        etAllBtnsVisible();
+        btn1.setText("Sit in the Front were it is empty.");
+        btn2.setText("Sit in the Back were it is empty.");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            front();
-        }
-        else if (choice == 2)
-        {
-            back();
-        }
+        btn1.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                front();
+            }
+        });
+
+        btn2.setOnClickListener(new view.OnClickListner() {
+
+            @Override
+            public void onClick(view v) {
+                back();
+            }
+        });
 
     }
 
@@ -386,7 +425,7 @@ public class GameSanchezCristian extends GameActivity {
     private void  front()
     {
 
-        System.out.println("\nYou die she is weird she dosnt like people siting in the front ");
+        tvStoryText.setText("\nYou die she is weird she dosnt like people siting in the front ");
 
         defeat();
     }
@@ -395,7 +434,7 @@ public class GameSanchezCristian extends GameActivity {
     private void  back()
     {
 
-        System.out.println("\nYou die she is weird she dosnt like people siting in the back ");
+        tvStoryText.setText("\nYou die she is weird she dosnt like people siting in the back ");
 
         defeat();
     }
@@ -407,7 +446,7 @@ public class GameSanchezCristian extends GameActivity {
     {
         numLives--;
 
-        System.out.print("...");
+        tvStoryText.setText("...");
 
         if (numLives > 0)
         {
@@ -415,7 +454,7 @@ public class GameSanchezCristian extends GameActivity {
         }
         else
         {
-            System.out.println("GAME OVER TRY AGAIN");
+            tvStoryText.setText("GAME OVER TRY AGAIN");
         }
     }
 }
