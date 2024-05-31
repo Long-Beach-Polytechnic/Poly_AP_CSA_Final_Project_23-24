@@ -251,17 +251,25 @@ public class GameEscalanteJacqueline extends GameActivity {
     {
 
         tvStoryText.setText("\nYou have a choice, what do you do?");
-        System.out.println("1. Go to Ms.Vang\n2. Go to Ms.Laztin");
+
+        btn1.setText("Go to Ms.Vang");
+        btn2.setText(" Go to Ms.Laztin");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if(choice == 1)
-        {
-            gotoIntrotoDrawing();
-        }
-        else if (choice == 2)
-        {
-            gotoCeramics();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoIntrotoDrawing();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoCeramics();
+            }
+        });
+
     }
     private void gotoIntrotoDrawing()
     {
@@ -283,33 +291,48 @@ public class GameEscalanteJacqueline extends GameActivity {
     {
 
         tvStoryText.setText("\nWhat MEDS Strand would you like to enroll in?");
-        System.out.println("1 .Enroll in Patient Mental Health\n2. Enroll in Patient Physical Health");
+
+        btn1.setText("  Enroll in Patient Mental Health");
+        btn2.setText("Enroll in Patient Physical Health");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if (choice == 1)
-        {
-            enrollinPMH();
-        }
-        else if(choice == 2);
-        {
-            enrollinPPH();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enrollinPMH();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enrollinPPH();
+            }
+        });
+
     }
     private void enrollinPMH()
     {
 
         tvStoryText.setText("\nYou have a choice, what do you do?");
-        System.out.println("1. Go to Health and Career Exploration\n2. Go to Mental and Behavioral Health Pro INT");
+        btn1.setText(" Go to Health and Career Exploration");
+        btn2.setText("Go to Mental and Behavioral Health Pro INT");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if(choice == 1)
-        {
-            gotoHCE();
-        }
-        else if (choice == 2)
-        {
-            gotoMBHPI();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoHCE();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoMBHPI();
+            }
+        });
+
     }
     private void gotoHCE()
     {
@@ -329,17 +352,24 @@ public class GameEscalanteJacqueline extends GameActivity {
     {
 
         tvStoryText.setText("\nYou have a choice, what do you do?");
-        System.out.println("1. Go to Healthcare Admin Tech\n2. Go to Medical Occuption");
+        btn1.setText(" Go to Healthcare Admin Tech");
+        btn2.setText("Go to Medical Occuption");
+        btn3.setVisibility(View.INVISIBLE);
 
 
-        if(choice == 1)
-        {
-            gotoHAT();
-        }
-        else if (choice == 2)
-        {
-            gotoMO();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoHAT();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoMO();
+            }
+        });
+
     }
     private void gotoHAT()
     {
