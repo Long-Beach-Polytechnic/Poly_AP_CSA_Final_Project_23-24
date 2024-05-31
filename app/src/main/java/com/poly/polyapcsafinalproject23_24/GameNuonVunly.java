@@ -326,7 +326,7 @@ public class GameNuonVunly extends GameActivity {
     private void gotTelepot()
     {
         tvStoryText.setText(" Thought a spaceship going to spawn?");
-        tvStoryText.setText("A light coming from above and shine dirctly at you. and the closer you look, You realized a ship coming down and abducting you")
+        tvStoryText.setText("A light coming from above and shine dirctly at you. and the closer you look, You realized a ship coming down and abducting you");
         tvStoryText.setText("*CONGRATULATION YOU WIN* The moment you open your eye again, you'll forget everything.");
     }
 
@@ -419,7 +419,7 @@ public class GameNuonVunly extends GameActivity {
 
     private void backward()
     {
-        tvStoryText.setText("*Take steps back to give more space* not even a second later, Jeff rushing at you about swing right again, but this time slower and seem weaker than last time....however it still fast.\n1. try to block...\n2. dodge again...\n3. rush at him and try to slashing its stomach");
+        tvStoryText.setText("*Take steps back to give more space* not even a second later, Jeff rushing at you about swing right again, but this time slower and seem weaker than last time....however it still fast.");
 
         btn1.setText("try to block...");
         btn2.setText("dodge again...");
@@ -455,23 +455,35 @@ public class GameNuonVunly extends GameActivity {
     private void dodgeAgain()
     {
         System.out.println("\nYou dodge and try to do like time, but this time your aim for the neck. At the same time, Jeff's left hand was about to swing. \n1. risk it \n2. dodge \n3. change aim to the left hand");
-        int choice = Util.enterInt(1,3);
-        if (choice == 1)
-        {
-            System.out.println("\nIt's a battle of time. But You Won...You piered him in a throat and kill it.");
-            System.out.println("Congratulation YOU WIN");
-            run();
-        }
-        else if (choice == 2 )
-        {
-            System.out.println("\nYou dodged right but Jeff swing around, back slapping you and...");
-            defeatGame();
-        }
-        else if (choice == 3)
-        {
-            System.out.println("\nYou're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
-            defeatGame();
-        }
+        btn1.setText("Risk it");
+        btn2.setText("Dodge");
+        btn3.setText("change aim to its left hand");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("It's a battle of time. But You Won...You piered him in a throat and kill it.");
+                tvStoryText.setText("Congratulation YOU WIN");
+                run();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("\nYou dodged right but Jeff swing around, back slapping you and...");
+                defeatGame();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
+                defeatGame();
+            }
+        });
+
     }
 
 
@@ -480,40 +492,64 @@ public class GameNuonVunly extends GameActivity {
 
     private void store()
     {
-        System.out.println("\nYou 3 options: \n1. speed potions ($1050) \n2. ak-47 ($600) \n3. mystery box ($900)");
-        int choice = Util.enterInt(1,3);
-        if (choice == 1)
-        {
-            speedPotion();
-        }
-        else if (choice == 2)
-        {
-            ak_47();
-        }
-        else if (choice == 3)
-        {
-            mysteryBox();
-        }
+         tvStoryText.setText("You 3 options:");
+        btn1.setText("speed potions ($1050)");
+        btn2.setText("ak-47 ($600)");
+        btn3.setText("mystery box ($900)");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speedPotion();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ak_47();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mysteryBox();
+            }
+        });
     }
 
 
 
     private void speedPotion()
     {
-        System.out.println("The potion give you insane speed and immortality for 1:30min. skipping most of the obstacle. \n*TIME SKIP TO WHERE THE AFFECT STOP* You stop and face three paths. \n1. Left path \n2. straight path \n3. The inB etween path");
-        int choice = Util.enterInt(1, 3);
-        if (choice == 1)
-        {
-            leftPath();
-        }
-        else if (choice == 2)
-        {
-            straightPath();
-        }
-        else if (choice == 3)
-        {
-            inBetween();
-        }
+        tvStoryText.setText("The potion give you insane speed and immortality for 1:30min. skipping most of the obstacle. *TIME SKIP TO WHERE THE AFFECT STOP* You stop and face three paths.");
+
+        btn1.setText("Left Path");
+        btn2.setText("Straight Path");
+        btn3.setText("The in Between Path");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                leftPath();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                straightPath();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inBetween();
+            }
+        });
+
     }
 
 
@@ -522,9 +558,9 @@ public class GameNuonVunly extends GameActivity {
 
     private void leftPath()
     {
-        System.out.println("You see a portal and run into it.");
-        System.out.println("\"CONGRATULATION YOU WIN\"");
-        System.out.println("You wake up in your bed and don't remeber anything");
+        tvStoryText.setText("You see a portal and run into it.");
+        tvStoryText.setText("\"CONGRATULATION YOU WIN\"");
+        tvStoryText.setText("You wake up in your bed and don't remeber anything");
         run();
 
 
@@ -532,16 +568,16 @@ public class GameNuonVunly extends GameActivity {
 
     private void straightPath()
     {
-        System.out.println("\nAs you continue to run straight, A message pop up");
-        System.out.println("\"Opp!!! The games haven’t yet so this is a bug\" \nWe going to send you back to nearly the start");
+        tvStoryText.setText("\nAs you continue to run straight, A message pop up");
+        tvStoryText.setText("\"Opp!!! The games haven’t yet so this is a bug\" \nWe going to send you back to nearly the start");
         right();
 
     }
 
     private void inBetween()
     {
-        System.out.println("As you continue to run, There is a deadend and a door infront...");
-        System.out.println("As you approach to the door, It need password to open. (This is a dlc path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
+        tvStoryText.setText("As you continue to run, There is a deadend and a door infront...");
+        tvStoryText.setText("As you approach to the door, It need password to open. (This is a dlc path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
         defeatGame();
     }
 
@@ -553,7 +589,7 @@ public class GameNuonVunly extends GameActivity {
 
     private void ak_47()
     {
-        System.out.println("+1 Gun, +5 Mag \nYou shoot the monster finished 1st Mag. However, AS you try to shoot try to it, The monster's regeneration power getting more stronger and stronger, to the point of bullet become useless...");
+        tvStoryText.setText("+1 Gun, +5 Mag \nYou shoot the monster finished 1st Mag. However, AS you try to shoot try to it, The monster's regeneration power getting more stronger and stronger, to the point of bullet become useless...");
         defeatGame();
     }
 
@@ -579,17 +615,27 @@ public class GameNuonVunly extends GameActivity {
     private void grenade()
     {
         System.out.println("wow...one single grenade...\n1. end yourself \n2. throw to the monster");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            System.out.println("You open the trigger and rush to the monster....");
-            defeatGame();
-        }
-        else if (choice == 2)
-        {
-            System.out.println("You throw it to the monster....It dodged.....");
-            defeatGame();
-        }
+
+        btn1.setText("end yourself");
+        btn2.setText("throw to the monster");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You open the trigger and rush to the monster....");
+                defeatGame();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You throw it to the monster....It dodged.....");
+                defeatGame();
+            }
+        });
+
     }
 
 
@@ -600,22 +646,29 @@ public class GameNuonVunly extends GameActivity {
 
     private void continueToRun()
     {
-        System.out.println();
-        System.out.println("You decided not to shoot it because you thought that you might miss it");
-        System.out.println("After you took about 4 steps, you see a left turn next to you. What would you do? \n1. turn left \n2. continue straight");
-        int choice = Util.enterInt(1, 2);
-        if (choice == 1)
-        {
-            System.out.println();
-            System.out.println("The moment you turn, You see a light shine upward coming from a \"place\". unfortunately, you're too slow and the \"thing\" catch up to you....");
-            defeatGame();
-        }
-        else if (choice == 2)
-        {
-            System.out.println();
-            System.out.println("You decided to continue forward, but what you don't realized is how fast the \"monster\" is. In a flash, It already catch up to you and then...");
-            defeatGame();
-        }
+
+        tvStoryText.setText("You decided not to shoot it because you thought that you might miss it");
+        tvStoryText.setText("After you took about 4 steps, you see a left turn next to you. What would you do? \n1. turn left \n2. continue straight");
+        btn1.setText("turn left");
+        btn2.setText("continue straight");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("The moment you turn, You see a light shine upward coming from a \"place\". unfortunately, you're too slow and the \"thing\" catch up to you....");
+                defeatGame();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You decided to continue forward, but what you don't realized is how fast the \"monster\" is. In a flash, It already catch up to you and then...");
+                defeatGame();
+            }
+        });
+
     }
 
 
@@ -631,12 +684,12 @@ public class GameNuonVunly extends GameActivity {
         int chances = (int) (Math.random() * 5) + 1;
         if (chances == 1 || chances == 2 || chances == 4 || chances == 5)
         {
-            System.out.println("A sign placed there for a reason.... You then proceed to fall off a climb");
+            tvStoryText.setText("A sign placed there for a reason.... You then proceed to fall off a climb");
             defeatGame();
         }
         else
         {
-            System.out.println("WOW, NO WAY!! You actually so lucky. Congrat, You won");
+            tvStoryText.setText("WOW, NO WAY!! You actually so lucky. Congrat, You won");
             run();
         }
     }
@@ -646,9 +699,9 @@ public class GameNuonVunly extends GameActivity {
 
     private void rightToDead()
     {
-        System.out.println();
-        System.out.println("\"You're at the starting line\"");
-        System.out.println("Turn out there a barrier at a starting line, unfortunate...");
+
+        tvStoryText.setText("\"You're at the starting line\"");
+        tvStoryText.setText("Turn out there a barrier at a starting line, unfortunate...");
         defeatGame();
 
     }
@@ -658,67 +711,102 @@ public class GameNuonVunly extends GameActivity {
 
     private void left()
     {
-        System.out.println("You took left and then see a split way again, Which way you going? \n1. left \n2. right");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            System.out.println("You're at a starting line");
-            System.out.println(image());
-            defeatGame();
-        }
-        else if (choice == 2)
-        {
-            firstObstacle();
-        }
+        System.out.println("You took left and then see a split way again, Which way you going? ");
+        btn1.setText("Left");
+        btn2.setText("Right");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You're at a starting line");
+                tvStoryText.setText(image());
+                defeatGame();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firstObstacle();
+            }
+        });
+
     }
 
 
 
     private void firstObstacle()
     {
-        System.out.println("\nAs soon as you turned, You see: \n1. A fence that you might able to jump over \n2. A wall with broken bottom part");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            secondObstacle();
-        }
+        tvStoryText.setText("\nAs soon as you turned, You see: \n1. A fence that you might able to jump over \n2. A wall with broken bottom part");
+        btn1.setText("A fence that you might able to jump over");
+        btn2.setText("A wall with broken bottom part");
+        btn3.setVisibility(View.INVISIBLE);
 
-        else if (choice == 2)
-        {
-            System.out.println("\nthe wall is too close to slide in and too small to roll over. which allow the monster to catch up");
-            defeatGame();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                secondObstacle();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText(" wall is too close to slide in and too small to roll over. which allow the monster to catch up");
+                defeatGame();
+            }
+        });
+
     }
 
 
     private void secondObstacle()
     {
-        System.out.println("\nAfter jump across, the road getting smaller, barely fit two person. and there is a do-- \n *quick time event* \n1. dropping planks on your right to block way...\n2. grab a crowbar and throw at the monster... ");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            System.out.println("\nYou dropped all the planks down and not realized they connect to a big rock above. dropping the plank meaning that a big rock also fall down and it fail on the monster, knocking it out for a moment ");
-            door();
-        }
-        else if (choice == 2)
-        {
-            System.out.println("\nWhen you threw that crowber, It hit its throat which is a jekpot (because it's the monster's weak point), knocking the monster out for a mmonet");
-            door();
-        }
+        System.out.println("\nAfter jump across, the road getting smaller, barely fit two person. and there is a do-- \n *quick time event*");
+        btn1.setText("dropping planks on your right to block way...");
+        btn2.setText("grab a crowbar and throw at the monster... ");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You dropped all the planks down and not realized they connect to a big rock above. dropping the plank meaning that a big rock also fall down and it fail on the monster, knocking it out for a moment ");
+                door();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("When you threw that crowber, It hit its throat which is a jekpot (because it's the monster's weak point), knocking the monster out for a mmonet");
+                door();
+            }
+        });
+
     }
 
     private void door()
     {
         System.out.print("\nThis giving you time to rush to the door. beside you there: \n1. A key \n2. An axe");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            randomKey();
-        }
-        else if (choice == 2)
-        {
-            anAxe();
-        }
+        btn1.setText("A key");
+        btn2.setText("An axe");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                randomKey();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                anAxe();
+            }
+        });
+
     }
 
     private void randomKey()
@@ -727,12 +815,12 @@ public class GameNuonVunly extends GameActivity {
         int chances = (int) (Math.random() * 4) + 1;
         if (chances == 1 || chances == 2 || chances == 4 )
         {
-            System.out.println("Oh oh! wrong key...");
+            tvStoryText.setText("Oh oh! wrong key...");
             defeatGame();
         }
         else
         {
-            System.out.println("*Door unlocked*");
+            tvStoryText.setText("*Door unlocked*");
             triviaQuestions();
         }
     }
@@ -742,58 +830,88 @@ public class GameNuonVunly extends GameActivity {
     private void anAxe()
     {
         System.out.println("\nYou pick up the axe and immediately axing the door viciously. after 30second of cutting the door, The monster wake up. and you start panicking \n1. continue \n2. facing the monster");
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            System.out.println("\nAnd then the door crack a huge hole. with no time less, You hurry and go through ");
-            triviaQuestions();
-        }
-        else if (choice == 2)
-        {
-            System.out.println("You try charging toward the monster but he just launch to you and grab by the head first. and crushing it.");
-            defeatGame();
-        }
+        btn1.setText("continue");
+        btn2.setText("facing the monster");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("\nAnd then the door crack a huge hole. with no time less, You hurry and go through ");
+                triviaQuestions();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You try charging toward the monster but he just launch to you and grab by the head first. and crushing it.");
+                defeatGame();
+            }
+        });
+
     }
 
 
     private void triviaQuestions()
     {
-        System.out.println("*TRIVIA TIME* TIME REMAIN STOP UNTIL YOU ANSWER THE QUESTION. \nWhat was the first Disney animated feature movie that was not based on an already existing story? \n1. Lion King \n2. Cinderella \n3. Bambi");
-        int choice = Util.enterInt(1,3);
-        if (choice == 1)
-        {
-            System.out.println("Correct");
-            finalDestination();
-        }
-        else if (choice == 2)
-        {
-            System.out.println("WRONG!");
-            defeatGame();
-        }
-        else if (choice == 3)
-        {
-            System.out.println("Close but WRONG");
-            defeatGame();
-        }
+        tvStoryText.setText("*TRIVIA TIME* TIME REMAIN STOP UNTIL YOU ANSWER THE QUESTION. \nWhat was the first Disney animated feature movie that was not based on an already existing story? ");
+        btn1.setText("Lion King");
+        btn2.setText("Cinderella");
+        btn3.setText("Bambi");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("Correct");
+                finalDestination();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("WRONG");
+                defeatGame();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("Close but WRONG");
+                defeatGame();
+            }
+        });
+
     }
 
     private void finalDestination()
     {
-        System.out.println("After answer the question and go to the door, you see see two path. \n1. right lane \n2. diagonal line to the right");
-        int choice = Util.enterInt(1, 2);
-        if (choice == 1)
-        {
-            System.out.println("As you continue to run, There is a deadend and a door infront...");
-            System.out.println("As you approach to the door, It need password to open. (This is a DLC path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
-            defeatGame();
-        }
-        else if (choice == 2)
-        {
-            System.out.println("You see a portal and run into it.");
-            System.out.println("\"CONGRATULATION YOU WIN\"");
-            System.out.println("You wake up in your bed and don't remeber anything");
-            run();
-        }
+        tvStoryText.setText("After answer the question and go to the door, you see see two path. \n1. right lane \n2. diagonal line to the right");
+        btn1.setText("right lane");
+        btn2.setText("diagonal line to the right");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("As you continue to run, There is a deadend and a door infront...");
+                tvStoryText.setText("As you approach to the door, It need password to open. (This is a DLC path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
+                defeatGame();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvStoryText.setText("You see a portal and run into it.");
+                tvStoryText.setText("\"CONGRATULATION YOU WIN\"");
+                tvStoryText.setText("You wake up in your bed and don't remeber anything");
+                run();
+            }
+        });
+
 
     }
 
