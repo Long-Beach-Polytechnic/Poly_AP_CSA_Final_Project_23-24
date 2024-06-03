@@ -1,5 +1,12 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.poly.polyapcsafinalproject23_24.GameActivity;
@@ -8,34 +15,15 @@ import java.util.Scanner;
 
 public class GameOfSengVisal extends GameActivity {
 
-    private TextView tvTitle, tvSubtitle, tvStoryText;
 
-    private ImageView ivStory;
+    private TextView tvSubtitle, tvNameVal, tvWeightVal, tvBodyFatVal, tvBodyMassVal, tvMaxBenchVal, tvMaxSquatVal, tvMaxRunVal, tvMain;
+
+    private ImageView ivMain;
+    private EditText etMain;
+
+    private int day, numDays;
 
     private Button btn1, btn2, btn3, btn4;
-
-    @Override
-    protected void run() {
-        setContentView(R.layout.activity_game_4_button);
-
-        tvTitle = findViewByID(R.id.tv_title_txt);
-        tvSubtitle = findviewById(R.id.tv_subtitle);
-        tvStoryText = findViewById(R.id.tv_story);
-        ivStory = findViewById(R.id.iv_story);
-        btn1 = findViewById(R.id.btn_1);
-        btn2 = findViewById(R.id.btn_2);
-        btn3 = findViewById(R.id.btn_3);
-
-        tvTitle.setText("GET FIT!");
-    }
-
-    private void setAllBtnsVisible()
-    {
-        btn1.setVisibility(View.VISIBLE);
-        btn2.setVisibility(View.VISIBLE);
-        btn3.setVisibility(View.VISIBLE);
-        btn4.setVisibility(View.VISIBLE);
-    }
 
     /**
      *fat body type preset
@@ -54,6 +42,54 @@ public class GameOfSengVisal extends GameActivity {
      *tracks the current body type chosen
      */
     private SengMan currentBodyType; //tracks which body type is currently being used
+
+    @Override
+    protected void run() {
+        setContentView(R.layout.activity_seng_visal_main);
+
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvMain = findViewById(R.id.tv_main);
+        tvNameVal = findViewById(R.id.tv_name_val);
+        tvWeightVal = findViewById(R.id.tv_weight_val);
+        tvBodyFatVal = findViewById(R.id.tv_body_fat_val);
+        tvBodyMassVal = findViewById(R.id.tv_body_mass_val);
+        tvMaxBenchVal = findViewById(R.id.tv_max_bench_val);
+        tvMaxSquatVal = findViewById(R.id.tv_max_squat_val);
+        tvMaxRunVal = findViewById((R.id.tv_max_run_val);
+        etMain = findViewById(R.id.et_main);
+
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+        btn4 = findViewById(R.id.btn_4);
+
+        etMain.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                welcomeScreen();
+            }
+        });
+
+
+
+    }
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
+    }
+
+
 
 
     /**
@@ -75,24 +111,22 @@ public class GameOfSengVisal extends GameActivity {
      *method for the pre-game screen
      */
     private void welcomeScreen() {
-        String text = """
 
-         ____ _____ _____   _____ ___ _____ _
-        / ___| ____|_   _| |  ___|_ _|_   _| |
-       | |  _|  _|   | |   | |_   | |  | | | |
-       | |_| | |___  | |   |  _|  | |  | | |_|
-       | ____|_____| |_|   |_|   |___| |_| (_)
-
-
-      """;
-        System.out.println(text);
-        System.out.println("Welcome to the body improvement simulator!");
+        tvSubtitle.setText("Welcome to the body improvement simulator!");
         System.out.println("\nYou can choose between 3 body types: ");
         System.out.println("There some exercises you can perform, your maxes are recorded and you can increase them by pushing your limits bit by bit");
         System.out.println("Diet is important too! There are multiple foods you can eat to manipulate your body's appearance!");
         System.out.println("\nGood luck!");
-        Util.pauseConsole();
-        Util.clearConsole();
+        String text = "";
+        tvMain.setText(text);
+
+        btn1.setText("Continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initialize();
+            }
+        });
     }
 
     /**
@@ -100,17 +134,36 @@ public class GameOfSengVisal extends GameActivity {
      */
     private void initialize() {
 
-        Scanner scan = new Scanner(System.in);
 
-        System.out.print("Enter your name: ");
-        String characterName = scan.nextLine();
+        tvMain.setText("Enter your name");
 
+        btn1.setVisibility(View.INVISIBLE);
 
-        //initialize the instance variables
+        etMain.setVisibility(View.VISIBLE);
 
-        this.bodyType1 = new SengMan(characterName, 200.0, 30.0, 70.0, 150, 170, 1, 0);
-        this.bodyType2 = new SengMan(characterName, 100, 10.0, 90.0, 90, 100, 3, 0);
-        this.bodyType3 = new SengMan(characterName, 140, 15.0, 85.0, 120, 140, 2, 0);
+        etMain.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                btn4.setVisibility(View.VISIBLE);
+                btn4.setText("Continue");
+                btn4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        chooseBody(etMain.getText().toString());
+                    }
+                });
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
 
     }
@@ -118,19 +171,53 @@ public class GameOfSengVisal extends GameActivity {
     /**
      *decision by the user to choose one of the three given body types
      */
-    private void chooseBody() {
-        Util.clearConsole();
+    private void chooseBody(String characterName) {
+
+        etMain.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        this.bodyType1 = new SengMan(characterName, 200.0, 30.0, 70.0, 150, 170, 1, 0);
+        this.bodyType2 = new SengMan(characterName, 100, 10.0, 90.0, 90, 100, 3, 0);
+        this.bodyType3 = new SengMan(characterName, 140, 15.0, 85.0, 120, 140, 2, 0);
+
+
+
         System.out.println("Pick a body preset");
         System.out.println("1. Fat\n2. Skinny\n3. Average");
 
-        int body = Util.enterInt(1, 3);
-        if (body == 1) {
-            this.currentBodyType = bodyType1;
-        } else if (body == 2) {
-            this.currentBodyType = bodyType2;
-        } else if (body == 3) {
-            this.currentBodyType = bodyType3;
-        }
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+
+        btn1.setText("Fat");
+        btn2.setText("Skinny");
+        btn3.setText("Average");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentBodyType = bodyType1;
+                decision();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentBodyType = bodyType2;
+                decision();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentBodyType = bodyType3;
+                decision();
+            }
+        });
+
+
 
     }
 
@@ -138,39 +225,109 @@ public class GameOfSengVisal extends GameActivity {
      *contents inside this method will loop for the majority of the game
      */
     private void decision() { //block variable, you cannot use day outside of this for loop
-        Util.clearConsole();
-        System.out.println("How many days do you want to give yourself for your best you?");
-        int dayNumbers = Util.enterInt(1, 500);
-        Util.clearConsole();
-        System.out.println("You have " + dayNumbers + " days to fulfill your goals, " + currentBodyType.getName());
-        System.out.println(currentBodyType);
-        Util.pauseConsole();
 
-        String text = """
+        tvMain.setText("How many days do you want to give yourself for your best you?");
+
+        etMain.setInputType(InputType.TYPE_CLASS_NUMBER);
+        etMain.setHint("");
+
+        etMain.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                btn4.setVisibility(View.VISIBLE);
+                btn4.setText("Continue");
+                btn4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        numDays = Integer.parseInt(etMain.getText().toString());
+                        day = 1;
+                        options();
+                    }
+                });
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+    }
+
+    private void options(){
+
+        if (day < numDays)
+        {
+            Util.clearConsole();
+            System.out.println("You have " + dayNumbers + " days to fulfill your goals, " + currentBodyType.getName());
+            System.out.println(currentBodyType);
+
+            tvNameVal.setText(currentBodyType.getName());
+            tvWeightVal.setText(currentBodyType.getWeight());
+            Util.pauseConsole();
+
+            String text = """
         What do you want to do?
         1. Go to the Gym
         2. Eat food
         3. Go for a run
         4. Rest for the day
         """;
-        System.out.println(text);
-        for (int day=dayNumbers;day>=1;day--) { //incrementing for loop
-            int option = Util.enterInt(1,4);
-            if (option == 1) {
-                Util.clearConsole();
-                System.out.println("What do you want to do at the gym?");
-                System.out.println("1. Bench Press\n2. Squat\n3. Run on the treadmill");
-                option = Util.enterInt(1,3);
-                if (option == 1) { //benchpress chosen
-                    benchPress();
-                } else if (option == 2) { //squat chosen
-                    squat();
-                } else if (option == 3) { //treadmill chosen
+
+
+                if (option == 1) {
+                    Util.clearConsole();
+                    System.out.println("What do you want to do at the gym?");
+                    System.out.println("1. Bench Press\n2. Squat\n3. Run on the treadmill");
+                    option = Util.enterInt(1,3);
+                    if (option == 1) { //benchpress chosen
+                        benchPress();
+                    } else if (option == 2) { //squat chosen
+                        squat();
+                    } else if (option == 3) { //treadmill chosen
+                        Util.clearConsole();
+                        currentBodyType.setConsecutiveWorkoutDays(0); //running is rest as it does not heavily train muscles
+                        System.out.println("How many miles do you want to run?");
+                        System.out.println("Your current max run distance is: " + currentBodyType.getMaxRunDistance());
+                        int run = Util.enterInt(1,1000);
+                        if (run > currentBodyType.getMaxRunDistance() + 1) {
+                            System.out.println("You can't run that far! One day has been wasted");
+                        }
+                        else {
+                            currentBodyType.setWeight(currentBodyType.getWeight() - 4);
+                            currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() + 0.5);
+                            currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() - 0.5);
+                            System.out.println("LBM increased by 0.5\nFat decreased by 0.5\nWeight decreased by 4");
+                        } if (run > currentBodyType.getMaxRunDistance() - 1) { //increases max run distance after running
+                            currentBodyType.setMaxRunDistance(run);
+                            System.out.println("Your max distance has increased to " + currentBodyType.getMaxRunDistance() + "!");
+
+                        }
+                    }
+                } else if (option == 2) { // eat food
+                    Util.clearConsole();
+                    System.out.println("What do you want to eat?");
+                    System.out.println("1. Chicken\n2. Salad\n3. Burger");
+                    int food = Util.enterInt(1,3);
+                    if (food == 1 ) { //adds 5 weight and 2 lbm, subtracts 2 fat
+                        eatChicken();
+                    }
+                    else if (food == 2 ) { //subtracts 4 weight
+                        eatSalad();
+                    }
+                    else if (food == 3) { //adds 5 weight and 2 fat, subtracts 2 lbm
+                        eatBurger();
+                    }
+                } if (option == 3) { // go for a run
                     Util.clearConsole();
                     currentBodyType.setConsecutiveWorkoutDays(0); //running is rest as it does not heavily train muscles
-                    System.out.println("How many miles do you want to run?");
+                    System.out.println("How many miles do you want to run? Note that you cannot run over a mile over your max");
                     System.out.println("Your current max run distance is: " + currentBodyType.getMaxRunDistance());
-                    int run = Util.enterInt(1,1000);
+                    int run = Util.enterInt(1, 1000);
                     if (run > currentBodyType.getMaxRunDistance() + 1) {
                         System.out.println("You can't run that far! One day has been wasted");
                     }
@@ -182,64 +339,35 @@ public class GameOfSengVisal extends GameActivity {
                     } if (run > currentBodyType.getMaxRunDistance() - 1) { //increases max run distance after running
                         currentBodyType.setMaxRunDistance(run);
                         System.out.println("Your max distance has increased to " + currentBodyType.getMaxRunDistance() + "!");
-
+                    } else if (option == 4) {
+                        currentBodyType.setConsecutiveWorkoutDays(0);
+                        currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() + 0.5);
+                        currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() - 0.5);
+                        System.out.println("You rested for the day");
+                        // You decide to rest for the day
                     }
-                }
-            } else if (option == 2) { // eat food
-                Util.clearConsole();
-                System.out.println("What do you want to eat?");
-                System.out.println("1. Chicken\n2. Salad\n3. Burger");
-                int food = Util.enterInt(1,3);
-                if (food == 1 ) { //adds 5 weight and 2 lbm, subtracts 2 fat
-                    eatChicken();
-                }
-                else if (food == 2 ) { //subtracts 4 weight
-                    eatSalad();
-                }
-                else if (food == 3) { //adds 5 weight and 2 fat, subtracts 2 lbm
-                    eatBurger();
-                }
-            } if (option == 3) { // go for a run
-                Util.clearConsole();
-                currentBodyType.setConsecutiveWorkoutDays(0); //running is rest as it does not heavily train muscles
-                System.out.println("How many miles do you want to run? Note that you cannot run over a mile over your max");
-                System.out.println("Your current max run distance is: " + currentBodyType.getMaxRunDistance());
-                int run = Util.enterInt(1, 1000);
-                if (run > currentBodyType.getMaxRunDistance() + 1) {
-                    System.out.println("You can't run that far! One day has been wasted");
-                }
-                else {
-                    currentBodyType.setWeight(currentBodyType.getWeight() - 4);
-                    currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() + 0.5);
-                    currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() - 0.5);
-                    System.out.println("LBM increased by 0.5\nFat decreased by 0.5\nWeight decreased by 4");
-                } if (run > currentBodyType.getMaxRunDistance() - 1) { //increases max run distance after running
-                    currentBodyType.setMaxRunDistance(run);
-                    System.out.println("Your max distance has increased to " + currentBodyType.getMaxRunDistance() + "!");
-                } else if (option == 4) {
-                    currentBodyType.setConsecutiveWorkoutDays(0);
-                    currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() + 0.5);
-                    currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() - 0.5);
-                    System.out.println("You rested for the day");
-                    // You decide to rest for the day
-                }
 
-            }
-            Util.pauseConsole();
-            Util.clearConsole();
-            System.out.println("You have " + day + " days left to fulfill your goals, " + currentBodyType.getName());
-            System.out.println(currentBodyType);
-            Util.pauseConsole();
+                }
+                Util.pauseConsole();
+                Util.clearConsole();
+                System.out.println("You have " + day + " days left to fulfill your goals, " + currentBodyType.getName());
+                System.out.println(currentBodyType);
+                Util.pauseConsole();
 
-            text = """
+                text = """
           What do you want to do?
           1. Go to the Gym
           2. Eat food
           3. Go for a run
           4. Rest for the day
           """;
-            System.out.println(text);
+                System.out.println(text);
+            }
         }
+        else {
+            endScreen();
+        }
+
     }
 
 
