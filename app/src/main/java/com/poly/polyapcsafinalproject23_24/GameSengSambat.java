@@ -35,7 +35,7 @@ public class GameSengSambat extends GameActivity
      //initialize number of lives
      numAttempts = 3;
      //create a scanner object for user input
-     scan = new Scanner(System.in);
+
 
      //create a player object (optional)
      //player = new Player(...)
@@ -45,11 +45,10 @@ public class GameSengSambat extends GameActivity
 
 
 
-     System.out.print(TextColor.YELLOW + (text) + TextColor.RESET);
 
-     System.out.println("You currently have " +  numAttempts + " attempts. You have " + numAttempts + " attempts left to survive the forest");
+     tvStoryText.setText("You currently have " +  numAttempts + " attempts. You have " + numAttempts + " attempts left to survive the forest");
 
-     System.out.println("\nTime: 11:07 PM Location: Somewhere in Alberta, Canada \n \nIt's getting dark and you're in the woods trying to get to a campsite. While navigating your way through the forest you hear a screech that creeps you out. What do you do?");
+     tvStoryText.setText("\nTime: 11:07 PM Location: Somewhere in Alberta, Canada \n \nIt's getting dark and you're in the woods trying to get to a campsite. While navigating your way through the forest you hear a screech that creeps you out. What do you do?");
 
      System.out.println( );
 
@@ -487,18 +486,34 @@ public class GameSengSambat extends GameActivity
         {
             tvStoryText.setText("The monster wanders off somewhere far and you leave safely");
 
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
 
+            btn1.setText("Continue");
 
-            endAdventure();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                endAdventure();
+            }
+        });
+
 
         }
         else
         {
             tvStoryText.setText("You walk into the monster again and it eats you.  You died.");
 
+            btn1.setText("Continue");
 
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    defeat();
+                }
 
-            defeat();
+            }
+
 
         }
     }

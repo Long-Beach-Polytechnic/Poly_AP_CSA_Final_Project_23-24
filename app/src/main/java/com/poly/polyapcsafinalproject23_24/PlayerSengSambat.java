@@ -1,4 +1,4 @@
-public class Player{
+public class PlayerSengSambat {
 
     private String name;
     private int points;
@@ -6,7 +6,7 @@ public class Player{
     private int numLives;
 
 
-    public Player(String name, int numLives)
+    public PlayerSengSambat(String name, int numLives)
     {
         this.name = name;
         this.points = 0;
@@ -14,7 +14,7 @@ public class Player{
         this.numLives = numLives;
     }
 
-    public Player(String name, int numLives, double money)
+    public PlayerSengSambat(String name, int numLives, double money)
     {
         this.name = name;
         this.points = 0;
