@@ -55,6 +55,7 @@ public class GamePadilloDamien extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 start();
             }
         });
@@ -172,8 +173,7 @@ public class GamePadilloDamien extends GameActivity {
         //start adventure here
 
         String text = """
-    Yeah… That’s not happening… Anyway, you decide to go investigate. You make it to the kitchen. “Who called?” She asked confused. “I don’t know, it’s an unknown number.” You say. What next?
-      """;
+    Yeah… That’s not happening… Anyway, you decide to go investigate. You make it to the kitchen. “Who called?” She asked confused. “I don’t know, it’s an unknown number.” You say. What next?""";
 
         tvStoryText.setText(text);
 
@@ -185,39 +185,58 @@ public class GamePadilloDamien extends GameActivity {
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            answerPhone2();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                leaveTheGame();
+            }
+        });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    dontAnswerPhone2();
+                }
+        });
+
         }
-        else if (choice == 2)
-        {
-            dontAnswerPhone2();
-        }
-
-    }
-
-
 
     private void answerPhone2()
     {
         //start adventure here
 
         String text = """
-    “Hello?” You ask. No answer.“That’s a horrible sound.” Lux says through the phone.
-    1. Ask again
-    2. Put the phone down
-      """;
+    “Hello?” You ask. No answer.“That’s a horrible sound.” Lux says through the phone.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            askAgain2();
-        }
-        else if (choice == 2)
-        {
-            dontAnswerPhone2();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Ask again");
+        btn2.setText("Put the phone down");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                answerPhone2();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dontAnswerPhone2();
+            }
+        });
+
+    }
 
     }
 
@@ -229,23 +248,33 @@ public class GamePadilloDamien extends GameActivity {
         //start adventure here
 
         String text = """
-    You hear a noise back in your room. “Who is that behind you?!” Lux asks.
-    1. Hide in the empty cabinet
-    2. Investigate
-      """;
+    You hear a noise back in your room. “Who is that behind you?!” Lux asks.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            hideInCabinet2();
-        }
-        else if (choice == 2)
-        {
-            investigate2();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Hide in a cabinet");
+        btn2.setText("Investigate");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-    }
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                hideInCabinet();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                investigate();
+            }
+        });
 
 
 
@@ -253,25 +282,36 @@ public class GamePadilloDamien extends GameActivity {
     private void investigate2()
     {
         //start adventure here
-
-        String text = TextColor.GREEN + """
-    You unlocked the plot armor ending. You walked into your room, and a masked killer was standing right there. You tried to run, but tripped on nothing. Idiot. The killer ended up tripping over your body, and landing on their knife. Suddenly, a second killer came running at you, but tripped, and got the same fate. Why are you weird? You still lived though I guess.
-    1. Yay, I'm gonna play again
-    2. I'm done (You're racist)
-      """ + TextColor.RESET;
+        String text = """
+    You unlocked the plot armor ending. You walked into your room, and a masked killer was standing right there. You tried to run, but tripped on nothing. Idiot. The killer ended up tripping over your body, and landing on their knife. Suddenly, a second killer came running at you, but tripped, and got the same fate. Why are you weird? You still lived though I guess.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yay, I'm gonna play again");
+        btn2.setText("I'm done (You're racist)");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-    }
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+
 
 
 
@@ -279,8 +319,7 @@ public class GamePadilloDamien extends GameActivity {
     private void hideInCabinet2()
     {
         //start adventure here
-
-        String text = TextColor.RED + """
+        String text = """
       ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
       ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
       ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
@@ -295,79 +334,107 @@ public class GamePadilloDamien extends GameActivity {
       ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
       ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄ ⠙⢿⣿
       ⠄⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿
-    You unlocked the Idiot Ending. The killer found you because they literally watched you go into the cabinet. Are you dumb? Just kidding, do you want to try again?
-    1. Okay sure
-    2. No (You're homophobic against men but not women because you're one of those weird people)
-      """ + TextColor.RESET;
+    You unlocked the Idiot Ending. The killer found you because they literally watched you go into the cabinet. Are you dumb? Just kidding, do you want to try again?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Okay sure");
+        btn2.setText("No (You're homophobic against men but not women because you're one of those weird people)");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-    }
+        tvStoryText.setText(text);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                start();
+            }
+        });
 
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                start();
+            }
+        });
 
 
     private void askAgain2()
     {
         //start adventure here
-
         String text = """
-    “Hello?” You ask again, more impatiently this time. A voice spoke, “Hello.” The voice was low and raspy as it responded. “Girl, hang up now.” Lux says, worried. “Who is this?” You ask. “Someone who likes scary movies.” They say hauntingly. Oh, so you’re ghostface? Wow! Actually, I’m not confused.” You say sarcastically, hanging up. “You’re so cool.” Lux says, proud. Her expression suddenly changed. “Wait, there’s someone behind you!”
-    1. Leave the house and call the police
-    2. Attack that loser
-      """;
+    “Hello?” You ask again, more impatiently this time. A voice spoke, “Hello.” The voice was low and raspy as it responded. “Girl, hang up now.” Lux says, worried. “Who is this?” You ask. “Someone who likes scary movies.” They say hauntingly. Oh, so you’re ghostface? Wow! Actually, I’m not confused.” You say sarcastically, hanging up. “You’re so cool.” Lux says, proud. Her expression suddenly changed. “Wait, there’s someone behind you!""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            leaveCallPolice2();
-        }
-        else if (choice == 2)
-        {
-            attackLoser();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Leave the house and call the police");
+        btn2.setText("Attack that loser");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                leaveCallPolice2();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                attackLoser();
+            }
+        });
 
     }
 
-
+    }
 
 
     private void attackLoser()
     {
         //start adventure here
-
-        String text = TextColor.GREEN + """
-    You unlocked the Samantha Carpenter ending. “Where?” You ask. You sound upset, but not scared. “In your room! I saw them down the hallway!” She shouted. “Fun.” You say sarcastically, charging down the hall and into your room. A masked killer was there, not expecting you yet. You tackled him, took his knife, and stabbed him in the face. “Oh my god! Behind you.!” Feet away, the second killer was there. You grabbed his knife holding arm, and stabbed him with it. Lux screams over the phone at the sight of blood, and you survive.
-    1. Play again
-    2. I hate Millessa Berrera and I'm glad she was fired from Scream 7
-      """ + TextColor.RESET;
+        String text = """
+    You unlocked the Samantha Carpenter ending. “Where?” You ask. You sound upset, but not scared. “In your room! I saw them down the hallway!” She shouted. “Fun.” You say sarcastically, charging down the hall and into your room. A masked killer was there, not expecting you yet. You tackled him, took his knife, and stabbed him in the face. “Oh my god! Behind you.!” Feet away, the second killer was there. You grabbed his knife holding arm, and stabbed him with it. Lux screams over the phone at the sight of blood, and you survive.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Play again");
+        btn2.setText("I hate Millessa Berrera and I'm glad she was fired from Scream 7");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
 
-
+    }
 
 
     private void leaveCallPolice2()
