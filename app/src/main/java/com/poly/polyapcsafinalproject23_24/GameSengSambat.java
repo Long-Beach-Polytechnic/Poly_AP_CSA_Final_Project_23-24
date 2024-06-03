@@ -41,18 +41,10 @@ public class GameSengSambat extends GameActivity
      //player = new Player(...)
 
      //display project title and description
-     String text = """
-
-      ███████╗███████╗██████╗ ██╗███████╗    ██╗    ██╗ ██████╗  ██████╗ ██████╗ ██╗      █████╗ ███╗   ██╗██████╗ ███████╗
-      ██╔════╝██╔════╝██╔══██╗██║██╔════╝    ██║    ██║██╔═══██╗██╔═══██╗██╔══██╗██║     ██╔══██╗████╗  ██║██╔══██╗██╔════╝
-      █████╗  █████╗  ██████╔╝██║█████╗      ██║ █╗ ██║██║   ██║██║   ██║██║  ██║██║     ███████║██╔██╗ ██║██║  ██║███████╗
-      ██╔══╝  ██╔══╝  ██╔══██╗██║██╔══╝      ██║███╗██║██║   ██║██║   ██║██║  ██║██║     ██╔══██║██║╚██╗██║██║  ██║╚════██║
-      ███████╗███████╗██║  ██║██║███████╗    ╚███╔███╔╝╚██████╔╝╚██████╔╝██████╔╝███████╗██║  ██║██║ ╚████║██████╔╝███████║
-      ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚══════╝     ╚══╝╚══╝  ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝
+     tvStoryText.setText("Eerie Woodlands");
 
 
 
-      """;
      System.out.print(TextColor.YELLOW + (text) + TextColor.RESET);
 
      System.out.println("You currently have " +  numAttempts + " attempts. You have " + numAttempts + " attempts left to survive the forest");
@@ -87,7 +79,6 @@ public class GameSengSambat extends GameActivity
         btn1.setText("Keep walking forward");
         btn2.setText("Investigate the noise");
         btn3.setText("Turn around and run away");
-        System.out.println( );
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +107,6 @@ public class GameSengSambat extends GameActivity
     private void goForward()
     {
         tvStoryText.setText("You keep walking forward hoping to find a way out of the forest, but you see an eyeless monster, he notices your footsteps and walks towards you. What do you do?");
-        setAllBtnsVisible();
         setAllBtnsVisible();
         btn1.setText("Hide in a bush");
         btn2.setText("Keep walking forward");
@@ -213,86 +203,103 @@ public class GameSengSambat extends GameActivity
     {
 
 
-        System.out.println("After heading east you walk into a group of hikers and they take you somewhere safe. You lived");
+       tvStoryText.setText("After heading east you walk into a group of hikers and they take you somewhere safe. You lived");
 
 
 
         endAdventure();
     }
 
-    private void keepWalkingForward()
-    {
+    private void keepWalkingForward() {
+        tvStoryText.setText("You keep walking forward but at this point the monster finds where you are and is very near. What do you do?");
+        btn1.setText("Attack the monster");
+        btn2.setText("Stay still and be quiet");
+        btn3.setText("Run Away as fast as you can");
 
-        System.out.println("You keep walking forward but at this point the monster finds where you are and is very near. What do you do?");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attackMonster();
+            }
+        });
 
-        System.out.println("1. Attack the monster\n2. Stay still and be quiet\n3. Run away as fast as you can");
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                beQuiet();
+            }
+        });
 
-        System.out.println( );
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                runAway();
+            }
 
 
-
-        if (choice == 1)
-        {
-            attackMonster();
-        }
-        else if (choice == 2)
-        {
-            beQuiet();
-        }
-        else if (choice == 3)
-        {
-            runAway();
-        }
+        });
     }
     private void beQuiet()
     {
 
 
-        System.out.println("You stay stil without making a noise, the monster can't detect you and eventually wanders off. What do you do?");
+        tvStoryText.setText("You stay still without making a noise, the monster can't detect you and eventually wanders off. What do you do?");
+        setAllBtnsVisible();
+        btn1.setText("Wait longer");
+        btn2.setText("Try to leave");
+        btn3.setVisibility(View.INVISIBLE);
 
-        System.out.println("\n1. Wait longer\n2. Try to leave");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { waitLonger(); }
+        });
 
-        System.out.println( );
-
-
-        if (choice == 1)
-        {
-            waitLonger();
-        }
-        else if (choice == 2)
-            tryToLeave();
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tryToLeave();
+            }
+        });
     }
 
 
-    private void investigateNoise()
-    {
+    private void investigateNoise() {
+        tvStoryText.setText("You investigate the noise and see a horrific eyeless monster in front of you. What do you do?");
+        btn1.setText("Stay still and don't make a noise");
+        btn2.setText("Try to run away");
+        btn3.setText("Throw a rock at it");
 
-        System.out.println("\nYou investigate the noise and see a horrific eyeless monster in front of you. What do you do?");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                beQuiet();
+            }
+        });
 
-        System.out.println("1. Stay still and don't make a noise\n2. Try to run away\n3. Throw a rock at it");
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                runAway();
+            }
+        });
 
-        System.out.println( );
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                throwRock();
+            }
 
 
-        if (choice == 1)
-        {
-            beQuiet();
-        }
-        else if (choice == 2)
-        {
-            runAway();
-        }
-        else if (choice == 3)
-        {
-            throwRock();
-        }
+        });
     }
 
     private void throwRock()
     {
 
 
-        System.out.println("You throw a rock at the monster, he responds by brutally beating you to death");
+        tvStoryText.setText("You throw a rock at the monster, he responds by brutally beating you to death");
 
 
 
@@ -302,33 +309,41 @@ public class GameSengSambat extends GameActivity
     private void runAway()
     {
 
+        tvStoryText.setText("While you're running away you notice the monster catching up. What do you do?");
+        btn1.setText("Attack the monster");
+        btn2.setText("Run west");
+        btn3.setText("Keep running");
 
-        System.out.println("\nWhile you're running away you notice the monster catching up. What do you do?");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attackMonster();
+            }
+        });
 
-        System.out.println("1. Attack the monster\n2. Run West\n3. Keep running");
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                runWest();
+            }
+        });
 
-        System.out.println( );
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                keepRunning();
+            }
 
 
-        if (choice == 1)
-        {
-            attackMonster();
-        }
-        else if (choice == 2)
-        {
-            runWest();
-        }
-        else if (choice == 3)
-        {
-            keepRunning();
-        }
+        });
     }
 
     private void keepRunning()
     {
 
 
-        System.out.println("The monster catches up and kills you. You died");
+       tvStoryText.setText("The monster catches up and kills you. You died");
 
 
 
@@ -339,59 +354,76 @@ public class GameSengSambat extends GameActivity
     {
 
         ivStory.setImageResource(R.drawable.im_sengsambat_tunnel);
+        tvStoryText.setText(" You run west and find a cave, there are two tunnels in front of you. What do you do");
+        btn1.setText("Hide in left tunnel");
+        btn2.setText("Hide in right tunnel");
+        btn3.setText("Hide behind a rock");
 
-        String text = """
-      You run west and find a cave, there are two tunnels in front of you. What do you do
-      1. Hide in left tunnel
-      2. Hide in right tunnel
-      3. Hide behind a rock
-      """;
-        System.out.println(TextColor.YELLOW + (text) + TextColor.RESET);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                leftTunnel();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rightTunnel();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                hideBehindRock();
+            }
 
 
-        if (choice == 1)
-        {
-            leftTunnel();
-        }
-        else if (choice == 2)
-        {
-            rightTunnel();
-        }
-        else if (choice == 3)
-        {
-            hideBehindRock();
-        }
+        });
+
     }
 
     private void hideBehindRock()
     {
 
 
+        tvStoryText.setText("You hide behind the rock and see it walk past you, you can use this as your chance to escape. What do you do?");
+        btn1.setText("Make a run for it");
+        btn2.setText("Walk silently out");
+        btn3.setText("Attack the monster");
 
-        System.out.println("You hide behind the rock and see it walk past you, you can use this as your chance to escape. What do you do?");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                runOut();
+            }
+        });
 
-        System.out.println("1. Make a run for it\n2. Walk silently out\n3. Attack the monster");
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                walkSilently();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                attackMonster();
+            }
 
 
-        if (choice == 1)
-        {
-            runOut();
-        }
-        else if (choice == 2)
-        {
-            walkSilently();
-        }
-        else if (choice == 3)
-        {
-            attackMonster();
-        }
+        });
     }
 
     private void runOut()
     {
 
 
-        System.out.println("You try to run out of the cave but the monster chases you and kills you. You died");
+        tvStoryText.setText("You try to run out of the cave but the monster chases you and kills you. You died");
 
 
 
@@ -400,33 +432,37 @@ public class GameSengSambat extends GameActivity
     private void walkSilently()
     {
 
-        System.out.println("You walk silently out of the cave and make it out the forest without the monster noticing");
+        tvStoryText.setText("You walk silently out of the cave and make it out the forest without the monster noticing");
 
 
         endAdventure();
     }
     private void leftTunnel()
     {
+        tvStoryText.setText("The monster headed to the right tunnel and couldn't find you. What do you do?");
 
-        System.out.println("The monster headed to the right tunnel and couldn't find you. What do you do?");
+        setAllBtnsVisible();
+        btn1.setText("Stop hiding and try to leave");
+        btn2.setText("Hide for longer");
+        btn3.setVisibility(View.INVISIBLE);
 
-        System.out.println("1. Stop hiding and try to leave\n2. Hide for longer");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { stopHiding(); }
+        });
 
-        System.out.println( );
-
-
-        if (choice == 1)
-        {
-            stopHiding();
-        }
-        else if (choice == 2)
-            hideForLonger();
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hideForLonger();
+            }
+        });
     }
     private void rightTunnel()
     {
 
 
-        System.out.println("The monster headed to the right tunnel and found you. You died");
+        tvStoryText.setText("The monster headed to the right tunnel and found you. You died");
 
 
 
@@ -436,7 +472,7 @@ public class GameSengSambat extends GameActivity
     {
 
 
-        System.out.println("The monster wanders off somewhere far and you leave safely");
+        tvStoryText.setText("The monster wanders off somewhere far and you leave safely");
 
 
 
@@ -449,7 +485,7 @@ public class GameSengSambat extends GameActivity
         int leaveResult = (int) (1 + Math.random()*100);
         if (leaveResult <= 50)
         {
-            System.out.println("The monster wanders off somewhere far and you leave safely");
+            tvStoryText.setText("The monster wanders off somewhere far and you leave safely");
 
 
 
@@ -458,7 +494,7 @@ public class GameSengSambat extends GameActivity
         }
         else
         {
-            System.out.println("You walk into the monster again and it eats you.  You died.");
+            tvStoryText.setText("You walk into the monster again and it eats you.  You died.");
 
 
 
@@ -469,22 +505,23 @@ public class GameSengSambat extends GameActivity
     private void attackMonster()
     {
 
+        tvStoryText.setText("What will will you attack it with");
+        setAllBtnsVisible();
+        btn1.setText("Gun");
+        btn2.setText("Knife");
+        btn3.setVisibility(View.INVISIBLE);
 
-        System.out.println("What will will you attack it with");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { useGun(); }
+        });
 
-        System.out.println("1. Gun\n2. Knife");
-
-        System.out.println( );
-
-
-        if (choice == 1)
-        {
-            useGun();
-        }
-        else if (choice == 2)
-        {
-            useKnife();
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                useKnife();
+            }
+        });
     }
 
     private void useGun()
@@ -494,7 +531,7 @@ public class GameSengSambat extends GameActivity
         int shootResult = (int) (1 + Math.random()*100);
         if (shootResult <= 50)
         {
-            System.out.println("You shoot the monster and it dies. You escaped the forest");
+            tvStoryText.setText("You shoot the monster and it dies. You escaped the forest");
 
 
             endAdventure();
@@ -502,7 +539,7 @@ public class GameSengSambat extends GameActivity
         }
         else
         {
-            System.out.println("Oh no! your gun ends up jamming and the monster eats you.");
+            tvStoryText.setText("Oh no! your gun ends up jamming and the monster eats you.");
 
 
 
@@ -531,7 +568,7 @@ public class GameSengSambat extends GameActivity
     {
 
 
-        System.out.println(TextColor.GREEN + "You have won! Play again?" + TextColor.RESET);
+        tvStoryText.setText("You have won! Try again?");
 
         start();
 
@@ -551,7 +588,7 @@ public class GameSengSambat extends GameActivity
 
 
         //System.out.println(...)
-        System.out.println(TextColor.YELLOW + "You failed to survive, you now have " + numAttempts + " attempts left" + TextColor.RESET);
+        tvStoryText.setText("You failed to survive, you now have " + numAttempts + " attempts left");
 
 
         //determine if player gets to play again
@@ -563,9 +600,9 @@ public class GameSengSambat extends GameActivity
         else
         {
             //print game over message
-            Util.clearConsole();
 
-            System.out.println(TextColor.RED + "Game over! you ran out of attempts" + TextColor.RESET);
+
+            tvStoryText.setText("Game over! you ran out of attempts");
         }
     }
 }
