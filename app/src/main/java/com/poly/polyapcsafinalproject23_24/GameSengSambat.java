@@ -50,7 +50,6 @@ public class GameSengSambat extends GameActivity
 
      tvStoryText.setText("\nTime: 11:07 PM Location: Somewhere in Alberta, Canada \n \nIt's getting dark and you're in the woods trying to get to a campsite. While navigating your way through the forest you hear a screech that creeps you out. What do you do?");
 
-     System.out.println( );
 
 
      start();
@@ -149,9 +148,20 @@ public class GameSengSambat extends GameActivity
     {
 
         tvStoryText.setText("You wait longer and the monster eventually wanders off somewhere far, you left the forest surviving");
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                endAdventure();
+            }
+        });
 
 
-        endAdventure();
+
 
     }
 
@@ -189,13 +199,35 @@ public class GameSengSambat extends GameActivity
 
     {
         tvStoryText.setText("After heading north you walk into a bear and it ends up eating you. You died");
-        defeat();
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                endAdventure();
+            }
+        });
+
     }
 
     private void goSouth()
     {
         tvStoryText.setText("After heading south, you end up walking into the monster again and it eats you. You died");
-        defeat();
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
+
     }
 
     private void goEast()
@@ -203,10 +235,21 @@ public class GameSengSambat extends GameActivity
 
 
        tvStoryText.setText("After heading east you walk into a group of hikers and they take you somewhere safe. You lived");
+       btn3.setVisibility(View.INVISIBLE);
+       btn2.setVisibility(View.INVISIBLE);
+
+       btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                endAdventure();
+            }
+        });
 
 
 
-        endAdventure();
+
     }
 
     private void keepWalkingForward() {
@@ -299,10 +342,20 @@ public class GameSengSambat extends GameActivity
 
 
         tvStoryText.setText("You throw a rock at the monster, he responds by brutally beating you to death");
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
 
 
 
-        defeat();
+
     }
 
     private void runAway()
@@ -343,10 +396,20 @@ public class GameSengSambat extends GameActivity
 
 
        tvStoryText.setText("The monster catches up and kills you. You died");
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
 
 
 
-        defeat();
     }
 
     private void runWest()
@@ -423,15 +486,32 @@ public class GameSengSambat extends GameActivity
 
 
         tvStoryText.setText("You try to run out of the cave but the monster chases you and kills you. You died");
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { defeat(); }
+        });
 
 
 
-        defeat();
     }
     private void walkSilently()
     {
 
         tvStoryText.setText("You walk silently out of the cave and make it out the forest without the monster noticing");
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { endAdventure(); }
+        });
 
 
         endAdventure();
@@ -463,9 +543,18 @@ public class GameSengSambat extends GameActivity
 
         tvStoryText.setText("The monster headed to the right tunnel and found you. You died");
 
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
+        btn1.setText("Continue");
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+
+        });
     }
     private void hideForLonger()
     {
@@ -473,9 +562,19 @@ public class GameSengSambat extends GameActivity
 
         tvStoryText.setText("The monster wanders off somewhere far and you leave safely");
 
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                endAdventure();
+            }
+
+        });
 
 
-        endAdventure();
     }
     private void stopHiding()
     {
@@ -512,7 +611,7 @@ public class GameSengSambat extends GameActivity
                     defeat();
                 }
 
-            }
+            });
 
 
         }
@@ -547,6 +646,17 @@ public class GameSengSambat extends GameActivity
         if (shootResult <= 50)
         {
             tvStoryText.setText("You shoot the monster and it dies. You escaped the forest");
+            btn3.setVisibility(View.INVISIBLE);
+            btn2.setVisibility(View.INVISIBLE);
+
+            btn1.setText("Continue");
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    endAdventure();
+                }
+            });
 
 
             endAdventure();
@@ -555,10 +665,18 @@ public class GameSengSambat extends GameActivity
         else
         {
             tvStoryText.setText("Oh no! your gun ends up jamming and the monster eats you.");
+            btn3.setVisibility(View.INVISIBLE);
+            btn2.setVisibility(View.INVISIBLE);
 
+            btn1.setText("Continue");
 
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+            });
 
-            defeat();
         }
     }
 
@@ -567,11 +685,21 @@ public class GameSengSambat extends GameActivity
     {
 
 
-        System.out.println("You try to attack it with a knife but it isn't very effective, it angers the monster and you die a horrible painful death");
+        tvStoryText.setText("You try to attack it with a knife but it isn't very effective, it angers the monster and you die a horrible painful death");
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Continue");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
 
 
 
-        defeat();
     }
 
 
