@@ -52,13 +52,13 @@ public class GamePinedaJavier extends GameActivity {
     private void start()
     {
         isWon = false;
-        ivStory.setImageResource(R.drawable.im_laborday_title);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_title);
 
         //start adventure here
 
         //create an Adventure object
 
-        tvStoryText.setText("You just got signed to one of the newest clubs in the MLS,the Los Angeles football Club (LAFC). You worked so hard to be chosen to play for the club and everyone is so proud of you. what is your way of celebrating?");
+        tvStoryText.setText("You just got signed to one of the newest clubs in the MLS, the Los Angeles football Club (LAFC). You worked so hard to be chosen to play for the club and everyone is so proud of you. what is your way of celebrating?");
 
         setAllBtnsVisible();
         btn1.setText("Go party with friends and family");
@@ -269,7 +269,7 @@ public class GamePinedaJavier extends GameActivity {
 
         setAllBtnsVisible();
         btn1.setText(" Train with Brother");
-        btn2.setText(" Train with teammate  *hint he has experience*");
+        btn2.setText(" Train with teammate");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
