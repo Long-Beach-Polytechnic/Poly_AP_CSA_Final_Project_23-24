@@ -732,12 +732,24 @@ public class GameSengSambat extends GameActivity
 
         //System.out.println(...)
         tvStoryText.setText("You failed to survive, you now have " + numAttempts + " attempts left");
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+
+        btn3.setText("Continue");
+
 
 
         //determine if player gets to play again
         if (numAttempts > 0)
         {
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start();
+                }
+            });
             //if you still have lives, return to start()
+
             start();
         }
         else
