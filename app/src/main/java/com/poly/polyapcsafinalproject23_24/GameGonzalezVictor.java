@@ -300,7 +300,7 @@ GameGonzalezVictor extends GameActivity{
     private void notOnShip()
     {
         //COME BACK TO DEFEATS MESSASGE
-        tvStoryText.setText("They don't like you. Pew pew!!!");
+        tvStoryText.setText("They don't like you. Pew pew!!");
 
         defeat();
 
