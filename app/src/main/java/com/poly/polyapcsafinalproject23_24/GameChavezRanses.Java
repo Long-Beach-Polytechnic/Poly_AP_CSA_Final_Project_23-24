@@ -693,7 +693,6 @@ public class GameChavezRanses extends GameActivity {
 
     private void acrossSeas()  //_____ACROSS SEAS CHOICE___________
     {
-        //Util.clearConsole was here
         tvStoryText.setText("ACROSS SEAS WE GO! Now that your across seas you go to the one man who knows of the Matrix, Andrew Tate to ask questions.");
         //Util.clearConsole was here
 
