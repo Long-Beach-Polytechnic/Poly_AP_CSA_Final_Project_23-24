@@ -35,14 +35,10 @@ public class GamePadilloDamien extends GameActivity {
         btn3 = findViewById(R.id.btn_3);
         btn4 = findViewById(R.id.btn_4);
 
-        tvTitle.setText("LABOR DAY");
-        tvSubtitle.setText("High School Edition");
-
-        numLives = 4;
         start();
 
-
         tvTitle.setText("Don't Scream");
+        tvSubtitle.setText("by Damien Padillo");
 
         tvStoryText.setText("Play an interactive spin off version of the 'Scream' franchise... ");
 
@@ -119,10 +115,8 @@ public class GamePadilloDamien extends GameActivity {
         playCount++;
         //start adventure here
 
-        String text = """
-      (Your name is Blake Heaven)
-      You’re in your bedroom on a FaceTime call with your best friend Luxury. (Lux for short) Suddenly the landline rings from the kitchen. “Who the hell is calling the landline?” You ask her rhetorically. “People still use landlines?” Lux asks over the phone. What do you do?
-      """;
+        String text ="\n(Your name is Blake Heaven)" +
+      "\nYou’re in your bedroom on a FaceTime call with your best friend Luxury. (Lux for short) Suddenly the landline rings from the kitchen. “Who the hell is calling the landline?” You ask her rhetorically. “People still use landlines?” Lux asks over the phone. What do you do? ;
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -238,17 +232,15 @@ public class GamePadilloDamien extends GameActivity {
 
     }
 
-    }
 
 
 
 
-    private void dontAnswerPhone2()
-    {
+    private void dontAnswerPhone2() {
         //start adventure here
 
         String text = """
-    You hear a noise back in your room. “Who is that behind you?!” Lux asks.""";
+                You hear a noise back in your room. “Who is that behind you?!” Lux asks.""";
 
         tvStoryText.setText(text);
 
@@ -275,15 +267,15 @@ public class GamePadilloDamien extends GameActivity {
                 investigate();
             }
         });
+    }
 
 
 
 
-    private void investigate2()
-    {
+    private void investigate2() {
         //start adventure here
         String text = """
-    You unlocked the plot armor ending. You walked into your room, and a masked killer was standing right there. You tried to run, but tripped on nothing. Idiot. The killer ended up tripping over your body, and landing on their knife. Suddenly, a second killer came running at you, but tripped, and got the same fate. Why are you weird? You still lived though I guess.""";
+                You unlocked the plot armor ending. You walked into your room, and a masked killer was standing right there. You tried to run, but tripped on nothing. Idiot. The killer ended up tripping over your body, and landing on their knife. Suddenly, a second killer came running at you, but tripped, and got the same fate. Why are you weird? You still lived though I guess.""";
 
         tvStoryText.setText(text);
 
@@ -310,31 +302,16 @@ public class GamePadilloDamien extends GameActivity {
                 start();
             }
         });
+    }
 
 
 
 
 
 
-    private void hideInCabinet2()
-    {
+    private void hideInCabinet2() {
         //start adventure here
-        String text = """
-      ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
-      ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
-      ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
-      ⣿⣿⣿⡟⠄⠄⠄⠄⠐⢻⣿⣿⣿⣷⡄⠄⠄⠄⠄⠄⠄⠈
-      ⣿⣿⣿⠃⠄⠄⠄⢀⠴⠛⠙⣿⣿⡿⣿⣦⠄⠄⠄⠄⠄⠄
-      ⣿⣿⠃⠄⢠⡖⠉⠄⠄⠄⣠⣿⡏⠄⢹⣿⠄⠄⠄⠄⠄⢠
-      ⣿⠃⠄⠄⢸⣧⣤⣤⣤⢾⣿⣿⡇⠄⠈⢻⡆⠄⠄⠄⠄⣾
-      ⠁⠄⠄⠄⠈⠉⠛⢿⡟⠉⠉⣿⣷⣀⠄⠄⣿⡆⠄⠄⢠⣿
-      ⠄⠄⠄⠄⠄⠄⢠⡿⠿⢿⣷⣿⣿⣿⣿⣿⠿⠃⠄⠄⣸⣿
-      ⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠈⣿⣿⣿⡟⠁⠄⠄⠄⠄⣿⣿
-      ⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢀⣿⣿⡟⠄⠄⠄⠄⠄⢠⣿⣿
-      ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
-      ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄ ⠙⢿⣿
-      ⠄⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿
-    You unlocked the Idiot Ending. The killer found you because they literally watched you go into the cabinet. Are you dumb? Just kidding, do you want to try again?""";
+        String text = """You unlocked the Idiot Ending. The killer found you because they literally watched you go into the cabinet. Are you dumb? Just kidding, do you want to try again?""";
 
         tvStoryText.setText(text);
 
@@ -361,6 +338,7 @@ public class GamePadilloDamien extends GameActivity {
                 start();
             }
         });
+    }
 
 
     private void askAgain2()
@@ -394,8 +372,6 @@ public class GamePadilloDamien extends GameActivity {
                 attackLoser();
             }
         });
-
-    }
 
     }
 
@@ -434,724 +410,783 @@ public class GamePadilloDamien extends GameActivity {
 
     }
 
-    }
-
 
     private void leaveCallPolice2()
     {
         //start adventure here
-
-        String text = TextColor.GREEN + """
-    You unlocked the Anti Tara ending. You managed to avoid any injuries, and ran down the street with Lux in your hand. The police pulled up later, arresting the two killers hiding in your house. There are more endings to unlock. Do you want to play again?
-    1. Yeah
-    2. No I'm sexist to women
-      """ + TextColor.RESET;
+        String text = """You unlocked the Anti Tara ending. You managed to avoid any injuries, and ran down the street with Lux in your hand. The police pulled up later, arresting the two killers hiding in your house. There are more endings to unlock. Do you want to play again?.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yeah");
+        btn2.setText("No, I'm sexist to women");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
-
     private void lockDoor()
     {
         //start adventure here
+        String text = """Yeah… That’s not happening…” You say dismissively, locking the door. “What?” Lux asks over the FaceTime call, having no idea what you’re talking about. You suddenly hear something fall in your closet. “What the-” The closet opens quickly, and a masked killer charges at you with a knife. What do you do?""";
 
-        String text = """
-    “Yeah… That’s not happening…” You say dismissively, locking the door. “What?” Lux asks over the FaceTime call, having no idea what you’re talking about. You suddenly hear something fall in your closet. “What the-” The closet opens quickly, and a masked killer charges at you with a knife. What do you do?
-    1. Get out
-    2. Fight
-      """;
+        tvStoryText.setText(text);
 
-        System.out.println(text);
+        setAllBtnsVisible();
+        btn1.setText("Pick up the phone");
+        btn2.setText("Don't answer the phone");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-        if (choice == 1)
-        {
-            getOut();
-        }
-        else if (choice == 2)
-        {
-            fight2();
-        }
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                getOut();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                fight2();
+            }
+        });
 
     }
-
-
-
 
     private void fight2()
     {
         //start adventure here
-
-        String text = TextColor.BLUE + """
-      You unlocked the Happy Death Day ending.
-      “Oh hell to the no!” You scream. You don’t even get to fight him because he stabs you in the face…
-    1. Continue???
-      """ + TextColor.RESET;
+        String text = """You unlocked the Happy Death Day ending.
+      “Oh hell to the no!” You scream. You don’t even get to fight him because he stabs you in the face…""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            yeahContinue();
-        }
-
-    }
-
-
-
-
-    private void getOut()
-    {
-        //start adventure here
-
-        String text = TextColor.BLUE + """
-      You unlocked the Baby Face ending. “Oh hell to the no!” You scream. You tried to open the door, but forgot that you locked it. The killer stabbed you against the door.
-    1. Continue???
-      """ + TextColor.RESET;
+        setAllBtnsVisible();
+        btn1.setText("Continue? Sure!");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            yeahContinue();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                yeahContinue();
+            }
+
+        });
 
     }
-
-
-
 
     private void yeahContinue()
     {
         //start adventure here
-
-        String text = """
-    You scream, processing what just happened. “What!?” Lux screamed, startled and confused by your sudden outburst. You were back on your bed, holding your iPhone on a FaceTime call with Lux. Your door was opened, and your closet was closed. “I thought-” The landline wrang again, interrupting you. “Thought what?”
-    1. Check the closet
-      """;
+        String text = """You scream, processing what just happened. “What!?” Lux screamed, startled and confused by your sudden outburst. You were back on your bed, holding your iPhone on a FaceTime call with Lux. Your door was opened, and your closet was closed. “I thought-” The landline wrang again, interrupting you. “Thought what?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            checkTheCloset();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Check the closet");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                checkTheCloset();
+            }
+
+        });
 
     }
-
-
-
 
     private void checkTheCloset()
     {
         //start adventure here
-
-        String text = """
-    You looked at the closet across the room. “I just um…” Lux was squinting in confusion. “I thought someone was in here, and they…” You open the doors slowly, and the masked killer was still there. You screamed again, slamming the doors closed, and booking it. The killer charged out of your room, close behind.
-    1. Leave the house
-    2. Run around the kitchen island
-      """;
+        String text = """You looked at the closet across the room. “I just um…” Lux was squinting in confusion. “I thought someone was in here, and they…” You open the doors slowly, and the masked killer was still there. You screamed again, slamming the doors closed, and booking it. The killer charged out of your room, close behind.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            endLeave();
-        }
-        else if (choice == 2)
-        {
-            island();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Leave the house");
+        btn2.setText("Run around the kitchen island");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                endLeave();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                island();
+            }
+        });
 
     }
-
-
-
 
     private void island()
     {
         //start adventure here
-
-        String text = TextColor.RED + """
-      ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
-      ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
-      ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
-      ⣿⣿⣿⡟⠄⠄⠄⠄⠐⢻⣿⣿⣿⣷⡄⠄⠄⠄⠄⠄⠄⠈
-      ⣿⣿⣿⠃⠄⠄⠄⢀⠴⠛⠙⣿⣿⡿⣿⣦⠄⠄⠄⠄⠄⠄
-      ⣿⣿⠃⠄⢠⡖⠉⠄⠄⠄⣠⣿⡏⠄⢹⣿⠄⠄⠄⠄⠄⢠
-      ⣿⠃⠄⠄⢸⣧⣤⣤⣤⢾⣿⣿⡇⠄⠈⢻⡆⠄⠄⠄⠄⣾
-      ⠁⠄⠄⠄⠈⠉⠛⢿⡟⠉⠉⣿⣷⣀⠄⠄⣿⡆⠄⠄⢠⣿
-      ⠄⠄⠄⠄⠄⠄⢠⡿⠿⢿⣷⣿⣿⣿⣿⣿⠿⠃⠄⠄⣸⣿
-      ⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠈⣿⣿⣿⡟⠁⠄⠄⠄⠄⣿⣿
-      ⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢀⣿⣿⡟⠄⠄⠄⠄⠄⢠⣿⣿
-      ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
-      ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄ ⠙⢿⣿
-      ⠄⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿
-      You unlocked the Billie Eilish ending. The killer jumped onto, and over the kitchen island, shoving your head into the sink which was conveniently plugged, and full of water. You tried to scream… But your head was under water… Do you want to try again?
-    1. Yes
-    2. No (Okay then, bye lmaoo)
-      """ + TextColor.RESET;
+        String text = """You unlocked the Billie Eilish ending. The killer jumped onto, and over the kitchen island, shoving your head into the sink which was conveniently plugged, and full of water. You tried to scream… But your head was under water… Do you want to try again?.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No (Okay then, bye lmaoo");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void endLeave()
     {
         //start adventure here
-
-        String text = TextColor.GREEN + """
-    You unlocked THE ENDING. You ran out the door, and screamed when you saw another killer there. He wasn't expecting you yet. He jumped at you with his knife, but accidentally stabbed the other killer that was after you. They both fell over, and you got away. “What the hell is going on?” Lux asked, while you disappeared into the distance or something. There are still more endings, would you like to play again?
-    1. Yes
-    2. No (loser kid)
-      """ + TextColor.RESET;
+        String text = """You unlocked THE ENDING. You ran out the door, and screamed when you saw another killer there. He wasn't expecting you yet. He jumped at you with his knife, but accidentally stabbed the other killer that was after you. They both fell over, and you got away. “What the hell is going on?” Lux asked You did it, you're still alive... There are still more endings, would you like to play again?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void ignoreCall()
     {
         //start adventure here
-
-        String text = """
-    You end up ignoring the call, and talking with Luxury. The landline rang again. Annoyed, you stand up, but seconds later, you hear something fall in your closet. It opened slowly, and a masked man with a knife walked out. What do you do?
-    1. Fight
-    2. Run
-      """;
+        String text = """You end up ignoring the call, and talking with Luxury. The landline rang again. Annoyed, you stand up, but seconds later, you hear something fall in your closet. It opened slowly, and a masked man with a knife walked out. What do you do?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            fight1();
-        }
-        else if (choice == 2)
-        {
-            run1();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Fight");
+        btn2.setText("Run");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                fight1();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                run1();
+            }
+        });
 
     }
-
-
-
 
     private void fight1()
     {
         //start adventure here
-
-        String text = """
-    “Oh my god, run!” Lux shouts through the Facetime call. You panic, and decide to grab a pillow and tackle the killer with it. The pillow is too thick and large to stab through. He drops the knife.
-    1. Keep fighting
-    2. Listen to Luxury
-      """;
+        String text = """Oh my god, run!” Lux shouts through the Facetime call. You panic, and decide to grab a pillow and tackle the killer with it. The pillow is too thick and large to stab through. He drops the knife.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            keepFighting();
-        }
-        else if (choice == 2)
-        {
-            run1();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Keep fighting");
+        btn2.setText("Listen to Luxury");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                keepFighting();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                run1();
+            }
+        });
 
     }
-
-
-
 
     private void run1()
     {
         //start adventure here
-
-        String text = """
-    “Get out of there!” Lux shouts through the Facetime call. You panic, and run out as quick as you can, the killer only steps behind. What do you do?
-    1. Lock yourself in the bathroom
-    2. Leave the house
-      """;
+        String text = """Get out of there!” Lux shouts through the Facetime call. You panic, and run out as quick as you can, the killer only steps behind. What do you do?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            lockSelfBathroom();
-        }
-        else if (choice == 2)
-        {
-            leave3();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Lock yourself in the bathroom");
+        btn2.setText("Leave the house");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                lockSelfBathroom();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                leave3();
+            }
+        });
 
     }
-
-
-
 
     private void leave3()
     {
         //start adventure here
-
-        String text = TextColor.RED + """
-      ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
-      ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
-      ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
-      ⣿⣿⣿⡟⠄⠄⠄⠄⠐⢻⣿⣿⣿⣷⡄⠄⠄⠄⠄⠄⠄⠈
-      ⣿⣿⣿⠃⠄⠄⠄⢀⠴⠛⠙⣿⣿⡿⣿⣦⠄⠄⠄⠄⠄⠄
-      ⣿⣿⠃⠄⢠⡖⠉⠄⠄⠄⣠⣿⡏⠄⢹⣿⠄⠄⠄⠄⠄⢠
-      ⣿⠃⠄⠄⢸⣧⣤⣤⣤⢾⣿⣿⡇⠄⠈⢻⡆⠄⠄⠄⠄⣾
-      ⠁⠄⠄⠄⠈⠉⠛⢿⡟⠉⠉⣿⣷⣀⠄⠄⣿⡆⠄⠄⢠⣿
-      ⠄⠄⠄⠄⠄⠄⢠⡿⠿⢿⣷⣿⣿⣿⣿⣿⠿⠃⠄⠄⣸⣿
-      ⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠈⣿⣿⣿⡟⠁⠄⠄⠄⠄⣿⣿
-      ⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢀⣿⣿⡟⠄⠄⠄⠄⠄⢠⣿⣿
-      ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
-      ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄ ⠙⢿⣿
-      ⠄⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿
-      You unlocked the third party ending. On your way out the door, you run straight into the knife of the second killer. He was waiting for you outside. There are still more endings, would you like to try again?
-    1. Yes
-    2. No
-      """ + TextColor.RESET;
+        String text = """You unlocked the third party ending. On your way out the door, you run straight into the knife of the second killer. He was waiting for you outside. There are still more endings, would you like to try again?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No (That's why yo clumsy ahh died.)");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void lockSelfBathroom()
     {
         //start adventure here
-
-        String text = """
-    You manage to lock the door seconds before they reach you. “Blake get out of there! I’m calling the police.” Lux says. What do you do?
-    1. Crawl out of the window
-    2. stayAndFight
-      """;
+        String text = """You manage to lock the door seconds before they reach you. “Blake get out of there! I’m calling the police.” Lux says. What do you do?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            bathroomWindow();
-        }
-        else if (choice == 2)
-        {
-            stayAndFight();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Crawl out of the window");
+        btn2.setText("Stay and fight");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                bathroomWindow();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                stayAndFight();
+            }
+        });
 
     }
-
-
-
 
     private void stayAndFight()
     {
         //start adventure here
-
-        String text = TextColor.RED + """
-    You unlocked the Pam Hues ending. You had nothing to defend yourself with when the killer kicked the door down. You didn’t make it…
-    1. Try again
-    2. Cry in real life
-      """ + TextColor.RESET;
+        String text = """You unlocked the Pam Hues ending. You had nothing to defend yourself with when the killer kicked the door down. You didn’t make it…""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Try again");
+        btn2.setText("Cry in real life");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void bathroomWindow()
     {
         //start adventure here
-
-        String text = TextColor.RED + """
-      ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
-      ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
-      ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
-      ⣿⣿⣿⡟⠄⠄⠄⠄⠐⢻⣿⣿⣿⣷⡄⠄⠄⠄⠄⠄⠄⠈
-      ⣿⣿⣿⠃⠄⠄⠄⢀⠴⠛⠙⣿⣿⡿⣿⣦⠄⠄⠄⠄⠄⠄
-      ⣿⣿⠃⠄⢠⡖⠉⠄⠄⠄⣠⣿⡏⠄⢹⣿⠄⠄⠄⠄⠄⢠
-      ⣿⠃⠄⠄⢸⣧⣤⣤⣤⢾⣿⣿⡇⠄⠈⢻⡆⠄⠄⠄⠄⣾
-      ⠁⠄⠄⠄⠈⠉⠛⢿⡟⠉⠉⣿⣷⣀⠄⠄⣿⡆⠄⠄⢠⣿
-      ⠄⠄⠄⠄⠄⠄⢠⡿⠿⢿⣷⣿⣿⣿⣿⣿⠿⠃⠄⠄⣸⣿
-      ⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠈⣿⣿⣿⡟⠁⠄⠄⠄⠄⣿⣿
-      ⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢀⣿⣿⡟⠄⠄⠄⠄⠄⢠⣿⣿
-      ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
-      ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄ ⠙⢿⣿
-      ⠄⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿
-      You unlocked the Olivia Morris ending. You climbed out of the window, but were impaled by the knife of the second killer. They were waiting for you. There are still more endings. Would you like to try again?
-    1. Yes
-    2. No
-      """ + TextColor.RESET;
+        String text = """You unlocked the Olivia Morris ending. You climbed out of the window, but were impaled by the knife of the second killer. They were waiting for you. There are still more endings. Would you like to try again?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
 
     private void keepFighting()
     {
         //start adventure here
-
-        String text = TextColor.GREEN + """
-    You unlocked the Sydney Prescott ending. You managed to grab his knife while he was down, and stab him through the eye of the mask. You noticed another masked killer outside, they tried to run but you got to them first…
-    1. Play some more
-    2. Quit (Loser)
-      """ + TextColor.RESET;
+        String text = """You unlocked the Sydney Prescott ending. You managed to grab his knife while he was down, and stab him through the eye of the mask. You noticed another masked killer outside, they tried to run but you got to them first…""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void seeWhosCallingYou()
     {
         //start adventure here
-
-        String text = """
-    You make it to the kitchen. “Who is it?” She asked intrigued. “Unknown Caller ID.” You say. What do you do?
-    1. Answer the phone
-    2. Don't answer the phone
-      """;
+        String text = """You make it to the kitchen. “Who is it?” She asked intrigued. “Unknown Caller ID.” You say. What do you do?…""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            answerPhone();
-        }
-        else if (choice == 2)
-        {
-            dontAnswerPhone();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Answer the phone");
+        btn2.setText("Don't answer the phone");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                answerPhone();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dontAnswerPhone();
+            }
+        });
 
     }
-
-
-
 
     private void answerPhone()
     {
         //start adventure here
-
-        String text = """
-    “Hello?” You ask. No answer.“Is that what the landline sounds like?” Lux asks through the phone. What do you do?
-    1. Ask again
-    2. Hang up
-      """;
+        String text = """You make it to the kitchen. “Who is it?” She asked intrigued. “Unknown Caller ID.” You say. What do you do?…""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            askAgain();
-        }
-        else if (choice == 2)
-        {
-            hangUp();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Answer the phone");
+        btn2.setText("Don't answer the phone");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                askAgain();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                hangUp();
+            }
+        });
 
     }
-
-
-
 
     private void dontAnswerPhone()
     {
         //start adventure here
-
-        String text = """
-    You hear a thud back in your room. Something fell. “What was that?” Lux asks.
-    1. Hide in an empty cabinet
-    2. Investigate
-      """;
+        String text = """You hear a thud back in your room. Something fell. “What was that?” Lux asks.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            cabinet2();
-        }
-        else if (choice == 2)
-        {
-            investigate();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Hide in an empty cabinet");
+        btn2.setText("Investigate");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                cabinet2();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                investigate();
+            }
+        });
 
     }
-
-
-
 
     private void cabinet2()
     {
         //start adventure here
-
-        String text = TextColor.GREEN + """
-    You unlocked the Camper Ending. The killer never found you because they didn't think you had a reason to hide, the police arrested two masked men, one hiding in your closet, the other found wandering around the sides of your house. There are still more endings, would you like to play again?
-    1. Yes
-    2. No
-      """ + TextColor.RESET;
+        String text = """You unlocked the Camper Ending. The killer never found you because they didn't think you had a reason to hide, the police arrested two masked men, one hiding in your closet, the other found wandering around the sides of your house. There are still more endings, would you like to play again?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Hide in an empty cabinet");
+        btn2.setText("Investigate");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void investigate()
     {
         //start adventure here
-
-        String text = TextColor.RED + """
-      ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
-      ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
-      ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
-      ⣿⣿⣿⡟⠄⠄⠄⠄⠐⢻⣿⣿⣿⣷⡄⠄⠄⠄⠄⠄⠄⠈
-      ⣿⣿⣿⠃⠄⠄⠄⢀⠴⠛⠙⣿⣿⡿⣿⣦⠄⠄⠄⠄⠄⠄
-      ⣿⣿⠃⠄⢠⡖⠉⠄⠄⠄⣠⣿⡏⠄⢹⣿⠄⠄⠄⠄⠄⢠
-      ⣿⠃⠄⠄⢸⣧⣤⣤⣤⢾⣿⣿⡇⠄⠈⢻⡆⠄⠄⠄⠄⣾
-      ⠁⠄⠄⠄⠈⠉⠛⢿⡟⠉⠉⣿⣷⣀⠄⠄⣿⡆⠄⠄⢠⣿
-      ⠄⠄⠄⠄⠄⠄⢠⡿⠿⢿⣷⣿⣿⣿⣿⣿⠿⠃⠄⠄⣸⣿
-      ⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠈⣿⣿⣿⡟⠁⠄⠄⠄⠄⣿⣿
-      ⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢀⣿⣿⡟⠄⠄⠄⠄⠄⢠⣿⣿
-      ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
-      ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄ ⠙⢿⣿
-      ⠄⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿
-      You unlocked the White Girl ending. Before you even walked into your room, a masked killer ran out, and stabbed you. He was waiting for you. There are still more endings, would you like to try again?
-    1. Yes
-    2. No
-      """ + TextColor.RESET;
+        String text = """You unlocked the White Girl ending. Before you even walked into your room, a masked killer ran out, and stabbed you. He was waiting for you. There are still more endings, would you like to try again?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void askAgain()
     {
         //start adventure here
-
-        String text = """
-    “Hello?” You ask again, more impatiently this time. A voice spoke, “Hello.” The voice was low and raspy as it responded. “Girl, hang up now.” Lux says worried. “Who is this?” You ask. “This is the last person you’re ever gonna see alive.” They say hauntingly. Oh no, I’m so scared.” You say sarcastically, hanging up. “Good call.” Lux says. You suddenly hear a thud from your room. Something fell.
-      1. Leave the house and call the police
-      2. Hide in an empty cabinet
-      """;
+        String text = """“Hello?” You ask again, more impatiently this time. A voice spoke, “Hello.” The voice was low and raspy as it responded. “Girl, hang up now.” Lux says worried. “Who is this?” You ask. “This is the last person you’re ever gonna see alive.” They say hauntingly. Oh no, I’m so scared.” You say sarcastically, hanging up. “Good call.” Lux says. You suddenly hear a thud from your room. Something fell.""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            leaveCallPolice();
-        }
-        else if (choice == 2)
-        {
-            cabinet1();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Leave the house and call the police");
+        btn2.setText("Hide in an empty cabinet");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                leaveCallPolice();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                cabinet1();
+            }
+        });
 
     }
-
-
-
 
     private void leaveCallPolice()
     {
         //start adventure here
-
-        String text = TextColor.RED + """
-      ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
-      ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
-      ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
-      ⣿⣿⣿⡟⠄⠄⠄⠄⠐⢻⣿⣿⣿⣷⡄⠄⠄⠄⠄⠄⠄⠈
-      ⣿⣿⣿⠃⠄⠄⠄⢀⠴⠛⠙⣿⣿⡿⣿⣦⠄⠄⠄⠄⠄⠄
-      ⣿⣿⠃⠄⢠⡖⠉⠄⠄⠄⣠⣿⡏⠄⢹⣿⠄⠄⠄⠄⠄⢠
-      ⣿⠃⠄⠄⢸⣧⣤⣤⣤⢾⣿⣿⡇⠄⠈⢻⡆⠄⠄⠄⠄⣾
-      ⠁⠄⠄⠄⠈⠉⠛⢿⡟⠉⠉⣿⣷⣀⠄⠄⣿⡆⠄⠄⢠⣿
-      ⠄⠄⠄⠄⠄⠄⢠⡿⠿⢿⣷⣿⣿⣿⣿⣿⠿⠃⠄⠄⣸⣿
-      ⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠈⣿⣿⣿⡟⠁⠄⠄⠄⠄⣿⣿
-      ⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢀⣿⣿⡟⠄⠄⠄⠄⠄⢠⣿⣿
-      ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
-      ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄ ⠙⢿⣿
-      ⠄⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿
-      You unlocked the Tobey Maguire ending. On your way out, the killer stabbed you in the back. He was waiting outside. There are still more endings, would you like to try again?
-    1. Yes
-    2. No
-      """ + TextColor.RESET;
+        String text = """You unlocked the Tobey Maguire ending. On your way out, the killer stabbed you in the back. He was waiting outside. There are still more endings, would you like to try again?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void cabinet1()
     {
         //start adventure here
-
-        String text = TextColor.RED + """
-      ⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠄⠄⠈⠙⠻⣿⣿⣿⣿
-      ⣿⣿⣿⣿⣿⣿⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿
-      ⣿⣿⣿⣿⡿⠃⠄⠄⠄⢀⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠈⢿
-      ⣿⣿⣿⡟⠄⠄⠄⠄⠐⢻⣿⣿⣿⣷⡄⠄⠄⠄⠄⠄⠄⠈
-      ⣿⣿⣿⠃⠄⠄⠄⢀⠴⠛⠙⣿⣿⡿⣿⣦⠄⠄⠄⠄⠄⠄
-      ⣿⣿⠃⠄⢠⡖⠉⠄⠄⠄⣠⣿⡏⠄⢹⣿⠄⠄⠄⠄⠄⢠
-      ⣿⠃⠄⠄⢸⣧⣤⣤⣤⢾⣿⣿⡇⠄⠈⢻⡆⠄⠄⠄⠄⣾
-      ⠁⠄⠄⠄⠈⠉⠛⢿⡟⠉⠉⣿⣷⣀⠄⠄⣿⡆⠄⠄⢠⣿
-      ⠄⠄⠄⠄⠄⠄⢠⡿⠿⢿⣷⣿⣿⣿⣿⣿⠿⠃⠄⠄⣸⣿
-      ⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠈⣿⣿⣿⡟⠁⠄⠄⠄⠄⣿⣿
-      ⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⢀⣿⣿⡟⠄⠄⠄⠄⠄⢠⣿⣿
-      ⠄⠄⠄⠄⠄⠘⠄⠄⠄⢀⡼⠛⠉⠄⠄⠄⠄⠄⠄⣼⣿⣿
-      ⠄⠄⠄⠄⠄⡇⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄ ⠙⢿⣿
-      ⠄⠄⠄⠄⠄⢰⠃⠄⢀⠎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⣿
-      You unlocked the hopeless ending. The killer found you because they knew you would be hiding after the call. There are still more endings, would you like to try again?
-      Yes
-      No
-      """ + TextColor.RESET;
+        String text = """You unlocked the hopeless ending. The killer found you because they knew you would be hiding after the call. There are still more endings, would you like to try again?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Yes");
+        btn2.setText("No");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                start();
+            }
+        });
 
     }
-
-
-
 
     private void hangUp()
     {
         //start adventure here
-
-        String text = """
-      You hear a thud back in your room. “What was that?” Lux asks. What do you do?
-      1. Hide in an empty cabinet, calling the police over your suspicions
-      2. Investigate
-      """;
+        String text = """You hear a thud back in your room. “What was that?” Lux asks. What do you do?""";
 
         tvStoryText.setText(text);
 
-        if (choice == 1)
-        {
-            cabinet2();
-        }
-        else if (choice == 2)
-        {
-            investigate();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Hide in an empty cabinet, calling the police over your suspicions");
+        btn2.setText("Investigate");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        tvStoryText.setText(text);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                cabinet2();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                investigate();
+            }
+        });
 
     }
-
-
-
 
 }
