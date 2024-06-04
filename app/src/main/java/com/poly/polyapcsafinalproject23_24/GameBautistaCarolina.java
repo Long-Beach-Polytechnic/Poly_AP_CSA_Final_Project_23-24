@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -112,9 +113,7 @@ public class GameBautistaCarolina extends GameActivity
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
         }
-            public void onClick(View v) {
-
-                cleanToilet();
+            public void onClick(View v) { cleanToilet();
         });
     }
 
@@ -123,7 +122,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         //tvStoryText.setText("You chosed to clean the tub, what cleaner would you like to use?");
 
-        ivStory.setImageResource(R.drawable.im_dailylifechores_cleanTub);
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanTub);
 
         setAllBtnsVisible();
         btn1.setText("Usebleach");
@@ -133,13 +132,13 @@ public class GameBautistaCarolina extends GameActivity
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {Usebleach();}
+            public void onClick(View v) { useFabuloso();}
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fabuloso();
+                useBleach();
             }
         });
 
@@ -174,11 +173,22 @@ public class GameBautistaCarolina extends GameActivity
 
     private void useBleach()
     {
-        Util.clearConsole();
-        System.out.println("\nYou want to use the safe cleaner, but it did not make the toilet shine, sucks");
-        Util.pauseConsole();
-        Util.clearConsole();
-        defeat();
+        tvStoryText.setText("You want to use the safe cleaner, but it did not make the toilet shine, sucks");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_useBleach);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void useFabuloso()
@@ -245,7 +255,7 @@ public class GameBautistaCarolina extends GameActivity
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                end();
+                end ();
             }
         });
     }
@@ -374,21 +384,20 @@ public class GameBautistaCarolina extends GameActivity
         //ivStory.setImageResource(R.drawable.im_dailylifechores_useSalmon);
 
         setAllBtnsVisible();
-        btn1.setText("leaveSalmonRaw");
-        btn2.setText("cookTheSalmon");
+        btn1.setText("SalmonRaw");
+        btn2.setText("cookSalmon");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                leaveSalmonRaw();
+            public void onClick(View v) {salmonRaw();
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)k{cookTheSalmon();
+            public void onClick(View v) {cookSalmon();
             }
         });
     }
@@ -437,136 +446,264 @@ public class GameBautistaCarolina extends GameActivity
 
     private void cookChicken()
     {
-        Util.clearConsole();
-        System.out.println("\nYou want to cook chicken but not sure how to make it");
-        System.out.println("1. Leave the chicken plain\n2. Season the chicken");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You want to cook chicken but not sure how to make it" );
 
-        if (choice ==1)
-        {
-            chickenPlain();
-        }
-        else if (choice ==2)
-        {
-            seasonChicken();
-        }
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cookChicken);
+
+        setAllBtnsVisible();
+        btn1.setText("chickenPlain");
+        btn2.setText("seasonChicken");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chickenPlain();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seasonChicken();
+            }
+        });
     }
 
     private void chickenPlain()
     {
-        Util.clearConsole();
-        System.out.println("\nWOWWWW this does not have any flavor your chicken does not taste like nothing and its not good YUCK!");
-        Util.pauseConsole();
-        defeat();
+        isWon = false;
+        tvStoryText.setText("WOWWWW this does not have any flavor your chicken does not taste like nothing and its not good YUCK!");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_chickenPlain);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void seasonChicken()
     {
-        Util.clearConsole();
-        System.out.println("\nYou went with seasoning the chicken so it can taste good, once seasoning the chicken how would you like to cook it?");
-        System.out.println("1.Cook the chicken fully\n2. Cook the chicken half way");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You went with seasoning the chicken so it can taste good, once seasoning the chicken how would you like to cook it?" );
 
-        if (choice ==1)
-        {
-            cookChickenFully();
-        }
-        else if (choice ==2)
-        {
-            cookChickenHalf();
-        }
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_seasonChicken);
+
+        setAllBtnsVisible();
+        btn1.setText("cookChickenFully");
+        btn2.setText("cookChickenHalf");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cookChickenFully();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cookChickenHalf();
+            }
+        });
     }
 
     private void cookChickenFully()
     {
-        Util.clearConsole();
-        System.out.println("Its amazing that you cooked the chicken correctly but it would have been better if you over cooked it a bit so it can come out crispy and crunchy");
-        Util.pauseConsole();
-        defeat();
+        isWon = false;
+        tvStoryText.setText("Its amazing that you cooked the chicken correctly but it would have been better if you over cooked it a bit so it can come out crispy and crunchy");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cookChickenFully);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void cookChickenHalf()
     {
-        Util.clearConsole();
-        System.out.println("\nThe chicken was left half raw and we have to remeber that we do not like raw things, you got disgusted and threw the chicken, you ruined tonights dinner");
-        Util.pauseConsole();
-        defeat();
+        isWon = false;
+        tvStoryText.setText("The chicken was left half raw and we have to remeber that we do not like raw things, you got disgusted and threw the chicken, you ruined tonights dinner");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cookChickenHalf);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     //CLEAN THE LIVING ROOM
     private void cleanTheLivingRoom()
     {
-        Util.clearConsole();
-        System.out.println("\nCleaning the living roombecause it is the biggest part of the house and it could get pretty messy where would you like to start off cleaning?");
-        System.out.println("1. CLean the drawer\n2. Clean the floor");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("Cleaning the living roombecause it is the biggest part of the house and it could get pretty messy where would you like to start off cleaning?" );
 
-        if (choice ==1)
-        {
-            cleanDrawer();
-        }
-        else if (choice ==2)
-        {
-            cleanFloor();
-        }
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanTheLivingRoom);
+
+        setAllBtnsVisible();
+        btn1.setText("cleanDrawer");
+        btn2.setText("cleanFloor");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cleanDrawer();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cleanFloor();
+            }
+        });
     }
 
     private void cleanDrawer()
     {
-        Util.clearConsole();
-        System.out.println("\nYou are now cleaning the drawers but having a hard time and not sure how to start off");
-        System.out.println("1. Clean the drawer however\n2. Empty the drawer out");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You are now cleaning the drawers but having a hard time and not sure how to start off" );
 
-        if (choice ==1)
-        {
-            cleanDrawerHowever();
-        }
-        else if (choice ==2)
-        {
-            emptyDrawer();
-        }
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawer);
+
+        setAllBtnsVisible();
+        btn1.setText("cleanDrawerHowever");
+        btn2.setText("emptyDrawer");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cleanDrawerHowever();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                emptyDrawer();
+            }
+        });
     }
 
     private void cleanDrawerHowever()
     {
-        Util.clearConsole();
-        System.out.println("\nBad choice you decided to be lazy and clean the drawer with important paper inside the drawer and unfortunately you ruined them");
-        Util.pauseConsole();
-        defeat();
+        isWon = false;
+        tvStoryText.setText("Bad choice you decided to be lazy and clean the drawer with important paper inside the drawer and unfortunately you ruined them");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawersHowever);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void emptyDrawer()
     {
-        Util.clearConsole();
-        System.out.println("\nYou emptied all the drawer, you are ready to clean the drawer or you have other choices you can choose how you want to clean the restroom");
-        System.out.println("1. Clean evverthing\n2. Clean the drawers half way");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You are now cleaning the drawers but having a hard time and not sure how to start off" );
 
-        if (choice ==1)
-        {
-            cleanDrawersCompletly();
-        }
-        else if (choice ==2)
-        {
-            cleanDrawerHalfWay();
-        }
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawer);
+
+        setAllBtnsVisible();
+        btn1.setText("cleanDrawerCompletly");
+        btn2.setText("cleanDrawerHalfWay");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cleanDrawersCompletly();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cleanDrawerHowever();
+            }
+        });
     }
 
     private void cleanDrawersCompletly()
     {
-        Util.clearConsole();
-        System.out.println("\nYou have cleaned all the drawers and have left them shining, Once you are done cleaning all the drawers you can put everything back to its place, you have accomplished");
-        Util.pauseConsole();
-        Util.clearConsole();
+        isWon = true;
+        tvStoryText.setText("You have cleaned all the drawers and have left them shining, Once you are done cleaning all the drawers you can put everything back to its place, you have accomplished");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawersCompletely);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void cleanDrawerHalfWay()
     {
-        Util.clearConsole();
-        System.out.println("\nThis is a bad decision to clean it half way but you made the choice and its very disapointing, you definetly do not know how to clean");
-        Util.pauseConsole();
-        defeat();
+        isWon = false;
+        tvStoryText.setText("This is a bad decision to clean it half way but you made the choice and its very disapointing, you definetly do not know how to clean");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawerHalfWay);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void cleanFloor()
@@ -588,36 +725,87 @@ public class GameBautistaCarolina extends GameActivity
 
     private void pickUpSomeTrash()
     {
-        Util.clearConsole();
-        System.out.println("\nYes cleaning can be somewhat easy, but not picking up everything from the floor can make it a bit tricky and that what you chose, you are not ready to clean up yet until you choose to do the right thing");
-        Util.pauseConsole();
-        defeat();
+        isWon = false;
+        tvStoryText.setText("Yes cleaning can be somewhat easy, but not picking up everything from the floor can make it a bit tricky and that what you chose, you are not ready to clean up yet until you choose to do the right thing");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_pickUpSomeTrash);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void pickUpEverything()
     {
-        Util.clearConsole();
-        System.out.println("\nYou are doing great so far by picking up everything which will make cleaning a bit easier and faster once you are done cleaning the floor you are free to do whatever you want, CONGRADULATIONSSSS!!!!");
-        Util.pauseConsole();
-        Util.clearConsole();
+        isWon = true;
+        tvStoryText.setText("You are doing great so far by picking up everything which will make cleaning a bit easier and faster once you are done cleaning the floor you are free to do whatever you want, CONGRADULATIONSSSS!!!!");
+
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_pickUpEverything);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
 
     private void defeat()
     {
-        numLives--;
-        Util.clearConsole();
-        System.out.println("You lose");
-        Util.pauseConsole();
+        if (isWon)
+        {
+            tvStoryText.setText("Cleaning has to be done again You can go again to redo your chores");
 
-        if(numLives > 0)
-        {
-            start();
+            ivStory.setImageResource(R.drawable.im_laborday_miracle);
         }
-        else if(numLives == 0)
+        else
         {
-            System.out.println("Play again?");
+            numLives--;
+            String text = "You wasted an entire Day trying to do chores. You have " + numLives + " years remaining";
+            tvStoryText.setText(text);
+        }
+
+        if (numLives > 0)
+        {
+            btn1.setText("Play again!");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start();
+                }
+            });
+        }
+        else
+        {
+            tvStoryText.setText("Chore life is over. Permenant Game over.");
+            btn1.setText("Back to Home entrance");
+
+            ivStory.setImageResource(R.drawable.im_dailylifechores_over);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(dailylifechores.this, MainActivity.class));
+                }
+            });
         }
     }
+
 
 }
