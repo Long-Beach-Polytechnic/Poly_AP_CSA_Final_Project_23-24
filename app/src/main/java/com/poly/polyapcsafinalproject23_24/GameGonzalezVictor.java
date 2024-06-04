@@ -1,12 +1,14 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class GameGonzalezVictor extends GameActivity{
+public class
+GameGonzalezVictor extends GameActivity{
 
     //instance variables
     //   variables you plan to use throughout the adventure
@@ -261,20 +263,9 @@ public class GameGonzalezVictor extends GameActivity{
     private void shootAliens()
     {
         //COME BACK TO DEFEAT
-        System.out.println("They saw your hesitation. A laser gun is aimed to your head :(");
-        System.out.println();
+        tvStoryText.setText("They saw your hesitation. A laser gun is aimed to your head :(");
 
-        setAllbtnsVisable();
-        btn1.setText("Continue");
-        btn2.setVisibility(View.INVISIBLE);
-        btn3.setVisibility(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                defeat();
-            }
-        });
+        defeat();
 
     }
 
@@ -311,18 +302,8 @@ public class GameGonzalezVictor extends GameActivity{
         //COME BACK TO DEFEATS MESSASGE
         tvStoryText.setText("They don't like you. Pew pew!!!");
 
+        defeat();
 
-        setAllbtnsVisable();
-        btn1.setText("Continue");
-        btn2.setVisibility(View.INVISIBLE);
-        btn3.setVisibility(View.INVISIBLE);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                defeat();
-            }
-        });
 
     }
 
@@ -357,9 +338,9 @@ public class GameGonzalezVictor extends GameActivity{
     private void spacesuit()
     {
 
-        System.out.println("It's too cold, you froze.");
-        System.out.println();
+        tvStoryText.setText("It's too cold, you froze.");
         defeat();
+
     }
 
     private void pajamas()
@@ -472,8 +453,8 @@ public class GameGonzalezVictor extends GameActivity{
     private void checkMicrowave()
     {
 
-        System.out.println("There was a nice slice of pizza. You go in for a bite but then an angry mob of aliens attack you");
-        System.out.println();
+        tvStoryText.setText("There was a nice slice of pizza. You go in for a bite but then an angry mob of aliens attack you");
+
         defeat();
     }
 
@@ -518,8 +499,8 @@ public class GameGonzalezVictor extends GameActivity{
         else
         {
 
-            System.out.println("you got caught in a hurricane.");
-            System.out.println();
+            tvStoryText.setText("you got caught in a hurricane.");
+
             defeat();
         }
     }
@@ -555,21 +536,42 @@ public class GameGonzalezVictor extends GameActivity{
     private void expCave()
     {
 
-        System.out.println("You found the treasure chest. IT'S HUGE!");
-        System.out.println("Unlock with a key.");
+        tvStoryText.setText("You found the treasure chest. IT'S HUGE!");
+        tvStoryText.setText("Unlock with a key.");
+
+
 
         if (points >= 1)
         {
-            System.out.println("THERES A....");
+            tvStoryText.setText("THERES AN....\nempty can of coke \nYou win!!!");
+            setAllbtnsVisable();
+            btn1.setText("Victory Royale");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
 
-            System.out.println("empty can of coke \nYou win!!!");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(GameGonzalezVictor.this, MainActivity.class));
+                }
+            });
+
         }
         else if (points < 1)
         {
-            System.out.println("You may not open the treasure chest. Go find the key.");
-            System.out.println("Start all over.");
+            tvStoryText.setText("You may not open the treasure chest. Go find the key.");
 
-            start();
+            setAllbtnsVisable();
+            btn1.setText("continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    start();
+                }
+            });
+
         }
     }
 
@@ -603,12 +605,11 @@ public class GameGonzalezVictor extends GameActivity{
     private void runToMt()
     {
 
-        System.out.println("Phew, close one.");
-        System.out.println("Wait.");
+        tvStoryText.setText("Phew, close one.");
+        tvStoryText.setText("Wait.\n");
 
+        tvStoryText.setText("Acid rain comes storming in.");
 
-        System.out.println("Acid rain comes stroming in.");
-        System.out.println();
         defeat();
     }
 
@@ -638,11 +639,7 @@ public class GameGonzalezVictor extends GameActivity{
 
     private void defeat()
     {
-        //run method when defeated
-
-
-        //lose a life
-        //numLives--;
+        numLives--;
 
         //clear console, display text, etc
         //System.out.println(...)
@@ -659,15 +656,36 @@ public class GameGonzalezVictor extends GameActivity{
             {
                 tvStoryText.setText("TRY AGAIN, YOU HAVE ONE MORE SHOT\n");
             }
-            numLives--;
 
-            start();
+            setAllbtnsVisable();
+            btn1.setText("Try again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    start();
+                }
+            });
 
         }
         else
         {
             tvStoryText.setText("NO TREASURE FOR YOU");
             tvStoryText.setText("GAME OVER LOSER");
+
+            setAllbtnsVisable();
+            btn1.setText("End");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(GameGonzalezVictor.this, MainActivity.class));
+                }
+            });
 
             //print game over message
         }
