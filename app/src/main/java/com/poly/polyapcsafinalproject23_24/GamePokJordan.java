@@ -32,6 +32,8 @@ public class GamePokJordan extends GameActivity {
     {
         setContentView(R.layout.activity_game_3_button);
 
+
+
         tvTitle = findViewById(R.id.tv_title_txt);
         tvSubtitle = findViewById(R.id.tv_subtitle);
         tvStoryText = findViewById(R.id.tv_story);
@@ -53,9 +55,10 @@ public class GamePokJordan extends GameActivity {
 
     private void start() {
 
+        ivStory.setImageResource(R.drawable.im_pokjordan_raid);
         tvTitle.setText("Protect the cure.");
 
-        tvSubtitle.setText("Who do you want to play as?");
+        tvSubtitle.setText("Terrorist are raiding your building. Who do you want to play as?");
         tvStoryText.setText("1. Castle\n2. Frost\n3. Caveria");
 
         btn1.setText("Castle");
@@ -86,24 +89,41 @@ public class GamePokJordan extends GameActivity {
 
     private void castle()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_castle);
         tvStoryText.setText("You have bulletproof barricades but not explosive proof. The terrorist can't shoot inside nor can you shoot outside. What do you barricade?");
+        tvSubtitle.setText("Barricade the area");
 
         setAllBtnVisible();
         btn1.setText("Barricade Doors");
         btn2.setText("Barricade Entrances");
         btn3.setVisibility(View.INVISIBLE);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                barricadeDoors();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                barricadeEntrances();
+            }
+        });
 
     }
 
     private void barricadeDoors()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_barricade_doors);
         tvStoryText.setText("You completly barricaded off the doors to the room of the cure. Do you want to go look and take out the terrorist or stay with the cure inside the room.");
+        tvSubtitle.setText("What do you do?");
 
         setAllBtnVisible();
         btn1.setText("Look for terrorist");
         btn2.setText("Stay");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,10 +144,11 @@ public class GamePokJordan extends GameActivity {
     private void barricadeEntrances()
     {
         tvStoryText.setText("You barricaded off all of the entrances and hear them walking down the halls. What do you do?");
+        tvSubtitle.setText("Choose wisely");
 
         btn1.setText("Surrender");
         btn2.setText("Safer Room");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,10 +169,11 @@ public class GamePokJordan extends GameActivity {
     private void saferRoom()
     {
         tvStoryText.setText("You are now in a safer room what is your next move?");
+        tvSubtitle.setText("Ask for help or escape");
 
         btn1.setText("Escape");
         btn2.setText("Help");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,10 +196,11 @@ public class GamePokJordan extends GameActivity {
     private void levels()
     {
         tvStoryText.setText("You went out of the room and left it alone to go search for terrorist. Do you want to go upstairs or downstairs?");
+        tvSubtitle.setText("Be careful with your choices");
 
         btn1.setText("Upstairs");
         btn2.setText("Downstairs");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,10 +222,11 @@ public class GamePokJordan extends GameActivity {
     private void frost()
     {
         tvStoryText.setText("Your playing as frost you have bear traps that you can place down to kill the terrorist slowly. Do you want to use the bear traps as bait or Place them around.");
+        tvSubtitle.setText("Chose your strategy");
 
         btn1.setText("Bait");
         btn2.setText("Place them");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -223,10 +247,11 @@ public class GamePokJordan extends GameActivity {
     private void placed()
     {
         tvStoryText.setText("You placed down your bear traps thinking you will injure one with a bear trap. Do you place them and try to kill one with the trap or do you place them cleverly near the cure.");
+        tvSubtitle.setText("You or the cure");
 
         btn1.setText("Kill one");
         btn2.setText("Cleverly");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -247,10 +272,11 @@ public class GamePokJordan extends GameActivity {
     private void kill()
     {
         tvStoryText.setText("Congrats you got all of your traps down now do you finish off the terrorist when you hear the trap go off or do you let it do its thing.");
+        tvSubtitle.setText("Well done");
 
         btn1.setText("Finish terrorist");
         btn2.setText("Do its thing");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -272,10 +298,11 @@ public class GamePokJordan extends GameActivity {
     private void bait()
     {
         tvStoryText.setText("You placed the bear traps down and used them as bait and only have two options left. Do you shoot when you hear noise or do you sit behind a desk.");
+        tvSubtitle.setText("Fear");
 
         btn1.setText("Shoot with noise");
         btn2.setText("Sit behind a desk");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -297,10 +324,11 @@ public class GamePokJordan extends GameActivity {
     private void caveria()
     {
         tvStoryText.setText("Your playing as caveria. You can move around quickly and silently. Do you choose to move around loudly or quietly.");
+        tvSubtitle.setText("Your a ninja");
 
         btn1.setText("Loudly");
         btn2.setText("Quietly");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -320,10 +348,11 @@ public class GamePokJordan extends GameActivity {
     private void loudly()
     {
         tvStoryText.setText("Your moving around loudly completely dense of you but do you use your noise as distraction or use the sound to help you escape.");
+        tvSubtitle.setText("Choose carefully");
 
         btn1.setText("Distraction");
         btn2.setText("Escape");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -345,10 +374,11 @@ public class GamePokJordan extends GameActivity {
     private void quietly()
     {
         tvStoryText.setText("Moving around quietly. Do you wish to take them out one by one or Find whos their leader.");
+        tvSubtitle.setText("Don't hesitate");
 
         btn1.setText("Take out");
         btn2.setText("Find leader");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -369,10 +399,11 @@ public class GamePokJordan extends GameActivity {
     private void takeOut()
     {
         tvStoryText.setText("Your taking them out one by one with out a noise. Do you want to hide the bodies or interrogate them.");
+        tvSubtitle.setText("Be careful");
 
         btn1.setText("Hide the bodies");
         btn2.setText("Interrogate");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -410,7 +441,11 @@ public class GamePokJordan extends GameActivity {
         }
         else
         {
-            System.out.println("GAME OVER");
+            tvTitle.setText("GAME OVER");
+            tvSubtitle.setText("DEFEAT");
+            btn1.setVisibility(View.INVISIBLE);
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
         }
     }
 }
