@@ -34,7 +34,7 @@ public class GameGonzalezVictor extends GameActivity{
         btn3 = findViewById(R.id.btn_3);
 
         tvTitle.setText("SPACE ADVENTURE");
-        tvSubtitle.setText("Find the key to unlock the treasure hidden in the Solar System. You have 5 lives. Search at your own risk.  Good Luck!!")
+        tvSubtitle.setText("Find the key to unlock the treasure hidden in the Solar System. You have 5 lives. Search at your own risk.  Good Luck!!");
 
         //initialize number of lives
         numLives = 4;
@@ -71,7 +71,7 @@ public class GameGonzalezVictor extends GameActivity{
     private void start()
     {
 
-        tvStoryText.setText("COUTDOWN\n10 9 8 7 6 5 4 3 2 1\nBLAST OFF!!!\n\Where would you like to search first?");
+        tvStoryText.setText("COUTDOWN\n10 9 8 7 6 5 4 3 2 1\nBLAST OFF!!!\nWhere would you like to search first?");
 
         setAllbtnsVisable();
         btn1.setText("Mars");
@@ -309,7 +309,7 @@ public class GameGonzalezVictor extends GameActivity{
     private void notOnShip()
     {
         //COME BACK TO DEFEATS MESSASGE
-        System.out.println("They don't like you. Pew pew!!!");
+        tvStoryText.setText("They don't like you. Pew pew!!!");
 
 
         setAllbtnsVisable();
@@ -653,11 +653,11 @@ public class GameGonzalezVictor extends GameActivity{
             //if you still have lives, return to start()
             if (numLives > 1)
             {
-                System.out.println("TRY AGAIN, YOU NOW HAVE " + numLives + " LIVES");
+                tvStoryText.setText("TRY AGAIN, YOU NOW HAVE " + numLives + " LIVES");
             }
             else if(numLives == 1)
             {
-                System.out.print("TRY AGAIN, YOU HAVE ONE MORE SHOT\n");
+                tvStoryText.setText("TRY AGAIN, YOU HAVE ONE MORE SHOT\n");
             }
             numLives--;
 
@@ -666,8 +666,8 @@ public class GameGonzalezVictor extends GameActivity{
         }
         else
         {
-            System.out.println("NO TREASURE FOR YOU");
-            System.out.println("GAME OVER LOSER");
+            tvStoryText.setText("NO TREASURE FOR YOU");
+            tvStoryText.setText("GAME OVER LOSER");
 
             //print game over message
         }
