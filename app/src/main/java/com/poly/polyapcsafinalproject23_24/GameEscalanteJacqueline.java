@@ -1,3 +1,5 @@
+package com.poly.polyapcsafinalproject23_24;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -109,7 +111,7 @@ public class GameEscalanteJacqueline extends GameActivity {
     private void enrollinEngineering()
     {
 
-        tvStoryText.setTex("\nYou have a choice, what do you do?");
+        tvStoryText.setText("\nYou have a choice, what do you do?");
         btn1.setText("  Go to EDD");
         btn2.setText("Go to Intro to design");
         btn3.setVisibility(View.INVISIBLE);
@@ -391,26 +393,44 @@ public class GameEscalanteJacqueline extends GameActivity {
 
     private void defeat()
     {
-        //run method when defeated
-
-
-        //lose a life
         numLives--;
+        //run method when defeated.
 
-        //clear console, display text, etc
-        System.out.println("...");
+        setAllBtnsVisible();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        //determine if player gets to play again
-        if (numLives > 0)
-        {
-            //if you still have lives, return to start()
-            start();
-        }
-        else
-        {
-            //print game over message
-            tvStoryText.setText("TRY A NEW PATHWAY");
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //determine if player gets to play again
+                if (numLives > 0)
+                {
+                    //if you still have lives, return to start()
+                    tvStoryText.setText("Play again!");
+                    btn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            start();
+                        }
+                    });
+                }
+                else
+                {
+                    //print game over message
+                    tvStoryText.setText("Try a new pathway");
+                    btn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            start();
+                        }
+                    });
+                }
+            }
+        });
+
 
     }
 }
