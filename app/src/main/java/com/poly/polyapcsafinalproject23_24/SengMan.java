@@ -185,6 +185,10 @@ public class SengMan extends Contestant {
             weight = 0;
         }
     }
+
+    public void addWeight(double amount) {
+        this.weight += amount;
+    }
     /**
      *sets the number of the player's body fat percentage
      *<br>Precondition: fatPercentage must be non-negative
@@ -199,6 +203,10 @@ public class SengMan extends Contestant {
         }
 
     }
+
+    public void addFatPercentage(double amount) {
+        this.fatPercentage += amount;
+    }
     /**
      *sets the number of the player's lean body mass percentage
      *<br>Precondition: lbmPercentage must be non-negative
@@ -212,6 +220,10 @@ public class SengMan extends Contestant {
             lbmPercentage = 0;
         }
     }
+
+    public void addLbmPercentage(double amount) {
+        this.lbmPercentage += amount;
+    }
     /**
      *sets the number of the player's max benchpress
      *<br>Precondition: maxBench must be non-negative
@@ -221,6 +233,10 @@ public class SengMan extends Contestant {
     public void setMaxBench(int mb) {
         this.maxBench = mb;
 
+    }
+
+    public void addMaxBench(double amount) {
+        this.maxBench += amount;
     }
     /**
      *sets the number of the player's max squat
@@ -232,6 +248,9 @@ public class SengMan extends Contestant {
         this.maxSquat = ms;
 
     }
+    public void addMaxSquat(double amount) {
+        this.maxSquat += amount;
+    }
     /**
      *sets the number of the player's max run distance
      *<br>Precondition: maxRunDistance must be non-negative
@@ -241,6 +260,10 @@ public class SengMan extends Contestant {
     public void setMaxRunDistance(int mr) {
         this.maxRunDistance = mr;
 
+    }
+
+    public void addMaxRunDistance(double amount) {
+        this.maxRunDistance += amount;
     }
     /**
      *sets the number of the player's consecutive workout days

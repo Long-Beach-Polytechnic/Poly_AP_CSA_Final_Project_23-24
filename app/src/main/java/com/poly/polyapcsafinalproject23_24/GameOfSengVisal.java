@@ -56,7 +56,7 @@ public class GameOfSengVisal extends GameActivity {
         tvBodyMassVal = findViewById(R.id.tv_body_mass_val);
         tvMaxBenchVal = findViewById(R.id.tv_max_bench_val);
         tvMaxSquatVal = findViewById(R.id.tv_max_squat_val);
-        tvMaxRunVal = findViewById((R.id.tv_max_run_val);
+        tvMaxRunVal = findViewById(R.id.tv_max_run_val);
         etMain = findViewById(R.id.et_main);
 
         btn1 = findViewById(R.id.btn_1);
@@ -311,7 +311,7 @@ public class GameOfSengVisal extends GameActivity {
             });
 
 
-
+/**
                 if (option == 1) {
                     Util.clearConsole();
                     System.out.println("What do you want to do at the gym?");
@@ -395,6 +395,8 @@ public class GameOfSengVisal extends GameActivity {
           4. Rest for the day
           """;
                 System.out.println(text);
+
+                */
             }
         }
         else {
@@ -452,49 +454,237 @@ public class GameOfSengVisal extends GameActivity {
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    currentBodyType.setWeight(currentBodyType.getWeight() + 5);
-                    currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() - 0.5);
-                    currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() + 0.5);
+                    currentBodyType.addWeight(+ 5);
+                    currentBodyType.addFatPercentage(- 0.5);
+                    currentBodyType.addLbmPercentage(+ 0.5);
                 }
             });
 
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    currentBodyType.setWeight(currentBodyType.getWeight() - 3);
+                    currentBodyType.addWeight(- 3);
                 }
             });
 
             btn3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    currentBodyType.setWeight(currentBodyType.getWeight() + 10);
-                    currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() + 0.7);
-                    currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() - 0.7);
+                    currentBodyType.addWeight(+ 10);
+                    currentBodyType.addFatPercentage(+ 0.7);
+                    currentBodyType.addLbmPercentage(- 0.7);
                 }
             });
         }
 
         private void goForRun() {
 
-            tvMain.setText("Enter how much miles you want to run.")
+            tvMain.setText("Enter how much miles you want to run.");
 
-            btn1.setVisibility(View.INVISIBLE);
-            btn2.setVisibility(View.INVISIBLE);
-            btn3.setVisibility(View.INVISIBLE);
-            btn4.setVisibility(View.INVISIBLE);
+            etMain.setInputType(InputType.TYPE_CLASS_NUMBER);
+            etMain.setHint("");
 
-            etMain.setVisibility(View.VISIBLE);
+            etMain.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                btn4.setVisibility(View.VISIBLE);
+                btn4.setText("Continue");
+                btn4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        int miles = Integer.parseInt(etMain.getText().toString());
+                        if (miles > currentBodyType.getMaxRunDistance() + 1){
+                            tvMain.setText("You cannot run that far! One day has been wasted");
+                        }
+                        else {
+                            currentBodyType.addWeight( - 4);
+                            currentBodyType.addLbmPercentage(+ 0.5);
+                            currentBodyType.addFatPercentage(- 0.5);
+                            tvMain.setText("LBM increased by 0.5\nFat decreased by 0.5\nWeight decreased by 4")
+
+
+
+
+                        }
+
+                        if (miles > currentBodyType.getMaxRunDistance() - 1) {
+                            currentBodyType.setMaxRunDistance(miles);
+                            tvMain.setText("Your max distance has increased to " + currentBodyType.getMaxRunDistance() + "!");
+                        }
+
+                        btn4.setVisibility(View.VISIBLE);
+                        btn4.setText("Continue");
+
+
+
+                        btn4.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                decision();
+                            }
+                        });
+                    }
+                });
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+
+                }
+            });
+
+
+
+
+
+
 
 
 
         }
-        }
+
+        private void benchPress() {
+            tvMain.setText("Enter how much lbs you want to bench. Your current max is: " + currentBodyType.getMaxBench());
+
+            etMain.setInputType(InputType.TYPE_CLASS_NUMBER);
+            etMain.setHint("");
+
+            etMain.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    btn4.setVisibility(View.VISIBLE);
+                    btn4.setText("Continue");
+                    btn4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            int bench = Integer.parseInt(etMain.getText().toString());
+
+                            if (currentBodyType.getConsecutiveWorkoutDays() >= 5) {
+                                tvMain.setText("You have not been taking enough rest! You wasted one day.");
+                            }
+
+                            else if (bench > currentBodyType.getMaxBench() + 5) {
+                                tvMain.setText("You can't bench that much! You are injured in the process\n LBM decreased by 0.5\nFat increased by 0.5\nWeight decreased by 2");
+                                currentBodyType.addLbmPercentage(- 0.5);
+                                currentBodyType.addFatPercentage(+ 0.5);
+                                currentBodyType.addWeight(- 0.5);
+                            } else {
+                                currentBodyType.addWeight(-4);
+                                currentBodyType.addLbmPercentage(+0.5);
+                                currentBodyType.addFatPercentage(-0.5);
+                                tvMain.setText("LBM increased by 0.5\nFat decreased by 0.5\nWeight decreased by 4");
+                                if (bench > currentBodyType.getMaxBench() + 5) {
+                                    currentBodyType.addMaxBench(5);
+                                }
+
+                            }
+
+
+                            btn4.setVisibility(View.VISIBLE);
+                            btn4.setText("Continue");
+
+
+
+                            btn4.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    decision();
+                                }
+                            });
+                        }
+                    });
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+
+                }
+            });
 
 
 
     }
 
+
+    private void squat() {
+        tvMain.setText("Enter how much lbs you want to squat. Your current max is: " + currentBodyType.getMaxSquat());
+
+        etMain.setInputType(InputType.TYPE_CLASS_NUMBER);
+        etMain.setHint("");
+
+        etMain.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                btn4.setVisibility(View.VISIBLE);
+                btn4.setText("Continue");
+                btn4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int squat = Integer.parseInt(etMain.getText().toString());
+                        if (currentBodyType.getConsecutiveWorkoutDays() >= 5) {
+                            tvMain.setText("You have not been taking enough rest! You wasted one day.");
+                        }
+
+
+                            else if (squat > currentBodyType.getMaxSquat() + 5) {
+                            tvMain.setText("You can't squat that much! You are injured in the process\n LBM decreased by 0.5\nFat increased by 0.5\nWeight decreased by 2");
+                            currentBodyType.addLbmPercentage(- 0.5);
+                            currentBodyType.addFatPercentage(+ 0.5);
+                            currentBodyType.addWeight(- 0.5);
+
+                        } else {
+                            currentBodyType.addWeight(-4);
+                            currentBodyType.addLbmPercentage(+0.5);
+                            currentBodyType.addFatPercentage(-0.5);
+                            tvMain.setText("LBM increased by 0.5\nFat decreased by 0.5\nWeight decreased by 4")
+                            if (squat > currentBodyType.getMaxSquat() + 5) {
+                                currentBodyType.addMaxBench(5);
+                            }
+
+                        }
+
+
+                        btn4.setVisibility(View.VISIBLE);
+                        btn4.setText("Continue");
+
+
+
+                        btn4.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                decision();
+                            }
+                        });
+                    }
+                });
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
+
+    }
 
 
 
@@ -536,7 +726,7 @@ public class GameOfSengVisal extends GameActivity {
      *if bench amount is under 5 over max:
      *maxBench increased to amount the user benched
      */
-    private void benchPress() {
+    private void benchPressold() {
         Util.clearConsole();
         System.out.println("How much lbs do you want to bench?");
         System.out.println("Your current max is: " + currentBodyType.getMaxBench());
@@ -546,14 +736,15 @@ public class GameOfSengVisal extends GameActivity {
         }
         else if (bench > currentBodyType.getMaxBench() + 5) {
             System.out.println("You can't bench that much! You are injured in the process");
-            currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() - 0.5);
-            currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() + 0.5);
-            currentBodyType.setWeight(currentBodyType.getWeight() - 2);
+
+            currentBodyType.addLbmPercentage( - 0.5);
+            currentBodyType.addFatPercentage( + 0.5);
+            currentBodyType.addWeight( - 2);
             System.out.println("LBM decreased by 0.5\nFat increased by 0.5\nWeight decreased by 2");
         }
         else {
-            currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() + 0.5);
-            currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() - 0.5);
+            currentBodyType.addLbmPercentage( + 0.5);
+            currentBodyType.addFatPercentage(- 0.5);
             System.out.println("LBM incresaed by 0.5\nFat decreased by 0.5");
             if (bench > currentBodyType.getMaxBench() - 5) { //increases max bench after working out
                 currentBodyType.setMaxBench(bench);
@@ -577,7 +768,7 @@ public class GameOfSengVisal extends GameActivity {
      *if squat amount is under 5 over max:
      *maxSquat increased to amount the user squatted
      */
-    private void squat() {
+    private void squatold() {
         Util.clearConsole();
         System.out.println("How much lbs do you want to squat?");
         System.out.println("Your current max is: " + currentBodyType.getMaxSquat());
