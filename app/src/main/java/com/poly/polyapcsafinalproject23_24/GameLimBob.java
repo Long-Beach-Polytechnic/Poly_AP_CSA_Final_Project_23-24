@@ -13,7 +13,6 @@ public class GameLimBob extends GameActivity {
     private void createPlayer()
     {
         System.out.println("What is your name?");
-        String name = scan.nextLine();
         player = new Worker(name);
     }
 
