@@ -1,5 +1,8 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.poly.polyapcsafinalproject23_24.GameActivity;
@@ -11,12 +14,12 @@ public class GameSanchezCristian extends GameActivity {
 
     //instance variables
     //   variables you plan to use throughout the adventure
-
+    private boolean isWon;
     private int numLives;
-
+    private Button btn1, btn2, btn3;
     //private Player player; (optional)
-
-
+    private ImageView ivStory;
+    private TextView tvTitle, tvSubtitle, tvStoryText;
     private void setAllBtnsVisible()
     {
         btn1.setVisibility(View.VISIBLE);
@@ -31,8 +34,8 @@ public class GameSanchezCristian extends GameActivity {
      setContentView(R.layout.activity_game_3_button);
      tvTitle = findViewById(R.id.tv_title_txt);
      tvSubtitle = findViewById(R.id.tv_subtitle);
-     tvstoryText = findViewById(R.id.tv_story);
-     iv = findViewById(R.id.iv_story);
+     tvStoryText = findViewById(R.id.tv_story);
+     ivStory = findViewById(R.id.iv_story);
      btn1 = findViewById(R.id.btn_1);
      btn2 = findViewById(R.id.btn_2);
      btn3 = findViewById(R.id.btn_3);
@@ -43,20 +46,19 @@ public class GameSanchezCristian extends GameActivity {
 
 
 
-        tvTitle.setText("Will you survive");
-        tvSubtitle("The Not so seemly Dangerous places but they are.");
-
+        tvTitle.setText("Will you survive! The Not so seemly Dangerous places but they are.");
         numLives = 3;
         start();
     }
 
     private void start()
     {
+
         isWon = false;
 
 
 
-        tvStoryText.setText("\nIts finally summer,lets get it ");
+        tvStoryText.setText("Its finally summer,lets get it ");
 
 
         setAllBtnsVisible();
@@ -64,29 +66,26 @@ public class GameSanchezCristian extends GameActivity {
        btn2.setText("Go to School");
        btn3.setText("Go to Church");
 
-
-       btn1.setOnClickListener(new view.OnClickListner() {
-
+       btn1.setOnClickListener(new View.OnClickListener() {
            @Override
-           public void onClick(view v) {
+           public void onClick(View v) {
                goToPark();
            }
        });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
 
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 goToSchool();
             }
         });
 
 
 
-        btn3.setOnClickListener(new view.OnClickListner() {
-
+        btn3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 goToChurch();
             }
         });
@@ -96,26 +95,25 @@ public class GameSanchezCristian extends GameActivity {
     private void goToPark()
     {
 
-        tvStoryText.setText("\nHow do you want to go to the Park?");
+        tvStoryText.setText("How do you want to go to the Park?");
 
         setAllBtnsVisible();
         btn1.setText("Go Walking");
         btn2.setText("Go in the uber");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 goWalking();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
-
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 uber();
             }
         });
@@ -124,26 +122,26 @@ public class GameSanchezCristian extends GameActivity {
 
     private void goWalking()
     {
-        tvStoryText.setText("1.Do you want to take the shortcut 2. Do you want to take the longway");
+        tvStoryText.setText("Do you want to take the shortcut 2. Do you want to take the longway");
 
       setAllBtnsVisible();
         btn1.setText("Take shortcut");
         btn2.setText("Take longway");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 shortCut();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
+        btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 longWay();
             }
         });
@@ -173,20 +171,19 @@ public class GameSanchezCristian extends GameActivity {
         btn1.setText("Take nice car");
         btn2.setText("Take regular car");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 niceCar();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
-
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 regularCar();
             }
         });
@@ -220,20 +217,20 @@ public class GameSanchezCristian extends GameActivity {
         btn1.setText("Take a bike ride");
         btn2.setText("Take the car");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 bikeRide();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
+        btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 take();
             }
         });
@@ -249,20 +246,20 @@ public class GameSanchezCristian extends GameActivity {
         btn1.setText("Take the side walk");
         btn2.setText("Take the road");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 sideWalk();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
+        btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 road();
             }
         });
@@ -292,20 +289,20 @@ public class GameSanchezCristian extends GameActivity {
         btn1.setText("Take the sports Car");
         btn2.setText("Take the old Car");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 sportCar();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
+        btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 oldCar();
             }
         });
@@ -330,24 +327,24 @@ public class GameSanchezCristian extends GameActivity {
 
         tvStoryText.setText("What church do you want to go too ");
 
-        etAllBtnsVisible();
+        setAllBtnsVisible();
         btn1.setText("Old Looking church");
         btn2.setText("Nice fancy looking church");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 old();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
+        btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 fancy();
             }
         });
@@ -355,26 +352,26 @@ public class GameSanchezCristian extends GameActivity {
     private void old()
     {
 
-        tvStoryText.setText("\nWhat color do you want to wear to Church?");
+        tvStoryText.setText("What color do you want to wear to Church?");
 
-        etAllBtnsVisible();
+        setAllBtnsVisible();
         btn1.setText("Wear red");
         btn2.setText("Wear blue");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 red();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
+        btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 blue();
             }
         });
@@ -397,24 +394,24 @@ public class GameSanchezCristian extends GameActivity {
 
         tvStoryText.setText("Where do you want to sit at the Church?");
 
-        etAllBtnsVisible();
+       setAllBtnsVisible();
         btn1.setText("Sit in the Front were it is empty.");
         btn2.setText("Sit in the Back were it is empty.");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new view.OnClickListner() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 front();
             }
         });
 
-        btn2.setOnClickListener(new view.OnClickListner() {
+        btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(view v) {
+            public void onClick(View v) {
                 back();
             }
         });
@@ -425,7 +422,7 @@ public class GameSanchezCristian extends GameActivity {
     private void  front()
     {
 
-        tvStoryText.setText("\nYou die she is weird she dosnt like people siting in the front ");
+        tvStoryText.setText("You die she is weird she dosnt like people siting in the front ");
 
         defeat();
     }
@@ -434,7 +431,7 @@ public class GameSanchezCristian extends GameActivity {
     private void  back()
     {
 
-        tvStoryText.setText("\nYou die she is weird she dosnt like people siting in the back ");
+        tvStoryText.setText("You die she is weird she does not like people siting in the back ");
 
         defeat();
     }
