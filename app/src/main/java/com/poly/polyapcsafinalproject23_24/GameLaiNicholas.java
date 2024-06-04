@@ -107,92 +107,189 @@ public class GameLaiNicholas extends GameActivity {
         }
     }
 
-    private void goToNorthPole()
-    {
-        Util.clearConsole();
-        System.out.println("You decide to go to the North Pole.");
-        System.out.println("1. Go see Santa\n2. Encounter a polar bear");
-        int choice = Util.enterInt(1, 2);
+    private void goToNorthPole() {
+        tvStoryText.setText("You decide to go to the North Pole.");
 
-        if (choice == 1)
-        {
-            goSeeSanta();
-        }
-        else if (choice == 2)
-        {
-            encounterPolarBear();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Go see Santa");
+        btn2.setText("Encounter a polar bear");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                goSeeSanta();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                encounterPolarBear();
+            }
+        });
+
     }
 
     private void goSeeSanta()
     {
-        Util.clearConsole();
-        System.out.println("\nSanta asks what you want for Christmas?");
-        System.out.println("1. He reaches in his bag and hand you a present\n2. It's evil Santa and he kills you");
-        int choice = Util.enterInt(1, 2);
+        tvStoryText.setText("Santa asks what you want for Christmas?");
 
-        if (choice == 1)
-        {
-            santaHandsYouPresent();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Santa Hands You a Present");
+        btn2.setText("Santa Kills You");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                santaHandsYouPresent();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                santaKillsYou();
+            }
+        });
+
+    }
+
+    private void santaKillsYou()
+    {
+        tvStoryText.setText("Santa kills you, game over.");
+
+        setAllBtnsVisible();
+        btn1.setText("Game Over");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
     }
 
     private void santaHandsYouPresent()
     {
-        Util.clearConsole();
-        System.out.println("Santa turns around with the present, what happens next?");
-        System.out.println("1. Santa give you what you want\n2. Santa says your bad and tosses you intop the cold ocean");
-        int choice = Util.enterInt(1, 2);
+        tvStoryText.setText("Santa turns around with the present, what happens next?");
 
-        if (choice == 1)
-        {
-            santaGivesYouWhatYouWant();
-        }
-        else if (choice == 2)
-        {
-            santaTossesYouInTheColdOcean();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Santa tosses you in the cold ocean");
+        btn2.setText("Santa gives you what you want");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                santaTossesYouInTheColdOcean();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                santaGivesYouWhatYouWant();
+            }
+        });
+
     }
 
     private void santaTossesYouInTheColdOcean()
     {
-        Util.clearConsole();
-        System.out.println("You get tossed in the ocean and freeze to death");
-        Util.pauseConsole();
-        defeat();
+        tvStoryText.setText("You get tossed in the ocean and freeze to death");
+
+        setAllBtnsVisible();
+        btn1.setText("Game Over");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
     }
 
     private void santaGivesYouWhatYouWant()
     {
-        Util.clearConsole();
-        System.out.println("Santa gives you what you want, you WIN!");
-        Util.pauseConsole();
-        numLives++;
-        start();
+        tvStoryText.setText("Santa gives you what you want, you WIN!");
+
+        setAllBtnsVisible();
+        btn1.setText("Game Over");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
     }
 
     private void encounterPolarBear()
     {
-        Util.clearConsole();
-        System.out.println("1.The polar bear is hungry, he chases you down and eats you. You lose.\n2. You wake the polar bear from his nap, now he is angry and eats you. You Lose.");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You encounter the Polar bear, he eats you and you die.");
 
-        if(choice == 1)
-        {
-            defeat();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Game Over");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
     }
 
     private void goIceSkating()
     {
+        tvStoryText.setText("How would you like to get in?");
+
+        ivStory.setImageresource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Pay $15");
+        btn2.setText("Sneak in without paying");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {goIceSkating();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){pay$15(); }
+        });
         Util.clearConsole();
         System.out.println("\nHow would you like to get in?");
         System.out.println("1. Pay $15\n2. Sneak in without paying");
