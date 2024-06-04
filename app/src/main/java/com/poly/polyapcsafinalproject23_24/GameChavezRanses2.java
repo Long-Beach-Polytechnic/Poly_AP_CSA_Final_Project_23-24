@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.Scanner;
 
-public class GameChavezRanses extends GameActivity {
+public class GameChavezRanses2 extends GameActivity {
 
     //instance variables
     //   variables you plan to use throughout the adventure
@@ -117,9 +117,9 @@ public class GameChavezRanses extends GameActivity {
     //____STAYING HOME CHOICE____
     private void stayHome()
     {
-      //Util.clearConsole was here
+        //Util.clearConsole was here
         tvStoryText.setText("You decide to stay home and be FAT");
-         //Util.enterInt was here
+        //Util.enterInt was here
 
 
         setAllBtnsVisible();
