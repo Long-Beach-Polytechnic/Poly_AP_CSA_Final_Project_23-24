@@ -406,96 +406,155 @@ public class GameLaiNicholas extends GameActivity {
 
     private void sneakIn()
     {
-        Util.clearConsole();
-        System.out.println("\nYou sneak into the rink without paying, what happens next?");
-        System.out.println("1. Security catches you and throws you out, you lose.\n2. Everyone sees and they collectively kick you out, you lose.");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You sneak into the rink without paying, what happens next?");
 
-        if (choice == 1)
-        {
-            defeat();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        ivStory.setImageresource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Security catches you and throws you out, you lose");
+        btn2.setText("Everyone sees and they collectively kick you out, you lose");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                defeat();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+                defeat(); }
+        });
+
     }
 
     private void goSeeChristmasLights()
     {
-        Util.clearConsole();
-        System.out.println("\nWould you like to see lights inside or outside?");
-        System.out.println("1. Go Outside\n2. Go Inside");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("Would you like to see lights inside or outside?");
 
-        if (choice == 1)
-        {
-            goOutside();
-        }
-        else if (choice == 2)
-        {
-            goInside();
-        }
+        ivStory.setImageresource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Go outside");
+        btn2.setText("Go inside");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                goOutside();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+                goInside(); }
+        });
+
     }
 
     private void goOutside()
     {
-        Util.clearConsole();
-        System.out.println("\nYou go outside, what happens next?");
-        System.out.println("1. It leads into a forest! Follow it!\n2. The lights outside don't work, you lose.");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You go outside, what happens next?");
 
-        if (choice == 1)
-        {
-            followForest();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        ivStory.setImageresource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("It leads into a forest, follow it!");
+        btn2.setText("The lights outside don't work, you lose");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                followForest();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+                defeat(); }
+        });
+
     }
 
     private void followForest()
     {
-        Util.clearConsole();
-        System.out.println("\nYou follow the forest, what happens next?");
-        System.out.println("1. You see beautiful lights, you look at lights for almost an hour!\n2. The forest catches on fire from the lights, you lose");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You foolow the forest, what happens next?");
 
-        if (choice == 1)
-        {
-            lookAtLights();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        ivStory.setImageresource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("You see beautiful lights, you look at light for almost an hour!");
+        btn2.setText("The forest catches on fire, you lose");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                lookAtlights();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+                defeat(); }
+        });
     }
 
     private void lookAtLights()
     {
-        Util.clearConsole();
-        System.out.println("You have a great night looking at lights and you go home happy, You WIN");
-        Util.pauseConsole();
-        numLives++;
-        start();
+        tvStoryText.setText("You have a great night looking at lights and you go home happy, you WIN!.");
+
+        setAllBtnsVisible();
+        btn1.setText("Game Over");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
     }
 
     private void goInside()
     {
-        Util.clearConsole();
-        System.out.println("\nYou go inside, what happens next?");
-        System.out.println("1. The light catch on fire and you die, you lose.\n2. The light don't work, you get mad and you go home, you lose.");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You go inside, what happens next?");
 
-        if (choice == 1)
-        {
-            defeat();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        ivStory.setImageresource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("The light catches on fire and you die, you lose.");
+        btn2.setText("The lights don't work you get mad and leave, you lose.");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                defeat();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+                defeat(); }
+        });
+
     }
 
 
