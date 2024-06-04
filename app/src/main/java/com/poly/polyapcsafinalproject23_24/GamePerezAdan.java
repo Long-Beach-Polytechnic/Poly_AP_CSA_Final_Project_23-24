@@ -663,16 +663,32 @@ public class GamePerezAdan extends GameActivity {
          house.
       2. You do not and continue to be lazy.
       """;
+
+        tvStoryText.setText("Do you change your mind about helping with the house or do you continue to be lazy?");
+
+        setAllBtnsVisible();
+        btn1.setText("You changed your mind and start helping with the  house ");
+        btn1.setText("You do not and continue to be lazy");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            helpWithHouse();
-        }
-        else if (choice == 2)
-        {
-            continueBeingLazy();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                helpWithHouse();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                continueBeingLazy();
+            }
+        });
+
+
     }
 
     private void continueBeingLazy()
@@ -685,22 +701,39 @@ public class GamePerezAdan extends GameActivity {
       2. Live in the homeless shelter.
       3. Find a job.
       """;
+
+        tvStoryText.setText("You are now kicked out of your parents house what do you do?");
+
+        setAllBtnsVisible();
+        btn1.setText("Live in the streets");
+        btn2.setText("Live in the homeless shelter");
+        btn3.setText("Find A job")
         System.out.println(text);
-        int choice = Util.enterInt(1,3);
-        if (choice == 1)
-        {
-            System.out.println("Now you are on the streets");
-            Util.pauseConsole();
-            start();
-        }
-        else if (choice == 2)
-        {
-            start();//struggle();
-        }
-        else if (choice == 3)
-        {
-            getJob();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                ();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                getJob();
+            }
+        });
     }
 
     private void defeat()
