@@ -44,7 +44,7 @@ private void setAllBtnsVisible()
 
 
 
-public class Adventure{
+public class Adventure {
 
     //instance variables
     //   variables you plan to use throughout the adventure
@@ -53,8 +53,7 @@ public class Adventure{
     //private Player player; (optional)
 
 
-    public void run()
-    {
+    public void run() {
         //initialize number of lives
         numLives = 5;
         //create a scanner object for user input
@@ -75,12 +74,12 @@ public class Adventure{
     private void start() {
         isWon = false;
 
-        ivStory.setImageResource(R.drawable.im_laborday_title);
+        ivStory.setImageResource(R.drawable.im_chavezhugo_titans_attackt);
 
         tvStoryText.setText("THE TITANS HAVE BREACHED THE WALL");
         tvStoryText.setText("You must make the right decisions in order to survive!!!");
         tvStoryText.setText("The titans have breached the wall and are now attacking the village, what will you do to survive?");
-        tvStoryText.setText("1. Attack the titans\n2. Watch in fear\n3. Run as fast as possible");
+
 
         setAllBtnsVisible();
         btn1.setText("Attack");
@@ -89,22 +88,30 @@ public class Adventure{
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {attack();}
+            public void onClick(View v) {
+                attack();
+            }
 
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {watch();}
+            public void onClick(View view) {
+                watch();
 
+            }
         });
 
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { runAway();}
+            public void onClick(View view) {
+                runAway();
 
+            }
         });
     }
+
+
 
 
 
@@ -112,30 +119,34 @@ public class Adventure{
 
         tvStoryText.setText("So you have chosen to ATTACK the titans!, You are either very brave or very stupid, lets see how you will survive, TIME TO ATTACK, CHOOSE YOUR WEAPON");
 
+        ivStory.setImageResource(R.drawable.im_chavezhugo_attack);
         setAllBtnsVisible();
         btn1.setText("Sword");
         btn2.setText("Gun");
         btn3.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickerListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { sword() {
-            });
-
+            public void onClick(View view) {
+                sword();
+            }
+        });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { gun(); {
-            });
-
+            public void onClick(View view) {
+                gun();
             }
+        });
+    }
 
 
     private void sword() {
 
 
         tvStoryText.setText("You have chosen the sword, you have found that titans are vulnerable to swords, Now its time for you to kill the titan. Where would you attack?");
-        tvStoryText.setText("1. Chest \n2. Head \n3. Neck");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_sword);
 
         setAllBtnsVisible();
         btn1.setText("Chest");
@@ -144,27 +155,34 @@ public class Adventure{
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { chest(); {
+            public void onClick(View view) {
+                chest();
+            }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { head(); {
-            });
-
+            public void onClick(View view) {
+                head();
+            }
+        });
 
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { neck(); {
-            });
+            public void onClick(View view) {
+                neck();
             }
+        });
 
+    }
 
 
     private void chest()
     {
 
         tvStoryText.setText("YOU LOST!!! You got eaten by the titan!. The titans chest are very resistant, and tough against attacks, try again...");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_chest);
         defeat();
     }
 
@@ -176,25 +194,30 @@ public class Adventure{
     }
 
     private void neck()
-    {
+        {
 
-        tvStoryText.setText("You found out their weakness! Now how will you attack the neck?");
-        tvStoryText.setText("1. FULL STRENGTH \n2. NO STRENGTH.......");
+            tvStoryText.setText("You found out their weakness! Now how will you attack the neck?");
 
-        setAllBtnsVisible();
-        btn1.setText("FULL STRENGTH");
-        btn2.setText("No strength...");
-        btn3.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { fullstrength(); {
+            setAllBtnsVisible();
+            btn1.setText("FULL STRENGTH");
+            btn2.setText("No strength...");
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    fullstrength();
+                }
             });
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { nostrength(); {
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    nostrength();
+                }
             });
-            }
+        }
 
 
 
@@ -229,21 +252,36 @@ public class Adventure{
 
 
         tvStoryText.setText("You watch as the titans breach the wall, and you just keep watching... Whats your next move?");
-        tvStoryText.setText("1. You watch them \n 2. You keep watching \n 3. You watch them even more...");
 
 
-        if (choice == 1)
-        {
-            watchThem();
-        }
-        else if (choice == 2)
-        {
-            keepWatching();
-        }
-        else if (choice == 3)
-        {
-            watchThemMore();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Watch Them");
+        btn2.setText("Keep Watching");
+        btn3.setText("Watch Them More");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { watchThem();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { keepWatching();
+
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { watchThemMore();
+
+            }
+        });
+
+
+
     }
 
     private void watchThem()
@@ -270,17 +308,26 @@ public class Adventure{
     {
 
         tvStoryText.setText("You have chosen to run away, you are either a coward, or your thinking strategically, and with logic, now... make a decision!");
-        tvStoryText.setText("1. Run as fast as possible \n2. Try to save your family ");
 
 
-        if (choice == 1)
-        {
-            runFast();
-        }
-        else if (choice == 2)
-        {
-            runFamily();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Run as fast as possible");
+        btn2.setText("Run to save your family");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                runFast();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                runFamily();
+            }
+        });
+
     }
 
     private void runFast()
@@ -288,17 +335,27 @@ public class Adventure{
     {
 
         tvStoryText.setText("You are still running and are looking for a place to hide, choose quick!");
-        tvStoryText.setText("1. Hide in a building \n2. Hide in a tree");
 
 
-        if (choice == 1)
-        {
-            hideBuilding();
-        }
-        else if (choice == 2)
-        {
-            hideTree();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Hide in a building");
+        btn2.setText("Hide in a tree");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hideBuilding();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hideTree();
+            }
+        });
+
+
     }
 
     private void hideBuilding()
@@ -311,47 +368,71 @@ public class Adventure{
     private void hideTree()
     {
 
-        System.out.println("YOU LOST!!! The titans can still smell and see you!");
+        tvStoryText.setText("YOU LOST!!! The titans can still smell and see you!");
     }
 
     private void runFamily()
     {
 
-        System.out.println("You are looking for your family, how are you going to find them?");
-        System.out.println("1. Search for them \n2. Ask where they are ");
+        tvStoryText.setText("You are looking for your family, how are you going to find them?");
 
 
-        if (choice == 1)
-        {
-            searchFamily();
-        }
-        else if (choice == 2)
-        {
-            askFamily();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Search for them");
+        btn2.setText("Ask where they are");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchFamily();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                askFamily();
+            }
+        });
+
+
+
+
     }
 
     private void searchFamily()
     {
 
-        System.out.println("You are searching for your family, where are you going to look for them?");
-        System.out.println("1. Search in a nearby bulding \n2. Search among the people in the crowd");
+        tvStoryText.setText("You are searching for your family, where are you going to look for them?");
 
 
-        if (choice == 1)
-        {
-            searchBuilding();
-        }
-        else if (choice == 2)
-        {
-            searchCrowd();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Search in a nearby building");
+        btn2.setText("Search among the people in the crowd");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchBuilding();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchCrowd();
+            }
+        });
+
+
+
     }
 
     private void searchBuilding()
     {
 
-        System.out.println("YOU LOST!!! They were to many buildings to search for, and got eaten before you could reach one");
+        tvStoryText.setText("YOU LOST!!! They were to many buildings to search for, and got eaten before you could reach one");
 
         defeat();
     }
@@ -359,24 +440,35 @@ public class Adventure{
     private void searchCrowd()
     {
 
-        System.out.println("You see people who resemble them, do you go and check?");
-        System.out.println("1. Check \n2 Do not check");
+        tvStoryText.setText("You see people who resemble them, do you go and check?");
 
 
-        if (choice == 1)
-        {
-            check();
-        }
-        else if (choice == 2)
-        {
-            notCheck();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Check");
+        btn2.setText("Do not check");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                check();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notCheck();
+            }
+        });
+
+
+
     }
 
     private void check()
     {
 
-        System.out.println("YOU WIN!!! Those people were your family, and you succesfully rescued them and survived");
+        tvStoryText.setText("YOU WIN!!! Those people were your family, and you succesfully rescued them and survived");
 
         start();
     }
@@ -384,7 +476,7 @@ public class Adventure{
     private void notCheck()
     {
 
-        System.out.println("YOU LOST!!! Why woudln't you check? Like it doesnt hurt to double check");
+        tvStoryText.setText("YOU LOST!!! Why woudln't you check? Like it doesnt hurt to double check");
 
         defeat();
     }
@@ -392,7 +484,7 @@ public class Adventure{
     private void askFamily()
     {
 
-        System.out.println("YOU LOST!!! The strangers dont know how they look like, maybe you shouldve had friends");
+        tvStoryText.setText("YOU LOST!!! The strangers dont know how they look like, maybe you shouldve had friends");
 
         defeat();
     }
@@ -411,13 +503,13 @@ public class Adventure{
         if (numLives > 0)
         {
             //if you still have lives, return to start()
-            System.out.println("But you miracalously got saved, try again...");
+            tvStoryText.setText("But you miracalously got saved, try again...");
 
             start();
         }
         else
         {
-            System.out.println("GAME OVER!!! YOU LOST ALL YOUR LIVES, AND GOT EATEN WHOLE BY THE TITANS");//print game over message
+            tvStoryText.setText("GAME OVER!!! YOU LOST ALL YOUR LIVES, AND GOT EATEN WHOLE BY THE TITANS");//print game over message
         }
     }
 }
