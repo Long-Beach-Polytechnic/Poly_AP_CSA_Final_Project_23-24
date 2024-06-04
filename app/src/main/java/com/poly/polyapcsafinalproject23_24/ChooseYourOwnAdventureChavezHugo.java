@@ -190,6 +190,9 @@ public class Adventure {
     {
 
         tvStoryText.setText("YOU LOST!!! You got eaten by the titan!. The titans head are very alert, and can see your movements with great accuracy, try again...");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_head);
+
         defeat();
     }
 
@@ -197,6 +200,8 @@ public class Adventure {
         {
 
             tvStoryText.setText("You found out their weakness! Now how will you attack the neck?");
+
+            ivStory.setImageResource(R.drawable.im_chavezhugo_neck);
 
 
             setAllBtnsVisible();
@@ -228,6 +233,8 @@ public class Adventure {
 
         tvStoryText.setText("YOU WIN!! YOU WENT ALL IN WITH FULL STRENGTH AND DEFEATED THE TITANS!!! CONGRATS!!");
 
+        ivStory.setImageResource(R.drawable.im_chavezhugo_fullstrength);
+
         start();
     }
 
@@ -235,6 +242,9 @@ public class Adventure {
     {
 
         tvStoryText.setText("YOU LOST!!! Come on, you really thought you were gonna win without putting in strength? ._. try again...");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_defeat1);
+
         defeat();
     }
 
@@ -242,16 +252,18 @@ public class Adventure {
     {
 
         tvStoryText.setText("YOU LOST!!! Guns are not effective towards titans! try again...");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_deafeat_gun);
+
         defeat();
     }
 
     private void watch()
     {
 
-        tvStoryText.setText();
-
-
         tvStoryText.setText("You watch as the titans breach the wall, and you just keep watching... Whats your next move?");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_titanbreached);
 
 
         setAllBtnsVisible();
@@ -288,18 +300,26 @@ public class Adventure {
     {
 
         tvStoryText.setText("YOU LOST!!! What? you thought just staring at them would make you win? try again...");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_defeat2);
+
         defeat();
     }
     private void keepWatching()
     {
 
         tvStoryText.setText("YOU LOST!!! Why do you wanna watch them? you are just a sitting duck, try again...");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_defeat3);
         defeat();
     }
     private void watchThemMore()
     {
 
         tvStoryText.setText("YOU LOST!!! Why the hell do you just wanna watcn them? you like how the look? Whats wrong with you, do something else, try again...");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_defeat4);
+
         defeat();
     }
 
@@ -308,6 +328,8 @@ public class Adventure {
     {
 
         tvStoryText.setText("You have chosen to run away, you are either a coward, or your thinking strategically, and with logic, now... make a decision!");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_runaway);
 
 
         setAllBtnsVisible();
@@ -336,6 +358,8 @@ public class Adventure {
 
         tvStoryText.setText("You are still running and are looking for a place to hide, choose quick!");
 
+        ivStory.setImageResource(R.drawable.im_chavezhugo_runfast);
+
 
         setAllBtnsVisible();
         btn1.setText("Hide in a building");
@@ -362,19 +386,27 @@ public class Adventure {
     {
 
         tvStoryText.setText("YOU LOST!!! The titans can smell you! ");
-        defeat();
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_defeat5);
+
     }
 
     private void hideTree()
     {
 
         tvStoryText.setText("YOU LOST!!! The titans can still smell and see you!");
+
+        ivStory.setImageResource(R.drawable.im_chavezhugo_defeat6);
+
+        defeat();
     }
 
     private void runFamily()
     {
 
         tvStoryText.setText("You are looking for your family, how are you going to find them?");
+
+        ivStory.setImageResource(R.drawable.
 
 
         setAllBtnsVisible();
@@ -406,6 +438,8 @@ public class Adventure {
 
         tvStoryText.setText("You are searching for your family, where are you going to look for them?");
 
+        ivStory.setImageResource(R.drawable.
+
 
         setAllBtnsVisible();
         btn1.setText("Search in a nearby building");
@@ -434,6 +468,8 @@ public class Adventure {
 
         tvStoryText.setText("YOU LOST!!! They were to many buildings to search for, and got eaten before you could reach one");
 
+        ivStory.setImageResource(R.drawable.
+
         defeat();
     }
 
@@ -441,6 +477,8 @@ public class Adventure {
     {
 
         tvStoryText.setText("You see people who resemble them, do you go and check?");
+
+        ivStory.setImageResource(R.drawable.
 
 
         setAllBtnsVisible();
@@ -470,6 +508,8 @@ public class Adventure {
 
         tvStoryText.setText("YOU WIN!!! Those people were your family, and you succesfully rescued them and survived");
 
+        ivStory.setImageResource(R.drawable.
+
         start();
     }
 
@@ -478,6 +518,8 @@ public class Adventure {
 
         tvStoryText.setText("YOU LOST!!! Why woudln't you check? Like it doesnt hurt to double check");
 
+        ivStory.setImageResource(R.drawable.
+
         defeat();
     }
 
@@ -485,6 +527,8 @@ public class Adventure {
     {
 
         tvStoryText.setText("YOU LOST!!! The strangers dont know how they look like, maybe you shouldve had friends");
+
+        ivStory.setImageResource(R.drawable.
 
         defeat();
     }
