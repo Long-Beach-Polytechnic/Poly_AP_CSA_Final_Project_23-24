@@ -33,11 +33,9 @@ public class GameHoboJoeAdventure extends GameActivity {
         tvTitle.setText("Hobo Joe Adventure");
         tvSubtitle.setText("Master the dark arts of the homeless");
 
-        numLives = 5;
+
         start();
 
-
-            start();
         }
 
     private void setAllBtnsVisible()
@@ -52,9 +50,6 @@ public class GameHoboJoeAdventure extends GameActivity {
 
             isWon = false;
 
-            ivStory.setImageResource(R.drawable.im_laborday_title);
-            playAudio(R.raw.audio_laborday_bass);
-
             tvStoryText.setText("You are Hobo Joe decide what to do");
 
             setAllBtnsVisible();
@@ -62,10 +57,6 @@ public class GameHoboJoeAdventure extends GameActivity {
             btn2.setText("Go dumpster diving");
             btn3.setText("Put on hobo ski mask and rob something");
             btn4.setVisibility(View.INVISIBLE);
-
-            System.out.println("Hobo Adventure");
-            System.out.println("You are homeless decide what you want to do");
-            System.out.println("1. Fight another homeless person for their cheese pizza\n2. Go dumpster diving\n3. Put on hobo ski mask and rob something");
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -150,7 +141,7 @@ public class GameHoboJoeAdventure extends GameActivity {
                 isWon = false;
                 tvStoryText.setText("You used the powder and gained powers you beat up the homeless and ate the pizza but it was laced with fentanyl you died");
 
-                ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
                 setAllBtnsVisible();
                 btn1.setText("Play again");
@@ -172,7 +163,6 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = true;
             tvStoryText.setText("You decide to trade the powder for the pizza he gladly accepts nice you don't starve and made a new crack friend");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -189,8 +179,6 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         //choice 2
         private void grabPizza() {
-
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
 
             tvStoryText.setText("You rush in and grab his pizza what do you do next");
 
@@ -221,8 +209,6 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("You ran into a dead end and he catches up and you died");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
-
             setAllBtnsVisible();
             btn1.setText("Play again");
             btn2.setVisibility(View.INVISIBLE);
@@ -242,7 +228,6 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("You successfully escape but you starve to death after");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -264,8 +249,6 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         //dumpster diving path
         private void dumpster() {
-
-                ivStory.setImageResource(R.drawable.im_laborday_beach);
 
                 tvStoryText.setText("Dumpster diving what do you do");
 
@@ -297,8 +280,6 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void bellyFlop() {
 
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
-
             tvStoryText.setText("You dive in and get cut up bad what do you do");
 
             setAllBtnsVisible();
@@ -328,7 +309,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("Rip you have Aids, Hiv, Stds and herpes worst than death");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -348,7 +329,7 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         private void keepSearching() {
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
+
 
             tvStoryText.setText("You found a med kit and some white stuff what do you use");
 
@@ -380,7 +361,7 @@ public class GameHoboJoeAdventure extends GameActivity {
                 isWon = false;
                 tvStoryText.setText("You used the med kit but it was dirty used for drugs you died");
 
-                ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
                 setAllBtnsVisible();
                 btn1.setText("Play again");
@@ -404,7 +385,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("You take the white stuff but later on you get more addicted to it and spend every last penny for more eventually you couldn't handle it and died");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -426,7 +407,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //choice 2
         private void flipDumpster() {
 
-                ivStory.setImageResource(R.drawable.im_laborday_beach);
+
 
                 tvStoryText.setText("You flipped the dumpster and see a glowing green rat and a honey bun pick one up");
 
@@ -458,7 +439,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("The rat was radioactive and you picked it up and died");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -481,7 +462,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("It was hot like a volcano you gain powers to create a domain iron coffin meter and you are able obliterated the city you mastered the homeless powers to its fullest");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -502,7 +483,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //robbing path
         private void hoboRob() {
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
+
 
             tvStoryText.setText("Put on hobo ski mask what do you rob");
 
@@ -531,7 +512,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //choice 1
         private void robBank() {
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
+
 
             tvStoryText.setText("You get in the bank decide what you wanna do");
 
@@ -562,7 +543,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("Your face is so hideous it breaks everything around you except the free money that was easy");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -582,7 +563,7 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         private void rushVault(){
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
+
 
             tvStoryText.setText("Who that dumb to leave the vault open but it closes shut on you what do you do");
 
@@ -614,7 +595,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("You broke out with the strength but died after effects wore off");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -639,7 +620,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("You ate the money but the cops arrested you but they believed you had a mental disability and let you go after you poop the money out light work no reaction easy money");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -662,7 +643,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void robCracked()
         {
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
+
 
             tvStoryText.setText("You decide to rob the local crackhead what do you do");
 
@@ -694,7 +675,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("Rip it did not phase him and he channeled his crackhead energy into one attack and blasts you to oblivion");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -715,7 +696,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void hotHoneyBun()
         {
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
+
 
             tvStoryText.setText("The honey bun is steaming hot do something quick");
 
@@ -747,7 +728,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = true;
             tvStoryText.setText("You ate the honey bun but something feels off you are now a vessel for the strongest curse and he takes control and destroyed half the city");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -771,7 +752,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
             tvStoryText.setText("You threw the honey bun at him but the crackhead had a trick of his sleeve and countered with a domain expnasion your dead");
 
-            ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+
 
             setAllBtnsVisible();
             btn1.setText("Play again");
@@ -807,7 +788,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             {
                 tvStoryText.setText("You have mastered the homeless ways and ancient techniques");
 
-                ivStory.setImageResource(R.drawable.im_laborday_miracle);
+
             }
             else
             {
