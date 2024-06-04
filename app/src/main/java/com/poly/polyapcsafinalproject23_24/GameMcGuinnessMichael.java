@@ -47,7 +47,7 @@ public class GameMcGuinnessMichael extends GameActivity {
          //util wuz hear
         tvTitle.setText("Hit On Hot Person");
         tvSubtitle.setText("");
-        tvStoryText.setText("You see an hot person. You think they are really good looking and you want to get their number. What do you do?")
+        tvStoryText.setText("You see an hot person. You think they are really good looking and you want to get their number. What do you do?");
 
 
 
@@ -207,16 +207,19 @@ public class GameMcGuinnessMichael extends GameActivity {
                 }
                 else {
                     botox();
+                }
             }
         });
 
+        }
 
 
 
     private void botox() {
-        tvStoryText.setText("They ask you if you think that they actually look like they have gotten work done. What do you respond? \n1. Be nice and tell them they are beautiful \n2. Tell them they look like Caitlyn Jenner");
+        tvStoryText.setText("They ask you if you think that they actually look like they have gotten work done. What do you respond? ");
         //util wuz hear
-
+        btn1.setText("Tell them they look beautiful");
+        btn2.setText("Tell them they look like Caitlyn Jenner");
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -279,9 +282,7 @@ public class GameMcGuinnessMichael extends GameActivity {
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                defeat();
-            }
+            public void onClick(View v) { color();}
         });
 
 
@@ -300,6 +301,8 @@ public class GameMcGuinnessMichael extends GameActivity {
         btn2.setText("Brown");
         btn3.setText("Ignore the question and try another pickup line");
 
+        btn3.setVisibility(View.VISIBLE);
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -308,6 +311,10 @@ public class GameMcGuinnessMichael extends GameActivity {
                 points -= 350;
                 numLives -=5;
                 tvStoryText.setText("You got " + points + " points");
+
+                btn1.setVisibility(View.INVISIBLE);
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
             }
         });
 
