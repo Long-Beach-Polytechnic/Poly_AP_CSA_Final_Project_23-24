@@ -41,7 +41,7 @@ public class RodriguezJohnnyCrop {
      * category as empty string, isRipe set to false, daysOld,
      * healthboost set to 0
      */
-    public Crop ()
+    public RodriguezJohnnyCrop()
     {
         this.name = " ";
         this.category = " ";
@@ -58,7 +58,7 @@ public class RodriguezJohnnyCrop {
      * <br>Postconditions: crop with given name and category,
      *     isRipe set to false, daysOld, healthBoost set to 0
      */
-    public Crop(String name, String category)
+    public RodriguezJohnnyCrop(String name, String category)
     {
         this.name = name;
         this.category = category;
@@ -79,7 +79,7 @@ public class RodriguezJohnnyCrop {
      * @param daysOld       number of days the crop has been planted for ( >= 0)
      * @param healthboost   amount of health the crop gives ( >=0)
      */
-    public Crop(String name, String category, boolean isRipe, int daysOld, int healthBoost)
+    public RodriguezJohnnyCrop(String name, String category, boolean isRipe, int daysOld, int healthBoost)
     {
         this.name = name;
         this.category = category;

@@ -25,7 +25,7 @@ public class RodriguezJohnnyFarmer {
      * <br>Postconditions: Farmer with name as empty string,
      * health set to 100, isPoisoned set to false
      */
-    public Farmer(String name)
+    public RodriguezJohnnyFarmer(String name)
     {
         this.name = name;
         this.health = 100;
@@ -96,7 +96,7 @@ public class RodriguezJohnnyFarmer {
 
 
 
-    public void eatCrop(Crop crop)
+    public void eatCrop(RodriguezJohnnyCrop crop)
     {
         this.health += crop.getHealthBoost();
         if (!crop.isRipe())

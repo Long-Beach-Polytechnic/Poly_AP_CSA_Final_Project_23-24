@@ -1,6 +1,7 @@
 package com.poly.polyapcsafinalproject23_24;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,68 +14,49 @@ import java.util.ArrayList;
 public class GameRodriguezJohnny extends GameActivity {
 
     //create variables up here
-    private TextView tvGame;
+    private TextView tvGame, tvNameVal, tvHealthVal, tvStatusVal, tvDaysSurvived;
     private ImageView ivMain;
     private Button btn1, btn2, btn3, btn4;
     private boolean isWon;
     private int numLives;
+    private int daysSurvived;
+
+
+    private RodriguezJohnnyFarmer player;
+    private ArrayList<RodriguezJohnnyCrop> crops = new ArrayList<RodriguezJohnnyCrop>();
 
     @Override
     protected void run() {
         setContentView(R.layout.activity_rodriguezjohnny_main);
 
         tvGame = findViewById(R.id.tv_game);
-
-
+        tvNameVal = findViewById(R.id.tv_name);
+        tvHealthVal = findViewById(R.id.tv_health);
+        tvDaysSurvived = findViewById(R.id.tv_days_survived);
+        tvStatusVal = findViewById(R.id.tv_status);
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
+        daysSurvived = 0;
+        tvDaysSurvived.setText(""+daysSurvived);
+
+        ivMain.setImageResource(R.drawable.im_rodriguezjohnny_farmersimstart);
+
+        System.out.println("You are a farmer, and you will have to grow crops you grow in order to survive...");
+
+        createCharacter();
+        farm();
 
     }
-    protected void onCreate(Bundle savedInstanceState){
-    }
-
-    private RodriguezJohnnyFarmer player;
-    private ArrayList<RodriguezJohnnyCrop> crops = new ArrayList<RodriguezJohnnyCrop>();
-
-    private int daysSurvived;
 
     //write game down here
     //  use other void methods as nesssary
     //  use loops as nessesary
-    public void run()
-    {
-        daysSurvived = 0;
-        Scanner scan = new Scanner(System.in);
 
-        System.out.println("Farming Simulator");
-        String art = TextColor.YELLOW +  """
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠋⠀⠀⠀⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣶⡀⠀⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡛⢻⣷⡀⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⠃⢸⣿⡇⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡟⢀⣿⣿⠃⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⡿⠁⣼⣿⡏⠀⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⠟⢀⣾⣿⡟⠀⠀⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⠟⢁⣴⣿⣿⠋⠀⠀⠀⠀⠀
-      ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⠿⠋⣁⣴⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀
-      ⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⡿⠟⠋⣁⣴⣾⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀
-      ⠀⠀⢠⣾⣿⣿⣿⣿⠿⠟⠋⣁⣤⣶⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-      ⠀⠀⠈⠉⢉⣁⣤⣴⣶⣾⣿⣿⠿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-      ⠀⠀⠀⠀⠉⠉⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀
-      """ + TextColor.RESET;
-        System.out.println(art);
-
-        System.out.println(TextColor.GREEN + "You are a farmer, and you will have to grow crops you grow in order to survive..."+ TextColor.RESET);
-
-        createCharacter();
-        farm();
-    }
 
     private void farm()
     {
-        Scanner scan = new Scanner(System.in);
+
 
         while (player.getHealth() > 0)
         {
@@ -92,10 +74,9 @@ public class GameRodriguezJohnny extends GameActivity {
 
     private void createCharacter()
     {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        String name = scan.nextLine();
-        player = new RodriguezJohnnyFarmer(name);
+
+        player = new RodriguezJohnnyFarmer("Zack");
+        ivMain.setImageResource(R.drawable.im_rodriguezjohnny_happyfarmer);
     }
 
     private void displayStats()
@@ -113,19 +94,20 @@ public class GameRodriguezJohnny extends GameActivity {
         System.out.println("\nWhat would you like to do today on your farm, " + player.getName() + "?");
         System.out.println("1. Plant a Crop \n2. Eat a crop \n3. nothing");
 
-        if(choice == 1)
-        {
-            plant();
-        }
-        else if (choice == 2)
-        {
-            eat();
-        }
-        else if (choice == 3)
-        {
-            nothing();
-        }
-    }
+       setAllBtnsVisible();
+       btn1.setText("Plant");
+       btn2.setText("Eat");
+       btn3.setText("Nothing");
+
+       btn1.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               player.plant();
+               farm();
+           }
+       });
+
+
 
 
     private void plant()
@@ -135,6 +117,7 @@ public class GameRodriguezJohnny extends GameActivity {
         if (crops.size() < 3)
         {
             Scanner scan = new Scanner(System.in);
+            ivMain.setImageResource(R.drawable.im_rodriguezjohnny_farmerplantscrop);
             System.out.println("What crop would you like to plant today?");
             String name = scan.nextLine();
             System.out.println("Is this crop a vegetable or a fruit?");
@@ -152,6 +135,7 @@ public class GameRodriguezJohnny extends GameActivity {
             System.out.println("You decide to plant a crop but you do not have any more space to plant it, you wasted time! You lose 20 health");
             daysSurvived ++;
             player.addHealth(-20);
+            ivMain.setImageResource(R.drawable.im_rodriguezjohnny_unhappyfarmer);
 
 
         }
@@ -169,6 +153,7 @@ public class GameRodriguezJohnny extends GameActivity {
             for (int i=0; i<crops.size(); i++)
             {
                 System.out.println("Crop " + (i+1) + ": " + crops.get(i).getName());
+                ivMain.setImageResource(R.drawable.im_rodriguezjohnny_happyfarmer);
 
             }
 
@@ -178,6 +163,8 @@ public class GameRodriguezJohnny extends GameActivity {
         {
 
             System.out.println("You have no crops in your farm right now!");
+            ivMain.setImageResource(R.drawable.im_rodriguezjohnny_unhappyfarmer);
+
 
 
         }
@@ -188,6 +175,7 @@ public class GameRodriguezJohnny extends GameActivity {
     {
 
         System.out.println("Which do you want to eat?");
+        ivMain.setImageResource(R.drawable.im_rodriguezjohnny_farmereating);
         for (int i=0; i<crops.size(); i++)
         {
             System.out.println("Crop " + (i+1) + ": " + crops.get(i).getName());
@@ -203,6 +191,7 @@ public class GameRodriguezJohnny extends GameActivity {
             player.setPoisoned(false);
             System.out.println("The Crop was ready to eat, You gain 20 health!");
             daysSurvived ++;
+            ivMain.setImageResource(R.drawable.im_rodriguezjohnny_farmereatinggoodcrop);
 
         }
         else
@@ -211,6 +200,7 @@ public class GameRodriguezJohnny extends GameActivity {
             player.setPoisoned(true);
             System.out.println("Oh no! The crop was not ready to eat, You lose 20 health!");
             daysSurvived ++;
+            ivMain.setImageResource(R.drawable.im_rodriguezjohnny_farmerpoisonedcrop);
 
         }
 
@@ -222,6 +212,7 @@ public class GameRodriguezJohnny extends GameActivity {
         System.out.println("You decide to do nothing for the day (lazy) your farmer starves, You lose 20 health");
         daysSurvived ++;
         player.addHealth(-20);
+        ivMain.setImageResource(R.drawable.im_rodriguezjohnny_unhappyfarmer);
 
 
 
@@ -232,6 +223,7 @@ public class GameRodriguezJohnny extends GameActivity {
     {
         System.out.println(TextColor.GREEN + player.getName() + " Has died from hunger on his farm. Game Over!" + TextColor.RESET);
         System.out.println(player.getName() + " survived " + daysSurvived + " days!");
+        ivMain.setImageResource(R.drawable.im_rodriguezjohnny_farmerdies);
 
         run();
 
