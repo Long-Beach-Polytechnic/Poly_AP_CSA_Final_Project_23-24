@@ -154,12 +154,36 @@ public class GamePerezAdan extends GameActivity {
 
     private void loseMotivation()
     {
-        Util.clearConsole();
+
         String text = """
       You are losing motivation and struggling
       """;
+
+        tvStoryText.setText("You are losing motivation and struggling");
+
+        setAllBtnsVisible();
+        btn1.setText("Keep doing well");
+        btn1.setText("Lose motivation");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        struggle();
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                veryWell();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                struggle();
+            }
+        });
+    }
+
     }
 
 
@@ -172,19 +196,31 @@ public class GamePerezAdan extends GameActivity {
       1. Work for a successful company.
       2. Get a normal job.
       """;
+
+        tvStoryText.setText("Congrats,you graduated! What do you want to do");
+
+        setAllBtnsVisible();
+        btn1.setText("Work for a successful company");
+        btn1.setText("Get a normal job");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            System.out.println("You work for a successful company and get paid a lot...YOU WIN!!!");
-            Util.pauseConsole();
-            System.out.println("Play again!");
-            start();
-        }
-        else if (choice == 2)
-        {
-            getJob();//getJob();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                getJob();
+            }
+        });
+
     }
 
     private void struggle()
@@ -195,16 +231,31 @@ public class GamePerezAdan extends GameActivity {
       1. keep trying.
       2. drop out.
       """;
+
+        tvStoryText.setText("You are struggling and thinking of dropping out...");
+
+        setAllBtnsVisible();
+        btn1.setText("keep trying");
+        btn2.setText("drop out");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            keepTrying();
-        }
-        else if (choice == 2)
-        {
-            dropOut();//dropout();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                keepTrying();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dropOut();
+            }
+        });
+
     }
 
     private void keepTrying()
@@ -215,16 +266,32 @@ public class GamePerezAdan extends GameActivity {
       1.Yes,you go on to graduate.
       2.No,you end up dropping out of school.
       """;
+
+        tvStoryText.setText("You keep on trying does it end up paying off?");
+
+        setAllBtnsVisible();
+        btn1.setText("Yes,you go on to graduate");
+        btn2.setText("No,you end up dropping out");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            graduate();
-        }
-        else if (choice == 2)
-        {
-            dropOut();//dropout();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               graduate();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dropOut();
+            }
+        });
+
+
     }
 
 
@@ -236,16 +303,31 @@ public class GamePerezAdan extends GameActivity {
       1.Get a job.
       2.Stay at parent's house.
       """;
+
+        tvStoryText.setText("You dropped out of college, what do you do now?");
+
+        setAllBtnsVisible();
+        btn1.setText("Get a job");
+        btn2.setText("Stay at parent's house");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            getJob();
-        }
-        else if (choice == 2)
-        {
-            stayAtParents();//dropout();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getJob();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                stayAtParents();
+            }
+        });
+
     }
 
     private void getJob()
@@ -256,16 +338,31 @@ public class GamePerezAdan extends GameActivity {
       1. A stay at home job that pays good money.
       2. Mcdonalds.
       """;
+
+        tvStoryText.setText("Where would you like to work at?");
+
+        setAllBtnsVisible();
+        btn1.setText("A stay at home job that pays good money");
+        btn2.setText("Mcdonalds");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            homeJob();
-        }
-        else if (choice == 2)
-        {
-            badJob();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homeJob();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                badJob();
+            }
+        });
+
     }
 
     private void homeJob()
@@ -276,16 +373,31 @@ public class GamePerezAdan extends GameActivity {
       1. Yes,and start to get paid millions.
       2. No,but continue to make good money.
       """;
+
+        tvStoryText.setText("You get a big opportunity at the job do you take it?");
+
+        setAllBtnsVisible();
+        btn1.setText("Yes,and start to get paid millions");
+        btn2.setText("No,but continue to make good money");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            bigOpportunity();
-        }
-        else if (choice == 2)
-        {
-            start();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               bigOpportunity();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ();
+            }
+        });
+
     }
 
     private void badJob()
@@ -297,16 +409,31 @@ public class GamePerezAdan extends GameActivity {
       1. Get fired for being lazy on the job.
       2. Quit,and go live with your parents.
       """;
+
+        tvStoryText.setText("You start your job but things aren't looking for nthe best what do you do?");
+
+        setAllBtnsVisible();
+        btn1.setText("Get fired for being lazy on the job");
+        btn2.setText("Quit,and go live with your parents");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            jobOrLazy();
-        }
-        else if (choice == 2)
-        {
-            stayAtParents();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                jobOrLazy();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                stayAtParents();
+            }
+        });
+
     }
 
     private void bigOpportunity()
@@ -318,19 +445,31 @@ public class GamePerezAdan extends GameActivity {
       1. Yes,and you life live to its best.
       2. No,gamble all your money away.
       """;
+
+        tvStoryText.setText("You took it and make a lot of money,but are you smart with it?");
+
+        setAllBtnsVisible();
+        btn1.setText("Yes,and you life live to its best");
+        btn2.setText("No,gamble all your money away");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            System.out.println("You retired early with all the money you made and live life to its best...YOU WIN!!!");
-            Util.pauseConsole();
-            System.out.println("Play again!");
-            start();
-        }
-        else if (choice == 2)
-        {
-            stayAtParents();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               ();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                stayAtParents();
+            }
+        });
+
     }
 
     private void jobOrLazy()
@@ -342,16 +481,31 @@ public class GamePerezAdan extends GameActivity {
       1. No one wants to hire you,stay at parent's house.
       2. Stay lazy and don't look for another job.
       """;
+
+        tvStoryText.setText("You khot fired for being lazy,do you look for another job or stay lazy");
+
+        setAllBtnsVisible();
+        btn1.setText("no one wants to hire you.you stay at parent's house");
+        btn2.setText("Stay lazy and don't look for another job");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            stayAtParents();
-        }
-        else if (choice == 2)
-        {
-            start();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stayAtParents();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ();
+            }
+        });
+
     }
 
     private void stayAtParents()
@@ -364,16 +518,31 @@ public class GamePerezAdan extends GameActivity {
       2. You do not help around the house and your parent's
          are getting fed up with you.
       """;
+
+        tvStoryText.setText("You stay at your parents house, do you help around the house?");
+
+        setAllBtnsVisible();
+        btn1.setText("Yes,you dpo help around the house");
+        btn2.setText("You do not help around the house and your parent's are getting fed up with you");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            helpWithHouse();
-        }
-        else if (choice == 2)
-        {
-            parentsFedUp();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                helpWithHouse();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                parentsFedUp();
+            }
+        });
+
     }
 
     private void helpWithHouse()
@@ -385,16 +554,31 @@ public class GamePerezAdan extends GameActivity {
       1. Yes,you do chores and dinner.
       2. No,you only do chores.
       """;
+
+        tvStoryText.setText("You help out with the house but do you also cook dinner? ");
+
+        setAllBtnsVisible();
+        btn1.setText("Yes,you do chores and dinner");
+        btn1.setText("No,you only do chores");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            makeParentsProud();
-        }
-        else if (choice == 2)
-        {
-            chores();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                makeParentsProud();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                chores();
+            }
+        });
+
     }
 
     private void makeParentsProud()
@@ -407,16 +591,30 @@ public class GamePerezAdan extends GameActivity {
       2. No,and parent's finally have enough of you and kick
          you out.
       """;
+
+        tvStoryText.setText("They suggest you finally get a job,do you agree with them??");
+
+        setAllBtnsVisible();
+        btn1.setText("Yes,and decide to get a job");
+        btn1.setText("No,and parent's finally have enough of you and kick you out");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            getJob();
-        }
-        else if (choice == 2)
-        {
-            start();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getJob();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                     ();
+            }
+        });
+
     }
 
     private void chores()
@@ -428,16 +626,31 @@ public class GamePerezAdan extends GameActivity {
       2. You finally give in and also start making dinner
          aswell.
       """;
+
+        tvStoryText.setText("You start doing chores around the house");
+
+        setAllBtnsVisible();
+        btn1.setText("Do you continue only doing chores?");
+        btn1.setText("You finally give in and also start making dinner aswell");
+        btn3.setVisibility(View.INVISIBLE);
         System.out.println(text);
-        int choice = Util.enterInt(1,2);
-        if (choice == 1)
-        {
-            helpWithHouse();
-        }
-        else if (choice == 2)
-        {
-            helpWithHouse();//struggle();
-        }
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                helpWithHouse();
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                helpWithHouse();
+            }
+        });
+
     }
 
     private void parentsFedUp()
