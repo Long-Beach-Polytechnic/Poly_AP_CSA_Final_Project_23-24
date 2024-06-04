@@ -2,6 +2,8 @@ package com.poly.polyapcsafinalproject23_24;
 
 
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.poly.polyapcsafinalproject23_24.GameActivity;
 
@@ -10,7 +12,20 @@ public class GameTrujilloJose extends GameActivity {
 
   //instance variables
   //   variables you plan to use throughout the adventure
+
+  private boolean isWon;
   private int numLives;
+  private Button btn1, btn2, btn3;
+  private ImageView ivStory;
+  private TextView tvTitle, tvSubTitle, tvStoryText;
+  private void setAllBtnsVisible()
+  {
+    btn1.setVisibility(View.VISIBLE);
+    btn2.setVisibility(View.VISIBLE);
+    btn3.setVisibility(View.VISIBLE);
+  }
+
+
   //private Player player; (optional)
 
 
@@ -28,16 +43,10 @@ public class GameTrujilloJose extends GameActivity {
     btn3 = findViewById((R.id.btn_3);
 
     tvTitle.setText("SPACE EXPLORATION");
-    tvSubtitle.setText("Map out the endless void of space");
+    tvSubTitle.setText("Map out the endless void of space");
 
     )
 
-    private void setAllBtnsVisible()
-    {
-      btn1.setVisibility(View.VISIBLE);
-      btn2.setVisibility(View.VISIBLE);
-      btn3.setVisibility(View.VISIBLE);
-    }
 
 
 
@@ -56,143 +65,151 @@ public class GameTrujilloJose extends GameActivity {
   private void start()
   {
     //start adventure here
+    tvStoryText.setText(" Your team's job is to map out the endless void of space. What do you want to do?");
+    setAllBtnsVisible();
+    btn1.setText("Explore unknown planets");
+    btn2.setText("travel outside the galaxy");
+    btn3.setText(" go inside a black hole");
 
-    String artText = TextColor.PURPLE + """-
-       _______  _______  _______  _______  _______    _______  __   __  _______  ___      _______  ______    _______  _______  ___   _______  __    _
-      |       ||       ||   _   ||       ||       |  |       ||  |_|  ||       ||   |    |       ||    _ |  |   _   ||       ||   | |       ||  |  | |
-      |  _____||    _  ||  |_|  ||       ||    ___|  |    ___||       ||    _  ||   |    |   _   ||   | ||  |  |_|  ||_     _||   | |   _   ||   |_| |
-      | |_____ |   |_| ||       ||       ||   |___   |   |___ |       ||   |_| ||   |    |  | |  ||   |_||_ |       |  |   |  |   | |  | |  ||       |
-      |_____  ||    ___||       ||      _||    ___|  |    ___| |     | |    ___||   |___ |  |_|  ||    __  ||       |  |   |  |   | |  |_|  ||  _    |
-       _____| ||   |    |   _   ||     |_ |   |___   |   |___ |   _   ||   |    |       ||       ||   |  | ||   _   |  |   |  |   | |       || | |   |
-      |_______||___|    |__| |__||_______||_______|  |_______||__| |__||___|    |_______||_______||___|  |_||__| |__|  |___|  |___| |_______||_|  |__|
-      """ + TextColor.RESET;
-    System.out.println(artText);
-    System.out.println("...description...");
+    btn1.setOnClickListner(new View.OnClickListener() {
 
-    String text = TextColor.BLUE + """
-    Your team's job is to map out the endless void of
-    space.
-    What do you want to do?
+      @Override
+      public void onClick(View v) { exploreUnknownPlanets(); }
 
-    1. explore unknown planets
-    2. travel outside the galaxy
-    3. go inside a black hole
-      """ + TextColor.RESET;
-    System.out.println(text);
-    if (option == 1)
-    {
-      exploreUnknownPlanets();
-    }
-    else if (option == 2)
-    {
-      leaveGalaxy();
-    }
-    else if (option == 3)
-    {
-      enterBlackHole();
+       btn2.setOnClickListner(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) { leaveGalaxy(); }
+
+        btn3.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) { enterBlackHole(); }
+            }
+  }
+      }
     }
 
+  private void leaveGalaxy() {
+    tvStoryText.setText(" After a longgggg time we finally left the galaxy\n" +
+            "    while checking our communications we see a distress\n" +
+            "    call being made what should\n" +
+            "    we do");
+
+    setAllBtnsVisible();
+    btn1.setText("Ignore the call");
+    btn2.setText("Respond to the call");
+    btn3.setVisibility(View.INVISIBLE);
+
+
+    btn1.setOnClickListner(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        (ignore);
+      }
+    });
+    btn2.setOnClickListner(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        (respond);
+      }
+    });
   }
 
-  private void leaveGalaxy()
-  {
-    String text = """
-    After a longgggg time we finally left the galaxy
-    while checking our communications we see a distress
-    call being made what should
-    we do
 
-    1.Ignore the call
-    2.Respond to the call
-      """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      ignore();
-    }
-    else if (option == 2)
-    {
-      respond();
-    }
 
+
+
+
+  private void respond() {
+
+    tvStoryText.setText("You and your team fly into action thinking someone is in\n" +
+            "    trouble,....little did you think it was all a trap by an\n" +
+            "    alien civilization what should we do");
+
+
+    btn1.setText("Fight back");
+    btn2.setText("RUNNNN");
+    btn3.setVisibility(View.INVISIBLE);
+
+    btn1.setOnClickListner(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        (fightBack);
+      }
+    });
+    btn2.setOnClickListner(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        (runAway);
+      }
+    });
   }
-  private void respond()
-  {
-    String text = """
-    You and your team fly into action thinking someone is in
-    trouble,....little did you think it was all a trap by an
-    alien civilization what should we do
 
-
-    1.Fight back
-    2.RUNNNN
-      """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      fightBack();
-    }
-    else if (option == 2)
-    {
-      runAway();
-    }
-
-  }
   private void runAway()
     {
-      String text = """
-      While making your best attemp to run your spaceship runs
-      out of fuel and the bandits claim there new belongings
-        """;
-      System.out.println(text);
-      defeat();
+      tvStoryText.setText(" While making your best attemp to run your spaceship runs\n" +
+              "      out of fuel and the bandits claim there new belongings");
+                    defeat();
     }
 
   private void fightBack()
   {
-    String text = """
-    Our ship plunges into a maelstrom of laser fire and
-    explosive chaos.After barely surviving that fight what
-    nexts
+    tvStoryText.setText("  Our ship plunges into a maelstrom of laser fire and\n" +
+            "    explosive chaos.After barely surviving that fight what\n" +
+            "    nexts");
 
-    1.Revenge
-    2.Seek help
-      """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      revenge();
-    }
-    else if (option == 2)
-    {
-      seekHelp();
-    }
+    setAllBtnsVisible();
+    btn1.setText("Get revenge");
+    btn2.setText("Seek help");
+    btn3.setVisibility(View.INVISIBLE);
 
+
+    btn1.setOnClickListner(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        (revenge);
+      }
+    });
+    btn2.setOnClickListner(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        (seekHelp);
+      }
+    });
   }
+
   private void seekHelp()
   {
-    String text = """
-    Using a distressed call an advaced alien civilization
-    offers help in destroying these space bandits should we
-    accept?
+      tvStoryText.setText(" Using a distressed call an advaced alien civilization\n" +
+              "    offers help in destroying these space bandits should we\n" +
+              "    accept?");
+
+      setAllBtnsVisible();
+      btn1.setText("Yes team up with these guys");
+      btn2.setText("Betray them after the job is done");
+      btn3.setVisibility(View.INVISIBLE);
 
 
-    1.Yes team up with these guys
-    2.Betray them after the job is done
-      """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      destroybadGuys();
+      btn1.setOnClickListner(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          (destroybadGuys);
+        }
+      });
+      btn2.setOnClickListner(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          (betrayThem);
+        }
+      });
     }
-    else if (option == 2)
-    {
-      betrayThem();
-    }
 
-  }
   private void betrayThem()
   {
+
+
+
+
+
     String text = """
     After obliterating the bandits you quickly take out the
     leader of this civilization and order them to serve under
