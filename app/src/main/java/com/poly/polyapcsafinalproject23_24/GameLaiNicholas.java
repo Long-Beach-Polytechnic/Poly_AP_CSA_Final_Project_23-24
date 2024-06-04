@@ -288,82 +288,121 @@ public class GameLaiNicholas extends GameActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v){pay$15(); }
+            public void onClick(View v){
+                pay15(); }
         });
-        Util.clearConsole();
-        System.out.println("\nHow would you like to get in?");
-        System.out.println("1. Pay $15\n2. Sneak in without paying");
-        int choice = Util.enterInt(1,2);
 
-        if (choice == 1)
-        {
-            pay15();
-        }
-        else if (choice == 2)
-        {
-            sneakIn();
-        }
     }
 
     private void pay15()
     {
-        Util.clearConsole();
-        System.out.println("\nYou pay $15 and get into the ice skating rink, go get your skates!");
-        System.out.println("1. Go get your skates\n2. They don't have enough skates, you lose");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You pay $15 and get into the ice skating rink, go get your skates!");
 
-        if (choice == 1)
-        {
-            goGetSkates();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        ivStory.setImageresource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Go get your skates");
+        btn2.setText("They don't have enough skates, you lose");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                goGetSkates();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+                doNotHaveEnoughSkates(); }
+        });
+
+    }
+
+    private void doNotHaveEnoughSkates()
+    {
+        tvStoryText.setText("They don't have enough skates for you, you lose.");
+
+        setAllBtnsVisible();
+        btn1.setText("Game Over");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
     }
 
     private void goGetSkates()
     {
-        Util.clearConsole();
-        System.out.println("\nYou ask for your skates in your size, what happens next?");
-        System.out.println("1. They give you your skates\n2. They don't have your size, you lose.");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You ask for your skates in your size, what happens next?");
 
-        if (choice == 1)
-        {
-            getSkatesYourSize();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        ivStory.setImageresource(R.drawable.im_laborday_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("They give you your skates");
+        btn2.setText("They don't have your size, you lose");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                getSkatesYourSize();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+                doNotHaveYourSize(); }
+        });
+
+    }
+
+    private void doNotHaveYourSize()
+    {
+        tvStoryText.setText("They don't have skates your size, you lose.");
+
+        setAllBtnsVisible();
+        btn1.setText("Game Over");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
     }
 
     private void getSkatesYourSize()
     {
-        Util.clearConsole();
-        System.out.println("\nNow your skating, what happens next?");
-        System.out.println("1. You skate like a pro, have fun!\n2. The skates make your feet burn, you lose.");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("You skate like a pro, you WIN!");
 
-        if (choice == 1)
-        {
-            skateLikeAPro();
-        }
-        else if (choice == 2)
-        {
-            defeat();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Game Over");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
     }
 
-    private void skateLikeAPro()
-    {
-        Util.clearConsole();
-        System.out.println("You skate so good they give you a medal, YOU WIN!");
-        Util.pauseConsole();
-        numLives++;
-        start();
-    }
 
     private void sneakIn()
     {
