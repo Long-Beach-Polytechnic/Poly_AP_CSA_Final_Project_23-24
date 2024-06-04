@@ -101,6 +101,19 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText("Brick house ");
         btn2.setText("Blue house");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {brickHouse();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {blueHouse();
+            }
+        });
+
     }
 
     private void brickHouse() {
@@ -112,6 +125,18 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText("Fight the player ");
         btn2.setText("Hide until they leave");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {fight();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {hide();
+            }
+        });
     }
 
     private void fight() {
@@ -124,6 +149,18 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText(" Sprint to zone");
         btn2.setText("Take a rift and glide to zone");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {sprint();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {rift();
+            }
+        });
 
     }
 
@@ -168,6 +205,18 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText(" Fight the rest of the players at salty");
         btn2.setText("Rift to Dusty Divot to continue looting.");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {clearSalty();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {rotateDusty();
+            }
+        });
     }
 
     private void clearSalty() {
@@ -200,7 +249,7 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn1.setText(" Dog house");
         btn2.setText("Modern house");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void dogHouse() {
@@ -212,7 +261,19 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn1.setText("Go to the gas station for more loot");
         btn2.setText("Try to no scope the two players");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {dogHouse();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {modernHouse();
+            }
+        });
     }
 
     private void gasStation() {
@@ -225,7 +286,19 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn1.setText("Run away and hide until few people are left standing");
         btn2.setText("Fight everyone left at Pleasant");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {runHide();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {noScope();
+            }
+        });
     }
 
     private void noScope() {
@@ -257,7 +330,7 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn1.setText("Push the 10 remaining players left");
         btn2.setText("Camp in your 1x1 waiting for players to die");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void camp() {
@@ -287,7 +360,7 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn1.setText("Go to the roof and wait for him to come out");
         btn2.setText("Go inside the basement and try to kill him");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void roof() {
@@ -337,7 +410,7 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn1.setText("Clock Tower");
         btn2.setText(" Garage");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void clockTower() {
@@ -352,7 +425,7 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn1.setText("Loot Pawn Shop");
         btn2.setText("Loot the Park");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void garage() {
@@ -382,7 +455,7 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn1.setText("Hide in a cone a go pee");
         btn2.setText("keep playing");
-        btn3.setText(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
     }
 
     private void lootPark() {
