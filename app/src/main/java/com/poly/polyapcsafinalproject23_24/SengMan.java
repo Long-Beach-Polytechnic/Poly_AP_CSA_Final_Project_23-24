@@ -1,7 +1,5 @@
 package com.poly.polyapcsafinalproject23_24;
 
-import com.poly.polyapcsafinalproject23_24.Contestant;
-
 public class SengMan extends Contestant {
 
 
@@ -121,24 +119,27 @@ public class SengMan extends Contestant {
     }
     /**
      * gets the weight of the player
+     *
      * @return weight of the player
      */
 
-    public double getWeight() {
+    public CharSequence getWeight() {
         return weight;
     }
     /**
      * gets the body fat percentage of the player
+     *
      * @return body fat percentage of the player
      */
-    public double getFatPercentage() {
+    public CharSequence getFatPercentage() {
         return fatPercentage;
     }
     /**
      * gets the lean body mass percentage of the player
+     *
      * @return lean body mass percentage of the player
      */
-    public double getLbmPercentage() {
+    public CharSequence getLbmPercentage() {
         return lbmPercentage;
     }
     /**

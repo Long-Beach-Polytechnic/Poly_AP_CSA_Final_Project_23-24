@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.annotation.SuppressLint;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -181,10 +182,6 @@ public class GameOfSengVisal extends GameActivity {
         this.bodyType3 = new SengMan(characterName, 140, 15.0, 85.0, 120, 140, 2, 0);
 
 
-
-        System.out.println("Pick a body preset");
-        System.out.println("1. Fat\n2. Skinny\n3. Average");
-
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
@@ -258,25 +255,61 @@ public class GameOfSengVisal extends GameActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void options(){
 
         if (day < numDays)
         {
-            Util.clearConsole();
-            System.out.println("You have " + dayNumbers + " days to fulfill your goals, " + currentBodyType.getName());
-            System.out.println(currentBodyType);
+
+
+            tvMain.setText("You have " + numDays + " days to fulfill your goals, " + currentBodyType.getName() + ". What do you want to do?");
 
             tvNameVal.setText(currentBodyType.getName());
             tvWeightVal.setText(currentBodyType.getWeight());
-            Util.pauseConsole();
+            tvBodyFatVal.setText(currentBodyType.getFatPercentage());
+            tvBodyMassVal.setText(currentBodyType.getLbmPercentage());
+            tvMaxBenchVal.setText(currentBodyType.getMaxBench());
+            tvMaxSquatVal.setText(currentBodyType.getMaxSquat());
+            tvMaxRunVal.setText(currentBodyType.getMaxRunDistance());
 
-            String text = """
-        What do you want to do?
-        1. Go to the Gym
-        2. Eat food
-        3. Go for a run
-        4. Rest for the day
-        """;
+            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.VISIBLE);
+            btn3.setVisibility(View.VISIBLE);
+            btn4.setVisibility(View.VISIBLE);
+
+            btn1.setText("Go to the Gym");
+            btn2.setText("Eat food");
+            btn3.setText("Go for a run");
+            btn4.setText("Rest for the day");
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    gym();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    eat();
+                }
+            });
+
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    goForRun();
+                }
+            });
+
+            btn4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    rest();
+                }
+            });
+
 
 
                 if (option == 1) {
@@ -368,7 +401,102 @@ public class GameOfSengVisal extends GameActivity {
             endScreen();
         }
 
+    private void gym() {
+
+        tvMain.setText("What do you want to do at the gym?");
+
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Bench Press");
+        btn2.setText("Squat");
+        btn3.setText("Treadmill");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                benchPress();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                squat();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goForRun();
+            }
+        });
+
     }
+
+    private void eat() {
+            tvMain.setText("What do you want to eat?");
+
+            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.VISIBLE);
+            btn3.setVisibility(View.VISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setText("Chicken");
+            btn2.setText("Salad");
+            btn3.setText("Burger");
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    currentBodyType.setWeight(currentBodyType.getWeight() + 5);
+                    currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() - 0.5);
+                    currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() + 0.5);
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    currentBodyType.setWeight(currentBodyType.getWeight() - 3);
+                }
+            });
+
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    currentBodyType.setWeight(currentBodyType.getWeight() + 10);
+                    currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() + 0.7);
+                    currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() - 0.7);
+                }
+            });
+        }
+
+        private void goForRun() {
+
+            tvMain.setText("Enter how much miles you want to run.")
+
+            btn1.setVisibility(View.INVISIBLE);
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            etMain.setVisibility(View.VISIBLE);
+
+
+
+        }
+        }
+
+
+
+    }
+
+
+
 
 
     /**
@@ -479,43 +607,7 @@ public class GameOfSengVisal extends GameActivity {
      *<br>LbmPercentage increased by 0.5
      *<br>FatPercentage decreased by 0.5
      */
-    private void eatChicken() {
-        Util.clearConsole();
-        currentBodyType.setWeight(currentBodyType.getWeight() + 5);
-        currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() - 0.5);
-        currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() + 0.5);
-        System.out.println("LBM increased by 0.5\nFat decreased by 0.5\nWeight increased by 5");
-    }
 
-    /**
-     *run when the user wants to eat salad
-     *<br>Precondition:
-     *(food == 2)
-     *<br>Postcondition:
-     *<br>Weight decreased by 3
-     */
-    private void eatSalad() {
-        Util.clearConsole();
-        currentBodyType.setWeight(currentBodyType.getWeight() - 3);
-        System.out.println("Weight decreased by 3");
-    }
-
-    /**
-     *run when the user wants to eat burger
-     *<br>Precondition:
-     *(food == 3)
-     *<br>Postcondition:
-     *<br>LbmPercentage decreased by 0.7
-     *<br>FatPercentage increased by 0.7
-     *<br>Weight increased by 5
-     */
-    private void eatBurger() {
-        Util.clearConsole();
-        currentBodyType.setWeight(currentBodyType.getWeight() + 10);
-        currentBodyType.setFatPercentage(currentBodyType.getFatPercentage() + 0.7);
-        currentBodyType.setLbmPercentage(currentBodyType.getLbmPercentage() - 0.7);
-        System.out.println("LBM decreased by 0.7\nFat increased by 0.7\nWeight increased by 5");
-    }
 }
 
 
