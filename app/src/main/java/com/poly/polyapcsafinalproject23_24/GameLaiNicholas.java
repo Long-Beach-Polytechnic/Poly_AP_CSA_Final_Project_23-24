@@ -84,27 +84,7 @@ public class GameLaiNicholas extends GameActivity {
             @Override
             public void onClick(View v){goSeeChristmasLights(); }
         });
-        Util.clearConsole();
-        System.out.println("CHRISTMAS ADVENTURE");
 
-        System.out.println("\nIts Christmas, let's go have fun!");
-        Util.pauseConsole();
-        System.out.println("\nWhere would you like to go?");
-        System.out.println("1. Go to the North Pole\n2. Go Ice Skating\n3. Go See Christmas Lights");
-        int choice = Util.enterInt(1, 3);
-
-        if (choice == 1)
-        {
-            goToNorthPole();
-        }
-        else if (choice == 2)
-        {
-            goIceSkating();
-        }
-        else if (choice == 3)
-        {
-            goSeeChristmasLights();
-        }
     }
 
     private void goToNorthPole() {
