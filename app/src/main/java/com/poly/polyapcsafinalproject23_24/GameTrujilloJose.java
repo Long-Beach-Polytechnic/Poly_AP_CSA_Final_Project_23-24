@@ -2,6 +2,7 @@ package com.poly.polyapcsafinalproject23_24;
 
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,29 +38,21 @@ public class GameTrujilloJose extends GameActivity {
     tvSubTitle = findViewById(R.id.tv_subtitle);
     tvStoryText = findViewById(R.id.tv_story);
     ivStory = findViewById((R.id.iv_story);
-
     btn1 = findViewById(R.id.btn_1);
     btn2 = findViewById(R.id.btn_2);
     btn3 = findViewById((R.id.btn_3);
 
     tvTitle.setText("SPACE EXPLORATION");
     tvSubTitle.setText("Map out the endless void of space");
+    start();
 
-    )
-
-
-
-
+  }
     //initialize number of lives
     numLives = 5;
     //create a scanner object for user input
-
     //create a player object (optional)
     //player = new Player(...)
-
     //display project title and description
-
-    start();
   }
 
   private void start()
@@ -71,7 +64,7 @@ public class GameTrujilloJose extends GameActivity {
     btn2.setText("travel outside the galaxy");
     btn3.setText(" go inside a black hole");
 
-    btn1.setOnClickListner(new View.OnClickListener() {
+    btn1.setOnClickListener();new View.OnClickListener() {
 
       @Override
       public void onClick(View v) { exploreUnknownPlanets(); }
@@ -114,18 +107,13 @@ public class GameTrujilloJose extends GameActivity {
     });
   }
 
-
-
-
-
-
   private void respond() {
 
     tvStoryText.setText("You and your team fly into action thinking someone is in\n" +
             "    trouble,....little did you think it was all a trap by an\n" +
             "    alien civilization what should we do");
 
-
+    setAllBtnsVisible();
     btn1.setText("Fight back");
     btn2.setText("RUNNNN");
     btn3.setVisibility(View.INVISIBLE);
@@ -700,209 +688,196 @@ public class GameTrujilloJose extends GameActivity {
   }
   private void DontPlay()
   {
-    String text = """
-    You chose not to play and this cosmic being
-    wasnt happy about it
-
-      """;
-    System.out.println(text);
-    defeat();
-
+      {
+          tvStoryText.setText(" You chose not to play and this cosmic being\n" +
+                  "    wasnt happy about it");
+          defeat();
+      }
   }
 
   private void firstRiddle()
   {
-    String text = """
-    I can be cracked, made, told, and played. I can make
-    some people happy while others feel betrayed.
 
-    What am I
 
-    1. A secret
-    2. A joke
-    3. A lie
-    """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      aSecret();
-    }
-    else if (option == 2)
-    {
-      aJoke();
-    }
-    else if (option == 3)
-    {
-      aLie();
-    }
+          tvStoryText.setText(" I can be cracked, made, told, and played. I can make\n" +
+                  "    some people happy while others feel betrayed.\n" +
+                  "\n" +
+                  "    What am I");
+
+          setAllBtnsVisible();
+          btn1.setText("A secret");
+          btn2.setText("A joke");
+          btn3.setText("A lie");
+
+          btn1.setOnClickListner(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  (aSecret);
+              }
+          });
+          btn2.setOnClickListner(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  (aJoke);
+              }
+          });
+
+          btn3.setOnClickListner(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  (aLie);
+              }
+          });
 
   }
 
   private void aSecret()
   {
-    String text = """
-    Wrong ill tell you a secret about death
-
-      """;
-    System.out.println(text);
+      tvStoryText.setText(" Wrong ill tell you a secret about death");
     defeat();
-
   }
 
   private void aJoke()
   {
-    String text = """
-    CORRECT moving on
 
-      """;
-    System.out.println(text);
+      tvStoryText.setText("CORRECT moving on");
     secondRiddle();
   }
 
   private void aLie()
   {
-    String text = """
-    I would lie and say you were correct but you arnt
-      """;
-    System.out.println(text);
+      tvStoryText.setText("I would lie and say you were correct but you arnt\n");
     defeat();
-
   }
 
   private void secondRiddle()
   {
-    String text = """
-    The more you take, the more you leave behind.
-    What am I
 
-    1.A memmory
-    2.A road
-    3.Footsteps
-      """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      aMemmory();
-    }
-    else if (option == 2)
-    {
-      aRoad();
-    }
-    else if (option == 3)
-    {
-      footSteps();
-    }
+      tvStoryText.setText("The more you take, the more you leave behind.\n" +
+              "    What am I");
 
+      setAllBtnsVisible();
+      btn1.setText("A memmory");
+      btn2.setText("A road");
+      btn3.setText("Footsteps");
+
+      btn1.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              (aMemmory);
+          }
+      });
+      btn2.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              (aRoad);
+          }
+      });
+
+      btn3.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              (footSteps);
+          }
+      });
   }
   private void aMemmory()
   {
-    String text = """
-    I'll remember you in my memory
-      """;
-    System.out.println(text);
+      tvStoryText.setText(" I'll remember you in my memory");
     defeat();
-
   }
   private void aRoad()
   {
-    String text = """
-    It’s the end of the road for you
-      """;
-    System.out.println(text);
+      tvStoryText.setText("It’s the end of the road for you");
     defeat();
-
   }
   private void footSteps()
   {
-    String text = """
-    CORRECT on to the final riddle
-      """;
-    System.out.println(text);
+      tvStoryText.setText(" CORRECT on to the final riddle");
     thirdRiddle();
-
   }
   private void thirdRiddle()
   {
-    String text = """
-    show you a different face each time you look at me.
-    I'm always moving, but I never leave my place.
 
-    What am I
 
-    1.A Clock
-    2.A photograph
-    3.A mirror
-      """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      aClock();
-    }
-    else if (option == 2)
-    {
-      aPhotograph();
-    }
-    else if (option == 3)
-    {
-      aMirror();
-    }
+      tvStoryText.setText(" show you a different face each time you look at me.\n" +
+              "    I'm always moving, but I never leave my place.\n" +
+              "\n" +
+              "    What am I");
 
+      setAllBtnsVisible();
+      btn1.setText("A Clock");
+      btn2.setText("A photograph");
+      btn3.setText("A mirror");
+
+      btn1.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              (aClock);
+          }
+      });
+      btn2.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              (aPhotograph);
+          }
+      });
+
+      btn3.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              (aMirror);
+          }
+      });
   }
   private void aClock()
   {
-    String text = """
-    CORRECT now heres one final question do you wish to
-    know all my knowledge or leave this place and never
-    return
 
-    1.Get his knowledge
-    2.Leave and never return
-      """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      knowledge();
-    }
-    else if (option == 2)
-    {
-      leave();
-    }
+      tvStoryText.setText("CORRECT now heres one final question do you wish to\n" +
+              "    know all my knowledge or leave this place and never\n" +
+              "    return");
+
+      setAllBtnsVisible();
+      btn1.setText("Get his knowledge");
+      btn2.setText("Leave and never return");
+      btn3.setVisibility(View.INVISIBLE);
+
+      btn1.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              (knowledge);
+          }
+      });
+      btn2.setOnClickListner(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              (leave);
+          }
+      });
   }
   private void knowledge()
   {
-    String text = """
-    A cosmic being mind shouldn’t be shared with a
-    human, you dropped dead within seconds
-      """;
-    System.out.println(text);
+      tvStoryText.setText(" A cosmic being mind shouldn’t be shared with a\n" +
+              "    human, you dropped dead within seconds");
     defeat();
   }
   private void leave()
   {
-    String text = """
-    Congrats you survived
-      """;
-    System.out.println(text);
+      tvStoryText.setText(" Congrats you survived");
     defeat();
   }
 
   private void aPhotograph()
   {
-    String text = """
-    Here is a picture of your finale momments alive
-      """;
-    System.out.println(text);
+
+      tvStoryText.setText("   Here is a picture of your finale momments alive");
     defeat();
 
   }
   private void aMirror()
   {
-    String text = """
-    I showed you a mirror and you died.
-      """;
-    System.out.println(text);
+      tvStoryText.setText(" I showed you a mirror and you died.");
     defeat();
-
   }
 
 
