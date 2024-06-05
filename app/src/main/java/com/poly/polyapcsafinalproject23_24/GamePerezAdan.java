@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,7 +20,7 @@ public class GamePerezAdan extends GameActivity {
     private ImageView ivStory;
     private Button btn1, btn2, btn3;
     private boolean isWon;
-    private int numLives;
+
 
     @Override
     protected void run() {
@@ -34,7 +35,7 @@ public class GamePerezAdan extends GameActivity {
         btn3 = findViewById(R.id.btn_3);
 
         tvTitle.setText("LIFE AFTER GRADUATION");
-        tvSubtitle.setText("")
+        tvSubtitle.setText("");
 
 
         numLives = 5;
@@ -53,6 +54,7 @@ public class GamePerezAdan extends GameActivity {
     {
         tvTitle.setText("GRADUATED");
         tvSubtitle.setText("HIGH SCHOOL EDITION");
+        ivStory.setImageResource(R.drawable.im_perezadan_graduated_highschool);
 
         String text = "We graduated high school, lets go!" +
                 "Where would you like to go?";
@@ -89,12 +91,8 @@ public class GamePerezAdan extends GameActivity {
 
     private void college()
     {
-        String text = """
-      How are you doing in your classes?
-      1. You are doing very well.
-      2. You are struggling.
-      """;
 
+        ivStory.setImageResource(R.drawable.im_perezadan_going_to_college);
         tvStoryText.setText("What are you doing in your classes?");
 
         setAllBtnsVisible();
@@ -122,19 +120,15 @@ public class GamePerezAdan extends GameActivity {
     private void veryWell()
     {
 
-        String text = """
-      Do you keep on doing well in your classes?
-      1. Keep doing well.
-      2. Lose motivation.
-      """;
 
+        ivStory.setImageResource(R.drawable.im_perezadan_doing_well);
         tvStoryText.setText("Do you keep on doing well in your classes?");
 
         setAllBtnsVisible();
         btn1.setText("Keep doing well");
         btn1.setText("Lose motivation");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,17 +149,14 @@ public class GamePerezAdan extends GameActivity {
     private void loseMotivation()
     {
 
-        String text = """
-      You are losing motivation and struggling
-      """;
-
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You are losing motivation and struggling");
 
         setAllBtnsVisible();
         btn1.setText("Keep doing well");
-        btn1.setText("Lose motivation");
+        btn2.setText("Lose motivation");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,32 +175,30 @@ public class GamePerezAdan extends GameActivity {
         });
     }
 
-    }
-
 
 
     private void graduate()
     {
-        Util.clearConsole();
-        String text = """
-      Congrats,you graduated! What do you want to do?
-      1. Work for a successful company.
-      2. Get a normal job.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("Congrats,you graduated! What do you want to do");
 
         setAllBtnsVisible();
         btn1.setText("Work for a successful company");
-        btn1.setText("Get a normal job");
+        btn2.setText("Get a normal job");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ();
 
+                //put image here
+                //ivStory.setImageResource(R.drawable.im_hotdog_0);
+
+                tvStoryText.setText("You now work for a successful company and get paid very good, YOU WIN!!!");
+
+                end();
             }
         });
 
@@ -225,20 +214,13 @@ public class GamePerezAdan extends GameActivity {
 
     private void struggle()
     {
-        Util.clearConsole();
-        String text = """
-      You are struggling and thinking of dropping out...
-      1. keep trying.
-      2. drop out.
-      """;
-
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You are struggling and thinking of dropping out...");
 
         setAllBtnsVisible();
         btn1.setText("keep trying");
         btn2.setText("drop out");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -260,20 +242,13 @@ public class GamePerezAdan extends GameActivity {
 
     private void keepTrying()
     {
-        Util.clearConsole();
-        String text = """
-      You keep on trying does it end up paying off?
-      1.Yes,you go on to graduate.
-      2.No,you end up dropping out of school.
-      """;
-
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You keep on trying does it end up paying off?");
 
         setAllBtnsVisible();
         btn1.setText("Yes,you go on to graduate");
         btn2.setText("No,you end up dropping out");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -297,20 +272,13 @@ public class GamePerezAdan extends GameActivity {
 
     private void dropOut()
     {
-        Util.clearConsole();
-        String text = """
-      You dropped out of college, what do you do now?
-      1.Get a job.
-      2.Stay at parent's house.
-      """;
-
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You dropped out of college, what do you do now?");
 
         setAllBtnsVisible();
         btn1.setText("Get a job");
         btn2.setText("Stay at parent's house");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -332,20 +300,13 @@ public class GamePerezAdan extends GameActivity {
 
     private void getJob()
     {
-        Util.clearConsole();
-        String text = """
-      Where would you like to work at?
-      1. A stay at home job that pays good money.
-      2. Mcdonalds.
-      """;
-
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("Where would you like to work at?");
 
         setAllBtnsVisible();
         btn1.setText("A stay at home job that pays good money");
-        btn2.setText("Mcdonalds");
+        btn2.setText("McDonalds");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -367,20 +328,15 @@ public class GamePerezAdan extends GameActivity {
 
     private void homeJob()
     {
-        Util.clearConsole();
-        String text = """
-      You get a big opportunity at the job do you take it?
-      1. Yes,and start to get paid millions.
-      2. No,but continue to make good money.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You get a big opportunity at the job do you take it?");
 
         setAllBtnsVisible();
         btn1.setText("Yes,and start to get paid millions");
         btn2.setText("No,but continue to make good money");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -394,7 +350,9 @@ public class GamePerezAdan extends GameActivity {
             @Override
             public void onClick(View view) {
 
-                ();
+                tvStoryText.setText("You get paid good money but this is not the right choice, YOU LOSE!!!");
+
+                end();
             }
         });
 
@@ -402,21 +360,15 @@ public class GamePerezAdan extends GameActivity {
 
     private void badJob()
     {
-        Util.clearConsole();
-        String text = """
-      You start your job but things aren't looking the best
-      what do you do?
-      1. Get fired for being lazy on the job.
-      2. Quit,and go live with your parents.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You start your job but things aren't looking for nthe best what do you do?");
 
         setAllBtnsVisible();
         btn1.setText("Get fired for being lazy on the job");
         btn2.setText("Quit,and go live with your parents");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -438,27 +390,23 @@ public class GamePerezAdan extends GameActivity {
 
     private void bigOpportunity()
     {
-        Util.clearConsole();
-        String text = """
-      You took it and make a lot of money,but are you smart
-      with it?
-      1. Yes,and you life live to its best.
-      2. No,gamble all your money away.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You took it and make a lot of money,but are you smart with it?");
 
         setAllBtnsVisible();
         btn1.setText("Yes,and you life live to its best");
         btn2.setText("No,gamble all your money away");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               ();
 
+                tvStoryText.setText("You retire early with a lot of money in your bank, YOU WIN!!!");
+
+                end();
             }
         });
 
@@ -474,21 +422,15 @@ public class GamePerezAdan extends GameActivity {
 
     private void jobOrLazy()
     {
-        Util.clearConsole();
-        String text = """
-      You got fired for being lazy,do you look for another
-      job or stay lazy.
-      1. No one wants to hire you,stay at parent's house.
-      2. Stay lazy and don't look for another job.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You khot fired for being lazy,do you look for another job or stay lazy");
 
         setAllBtnsVisible();
         btn1.setText("no one wants to hire you.you stay at parent's house");
         btn2.setText("Stay lazy and don't look for another job");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -502,7 +444,9 @@ public class GamePerezAdan extends GameActivity {
             @Override
             public void onClick(View view) {
 
-                ();
+                tvStoryText.setText("You don't get another job due to your laziness, YOU LOSE!!!");
+
+                end();
             }
         });
 
@@ -510,22 +454,15 @@ public class GamePerezAdan extends GameActivity {
 
     private void stayAtParents()
     {
-        Util.clearConsole();
-        String text = """
-      You stay at your parents house, do you help around the
-      house?
-      1. Yes,you do help around the house.
-      2. You do not help around the house and your parent's
-         are getting fed up with you.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You stay at your parents house, do you help around the house?");
 
         setAllBtnsVisible();
         btn1.setText("Yes,you dpo help around the house");
         btn2.setText("You do not help around the house and your parent's are getting fed up with you");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -547,21 +484,15 @@ public class GamePerezAdan extends GameActivity {
 
     private void helpWithHouse()
     {
-        Util.clearConsole();
-        String text = """
-      You help out with the house but do you also cook
-      dinner?
-      1. Yes,you do chores and dinner.
-      2. No,you only do chores.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You help out with the house but do you also cook dinner? ");
 
         setAllBtnsVisible();
         btn1.setText("Yes,you do chores and dinner");
-        btn1.setText("No,you only do chores");
+        btn2.setText("No,you only do chores");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -583,22 +514,15 @@ public class GamePerezAdan extends GameActivity {
 
     private void makeParentsProud()
     {
-        Util.clearConsole();
-        String text = """
-      They suggest you finally get a job,do you agree with
-      them?
-      1. Yes,and decide to get a job.
-      2. No,and parent's finally have enough of you and kick
-         you out.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("They suggest you finally get a job,do you agree with them??");
 
         setAllBtnsVisible();
         btn1.setText("Yes,and decide to get a job");
-        btn1.setText("No,and parent's finally have enough of you and kick you out");
+        btn2.setText("No,and parent's finally have enough of you and kick you out");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -611,7 +535,10 @@ public class GamePerezAdan extends GameActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                     ();
+
+                tvStoryText.setText("Your parents kick you out their house,you lose!!!");
+
+                end();
             }
         });
 
@@ -619,21 +546,15 @@ public class GamePerezAdan extends GameActivity {
 
     private void chores()
     {
-        Util.clearConsole();
-        String text = """
-      You start doing chores around the house
-      1. Do you continue only doing chores?
-      2. You finally give in and also start making dinner
-         aswell.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You start doing chores around the house");
 
         setAllBtnsVisible();
         btn1.setText("Do you continue only doing chores?");
-        btn1.setText("You finally give in and also start making dinner aswell");
+        btn2.setText("You finally give in and also start making dinner as well");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -655,22 +576,15 @@ public class GamePerezAdan extends GameActivity {
 
     private void parentsFedUp()
     {
-        Util.clearConsole();
-        String text = """
-      Do you change your mind about helping with the house
-      or do you continue to be lazy?
-      1. You changed your mind and start helping with the
-         house.
-      2. You do not and continue to be lazy.
-      """;
 
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("Do you change your mind about helping with the house or do you continue to be lazy?");
 
         setAllBtnsVisible();
         btn1.setText("You changed your mind and start helping with the  house ");
-        btn1.setText("You do not and continue to be lazy");
+        btn2.setText("You do not and continue to be lazy");
         btn3.setVisibility(View.INVISIBLE);
-        System.out.println(text);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -693,28 +607,21 @@ public class GamePerezAdan extends GameActivity {
 
     private void continueBeingLazy()
     {
-        Util.clearConsole();
-        String text = """
-      You are now kicked out of your parents house what do
-      you do?
-      1. Live in the streets.
-      2. Live in the homeless shelter.
-      3. Find a job.
-      """;
-
+        ivStory.setImageResource(R.drawable.);
         tvStoryText.setText("You are now kicked out of your parents house what do you do?");
 
         setAllBtnsVisible();
         btn1.setText("Live in the streets");
         btn2.setText("Live in the homeless shelter");
-        btn3.setText("Find A job")
-        System.out.println(text);
+        btn3.setText("Find A job");
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ();
 
+                tvStoryText.setText("You now live in the streets, YOU LOSE!!!");
+
+                end();
             }
         });
 
@@ -722,8 +629,10 @@ public class GamePerezAdan extends GameActivity {
             @Override
             public void onClick(View view) {
 
+               tvStoryText.setText("You live in the homeless shelter, YOU LOSE!!!");
 
-                ();
+
+                end();
             }
         });
 
@@ -736,27 +645,27 @@ public class GamePerezAdan extends GameActivity {
         });
     }
 
-    private void defeat()
-    {
-        //run method when defeated
 
-    /*
-    //lose a life
-    //numLives--;
-
-    //clear console, display text, etc
-    //System.out.println(...)
-
-    //determine if player gets to play again
-    if (numLives > 0)
+    private void end()
     {
-      //if you still have lives, return to start()
-      start();
-    }
-    else
-    {
-      //print game over message
-    }
-    */
+        ivStory.setImageResource(R.drawable.);
+        setAllBtnsVisible();
+        btn1.setText("Play again");
+        btn2.setText("Quit");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GamePerezAdan.this, MainActivity.class));
+            }
+        });
     }
 }
