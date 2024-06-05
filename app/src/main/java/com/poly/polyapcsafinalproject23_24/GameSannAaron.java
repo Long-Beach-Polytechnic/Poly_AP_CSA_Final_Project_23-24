@@ -247,106 +247,139 @@ public class GameSannAaron extends GameActivity {
 
         }
 
-        public void runBattle(SannPokemon wildPokemon, boolean battleOver)
-        {
+        public void runBattle(SannPokemon wildPokemon, boolean battleOver) {
+
+            if (playerPokemon.getHealth() <= 0) {
+                youFainted();
+            }
+            if (wildPokemon.getHealth() <= 0) {
+                wildPokemonFainted(wildPokemon);
+            }
             setContentView(R.layout.activity_sannaaron_battle);
 
             TextView tvP1HealthVal = findViewById(R.id.tv_p1_health_val);
+            TextView tvP2HealthVal = findViewById(R.id.tv_p2_health_val);
 
-            tvP1HealthVal.setText(""+playerPokemon.getHealth());
+            tvP1HealthVal.setText("" + playerPokemon.getHealth());
+            tvP2HealthVal.setText("" + wildPokemon.getHealth());
 
+            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.VISIBLE);
 
-            if (playerPokemon.getHealth() > 0 && wildPokemon.getHealth() > 0 && !battleOver)
-            {
-                // Player's turn
-                String text15 = "What will " + playerPokemon.getName() + " do?";
-                String text16 = "1. Attack";
-                String text17 = "2. Run";
-                tvStoryText.setText(text15);
-                tvStoryText.setText(text16);
-                tvStoryText.setText(text17);
+            btn1.setText("Attack");
+            btn2.setText("Run");
 
-                btn1.setText("Attack");
-                btn2.setText("Run");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                btn1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        int playerDamage = playerPokemon.calculateDamage(wildPokemon);
-                        wildPokemon.takeDamage(playerDamage);
-
-                        String text18 = playerPokemon.getName() + " dealt " + playerDamage + " damage to " + wildPokemon.getName();
-                        tvStoryText.setText(text18);
-
-                        setAllBtnsVisible();
-                        btn1.setText("Continue");
-                        btn2.setVisibility(View.INVISIBLE);
-                        btn3.setVisibility(View.INVISIBLE);
-
-                        btn1.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                runBattle(wildPokemon, battleOver);
-                            }
-                        });
-                    }
-                });
-
-                btn2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String text19 = "You successfully ran away!";
-                        tvStoryText.setText(text19);
-                        boolean battleOver = true;
-
-                        setAllBtnsVisible();
-                        btn1.setText("Continue");
-                        btn2.setVisibility(View.INVISIBLE);
-                        btn3.setVisibility(View.INVISIBLE);
-
-                        btn1.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                viridianForest();
-                            }
-                        });
-                    }
-                });
-
-
-                if (!battleOver)
-                {
-                    int wildDamage = wildPokemon.calculateDamage(playerPokemon);
-                    playerPokemon.takeDamage(wildDamage);
-                    String text20 = wildPokemon.getName() + " dealt " + wildDamage + " damage to " + playerPokemon.getName() + "\n \n" + playerPokemon.getName() + " HP: " + playerPokemon.getHealth() + "\n \n" + wildPokemon.getName() + " HP: " + wildPokemon.getHealth();
-                    tvStoryText.setText(text20);
-
-                    if (playerPokemon.getHealth() <= 0)
-                    {
-                        //String text23 = playerPokemon.getName() + " fainted. You ran to the nearest Pokemon Center to heal your Pokémon.";
-                        //tvStoryText.setText(text23);
-                        //viridianForest();
-                        return;
-                    }
                 }
-                else if (wildPokemon.getHealth() <= 0)
-                {
-                    String text24 = "You defeated the " + wildPokemon.getName() + "!";
-                    tvStoryText.setText(text24);
-                }
-            }
+            });
 
-            if (playerPokemon.getHealth() > 0)
-            {
-                String text37 = "Nice job! You defeated Brock!";
-                tvStoryText.setText(text37);
-                String text38 = "You should level up more and get ready for the next Gym.";
-                tvStoryText.setText(text38);
-                String text39 = "Heading back to Viridian Forest to level up... and you can face Brock again to test your Pokemon skills";
-                tvStoryText.setText(text39);
-            }
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
+
+            // Player's turn
+            String text15 = "What will " + playerPokemon.getName() + " do?";
+            String text16 = "1. Attack";
+            String text17 = "2. Run";
+            tvStoryText.setText(text15);
+            tvStoryText.setText(text16);
+            tvStoryText.setText(text17);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int playerDamage = playerPokemon.calculateDamage(wildPokemon);
+                    wildPokemon.takeDamage(playerDamage);
+
+                    String text18 = playerPokemon.getName() + " dealt " + playerDamage + " damage to " + wildPokemon.getName();
+                    tvStoryText.setText(text18);
+
+                    setAllBtnsVisible();
+                    btn1.setText("Continue");
+                    btn2.setVisibility(View.INVISIBLE);
+                    btn3.setVisibility(View.INVISIBLE);
+
+                    btn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            otherPokemonAttacksBack(wildPokemon);
+                        }
+                    });
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String text19 = "You successfully ran away!";
+                    tvStoryText.setText(text19);
+                    boolean battleOver = true;
+
+                    setAllBtnsVisible();
+                    btn1.setText("Continue");
+                    btn2.setVisibility(View.INVISIBLE);
+                    btn3.setVisibility(View.INVISIBLE);
+
+                    btn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            viridianForest();
+                        }
+                    });
+                }
+            });
+
         }
 
+        private void otherPokemonAttacksBack(SannPokemon wildPokemon){
+            if(playerPokemon.getHealth() <= 0 || wildPokemon.getHealth() <= 0)
+            {
+                youFainted();
+            }
+
+            int wildDamage = wildPokemon.calculateDamage(playerPokemon);
+            playerPokemon.takeDamage(wildDamage);
+            String text20 = wildPokemon.getName() + " dealt " + wildDamage + " damage to " + playerPokemon.getName() + "\n \n" + playerPokemon.getName() + " HP: " + playerPokemon.getHealth() + "\n \n" + wildPokemon.getName() + " HP: " + wildPokemon.getHealth();
+            tvStoryText.setText(text20);
+
+            if (playerPokemon.getHealth() <= 0)
+            {
+                youFainted();
+
+            }
+
+
+        }
+
+        private void youFainted() {
+            String text23 = playerPokemon.getName() + " fainted. You ran to the nearest Pokemon Center to heal your Pokémon.";
+            tvStoryText.setText(text23);
+
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    viridianForest();
+                }
+            });
+
+        }
+
+        private void wildPokemonFainted(SannPokemon wildPokemon) {
+
+            String text24 = "You defeated the " + wildPokemon.getName() + "!";
+            tvStoryText.setText(text24);
+        }
 
 
         /**
