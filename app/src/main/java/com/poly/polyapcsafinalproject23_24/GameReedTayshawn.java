@@ -9,7 +9,7 @@ import com.poly.polyapcsafinalproject23_24.GameActivity;
 
 import java.util.Scanner;
 
-public class GameTayshawnReed extends GameActivity {
+public class GameReedTayshawn extends GameActivity {
 
     //instance variables
     //   variables you plan to use throughout the adventure
@@ -25,7 +25,7 @@ public class GameTayshawnReed extends GameActivity {
     protected void run() {
         setContentView(R.layout.activity_game_4_button);
 
-        tvTitle = findViewById((R.id.tv_title_txt);
+        tvTitle = findViewById(R.id.tv_title_txt);
         tvSubtitle = findViewById(R.id.tv_subtitle);
         tvStoryText = findViewById(R.id.tv_story);
         ivStory = findViewById(R.id.iv_story);
@@ -61,11 +61,11 @@ public class GameTayshawnReed extends GameActivity {
     {
         isWon = false;
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_portalroom);
         //start adventure here
         tvStoryText.setText("It is normal day at school and you are being nosy and you find secret tunnels under the school and they have mysterious portals");
         
-        SetAllBtnsVisible();
+        setAllBtnsVisible();
         btn1.setText("Go into the red portal");
         btn2.setText("Go into the blue portal");
         btn3.setText("Go into the purple portal");
@@ -74,7 +74,7 @@ public class GameTayshawnReed extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
 
         @Override
-        public void onClick(View v) { (redPortal(); }
+        public void onClick(View v) { redPortal(); }
     });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +102,7 @@ public class GameTayshawnReed extends GameActivity {
     {
 
         tvStoryText.setText("You enter the red portal and you enter this super magical dimension");
-       ivStory.setImageResource(R.drawable.);
+       ivStory.setImageResource(R.drawable.im_reedtayshawn_enterredportal);
 
 
         setAllBtnsVisible();
@@ -132,7 +132,7 @@ public class GameTayshawnReed extends GameActivity {
 
     private void glowingButterflies() {
         tvStoryText.setText("You decided to follow the glowing butterflies but there are 2 of them and they are going 2 different directions one is leading you to a cyrstal key and another leads you to a dark area which one do you follow?");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_bridgeorbutterflies);
 
         setAllBtnsVisible();
         btn1.setText("crystal key");
@@ -163,7 +163,7 @@ public class GameTayshawnReed extends GameActivity {
     private void crystalKey()
     {
        tvStoryText.setText("You decided to use the crystal key and it opens a door. Do you decide to go left or right?");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_leftorright);
 
         setAllBtnsVisible();
         btn1.setText("Go Left");
@@ -191,6 +191,7 @@ public class GameTayshawnReed extends GameActivity {
     private void goLeft()
     {
         tvStoryText.setText("You went left and it lead you to a magical island for you and you find a bunch of treasures and win the game! congrats.");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_goleft);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -208,6 +209,7 @@ public class GameTayshawnReed extends GameActivity {
     private void goRight()
     {
         tvStoryText.setText("You went right and it lead you to a dark abyss and you ended up dying womp womp choose the right path next time.");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_goright);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -225,7 +227,7 @@ public class GameTayshawnReed extends GameActivity {
     private void magicBridge()
     {
         tvStoryText.setText("You decide to cross the mystical bridge and you realize it is really really wobbly do you want to take the risk and cross it?");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_magicalbridge);
 
         setAllBtnsVisible();
         btn1.setText("Cross The Bridge");
@@ -253,7 +255,7 @@ public class GameTayshawnReed extends GameActivity {
     private void crossBridge()
     {
         tvStoryText.setText("You decided to cross the bridge as it was very wobbly you still managed to get through and you made it, there is another portal do you want to enter?");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_crossbridge);
 
         setAllBtnsVisible();
         btn1.setText("Enter the portal");
@@ -283,6 +285,7 @@ public class GameTayshawnReed extends GameActivity {
     private void leavePortal()
     {
         tvStoryText.setText("Turned your back and a giant snake came and bite your head off and now you are dead sadly ");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_snakeattack);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -301,7 +304,7 @@ public class GameTayshawnReed extends GameActivity {
     private void entryPortal()
     {
         tvStoryText.setText("You decided to enter the portal and once you enter there is a big giant ogre what shall you do?");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_entersecondportal);
         btn1.setText("Fight back");
         btn2.setText("Run away");
         btn3.setVisibility(View.INVISIBLE);
@@ -327,6 +330,7 @@ public class GameTayshawnReed extends GameActivity {
     private void fightBack()
     {
         tvStoryText.setText("You decide to fight back and you ended up dying because you had no weapon no sword no anything and you decided to fight some greek beast nice try... better luck next time");
+       ivStory.setImageResource(R.drawable.im_reedtayshawn_fightorge);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -344,11 +348,26 @@ public class GameTayshawnReed extends GameActivity {
     private void runAway()
     {
         tvStoryText.setText("You ran away and thats what was best for you congrats! you did not die.  You live to see another day.");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_runfromorge);
+        setAllBtnsVisible();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
     }
 
     private void goBack()
     {
         tvStoryText.setText("You went back and were shivering and you didn't know what to do so you sat there for the rest of your life");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_stuckalone);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -367,6 +386,7 @@ public class GameTayshawnReed extends GameActivity {
     private void darkArea()
     {
         tvStoryText.setText("You decided to go into the dark area and you fell to your death in the aybss");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_darkabyss);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -388,11 +408,11 @@ public class GameTayshawnReed extends GameActivity {
 
        tvStoryText.setText("You enter the blue portal and you enter this super wierd lava type dimension");
 
-       ivStory.setImageResource(R.drawable);
+       ivStory.setImageResource(R.drawable.im_reedtayshawn_blueportal);
 
        setAllBtnsVisible();
-        btn1.setText("Fight back");
-        btn2.setText("Run away");
+        btn1.setText("Go through the maze");
+        btn2.setText("swim in the lava");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -416,6 +436,7 @@ public class GameTayshawnReed extends GameActivity {
     private void lavaSwim()
     {
         tvStoryText.setText("For some odd reason you thought that swimming in lava would be a good idea. Buddy you are no superhero give it up you died.");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_lavaswim);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -436,7 +457,7 @@ public class GameTayshawnReed extends GameActivity {
     {
         tvStoryText.setText("You decide to go through the crystal maze and explore! do you want to ride the lava stream on a lava rock or naviagte through the maze");
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_cystalmaze);
 
         setAllBtnsVisible();
         btn1.setText("Ride the Lava stream");
@@ -464,6 +485,7 @@ public class GameTayshawnReed extends GameActivity {
     private void lavaStream()
     {
         tvStoryText.setText("I dont know what is up with you and going in lava but clearly this isnt working out for you so yep you guessed it, you die");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_ridelavastream);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -482,7 +504,7 @@ public class GameTayshawnReed extends GameActivity {
     {
         tvStoryText.setText("You want to go through the maze now you see this gigantic beautiful bird do you want to go up to it, or go to the old person on the throne");
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_firebirdandoldman);
 
         setAllBtnsVisible();
         btn1.setText("Go towards the bird");
@@ -510,6 +532,7 @@ public class GameTayshawnReed extends GameActivity {
     private void beautifulBird()
     {
         tvStoryText.setText("The bird doesn't recgonize you and it burns you alive as it is a fire bird and it shot a fireball at you");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_pheonixbird);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -527,6 +550,7 @@ public class GameTayshawnReed extends GameActivity {
     private void throneGuy()
     {
         tvStoryText.setText("You went to the mysterious man and you found him as he is the LAVA KING and he gives you all the treasures you could ask for congragulations for winning and obtaining the secret lava treasure");
+       ivStory.setImageResource((R.drawable.im_reedtayshawn_followoldman));
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -549,7 +573,7 @@ public class GameTayshawnReed extends GameActivity {
     {
         tvStoryText.setText("This portal takes you into a MINECRAFT WORLD and you get to decide if yo want to go into the END or if you want to go into the overworld.");
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_purpleportal);
 
 
         setAllBtnsVisible();
@@ -578,8 +602,8 @@ public class GameTayshawnReed extends GameActivity {
 
     private void theEnd()
     {
-       tvStoryText.setText("\nYou wanted to go into the end lets see what we got here... okay so basically you can decide if you want to fight the ender dragon or glitch through the game and go into the end city while the dragon is stil alive");
-       ivStory.setImageResource(R.drawable.);
+       tvStoryText.setText("You wanted to go into the end lets see what we got here... okay so basically you can decide if you want to fight the ender dragon or glitch through the game and go into the end city while the dragon is stil alive");
+       ivStory.setImageResource(R.drawable.im_reedtayshawn_theend);
 
 
        setAllBtnsVisible();
@@ -608,7 +632,7 @@ public class GameTayshawnReed extends GameActivity {
     {
        tvStoryText.setText("You fight the enderdragon what weapon will you use a sword or a bunch of beds");
 
-       ivStory.setImageResource(R.drawable.);
+       ivStory.setImageResource(R.drawable.im_reedtayshawn_fightenderdragon);
 
 
        setAllBtnsVisible();
@@ -636,6 +660,7 @@ public class GameTayshawnReed extends GameActivity {
     private void diamondSword()
     {
         tvStoryText.setText("You grabbed the diamond sword and sadly did not make it as the enderdragon dragged his purple throwup all over you");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_usesword);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -653,6 +678,7 @@ public class GameTayshawnReed extends GameActivity {
     private void explosiveBed()
     {
         tvStoryText.setText("You used the beds to explode and you were able to kill the enderdragon and obtain his dragon egg as you now go onto live peacfully");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_explosivebeds);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -670,6 +696,7 @@ public class GameTayshawnReed extends GameActivity {
     private void enterEndCity()
     {
         tvStoryText.setText("You somehow glitched into the endcity and now you are stuck there forever and can never leave their, womp womp.");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_endcity);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -687,9 +714,9 @@ public class GameTayshawnReed extends GameActivity {
 
     private void theOverWorld()
     {
-        tvStoryText.setText("\nYou wanted to go into the overworld as this place is very boring you will find very random things to happen here regardless do you want to follow the cow or follow the cat");
+        tvStoryText.setText("You wanted to go into the overworld as this place is very boring you will find very random things to happen here regardless do you want to follow the cow or follow the cat");
 
-       ivStory.setImageResource(R.drawable.);
+       ivStory.setImageResource(R.drawable.im_reedtayshawn_overworld);
 
 
        setAllBtnsVisible();
@@ -720,6 +747,7 @@ public class GameTayshawnReed extends GameActivity {
     private void followCow()
     {
         tvStoryText.setText("The cow ate you alive I told you very weird things happen in the overworld in this portal and yes the cow's can eat people");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_cowattack);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -737,6 +765,7 @@ public class GameTayshawnReed extends GameActivity {
     private void followCat()
     {
         tvStoryText.setText("You follow the cat and it is a goodluck charm defending you from every creeper and even the King and Queen Creeper boss as they are very afriad of the cat congrats you win! ");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_catprotect);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -758,7 +787,7 @@ public class GameTayshawnReed extends GameActivity {
     private void noPortal()
     {
         tvStoryText.setText("you live you're live normally as you don't technically lose the game you just decide not to play it");
-
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_normallife);
         setAllBtnsVisible();
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
@@ -797,22 +826,41 @@ public class GameTayshawnReed extends GameActivity {
     {
         numLives--;
         tvStoryText.setText("You lose");
+        ivStory.setImageResource(R.drawable.im_reedtayshawn_defeat);
 
 
-        if(numLives > 0)
-        {
-            start();
+        if(numLives > 0) {
+            setAllBtnsVisible();
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    start();
+                }
+
+                ;
+            });
         }
-        else if(numLives == 0)
+        else
         {
-            System.out.println("Play again?");
+            setAllBtnsVisible();
+            btn1.setText("Play Again?");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    start();
+                }
+            });
         }
     }
+
 }
 
-    private void SetAllBtnsVisible() {
-    }
-
-    private void redPortal() {
-
-    }
