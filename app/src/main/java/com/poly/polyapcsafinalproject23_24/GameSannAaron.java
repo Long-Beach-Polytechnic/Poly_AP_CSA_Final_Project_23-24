@@ -26,12 +26,15 @@ public class GameSannAaron extends GameActivity {
             btn3 = findViewById(R.id.btn_3);
 
             setAllBtnsVisible();
-            btn1.setText("Continue");
+            btn1.setText("Play!");
             btn2.setVisibility(View.INVISIBLE);
             btn3.setVisibility(View.INVISIBLE);
 
             tvTitle.setText("Pokemon RPG");
             tvSubtitle.setText("Aaron Sann");
+
+            String text = "";
+            tvStoryText.setText(text);
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -181,7 +184,7 @@ public class GameSannAaron extends GameActivity {
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    levelPokemon();
+                    continueToLevelUpPokemon();
                 }
             });
 
@@ -193,9 +196,25 @@ public class GameSannAaron extends GameActivity {
             });
         }
 
+    public void continueToLevelUpPokemon()
+    {
+        String text34 = "You've decided to level up " + playerPokemon.getName() + "\n \nGo and level up!";
+        tvStoryText.setText(text34);
+
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                levelPokemon();
+            }
+        });
+    }
+
         public void continueToBrock()
         {
-            String text34 = "You've decided to challenge Brock in the Pewter City Gym!\n \nContinue to Brock";
+            String text34 = "You've decided to challenge Brock in the Pewter City Gym!\n \nContinue to Brock!";
             tvStoryText.setText(text34);
 
             btn1.setText("Continue");
@@ -204,37 +223,38 @@ public class GameSannAaron extends GameActivity {
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    battleBrock();
+                    SannPokemon brocksOnix = SannPokemonFactory.onix();
+                    initiateBattle(playerPokemon, brocksOnix);
                 }
             });
         }
 
+        public void initiateBattle(SannPokemon playerPokemon, SannPokemon wildPokemon) {
 
-        /**
-         * Initiates a battle between the player's Pokemon and a wild Pokemon.
-         * <br> Preconditions: The player's Pokemon and a wild Pokemon are present for battle.
-         * <br> Postconditions: The battle between the two Pokemon is resolved.
-         *
-         * @param playerPokemon The player's Pokemon.
-         * @param wildPokemon   The wild Pokemon.
-         */
-        private void initiateBattle(SannPokemon playerPokemon, SannPokemon wildPokemon) {
-
-            String text14 = "A " + wildPokemon.getName() + " appeared!";
+            String text14 = "Get ready to battle!\n \nYou sent out " + playerPokemon.getName() + "!";
             tvStoryText.setText(text14);
 
-            boolean battleOver = false;
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    boolean battleOver = false;
+                    runBattle(wildPokemon, battleOver);
+                }
+            });
 
-            runBattle(wildPokemon, battleOver);
         }
 
-        private void runBattle(SannPokemon wildPokemon, boolean battleOver)
+        public void runBattle(SannPokemon wildPokemon, boolean battleOver)
         {
             setContentView(R.layout.activity_sannaaron_battle);
 
             TextView tvP1HealthVal = findViewById(R.id.tv_p1_health_val);
 
-            tvP1HealthVal.setText(playerPokemon.getHealth());
+            tvP1HealthVal.setText(""+playerPokemon.getHealth());
+
 
             if (playerPokemon.getHealth() > 0 && wildPokemon.getHealth() > 0 && !battleOver)
             {
@@ -314,6 +334,16 @@ public class GameSannAaron extends GameActivity {
                     String text24 = "You defeated the " + wildPokemon.getName() + "!";
                     tvStoryText.setText(text24);
                 }
+            }
+
+            if (playerPokemon.getHealth() > 0)
+            {
+                String text37 = "Nice job! You defeated Brock!";
+                tvStoryText.setText(text37);
+                String text38 = "You should level up more and get ready for the next Gym.";
+                tvStoryText.setText(text38);
+                String text39 = "Heading back to Viridian Forest to level up... and you can face Brock again to test your Pokemon skills";
+                tvStoryText.setText(text39);
             }
         }
 
@@ -409,21 +439,7 @@ public class GameSannAaron extends GameActivity {
          * <br> Preconditions: The player has decided to challenge Brock.
          * <br> Postconditions: The battle against Brock is resolved, and the player may proceed or retry.
          */
-        public void battleBrock()
-        {
-            SannPokemon brocksOnix = SannPokemonFactory.onix();
-            initiateBattle(playerPokemon, brocksOnix);
 
-            if (playerPokemon.getHealth() > 0)
-            {
-                String text37 = "Nice job! You defeated Brock!";
-                tvStoryText.setText(text37);
-                String text38 = "You should level up more and get ready for the next Gym.";
-                tvStoryText.setText(text38);
-                String text39 = "Heading back to Viridian Forest to level up... and you can face Brock again to test your Pokemon skills";
-                tvStoryText.setText(text39);
-            }
-        }
 
 
         /**
@@ -448,7 +464,8 @@ public class GameSannAaron extends GameActivity {
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    battleBrock();
+                    SannPokemon brocksOnix = SannPokemonFactory.onix();
+                    initiateBattle(playerPokemon, brocksOnix);
                 }
             });
 
