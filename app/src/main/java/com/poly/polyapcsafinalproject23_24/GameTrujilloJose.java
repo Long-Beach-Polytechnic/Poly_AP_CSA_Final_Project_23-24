@@ -116,6 +116,7 @@ public class GameTrujilloJose extends GameActivity {
     setAllBtnsVisible();
     btn1.setText("Fight back");
     btn2.setText("RUNNNN");
+    //
     btn3.setVisibility(View.INVISIBLE);
 
     btn1.setOnClickListner(new View.OnClickListener() {
