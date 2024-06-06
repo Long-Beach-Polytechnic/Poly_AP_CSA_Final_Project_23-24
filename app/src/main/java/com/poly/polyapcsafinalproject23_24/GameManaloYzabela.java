@@ -15,9 +15,9 @@ public class GameManaloYzabela extends GameActivity
     private TextView tvTitle, tvSubtitle, tvStoryText;
     private ImageView ivStory;
     private Button btn1, btn2, btn3, btn4;
+
     @Override
-    protected void run()
-    {
+    protected void run() {
         setContentView(R.layout.activity_game_4_button);
 
         tvTitle = findViewById(R.id.tv_title_txt);
@@ -57,8 +57,7 @@ public class GameManaloYzabela extends GameActivity
 
     }
 
-    private void disclaimer()
-    {
+    private void disclaimer() {
         String text = "\nDisclaimer: VIOLENCE and NEGATIVITY\nThis game contains content that may induce frustration,disappointment,and a general sense of negativity. " +
                 "Player discretion is advised as you embark in a journey where challenges are designed to be relentless, and success often feels elusive. " +
                 "This game is not for the faint of heart and might cause emotional distress. " +
@@ -82,8 +81,7 @@ public class GameManaloYzabela extends GameActivity
 
     }
 
-    private void setAllBtnsVisible()
-    {
+    private void setAllBtnsVisible() {
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
@@ -113,38 +111,37 @@ public class GameManaloYzabela extends GameActivity
     }
 
 
-
     private void beginning() {
         String ant = "Who would you want to spend the rest of your sad life with?";
 
-      tvStoryText.setText(ant);
+        tvStoryText.setText(ant);
 
 
         String btn1Text = "1.Ryan Burke" +
-      "\n-High School Teacher with very outstanding Master’s Degree" +
-      "\n-Lives in Long Beach" +
-      "\n-Less than 3 miles away";
+                "\n-High School Teacher with very outstanding Master’s Degree" +
+                "\n-Lives in Long Beach" +
+                "\n-Less than 3 miles away";
 
         btn1.setText(btn1Text);
 
         String btn2Text = "2.Sofia Ramos" +
-      "\n-Registered Nurse" +
-      "\n-Lives in Long Beach" +
-      "\n-Less than 5 miles away";
+                "\n-Registered Nurse" +
+                "\n-Lives in Long Beach" +
+                "\n-Less than 5 miles away";
 
         btn2.setText(btn2Text);
 
         String btn3Text = "3.Koichi Hirose" +
-      "\n-Head Chef" +
-      "\n-Lives in Carson" +
-      "\n-Less than 9 miles away";
+                "\n-Head Chef" +
+                "\n-Lives in Carson" +
+                "\n-Less than 9 miles away";
 
         btn3.setText(btn3Text);
 
         String btn4Text = "4.Yara Lopez" +
-       "\n-Bartender" +
-       "\n-Lives in Lakewood" +
-       "\n-Less than 16 miles away";
+                "\n-Bartender" +
+                "\n-Lives in Lakewood" +
+                "\n-Less than 16 miles away";
         btn4.setText(btn4Text);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -181,8 +178,7 @@ public class GameManaloYzabela extends GameActivity
     }
 
     //..........RYAN BURKE PATH..............................................................
-    private void ryanBurke()
-    {
+    private void ryanBurke() {
 
         String butterfly = "You saw his profile picture and you were like OMG with a shocked face. How could God let a perfect creature like this roam around. He looked like the perfect match for you and you decided to give it all your shot to make him yours. He messaged you “Good morning, How’s your weekend?”. Your heart skipped a beat and you panicked like a shy anime girl. What should you say back?";
         tvStoryText.setText(butterfly);
@@ -222,8 +218,7 @@ public class GameManaloYzabela extends GameActivity
     }
 
     //........PICK UP LINE PATH..............................................................
-    private void pickUpLine()
-    {
+    private void pickUpLine() {
 
         String cat = "What pick up line should you send him?";
 
@@ -252,9 +247,9 @@ public class GameManaloYzabela extends GameActivity
         });
 
     }
+
     //..........BAD WEEKEND PATH..............
-    private void badWeekend()
-    {
+    private void badWeekend() {
 
         String dog = "He felt shy when you said that and told you he blushed, What is your next step?";
 
@@ -284,8 +279,7 @@ public class GameManaloYzabela extends GameActivity
     }
 
     //..........GO TO THE MOVIES PATH.........
-    private void goMovies()
-    {
+    private void goMovies() {
 
         String dog = "He agreed to go to the movies with you but you will have to wait outside for him.";
 
@@ -313,12 +307,12 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.........BINOCULARS PATH................
-    private void binoculars()
-    {
+    private void binoculars() {
 
         String elephant = "What's your next step?" +
-      "\nPick a scenario:)";
+                "\nPick a scenario:)";
 
         tvStoryText.setText(elephant);
 
@@ -344,12 +338,12 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.........DIARRHEA PATH...............
-    private void diarrhea()
-    {
+    private void diarrhea() {
 
         String fish = "What's your next step?" +
-       "\nPick a scenario:)";
+                "\nPick a scenario:)";
 
         tvStoryText.setText(fish);
 
@@ -375,36 +369,36 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.........GIVING SEAWEED PATH............
-    private void giveSeaweed()
-    {
+    private void giveSeaweed() {
 
 
-            String iguana = "CONGRATULATIONS! You two are instantly married. Obviously not rotting in a nursing home because seaweed is LIFE!." +
-                    "\nPress \"Play Again\" to play again (definetely try to see other outcomes,It's obviously great)";
+        String iguana = "CONGRATULATIONS! You two are instantly married. Obviously not rotting in a nursing home because seaweed is LIFE!." +
+                "\nPress \"Play Again\" to play again (definitely try to see other outcomes,It's obviously great)";
 
-          tvStoryText.setText(iguana);
+        tvStoryText.setText(iguana);
 
-            setAllBtnsVisible();
-            btn1.setText("Play Again");
-            btn2.setVisibility(View.INVISIBLE);
-            btn3.setVisibility(View.INVISIBLE);
-            btn4.setVisibility(View.INVISIBLE);
+        setAllBtnsVisible();
+        btn1.setText("Play Again");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
-            btn1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    start();
-                }
-            });
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
 
     }
+
     //.........GIVING DINO NUGGETS.............
-    private void giveDinoNuggets()
-    {
+    private void giveDinoNuggets() {
 
         String jaguar = "What's your next step?" +
-        "\nPick a scenario:)";
+                "\nPick a scenario:)";
 
         tvStoryText.setText(jaguar);
 
@@ -430,9 +424,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.........AGREE TO THE MOVIES PATH........
-    private void agree()
-    {
+    private void agree() {
 
         String kangaroo = "He admired your desperation for his love.";
         tvStoryText.setText(kangaroo);
@@ -461,9 +455,9 @@ public class GameManaloYzabela extends GameActivity
         });
 
     }
+
     //.......DISAGREE TO THE MOVIES PATH.......
-    private void disagree()
-    {
+    private void disagree() {
 
         String lion = "It did not went great, He got furious and told you “Never settling for less,organisms like me deserve princess treatment only” with a smug looking emoji then he blocked you. Obviously rotting in a nursing home because you respect yourself too much.";
         tvStoryText.setText(lion);
@@ -481,9 +475,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //......JUST JOKING PATH..................
-    private void justJoking()
-    {
+    private void justJoking() {
 
         String monkey = "He took it seriously and he flew to Alaska. You got heartbroken and decided you are going to change for the better. So you followed him to Alaska to be a full-time stalker. Obviously not rotting in a nursing home because you’re ending up in jail.";
         tvStoryText.setText(monkey);
@@ -500,9 +494,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.......RESTRAINING ORDER PATH...........
-    private void restrainingOrder()
-    {
+    private void restrainingOrder() {
 
         String nightingale = "He did it anyways and said \"Haha Deserve\". You are now rotting in jail and when your sentence is finished, you are now obviously rotting in a nursing home single and sad.";
         tvStoryText.setText(nightingale);
@@ -520,9 +514,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //........SEND PROOF PATH.................
-    private void sendProof()
-    {
+    private void sendProof() {
 
         String octopus = "He sold it online to creeps and made money out of it. Later on you realize he’s just taking advantage of you because of your poop. Obviously rotting pathetically in a nursing home.";
         tvStoryText.setText(octopus);
@@ -540,9 +534,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.........BITE HEAD PATH.............
-    private void biteHead()
-    {
+    private void biteHead() {
 
         String penguin = "You are a horrible cook but he ignored that because he thought the way you asserted dominance over him was hot. You got weirded out by his behavior and decided you’d rather be single and rotting in a nursing home.";
         tvStoryText.setText(penguin);
@@ -559,9 +553,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.....GIVE DINO NUGGETS ALREADY PATH.....
-    private void giveDinoNuggetsAlready()
-    {
+    private void giveDinoNuggetsAlready() {
 
         String quail = "You are a bad cook. It tasted horrible and he made sure to run to your bed and carpet to vomit. Obviously rotting in a nursing home.";
         tvStoryText.setText(quail);
@@ -579,9 +573,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.......BUY POPCORN PATH...............
-    private void buyPopcorn()
-    {
+    private void buyPopcorn() {
 
         String rat = "You were waiting for him patiently for 2 hours and he came out jolly. He told you “The plot twist was so good, Wish you could’ve seen it haha”. He told you afterwards that he could not see anyone as his future partner other than you. Obviously not rotting in a nursing home because you succeed." +
                 "\nPress \"Play again\" to play again (definitely try to see other outcomes,It's obviously great)";
@@ -600,11 +594,11 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //.........YOU FAINTED PATH...............
-    private void youFainted()
-    {
 
-        String quail =  "He forgot to brush his teeth so he refused to do it and called 911 instead. Turns out you got diagnosed with Leukemia. You only have 5 years left to live,very sad.Obviously not rotting in a nursing home because you won’t make it. ( Additional 1 live earned because I pity you )";
+    //.........YOU FAINTED PATH...............
+    private void youFainted() {
+
+        String quail = "He forgot to brush his teeth so he refused to do it and called 911 instead. Turns out you got diagnosed with Leukemia. You only have 5 years left to live,very sad.Obviously not rotting in a nursing home because you won’t make it. ( Additional 1 live earned because I pity you )";
         tvStoryText.setText(quail);
         numLives++;
 
@@ -621,27 +615,21 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //........................................
     //........................................
     //..........SOFIA RAMOS PATH..............
-    private void sofiaRamos()
-    {
+    private void sofiaRamos() {
 
-        String A = """
-
-                PLEASE READ THE FOLLOWING TRIGGERS FOR SOFIA
-                (Remember the following hints:This will help you win her heart)
-                -Loves the color red
-                -Hates going out
-                -Hates Rebecca
-                -Has shrimp allergy
-                -Loves Strawberries
-                """;
+        String A = "PLEASE READ THE FOLLOWING TRIGGERS FOR SOFIA" +
+                "\n(Remember the following hints:This will help you win her heart)" +
+                "\n-Loves the color red" +
+                "\n-Hates going out" +
+                "\n-Hates Rebecca" +
+                "\n-Has shrimp allergy" +
+                "\n-Loves Strawberries";
         tvStoryText.setText(A);
-
-        String yay = """
-                You are currently chatting with Sofia and you want to her to  fall in love with you, What should you do?
-                """;
+        String yay = "You are currently chatting with Sofia and you want to her to  fall in love with you, What should you do?:";
         tvStoryText.setText(yay);
 
         String btn1Text = "1.Tell her you look ugly all the time (She will definitely compliment you more and fall in love with how humble you are).";
@@ -677,9 +665,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.........IM SO UGLY PATH...............
-    private void imSoUgly()
-    {
+    private void imSoUgly() {
 
         String B = "She got icked by you and decided to block you, You are now single and ugly, waiting for the time you’re going to rot alone in a nursing home.You suck. Obviously rotting in a nursing home.";
         tvStoryText.setText(B);
@@ -697,13 +685,12 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //........ORANGE CAT PATH................
-    private void orangeCat()
-    {
-        String C = """
-      What's your next step?
-      Pick a scenario:)
-      """;
+    private void orangeCat() {
+        String C = "What's your next step?" +
+                "\nPick a scenario:)";
+
         tvStoryText.setText(C);
 
         String btn1Text = "1.She loves you instantly and invites you over to her house.";
@@ -728,14 +715,13 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //.........INVITES YOU OVER PATH.........
-    private void invitesYouOver()
-    {
 
-        String D = """
-      What's your next step?
-      Pick a scenario:)
-      """;
+    //.........INVITES YOU OVER PATH.........
+    private void invitesYouOver() {
+
+        String D = "What's your next step?" +
+                "\nPick a scenario:)";
+
 
         String btn1Text = "1.Bring over fresh strawberries you stole from the Grocery outlet, dipped in white chocolate.";
         btn1.setText(btn1Text);
@@ -759,11 +745,11 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //.........GO OUT DINNER PATH.............
-    private void goOutDinner()
-    {
 
-        String E =  "She hates going out for dinner but she said sure and ditched you.Obviously rotting in a nursing home.";
+    //.........GO OUT DINNER PATH.............
+    private void goOutDinner() {
+
+        String E = "She hates going out for dinner but she said sure and ditched you.Obviously rotting in a nursing home.";
         tvStoryText.setText(E);
 
         setAllBtnsVisible();
@@ -780,15 +766,11 @@ public class GameManaloYzabela extends GameActivity
         });
 
     }
+
     //..........STRAWBERRIES PATH.............
-    private void strawberries()
-    {
-        String F =  """
-      She liked the strawberries and gave you your first kiss, You win. Obviously not rotting in a nursing home.
-
-      Press \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)
-      """;
-
+    private void strawberries() {
+        String F = "She liked the strawberries and gave you your first kiss, You win. Obviously not rotting in a nursing home." +
+                "\nPress \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)";
         tvStoryText.setText(F);
 
         setAllBtnsVisible();
@@ -805,11 +787,11 @@ public class GameManaloYzabela extends GameActivity
         });
 
     }
-    //..........WHITE ROSES PATH..............
-    private void whiteRoses()
-    {
 
-        String G =  "She did not like the white roses because red is her favorite color, She buried you in her backyard. Obviously not rotting in a nursing home because you’re dead.";
+    //..........WHITE ROSES PATH..............
+    private void whiteRoses() {
+
+        String G = "She did not like the white roses because red is her favorite color, She buried you in her backyard. Obviously not rotting in a nursing home because you’re dead.";
         tvStoryText.setText(G);
         numLives--;
 
@@ -827,15 +809,13 @@ public class GameManaloYzabela extends GameActivity
         });
 
 
-
     }
-    //..........TEMPURA RECIPE PATH...........
-    private void tempuraRecipe()
-    {
 
-        String H = """
-      She got mad because she can’t eat shrimp. You try changing the topic and decided to talk about your:
-      """;
+    //..........TEMPURA RECIPE PATH...........
+    private void tempuraRecipe() {
+
+        String H = "She got mad because she can’t eat shrimp. You try changing the topic and decided to talk about your:";
+
         tvStoryText.setText(H);
 
         String btn1Text = "beloved great great great great great great grandmother.";
@@ -860,11 +840,11 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //...........GREAT GRANDMA PATH............
-    private void greatGrandma()
-    {
 
-        String I ="Your great great great great great great grandma’s name is REBECCA!. She poisoned you because she hates Rebecca.Obviously not rotting in a nursing home because you’re dead.";
+    //...........GREAT GRANDMA PATH............
+    private void greatGrandma() {
+
+        String I = "Your great great great great great great grandma’s name is REBECCA!. She poisoned you because she hates Rebecca.Obviously not rotting in a nursing home because you’re dead.";
         tvStoryText.setText(I);
         numLives--;
 
@@ -881,11 +861,11 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //...........ABOUT CRUSH PATH...............
-    private void aboutCrush()
-    {
 
-        String J =  "She got jealous and devastated when she heard that your crush’s name is REBECCA! She stabbed your kindergarten crush and blamed it on you.Obviously not rotting in a nursing home because you are in jail.";
+    //...........ABOUT CRUSH PATH...............
+    private void aboutCrush() {
+
+        String J = "She got jealous and devastated when she heard that your crush’s name is REBECCA! She stabbed your kindergarten crush and blamed it on you.Obviously not rotting in a nursing home because you are in jail.";
         tvStoryText.setText(J);
         numLives--;
 
@@ -903,25 +883,23 @@ public class GameManaloYzabela extends GameActivity
         });
 
     }
+
     //........................................
     //........................................
     //.........KOICHI HIROSE PATH.............
-    private void koichiHirose()
-    {
-        String Aaa = """
+    private void koichiHirose() {
+        String Aaa = "PLEASE READ THE FOLLOWING TRIGGERS FOR KOICHI" +
+                "\n(Remember the following hints:This will help you win his heart)" +
+                "\n-Does not like K-dramas" +
+                "\n-Hates his father" +
+                "\n-Loves birds" +
+                "\n-Scared of heights" +
+                "\n-Always goes to the gym" +
+                "\n-Loves blue";
 
-      PLEASE READ THE FOLLOWING TRIGGERS FOR KOICHI
-      (Remember the following hints:This will help you win his heart)
-      -Does not like K-dramas
-      -Hates his father
-      -Loves birds
-      -Scared of heights
-      -Always goes to the gym
-      -Loves blue
-      """;
         tvStoryText.setText(Aaa);
 
-        String yay= "You like him and wants to impress him, What should you do?";
+        String yay = "You like him and wants to impress him, What should you do?";
         tvStoryText.setText(yay);
 
         String btn1Text = "1.Tell him you like \\\"My Hero Academia\\\" and he looks so Kawaii desu, Also randomly slip \\\"Arigatou Gozaimasu Senpai\\\" during the conversation. (He needs to know that you appreciate his culture).";
@@ -945,13 +923,12 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //..........KAWAII DESU PATH.............
-    private void kawaiiDesu()
-    {
 
-        String Bbb = """
-      He got icked by you but decided to still give you a chance.What should you ask him?
-      """;
+    //..........KAWAII DESU PATH.............
+    private void kawaiiDesu() {
+
+        String Bbb = "He got icked by you but decided to still give you a chance.What should you ask him?";
+
         tvStoryText.setText(Bbb);
 
         String btn1Text = "1.Ask him if he wants to go to a rock climbing gym.";
@@ -978,8 +955,7 @@ public class GameManaloYzabela extends GameActivity
     }
 
     //...........ROCK CLIMBING PATH...........
-    private void rockClimbing()
-    {
+    private void rockClimbing() {
         String Ccc = "He agreed and once you started climbing he cut your rope off and you had a concussion. He managed to make everyone believe that it's your fault somehow because he hates his father. Obviously rotting in a nursing home.";
         tvStoryText.setText(Ccc);
         numLives--;
@@ -997,13 +973,11 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //..........SUSHI PATH...................
-    private void sushi()
-    {
 
-        String Ddd = """
-      He got disappointed about watching K-dramas but decided to give it a chance, Which K-drama should you pick?
-      """;
+    //..........SUSHI PATH...................
+    private void sushi() {
+
+        String Ddd = "He got disappointed about watching K-dramas but decided to give it a chance, Which K-drama should you pick?";
         tvStoryText.setText(Ddd);
 
         String btn1Text = "1.Watch \"Love in the moonlight\"";
@@ -1030,8 +1004,7 @@ public class GameManaloYzabela extends GameActivity
     }
 
     //.......LOVE IN THE MOONLIGHT PATH.......
-    private void loveInTheMoonlight()
-    {
+    private void loveInTheMoonlight() {
 
         String Eee = "He got mad about the girl not choosing the second lead. He cried for days straight and refused to eat. He eventually died of hunger and its your fault. Obviously rotting in a nursing home with guilt in your heart.";
         tvStoryText.setText(Eee);
@@ -1050,9 +1023,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //........COME AND HUG ME PATH............
-    private void comeAndHugMe()
-    {
+    private void comeAndHugMe() {
         String Fff = "He has Daddy Issues and got enraged with how the father loves his son. He fed you a tube of wasabi as revenge and you ended up in the hospital. Obviously rotting in a nursing home.";
         tvStoryText.setText(Fff);
         numLives--;
@@ -1071,12 +1044,12 @@ public class GameManaloYzabela extends GameActivity
         });
 
     }
+
     //.........RICE PATH......................
     private void rice() {
 
-        String Ggg = """
-        He fell in love with you instantly because you have so much rice in your house and called you the most attractive person he met.What should you ask him?
-        """;
+        String Ggg = "He fell in love with you instantly because you have so much rice in your house and called you the most attractive person he met.What should you ask him?";
+
 
         tvStoryText.setText(Ggg);
         String btn1Text = "1.Ask him if he wants to go to the gym with you.";
@@ -1099,42 +1072,40 @@ public class GameManaloYzabela extends GameActivity
                 family();
             }
         });
-      }
+    }
 
-      //.........GO GYM PATH....................
-      private void goGym()
-      {
+    //.........GO GYM PATH....................
+    private void goGym() {
 
-          String Hhh = """
-      You two had fun helping each other.He wants to go on a second date. He asked you to wear red on the second date.
-      """;
+        String Hhh = "You two had fun helping each other.He wants to go on a second date. He asked you to wear red on the second date.";
+
         tvStoryText.setText(Hhh);
 
-          String btn1Text = "1.Say \"Sure,I will\".";
-          btn1.setText(btn1Text);
+        String btn1Text = "1.Say \"Sure,I will\".";
+        btn1.setText(btn1Text);
 
-          String btn2Text = "2.Say you'll wear something else.";
-          btn2.setText(btn2Text);
+        String btn2Text = "2.Say you'll wear something else.";
+        btn2.setText(btn2Text);
 
-          btn1.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                  saySure();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saySure();
 
-              }
-          });
+            }
+        });
 
-          btn2.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                  somethingElse();
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                somethingElse();
 
-              }
-          });
+            }
+        });
     }
+
     //..........FAMILY PATH..................
-    private void family()
-    {
+    private void family() {
 
         String Iii = "He got furious that you asked about his family and his father came jumping out of nowhere and overfed you with uncooked rice and you choked.Obviously not rotting in a nursing home because you’re six feet underground.";
         tvStoryText.setText(Iii);
@@ -1153,9 +1124,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //........SAY SURE PATH...................
-    private void saySure()
-    {
+    private void saySure() {
 
         String Jjj = "He lifted a 100 kg plate and it accidentally fell into your head. Obviously not rotting in a nursing home because you’re dead.";
         tvStoryText.setText(Jjj);
@@ -1174,15 +1145,13 @@ public class GameManaloYzabela extends GameActivity
         });
 
     }
+
     //.......SOMETHING ELSE PATH..............
-    private void somethingElse()
-    {
+    private void somethingElse() {
 
-        String Kkk = """
-      He appreciates that you remembered his favorite color is blue. He smelled your armpits and declared you two are officially dating. Obviously not rotting in a nursing home.
+        String Kkk = "He appreciates that you remembered his favorite color is blue. He smelled your armpits and declared you two are officially dating. Obviously not rotting in a nursing home." +
+                "\nPress \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)";
 
-      Press \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)
-      """;
         tvStoryText.setText(Kkk);
 
         setAllBtnsVisible();
@@ -1198,16 +1167,13 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //........................................
     //........................................
     //.........YARA LOPEZ PATH................
-    private void yaraLopez()
-    {
-        String Antartica = """
-      Long story short, you like her and you want to go on a date with her.You want to get closer with her, What should you do?
-      """;
-
-       tvStoryText.setText(Antartica);
+    private void yaraLopez() {
+        String Antartica = "Long story short, you like her and you want to go on a date with her.You want to get closer with her, What should you do?";
+        tvStoryText.setText(Antartica);
 
         String btn1Text = "1.Ask her about how her day went and before she says something rant to her about how annoying your day was and tell her “Wish you were beside me to comfort me rn” with a cringe pouting emoji.";
         btn1.setText(btn1Text);
@@ -1244,12 +1210,10 @@ public class GameManaloYzabela extends GameActivity
     }
 
     //.............CRINGE PATH..............
-    private void cringe()
-    {
-        String Bahrain = """
-      What's your next step?
-      Pick a scenario:)
-      """;
+    private void cringe() {
+        String Bahrain = "What's your next step?" +
+                "\nPick a scenario:)";
+
         tvStoryText.setText(Bahrain);
 
         String btn1Text = "1.She said ew disgusting. Respond with “I’m sorry for being so dumb, It’s all my fault, Everything is always my fault”.";
@@ -1276,12 +1240,10 @@ public class GameManaloYzabela extends GameActivity
     }
 
     //.............EW PATH..............
-    private void ew()
-    {
-        String California =  """
-      What's your next step?
-      Pick a scenario:)
-      """;
+    private void ew() {
+        String California = "What's your next step?" +
+                "Pick a scenario:)";
+
         tvStoryText.setText(California);
 
         String btn1Text = "1.She got pissed so you decided to invite her over to your house to watch movies.";
@@ -1317,9 +1279,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //..........COME OVER PATH..............
-    private void comeOver()
-    {
+    private void comeOver() {
 
         String Denmark = "She decided to come over to your house, She cuddled with you and once you went to the bathroom to poop, she immediately took one of each pair of footwear you own and ditched you. Now you have only one piece of footwear with the other ones forever missing. Obviously rotting in a nursing home because you’re pathetic. ";
         tvStoryText.setText(Denmark);
@@ -1337,11 +1299,11 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //........WATCH MOVIES PATH............
-    private void watchMovies()
-    {
 
-        String England="I don’t know why but you suddenly have diarrhea and you rushed to the bathroom. She loosened the seams in all your pants and shorts and ditched you. Now whenever you sit, they rip open.Obviously rotting in a nursing home with ripped pants.";
+    //........WATCH MOVIES PATH............
+    private void watchMovies() {
+
+        String England = "I don’t know why but you suddenly have diarrhea and you rushed to the bathroom. She loosened the seams in all your pants and shorts and ditched you. Now whenever you sit, they rip open.Obviously rotting in a nursing home with ripped pants.";
         tvStoryText.setText(England);
 
         setAllBtnsVisible();
@@ -1357,9 +1319,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //.........BLOCK HER...................
-    private void blockHer()
-    {
+    private void blockHer() {
         String Finland = "She was very petty and decided to give mammals like you a lesson. She broke into your house and put prawns in your curtain poles. Your house smelled like rotten garbage for years and you have no idea why so you just sold it because you’re miserable and no one likes your house. You ended up homeless,depressed,and broke. Obviously not rotting in a nursing home because you can’t afford it.";
         tvStoryText.setText(Finland);
 
@@ -1376,9 +1338,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //............GIVE NUMBER PATH..........
-    private void giveNumber()
-    {
+    private void giveNumber() {
 
         String Ghana = "She gave your number to creepy men and therefore you kept getting texts and calls from random men asking for feet and armpit pictures.Obviously and definitely rotting in a nursing home.";
         tvStoryText.setText(Ghana);
@@ -1396,14 +1358,13 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //........DOLLARS PATH...................
-    private void dollars()
-    {
 
-        String Hawaii = """
-      What's your next step?
-      Pick a scenario:)
-      """;
+    //........DOLLARS PATH...................
+    private void dollars() {
+
+        String Hawaii = "What's your next step?" +
+                "\nPick a scenario:)";
+
         tvStoryText.setText(Hawaii);
 
         String btn1Text = "1.She choked on her drink when she read that and asked you if she can come over to cuddle and comfort you.";
@@ -1440,11 +1401,11 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
-    //..........BROKE PATH....................
-    private void broke()
-    {
 
-        String Indiana ="She decided to come over to your house, She cuddled with you and once you went to the bathroom to poop, she immediately took one of each pair of footwear you own and ditched you. Now you have only one piece of footwear with the other ones forever missing. Obviously rotting in a nursing home because you’re pathetic. ";
+    //..........BROKE PATH....................
+    private void broke() {
+
+        String Indiana = "She decided to come over to your house, She cuddled with you and once you went to the bathroom to poop, she immediately took one of each pair of footwear you own and ditched you. Now you have only one piece of footwear with the other ones forever missing. Obviously rotting in a nursing home because you’re pathetic. ";
         tvStoryText.setText(Indiana);
 
         setAllBtnsVisible();
@@ -1462,13 +1423,12 @@ public class GameManaloYzabela extends GameActivity
 
 
     }
-    //...........GIVE SSN PATH................
-    private void giveSNN()
-    {
 
-        String Jakarta ="""
-      She signed you up for military, Congratulations you are a soldier now.
-       """;
+    //...........GIVE SSN PATH................
+    private void giveSNN() {
+
+        String Jakarta = "She signed you up for military, Congratulations you are a soldier now.";
+
         tvStoryText.setText(Jakarta);
 
         String btn1Text = " 1.Go to war,sacrifice your pathetic life for US and A.";
@@ -1493,15 +1453,13 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //..........YES WAR PATH..................
-    private void yesWar()
-    {
+    private void yesWar() {
 
-        String Korea = """
-      You came back from the war and she admired how brave you were. She instantly married you and had 3 kids with her. You are living your best life and is obviously happy to not be rotting in a nursing home like you imagined.
+        String Korea = "You came back from the war and she admired how brave you were. She instantly married you and had 3 kids with her. You are living your best life and is obviously happy to not be rotting in a nursing home like you imagined." +
+                "\nPress \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)";
 
-      Press \"Enter\" to play again (definitely try to see other outcomes,It's obviously great)
-      """;
         tvStoryText.setText(Korea);
 
         setAllBtnsVisible();
@@ -1518,10 +1476,10 @@ public class GameManaloYzabela extends GameActivity
         });
 
     }
+
     //..........DO NOT WAR PATH....................
-    private void doNotWar()
-    {
-        String London ="You ended up not going to war because you love your parents, your siblings, your siblings’ spouses,your siblings’ in-laws and your neighbor’s cat. You are convinced they want you in their lives so therefore you chose to live longer but as you were crossing the streets, your neighbor’s cat tripped you over and you got ran over by a truck.Obviously not rotting in a nursing home because you’re six feet underground and your siblings’ in-laws does not love you.";
+    private void doNotWar() {
+        String London = "You ended up not going to war because you love your parents, your siblings, your siblings’ spouses,your siblings’ in-laws and your neighbor’s cat. You are convinced they want you in their lives so therefore you chose to live longer but as you were crossing the streets, your neighbor’s cat tripped you over and you got ran over by a truck.Obviously not rotting in a nursing home because you’re six feet underground and your siblings’ in-laws does not love you.";
         tvStoryText.setText(London);
 
         setAllBtnsVisible();
@@ -1537,12 +1495,11 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //...........SEND PICS PATH..............
-    private void sendPics()
-    {
-        String Manila = """
-        She got pissed and asked for your Social Security Number.
-        """;
+    private void sendPics() {
+        String Manila = "She got pissed and asked for your Social Security Number.";
+
         tvStoryText.setText(Manila);
 
         String btn1Text = "1.Give her your Social Security Number.";
@@ -1567,9 +1524,9 @@ public class GameManaloYzabela extends GameActivity
             }
         });
     }
+
     //...........NOT GIVE SSN PATH............
-    private void notGiveSSN()
-    {
+    private void notGiveSSN() {
         String Nevada = "She responded with “If you really love me you would give me your Social Security Number”.Therefore she broke into your house and took apart all of your Lego sets and donated them to very sad children with no more parents.Obviously rotting in a nursing home.";
         tvStoryText.setText(Nevada);
 
@@ -1591,8 +1548,7 @@ public class GameManaloYzabela extends GameActivity
     ///////////////////////////////////////////////////
     ///////////////////////////////////////////////////
 
-    private void youSuck()
-    {
+    private void youSuck() {
         numLives--;
 
         tvStoryText.setText("You have " + numLives + " left,Do you want to play again for the sake of finding a fitting relationship to end your pathetic and lonely life?");
@@ -1606,12 +1562,9 @@ public class GameManaloYzabela extends GameActivity
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(numLives > 0)
-                {
+                if (numLives > 0) {
                     start();
-                }
-                else
-                {
+                } else {
                     tvStoryText.setText("GAME OVER:( You are probably dead or rotting in a nursing home, doesn't matter, We are all gonna end up dead anyways.");
                     btn1.setText("Continue");
                     btn2.setVisibility(View.INVISIBLE);
@@ -1632,7 +1585,5 @@ public class GameManaloYzabela extends GameActivity
                 startActivity(new Intent(GameManaloYzabela.this, MainActivity.class));
             }
         });
-
-
-
+    }
 }
