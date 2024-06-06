@@ -31,11 +31,11 @@ public class GameBautistaCarolina extends GameActivity
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
         btn3 = findViewById(R.id.btn_3);
-        btn4.setVisibility(View.INVISIBLE);
+        btn4 = findViewById(R.id.btn_4);
 
 
         tvTitle.setText("DAILY LIFE CHORES");
-        tvSubtitle.setText("HOUSE Edition");
+        tvSubtitle.setText("HOUSE EDITION");
 
         numLives = 4;
         start();
@@ -101,8 +101,8 @@ public class GameBautistaCarolina extends GameActivity
         tvStoryText.setText("You picked to clean the restroom and it is really dirty, but you need to clean it so you can do your hygiene!");
 
         setAllBtnsVisible();
-        btn1.setText("cleanTub");
-        btn2.setText("cleanToilet");
+        btn1.setText("Clean tub");
+        btn2.setText("Clean toilet");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -130,8 +130,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_cleaningthetub);
 
         setAllBtnsVisible();
-        btn1.setText("usebleach");
-        btn2.setText("usefabuloso");
+        btn1.setText("Use bleach");
+        btn2.setText("Use fabuloso");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -156,8 +156,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_cleanthetoilet);
 
         setAllBtnsVisible();
-        btn1.setText("useHands");
-        btn2.setText("useGloves");
+        btn1.setText("Use hands");
+        btn2.setText("Use gloves");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -224,8 +224,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_usegloves);
 
         setAllBtnsVisible();
-        btn1.setText("newGloves");
-        btn2.setText("dirtyGloves");
+        btn1.setText("New gloves");
+        btn2.setText("Dirty gloves");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -316,8 +316,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_cookdinner);
 
         setAllBtnsVisible();
-        btn1.setText("makeSushi");
-        btn2.setText("cookChicken");
+        btn1.setText("Make sushi");
+        btn2.setText("Cook chicken");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -342,8 +342,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_makesushi);
 
         setAllBtnsVisible();
-        btn1.setText("useVeggies");
-        btn2.setText("useSalmon");
+        btn1.setText("Use veggies");
+        btn2.setText("Use salmon");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -389,8 +389,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_usesalmon);
 
         setAllBtnsVisible();
-        btn1.setText("SalmonRaw");
-        btn2.setText("cookSalmon");
+        btn1.setText("Salmon raw");
+        btn2.setText("Cook salmon");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -456,8 +456,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_cookchicken);
 
         setAllBtnsVisible();
-        btn1.setText("chickenPlain");
-        btn2.setText("seasonChicken");
+        btn1.setText("Chicken plain");
+        btn2.setText("Season chicken");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -504,8 +504,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_seasonchicken);
 
         setAllBtnsVisible();
-        btn1.setText("cookChickenFully");
-        btn2.setText("cookChickenHalf");
+        btn1.setText("Cook chicken fully");
+        btn2.setText("Cook chicken half");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -574,8 +574,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_cleanlivingroom);
 
         setAllBtnsVisible();
-        btn1.setText("cleanDrawer");
-        btn2.setText("cleanFloor");
+        btn1.setText("Clean drawer");
+        btn2.setText("Clean floor");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -601,8 +601,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_cleandrawer);
 
         setAllBtnsVisible();
-        btn1.setText("cleanDrawerHowever");
-        btn2.setText("emptyDrawer");
+        btn1.setText("Clean drawer however");
+        btn2.setText("Empty drawer");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -615,8 +615,7 @@ public class GameBautistaCarolina extends GameActivity
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                emptyDrawer();
+            public void onClick(View v) {emptyDrawer();
             }
         });
     }
@@ -649,8 +648,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_empty_drawer);
 
         setAllBtnsVisible();
-        btn1.setText("cleanDrawerCompletly");
-        btn2.setText("cleanDrawerHalfWay");
+        btn1.setText("Clean drawer completly");
+        btn2.setText("Clean drawer half way");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -718,8 +717,8 @@ public class GameBautistaCarolina extends GameActivity
         ivStory.setImageResource(R.drawable.im_bautistacarolina_cleanfloor);
 
         setAllBtnsVisible();
-        btn1.setText("pick up some trash");
-        btn2.setText("pick up everything");
+        btn1.setText("Pick up some trash");
+        btn2.setText("Pick up everything");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -811,12 +810,12 @@ public class GameBautistaCarolina extends GameActivity
             tvStoryText.setText("Chore life is over. Permenant Game over.");
             btn1.setText("Back to Home entrance");
 
-            //ivStory.setImageResource(R.drawable.im_dailylifechores_over);
+            ivStory.setImageResource(R.drawable.im_bautistacarolina_over);
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   // startActivity(new Intent(dailylifechores.this, MainActivity.class));
+                   startActivity(new Intent(GameBautistaCarolina.this, MainActivity.class));
                 }
             });
         }
