@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -47,13 +48,13 @@ public class GamePokJordan extends GameActivity {
         numLives = 5;
         //create a scanner object for user input
         //display project title and description
-        tvSubtitle.setText("Protecting the container ");
-        tvStoryText.setText("There are terrorist coming to your lab to come taking your cure for cancer trying to destroy it. They kill and destory all of the other labs looking for it. They then kill all the lights and it goes quiet inside the building and your the last one alive with the terrorist.");
 
         start();
     }
 
     private void start() {
+        tvSubtitle.setText("Protecting the container ");
+        tvStoryText.setText("There are terrorist coming to your lab to come taking your cure for cancer trying to destroy it. They kill and destory all of the other labs looking for it. They then kill all the lights and it goes quiet inside the building and your the last one alive with the terrorist.");
 
         ivStory.setImageResource(R.drawable.im_pokjordan_raid);
         tvTitle.setText("Protect the cure.");
@@ -587,7 +588,25 @@ public class GamePokJordan extends GameActivity {
             //if you still have lives, return to start()
             tvStoryText.setText("You died.");
             tvSubtitle.setText("Try again");
-            start();
+
+            setAllBtnVisible();
+            btn1.setText("Try again");
+            btn2.setText("Back to menu");
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    start();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(GamePokJordan.this, MainActivity.class));
+                }
+            });
         }
         else
         {
@@ -598,7 +617,14 @@ public class GamePokJordan extends GameActivity {
             btn2.setVisibility(View.INVISIBLE);
             btn3.setVisibility(View.INVISIBLE);
 
-            btn1.setText("");
+            btn1.setText("Back to menu");
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(GamePokJordan.this, MainActivity.class));
+                }
+            });
         }
     }
 }
