@@ -108,7 +108,15 @@ public class GameNuonVunly extends GameActivity {
             public void onClick(View v) {
                 player.addMoney(1000.00);
                 tvStoryText.setText("You get $1,000 from your uncle, Now you have $" + player.getMoney());
-                gamingTime();
+
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        gamingTime();
+                    }
+                });
+
 
             }
         });
@@ -118,7 +126,14 @@ public class GameNuonVunly extends GameActivity {
             public void onClick(View v) {
                 player.getGift();
                 tvStoryText.setText("You get $1,000 from your uncle, Now you have $" + player.getMoney());
-                gamingTime();
+
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        gamingTime();
+                    }
+                });
 
             }
         });
@@ -127,28 +142,17 @@ public class GameNuonVunly extends GameActivity {
 
 
     private void gamingTime() {
-        tvStoryText.setText("After that, you hop on a new game...similar to detroit become human.");
-        tvStoryText.setText("However! AS soon as you open it, Your Monitor START FLASHIN-----");
-        final int ROWS = 10;
-        final int COLS = 40;
-        for (int row = 0; row < ROWS; row++) {
-            for (int col = 0; col < COLS; col++) {
-                System.out.print(TextColor.WHITE_BACKGROUND + " ");
-            }
+        tvStoryText.setText("After that, you hop on a new game...similar to detroit become human. \nHowever! AS soon as you open it, Your Monitor START FLASHIN-----");
 
-        }
-        tvStoryText.setText(TextColor.WHITE_BACKGROUND + image());
-        tvStoryText.setText(TextColor.RESET);
-        tvStoryText.setText(TextColor.RED_BOLD + image1());
         glichingMetrex();
     }
 
 
     private void glichingMetrex() {
-        tvStoryText.setText(TextColor.RESET);
-        tvStoryText.setText("You now have " + numLives + " lives left");
-        tvStoryText.setText("This is the moment when you realizing that your're now stuck in a game. when you respawn back, you see right in front of you two paths:");
 
+        tvStoryText.setText("You now have " + numLives + " lives left \nThis is the moment when you realizing that your're now stuck in a game. when you respawn back, you see right in front of you two paths:");
+
+        setAllBtnsVisible();
         btn1.setText("left");
         btn2.setText("right");
         btn3.setVisibility(View.INVISIBLE);
@@ -175,6 +179,7 @@ public class GameNuonVunly extends GameActivity {
     private void right() {
         tvStoryText.setText("As soon as you turn right, You see 3 three path:");
 
+        setAllBtnsVisible();
         btn1.setText("A small alleyway to your left");
         btn2.setText("A road infront of you with sign saying \"DO NOT ENTER\"");
         btn3.setText("a road to the right");
@@ -205,10 +210,9 @@ public class GameNuonVunly extends GameActivity {
 
     private void itemDrop() {
 
-        tvStoryText.setText("*DING* you recieved:");
-        tvStoryText.setText("+1 Dessert Engle, +2 magazine (30 ammos)");
-        tvStoryText.setText("As soon as you pick up the items, The monster is about 30 feet away and going to charge on you");
+        tvStoryText.setText("*DING* you recieved: \n+1 Dessert Engle, +2 magazine (30 ammos) \nAs soon as you pick up the items, The monster is about 30 feet away and going to charge on you");
 
+        setAllBtnsVisible();
         btn1.setText("Are you gonna shoot it");
         btn2.setText("continue to run");
         btn3.setVisibility(View.INVISIBLE);
@@ -232,9 +236,9 @@ public class GameNuonVunly extends GameActivity {
 
     private void continueToShoot() {
 
-        tvStoryText.setText("*BANG* *BANG* *BANG* *BANG*.....");
-        tvStoryText.setText("You shot the \"Monster\" until you ran out of the 1st magazine. but It's seem to work because it has that thing SCREAMING screaming. While it stay still and screaming and bleeding, what would you dodnext?");
+        tvStoryText.setText("*BANG* *BANG* *BANG* *BANG*..... \nYou shot the \"Monster\" until you ran out of the 1st magazine. but It's seem to work because it has that thing SCREAMING screaming. While it stay still and screaming and bleeding, what would you do next?");
 
+        setAllBtnsVisible();
         btn1.setText("shoot again");
         btn2.setText("runaway");
         btn3.setVisibility(View.INVISIBLE);
@@ -243,7 +247,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("*you continue to shoot it* Little did you know...The monster slowly stand up and walk toward you...all its blood start to faint out. With just a blink of an eye, it jump to you...");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
+
             }
         });
 
@@ -265,9 +276,9 @@ public class GameNuonVunly extends GameActivity {
     private void runAway()
     {
 
-        tvStoryText.setText("You decided not to shoot it because you thought that you might miss it");
-        tvStoryText.setText("After you took about 4 steps, you see a left turn next to you. What would you do?");
+        tvStoryText.setText("You decided not to shoot it because you thought that you might miss it \nAfter you took about 4 steps, you see a left turn next to you. What would you do?");
 
+        setAllBtnsVisible();
         btn1.setText("turn left");
         btn2.setText("continue straight");
         btn3.setVisibility(View.INVISIBLE);
@@ -276,14 +287,22 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("The moment you turn, You see a light shine upward coming from a \"place\". fortunately, The monster is still stationary, allowing to get to there. It's a shop");
-                if (player.showGift())
-                {
-                    lightSaberAndShip();
-                }
-                else
-                {
-                    store();
-                }
+
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (player.showGift())
+                        {
+                            lightSaberAndShip();
+                        }
+                        else
+                        {
+                            store();
+                        }
+                    }
+                });
+
             }
         });
 
@@ -291,7 +310,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You decided to continue forward, but it's seem like you have been running on a straight line forever. About 2 minute later, see somthing...behind you...and it's approaching you fast. *As It get closer and closer you realized* It's the monster. In a flash, It already catch up to you and then... ");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
+
             }
         });
 
@@ -304,6 +330,8 @@ public class GameNuonVunly extends GameActivity {
     private void lightSaberAndShip()
     {
         tvStoryText.setText("\" You got a starter pack. a light saber and a spaceship. but you can only choose one of these. SO? \"");
+
+        setAllBtnsVisible();
         btn1.setText("Light Saber");
         btn2.setText("SpaceShip");
         btn3.setVisibility(View.INVISIBLE);
@@ -325,20 +353,15 @@ public class GameNuonVunly extends GameActivity {
 
     private void gotTelepot()
     {
-        tvStoryText.setText(" Thought a spaceship going to spawn?");
-        tvStoryText.setText("A light coming from above and shine dirctly at you. and the closer you look, You realized a ship coming down and abducting you");
-        tvStoryText.setText("*CONGRATULATION YOU WIN* The moment you open your eye again, you'll forget everything.");
+        tvStoryText.setText(" Thought a spaceship going to spawn? \nA light coming from above and shine dirctly at you. and the closer you look, You realized a ship coming down and abducting you \n*CONGRATULATION YOU WIN* The moment you open your eye again, you'll forget everything.");
+
+        run();
     }
 
 
     private void bossFight()
     {
-        tvStoryText.setText(" *+1 light saber*    *change scene to arena* *telepot Jeff*");
-        tvStoryText.setText("Jeff, the Monster appear to have human-like body with superhuman-strength. Its right arm is long and big hand, similar to the normal devil arm usually see in game, skinny and flesh skin, and small left arm");
-        tvStoryText.setText("FIGHT");
-        tvStoryText.setText("Immediately, Jeff approach at you in fast pace and about to swing right ");
-        tvStoryText.setText("1. block \n2. dodge");
-
+        String text = ("*+1 light saber*   *change scene to arena* *telepot Jeff* \n Jeff, the Monster appear to have human-like body with superhuman-strength. Its right arm is long and big hand, similar to the normal devil arm usually see in game, skinny and flesh skin, and small left arm \nFIGHT\n Immediately, Jeff approach at you in fast pace and about to swing right \n1. block \n2. dodge ");
 
         btn1.setText("block");
         btn2.setText("dodge");
@@ -393,6 +416,7 @@ public class GameNuonVunly extends GameActivity {
         tvStoryText.setText("You stabbed it in the stomach, lashing out a loud scream. \n*see the opportunity to hit it again...* \n1. pull out and slash it \n2. dodge back");
 
 
+        setAllBtnsVisible();
         btn1.setText("pull out and slash it");
         btn2.setText("dodge back");
         btn3.setVisibility(View.INVISIBLE);
@@ -401,7 +425,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("As you about to slashing it, Jeff's right hand was able to move then proceed to grab your head and crush it ");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -421,6 +451,7 @@ public class GameNuonVunly extends GameActivity {
     {
         tvStoryText.setText("*Take steps back to give more space* not even a second later, Jeff rushing at you about swing right again, but this time slower and seem weaker than last time....however it still fast.");
 
+        setAllBtnsVisible();
         btn1.setText("try to block...");
         btn2.setText("dodge again...");
         btn3.setText("rush at him and try to slashing its stomach");
@@ -429,7 +460,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You were able to block the attack, but its superstrength enable it to left kick you at the stomach and start comboing you.");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -444,7 +481,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -455,6 +498,7 @@ public class GameNuonVunly extends GameActivity {
     private void dodgeAgain()
     {
         System.out.println("\nYou dodge and try to do like time, but this time your aim for the neck. At the same time, Jeff's left hand was about to swing. \n1. risk it \n2. dodge \n3. change aim to the left hand");
+        setAllBtnsVisible();
         btn1.setText("Risk it");
         btn2.setText("Dodge");
         btn3.setText("change aim to its left hand");
@@ -462,9 +506,14 @@ public class GameNuonVunly extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvStoryText.setText("It's a battle of time. But You Won...You piered him in a throat and kill it.");
-                tvStoryText.setText("Congratulation YOU WIN");
-                run();
+                tvStoryText.setText("It's a battle of time. But You Won...You piered him in a throat and kill it. \nCongratulation YOU WIN");
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        run();
+                    }
+                });
             }
         });
 
@@ -472,7 +521,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("\nYou dodged right but Jeff swing around, back slapping you and...");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -480,7 +535,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -493,6 +554,7 @@ public class GameNuonVunly extends GameActivity {
     private void store()
     {
          tvStoryText.setText("You 3 options:");
+        setAllBtnsVisible();
         btn1.setText("speed potions ($1050)");
         btn2.setText("ak-47 ($600)");
         btn3.setText("mystery box ($900)");
@@ -525,6 +587,7 @@ public class GameNuonVunly extends GameActivity {
     {
         tvStoryText.setText("The potion give you insane speed and immortality for 1:30min. skipping most of the obstacle. *TIME SKIP TO WHERE THE AFFECT STOP* You stop and face three paths.");
 
+        setAllBtnsVisible();
         btn1.setText("Left Path");
         btn2.setText("Straight Path");
         btn3.setText("The in Between Path");
@@ -558,27 +621,44 @@ public class GameNuonVunly extends GameActivity {
 
     private void leftPath()
     {
-        tvStoryText.setText("You see a portal and run into it.");
-        tvStoryText.setText("\"CONGRATULATION YOU WIN\"");
-        tvStoryText.setText("You wake up in your bed and don't remeber anything");
-        run();
+        tvStoryText.setText("You see a portal and run into it. \n\"CONGRATULATION YOU WIN\" \nYou wake up in your bed and don't remeber anything");
+        btn1.setText("continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                run();
+            }
+        });
+
 
 
     }
 
     private void straightPath()
     {
-        tvStoryText.setText("\nAs you continue to run straight, A message pop up");
-        tvStoryText.setText("\"Opp!!! The games haven’t yet so this is a bug\" \nWe going to send you back to nearly the start");
-        right();
+        tvStoryText.setText("\nAs you continue to run straight, A message pop up \n \"Opp!!! The games haven’t yet so this is a bug\" \nWe going to send you back to nearly the start");
+        btn1.setText("continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                right();
+            }
+        });
+
 
     }
 
     private void inBetween()
     {
-        tvStoryText.setText("As you continue to run, There is a deadend and a door infront...");
-        tvStoryText.setText("As you approach to the door, It need password to open. (This is a dlc path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
-        defeatGame();
+
+        tvStoryText.setText("As you continue to run, There is a deadend and a door infront... \nAs you approach to the door, It need password to open. (This is a dlc path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
+        btn1.setText("continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeatGame();
+            }
+        });
     }
 
 
@@ -590,7 +670,13 @@ public class GameNuonVunly extends GameActivity {
     private void ak_47()
     {
         tvStoryText.setText("+1 Gun, +5 Mag \nYou shoot the monster finished 1st Mag. However, AS you try to shoot try to it, The monster's regeneration power getting more stronger and stronger, to the point of bullet become useless...");
-        defeatGame();
+        btn1.setText("continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeatGame();
+            }
+        });
     }
 
 
@@ -616,6 +702,7 @@ public class GameNuonVunly extends GameActivity {
     {
         System.out.println("wow...one single grenade...\n1. end yourself \n2. throw to the monster");
 
+        setAllBtnsVisible();
         btn1.setText("end yourself");
         btn2.setText("throw to the monster");
         btn3.setVisibility(View.INVISIBLE);
@@ -624,7 +711,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You open the trigger and rush to the monster....");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -632,7 +725,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You throw it to the monster....It dodged.....");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -647,8 +746,8 @@ public class GameNuonVunly extends GameActivity {
     private void continueToRun()
     {
 
-        tvStoryText.setText("You decided not to shoot it because you thought that you might miss it");
-        tvStoryText.setText("After you took about 4 steps, you see a left turn next to you. What would you do? \n1. turn left \n2. continue straight");
+        tvStoryText.setText("You decided not to shoot it because you thought that you might miss it \nAfter you took about 4 steps, you see a left turn next to you. What would you do? \n1. turn left \n2. continue straight");
+        setAllBtnsVisible();
         btn1.setText("turn left");
         btn2.setText("continue straight");
         btn3.setVisibility(View.INVISIBLE);
@@ -657,7 +756,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("The moment you turn, You see a light shine upward coming from a \"place\". unfortunately, you're too slow and the \"thing\" catch up to you....");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -665,7 +770,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You decided to continue forward, but what you don't realized is how fast the \"monster\" is. In a flash, It already catch up to you and then...");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -680,17 +791,29 @@ public class GameNuonVunly extends GameActivity {
 
     private void jumpOverFence()
     {
-        System.out.println();
+
         int chances = (int) (Math.random() * 5) + 1;
         if (chances == 1 || chances == 2 || chances == 4 || chances == 5)
         {
             tvStoryText.setText("A sign placed there for a reason.... You then proceed to fall off a climb");
-            defeatGame();
+            btn1.setText("continue");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeatGame();
+                }
+            });
         }
         else
         {
             tvStoryText.setText("WOW, NO WAY!! You actually so lucky. Congrat, You won");
-            run();
+            btn1.setText("continue");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    run();
+                }
+            });
         }
     }
 
@@ -700,9 +823,14 @@ public class GameNuonVunly extends GameActivity {
     private void rightToDead()
     {
 
-        tvStoryText.setText("\"You're at the starting line\"");
-        tvStoryText.setText("Turn out there a barrier at a starting line, unfortunate...");
-        defeatGame();
+        tvStoryText.setText("\"You're at the starting line\" \nTurn out there a barrier at a starting line, unfortunate...");
+        btn1.setText("continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeatGame();
+            }
+        });
 
     }
 
@@ -712,6 +840,7 @@ public class GameNuonVunly extends GameActivity {
     private void left()
     {
         System.out.println("You took left and then see a split way again, Which way you going? ");
+        setAllBtnsVisible();
         btn1.setText("Left");
         btn2.setText("Right");
         btn3.setVisibility(View.INVISIBLE);
@@ -720,8 +849,13 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You're at a starting line");
-                tvStoryText.setText(image());
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
             }
         });
 
@@ -739,6 +873,7 @@ public class GameNuonVunly extends GameActivity {
     private void firstObstacle()
     {
         tvStoryText.setText("\nAs soon as you turned, You see: \n1. A fence that you might able to jump over \n2. A wall with broken bottom part");
+        setAllBtnsVisible();
         btn1.setText("A fence that you might able to jump over");
         btn2.setText("A wall with broken bottom part");
         btn3.setVisibility(View.INVISIBLE);
@@ -754,7 +889,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText(" wall is too close to slide in and too small to roll over. which allow the monster to catch up");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
+
             }
         });
 
@@ -764,6 +906,7 @@ public class GameNuonVunly extends GameActivity {
     private void secondObstacle()
     {
         System.out.println("\nAfter jump across, the road getting smaller, barely fit two person. and there is a do-- \n *quick time event*");
+        setAllBtnsVisible();
         btn1.setText("dropping planks on your right to block way...");
         btn2.setText("grab a crowbar and throw at the monster... ");
         btn3.setVisibility(View.INVISIBLE);
@@ -772,7 +915,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You dropped all the planks down and not realized they connect to a big rock above. dropping the plank meaning that a big rock also fall down and it fail on the monster, knocking it out for a moment ");
-                door();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        door();
+                    }
+                });
+
             }
         });
 
@@ -780,7 +930,15 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("When you threw that crowber, It hit its throat which is a jekpot (because it's the monster's weak point), knocking the monster out for a mmonet");
-                door();
+
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        door();
+                    }
+                });
+
             }
         });
 
@@ -789,6 +947,7 @@ public class GameNuonVunly extends GameActivity {
     private void door()
     {
         System.out.print("\nThis giving you time to rush to the door. beside you there: \n1. A key \n2. An axe");
+        setAllBtnsVisible();
         btn1.setText("A key");
         btn2.setText("An axe");
         btn3.setVisibility(View.INVISIBLE);
@@ -811,17 +970,30 @@ public class GameNuonVunly extends GameActivity {
 
     private void randomKey()
     {
-        System.out.println();
+
         int chances = (int) (Math.random() * 4) + 1;
         if (chances == 1 || chances == 2 || chances == 4 )
         {
             tvStoryText.setText("Oh oh! wrong key...");
-            defeatGame();
+            btn1.setText("continue");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeatGame();
+                }
+            });
         }
         else
         {
             tvStoryText.setText("*Door unlocked*");
-            triviaQuestions();
+            btn1.setText("continue");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    triviaQuestions();
+                }
+            });
+
         }
     }
 
@@ -830,6 +1002,7 @@ public class GameNuonVunly extends GameActivity {
     private void anAxe()
     {
         System.out.println("\nYou pick up the axe and immediately axing the door viciously. after 30second of cutting the door, The monster wake up. and you start panicking \n1. continue \n2. facing the monster");
+        setAllBtnsVisible();
         btn1.setText("continue");
         btn2.setText("facing the monster");
         btn3.setVisibility(View.INVISIBLE);
@@ -838,7 +1011,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("\nAnd then the door crack a huge hole. with no time less, You hurry and go through ");
-                triviaQuestions();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        triviaQuestions();
+                    }
+                });
+
             }
         });
 
@@ -846,7 +1026,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("You try charging toward the monster but he just launch to you and grab by the head first. and crushing it.");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
+
             }
         });
 
@@ -856,6 +1043,7 @@ public class GameNuonVunly extends GameActivity {
     private void triviaQuestions()
     {
         tvStoryText.setText("*TRIVIA TIME* TIME REMAIN STOP UNTIL YOU ANSWER THE QUESTION. \nWhat was the first Disney animated feature movie that was not based on an already existing story? ");
+        setAllBtnsVisible();
         btn1.setText("Lion King");
         btn2.setText("Cinderella");
         btn3.setText("Bambi");
@@ -864,7 +1052,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("Correct");
-                finalDestination();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finalDestination();
+                    }
+                });
+
             }
         });
 
@@ -872,7 +1067,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("WRONG");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
+
             }
         });
 
@@ -880,7 +1082,14 @@ public class GameNuonVunly extends GameActivity {
             @Override
             public void onClick(View v) {
                 tvStoryText.setText("Close but WRONG");
-                defeatGame();
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
+
             }
         });
 
@@ -889,6 +1098,7 @@ public class GameNuonVunly extends GameActivity {
     private void finalDestination()
     {
         tvStoryText.setText("After answer the question and go to the door, you see see two path. \n1. right lane \n2. diagonal line to the right");
+        setAllBtnsVisible();
         btn1.setText("right lane");
         btn2.setText("diagonal line to the right");
         btn3.setVisibility(View.INVISIBLE);
@@ -896,19 +1106,31 @@ public class GameNuonVunly extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvStoryText.setText("As you continue to run, There is a deadend and a door infront...");
-                tvStoryText.setText("As you approach to the door, It need password to open. (This is a DLC path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
-                defeatGame();
+                tvStoryText.setText("As you continue to run, There is a deadend and a door infront...\nAs you approach to the door, It need password to open. (This is a DLC path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
+
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeatGame();
+                    }
+                });
+
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvStoryText.setText("You see a portal and run into it.");
-                tvStoryText.setText("\"CONGRATULATION YOU WIN\"");
-                tvStoryText.setText("You wake up in your bed and don't remeber anything");
-                run();
+                tvStoryText.setText("You see a portal and run into it. \n\"CONGRATULATION YOU WIN\" \nYou wake up in your bed and don't remeber anything ");
+                btn1.setText("continue");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        run();
+                    }
+                });
+
             }
         });
 
@@ -953,13 +1175,20 @@ public class GameNuonVunly extends GameActivity {
         if (numLives > 0)
         {
             //if you still have lives, return to start()
-            System.out.println(TextColor.RED_BOLD + "YOU DIE");
-            glichingMetrex();
+            tvStoryText.setText(TextColor.RED_BOLD + "YOU DIE");
+            btn1.setText("continue");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    glichingMetrex();
+                }
+            });
+
 
         }
         else
         {
-            System.out.println(TextColor.RED_BACKGROUND_BRIGHT + "GAME OVER");
+            tvStoryText.setText(TextColor.RED_BACKGROUND_BRIGHT + "GAME OVER");
         }
 
     }
