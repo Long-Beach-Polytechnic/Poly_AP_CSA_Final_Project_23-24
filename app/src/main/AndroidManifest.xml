@@ -22,10 +22,10 @@
             </intent-filter>
         </activity>
         <activity android:name="GameActivity" />
-        <activity android:name="com.poly.polyapcsafinalproject23_24.GameLaborDayAdventure" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.MainActivity" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameHotDogEatingContest" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameLeangThong" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameBinghamDaniel" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameRoyVidal" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameOntiverosMichael" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameCashawCharles" />
