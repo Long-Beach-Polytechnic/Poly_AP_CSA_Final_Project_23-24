@@ -67,6 +67,8 @@ public class GameLaborDayAdventure extends GameActivity {
                 goToBeach();
             }
         });
+
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
