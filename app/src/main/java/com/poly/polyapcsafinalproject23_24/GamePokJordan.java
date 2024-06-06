@@ -61,6 +61,7 @@ public class GamePokJordan extends GameActivity {
         tvSubtitle.setText("Terrorist are raiding your building. Who do you want to play as?");
         tvStoryText.setText("1. Castle\n2. Frost\n3. Caveria");
 
+        setAllBtnVisible();
         btn1.setText("Castle");
         btn2.setText("Frost");
         btn3.setText("Caveria");
@@ -143,6 +144,7 @@ public class GamePokJordan extends GameActivity {
 
     private void barricadeEntrances()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_entrances);
         tvStoryText.setText("You barricaded off all of the entrances and hear them walking down the halls. What do you do?");
         tvSubtitle.setText("Choose wisely");
 
@@ -168,6 +170,7 @@ public class GamePokJordan extends GameActivity {
 
     private void saferRoom()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_hiding);
         tvStoryText.setText("You are now in a safer room what is your next move?");
         tvSubtitle.setText("Ask for help or escape");
 
@@ -195,12 +198,49 @@ public class GamePokJordan extends GameActivity {
 
     private void levels()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_levels);
         tvStoryText.setText("You went out of the room and left it alone to go search for terrorist. Do you want to go upstairs or downstairs?");
         tvSubtitle.setText("Be careful with your choices");
 
         btn1.setText("Upstairs");
         btn2.setText("Downstairs");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvStoryText.setText("You tripped using the stairs and the terrorist heard you. You died from falling not from the terrorist.");
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvStoryText.setText("You tripped using the stairs and the terrorist heard you. You died from falling not from the terrorist.");
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
+            }
+        });
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,6 +261,7 @@ public class GamePokJordan extends GameActivity {
 
     private void frost()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_frost);
         tvStoryText.setText("Your playing as frost you have bear traps that you can place down to kill the terrorist slowly. Do you want to use the bear traps as bait or Place them around.");
         tvSubtitle.setText("Chose your strategy");
 
@@ -238,14 +279,25 @@ public class GamePokJordan extends GameActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvStoryText.setText("You tripped using the stairs and the terrorist heard you. You died from falling not from the terrorist.");
-                defeat();
+                tvStoryText.setText("You died from placing them so horribly you forgot wher they were.");
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
     }
 
     private void placed()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_placed);
         tvStoryText.setText("You placed down your bear traps thinking you will injure one with a bear trap. Do you place them and try to kill one with the trap or do you place them cleverly near the cure.");
         tvSubtitle.setText("You or the cure");
 
@@ -264,13 +316,23 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("You did what you wanted and placed them cleverly but didn't think they would look down see a huge bear trap. The traps did nothing and you died to your own trap.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
     }
 
-    private void kill()
-    {
+    private void kill() {
+        ivStory.setImageResource(R.drawable.im_pokjordan_kill);
         tvStoryText.setText("Congrats you got all of your traps down now do you finish off the terrorist when you hear the trap go off or do you let it do its thing.");
         tvSubtitle.setText("Well done");
 
@@ -282,7 +344,17 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("You got one of the terrorist congrats! You turn around the corner to finish off your kill and die. What made you think there was only going to be one terrorist?");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
 
@@ -290,13 +362,23 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("You decide to let the traps do it's own thing and it did absolutely nothing. You get lost in the dark and get scared and start running. You slipped on a banana because you didn't want to throw away your trash. You died from the banana.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
     }
 
-    private void bait()
-    {
+    private void bait() {
+        ivStory.setImageResource(R.drawable.im_pokjordan_bait);
         tvStoryText.setText("You placed the bear traps down and used them as bait and only have two options left. Do you shoot when you hear noise or do you sit behind a desk.");
         tvSubtitle.setText("Fear");
 
@@ -308,7 +390,17 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("You shot when you heard noise and they're behind you. You got shot from behind and died.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
 
@@ -316,13 +408,23 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("You went to go hide behind a desk and got shot because they saw your feet. You died.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
     }
 
-    private void caveria()
-    {
+    private void caveria() {
+        ivStory.setImageResource(R.drawable.im_pokjordan_caveria);
         tvStoryText.setText("Your playing as caveria. You can move around quickly and silently. Do you choose to move around loudly or quietly.");
         tvSubtitle.setText("Your a ninja");
 
@@ -347,6 +449,7 @@ public class GamePokJordan extends GameActivity {
 
     private void loudly()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_loudly);
         tvStoryText.setText("Your moving around loudly completely dense of you but do you use your noise as distraction or use the sound to help you escape.");
         tvSubtitle.setText("Choose carefully");
 
@@ -358,7 +461,17 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("What made you think that using your noisy footsteps would be a good distraction. They can literally hear your exact movement. You died because you ran around the corner too fast getting shot.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
 
@@ -366,13 +479,24 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("Using your own loud footsteps to help you escape is a horrible idea and you proceeded to do it. You died running into a group of terrorist at the exit.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
     }
 
     private void quietly()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_quietly);
         tvStoryText.setText("Moving around quietly. Do you wish to take them out one by one or Find whos their leader.");
         tvSubtitle.setText("Don't hesitate");
 
@@ -398,6 +522,7 @@ public class GamePokJordan extends GameActivity {
 
     private void takeOut()
     {
+        ivStory.setImageResource(R.drawable.im_pokjordan_takeout);
         tvStoryText.setText("Your taking them out one by one with out a noise. Do you want to hide the bodies or interrogate them.");
         tvSubtitle.setText("Be careful");
 
@@ -437,15 +562,20 @@ public class GamePokJordan extends GameActivity {
         if (numLives > 0)
         {
             //if you still have lives, return to start()
+            tvStoryText.setText("You died.");
+            tvSubtitle.setText("Try again");
             start();
         }
         else
         {
+            ivStory.setImageResource(R.drawable.im_pokjordan_defeat);
             tvTitle.setText("GAME OVER");
             tvSubtitle.setText("DEFEAT");
-            btn1.setVisibility(View.INVISIBLE);
+            btn1.setVisibility(View.VISIBLE);
             btn2.setVisibility(View.INVISIBLE);
             btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setText("");
         }
     }
 }
