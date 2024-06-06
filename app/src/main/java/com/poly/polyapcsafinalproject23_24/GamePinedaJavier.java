@@ -92,7 +92,7 @@ public class GamePinedaJavier extends GameActivity {
 
     private void party()
     {
-        ivStory.setImageResource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_party);
 
         tvStoryText.setText("You have a party with your loved ones and decide you want to drink yuhhh. Who are you drinking with to celebrate your achievment?");
 
@@ -122,7 +122,7 @@ public class GamePinedaJavier extends GameActivity {
 
         tvStoryText.setText("You are drinking with the family and you get very sentimental and can't think straight :(");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_drinking);
 
         setAllBtnsVisible();
         btn1.setText("Give half your check to your mom");
@@ -151,7 +151,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = true;
         tvStoryText.setText("She was so proud and thankful that she brought Lionel Messi to the party!!!!!!  *GOAT ENDING* ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_lifeguard_shark);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_messi);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -172,7 +172,7 @@ public class GamePinedaJavier extends GameActivity {
 
         tvStoryText.setText("You mad him so happy that he brought Lionel Messi to the party yuhhhh!! *GOAT ENDING*");
 
-        ivStory.setImageResource(R.drawable.im_laborday_punch_shark);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_messi);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -192,7 +192,7 @@ public class GamePinedaJavier extends GameActivity {
 
         tvStoryText.setText("You decide to drink with your friends! But one of your friends drank a little TOO much and is now telling you to do some weird things.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_arrive_at_beach);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_drinking_friends);
 
         setAllBtnsVisible();
         btn1.setText("Fight brother");
@@ -221,7 +221,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = false;
         tvStoryText.setText("You start fighting your brother and the fight gets intense... until bro really smacked you with a glass bottle. *DEAD ENDING*");
 
-        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_died);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -243,7 +243,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = false;
         tvStoryText.setText(" You talk smack to your brother and bro just does a finshing move on you.    You got the Dead Ending");
 
-        ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_died);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -265,7 +265,7 @@ public class GamePinedaJavier extends GameActivity {
 
         tvStoryText.setText("You decide to train hard to make it to the top.. I like it.  You go to the training grounds and see your brother and a team member. Who do you train with?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_train);
 
         setAllBtnsVisible();
         btn1.setText(" Train with Brother");
@@ -294,7 +294,7 @@ public class GamePinedaJavier extends GameActivity {
 
         tvStoryText.setText("You decided to train with a team member, great choice. While you were training with him, YOU get offers from international teams!! ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_train_with_teammate);
 
         setAllBtnsVisible();
         btn1.setText("Argentina");
@@ -331,7 +331,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = false;
         tvStoryText.setText("You took the Argentina offer *GREAT YOU PLAYED WITH LIONEL MESSI* but only twice. You were basiaclly benched your whole career and only won the Copa America   *GOOD ENDING* ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_rain);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_argentina);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -353,7 +353,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = false;
         tvStoryText.setText("You got signed but never in your career did you play a game. They even won the world cup without you :(  *WASTED PONTENTIAL ENDING* .");
 
-        ivStory.setImageResource(R.drawable.im_laborday_baby_lose_game);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_france);
 
 
         setAllBtnsVisible();
@@ -376,7 +376,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = false;
         tvStoryText.setText("You joined Mexico and you made history by carrying Mexico to the World Cup final and WINNING! You also win countless other trophies   *GREAT ENDING* ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_rain);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_mexico);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -397,7 +397,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = false;
         tvStoryText.setText("So basically..... your brother doesn't know how to play soccer and made you terrible. While he was quote on quote training you. There was scouts in the training grounds and just thought you were playing for fun  *GOOFY ENDING* ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_baby_lose_game);
+        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
 
 
         setAllBtnsVisible();
@@ -422,7 +422,7 @@ public class GamePinedaJavier extends GameActivity {
 
         tvStoryText.setText("You go to your instagram to show off. What do you do?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_iphone);
 
         setAllBtnsVisible();
         btn1.setText("show off your money");
@@ -448,7 +448,7 @@ public class GamePinedaJavier extends GameActivity {
 
         tvStoryText.setText("You show off your money and got instant popularity. Whats your next viral clip? *dont mess this up");
 
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_show_off);
 
         setAllBtnsVisible();
         btn1.setText("Throw a microwaved honeybun at a homeless");
@@ -477,7 +477,8 @@ public class GamePinedaJavier extends GameActivity {
         isWon = true;
         tvStoryText.setText("Damn you thought that was funny *it was* but people didn't like that!  *CANCELLED ENDING* ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_honey_bun
+        );
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -498,7 +499,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = true;
         tvStoryText.setText("People saw your amazing video and will always love you!  *POPULAR ENDING*");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_charity);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -519,7 +520,7 @@ public class GamePinedaJavier extends GameActivity {
 
         tvStoryText.setText("People saw your video and everyone now thinks you're the next messi! Now companies want to sponser you! What company do you choose?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_soccer_skills);
 
         setAllBtnsVisible();
         btn1.setText("Under Armour");
@@ -551,7 +552,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = true;
         tvStoryText.setText("No one likes under armour bruh. Now everyone thinks you weird lol. *FORGOTTEN ENDING*");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_sponser_under);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -573,7 +574,7 @@ public class GamePinedaJavier extends GameActivity {
         isWon = true;
         tvStoryText.setText("People loveee your new drip. Now everyone is going to buy nike thanks to you.  *POPULAR ENDING* ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_pinedajavier_nike);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -597,7 +598,7 @@ public class GamePinedaJavier extends GameActivity {
         {
             tvStoryText.setText("Thanks for playing your FIFA career :)");
 
-            ivStory.setImageResource(R.drawable.im_laborday_miracle);
+            ivStory.setImageResource(R.drawable.im_pinedajavier_end);
         }
         if (numLives > 0)
         {
@@ -614,7 +615,7 @@ public class GamePinedaJavier extends GameActivity {
             tvStoryText.setText("Fifa Career is over. Permenant Game over.");
             btn1.setText("Back to menu");
 
-            ivStory.setImageResource(R.drawable.im_laborday_high_school_over);
+            ivStory.setImageResource(R.drawable.im_pinedajavier_endend);
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
