@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,7 +18,6 @@ public class GameGaelAngeles extends GameActivity{
 
         //instance variables
         //   variables you plan to use throughout the adventure
-        private Scanner scan;
         private int numLives;
         //private Player player; (optional)
 
@@ -52,7 +52,7 @@ public class GameGaelAngeles extends GameActivity{
         {
             isWon = false;
 
-            ivStory.setImageResource(R.drawable.im_laborday_title);
+            ivStory.setImageResource(R.drawable.jfk_stand_with_other_u_s_presidents_like_nixon_and_mckinley);
 
             tvStoryText.setText("There is a killer on the loose protect the president!!");
 
@@ -113,7 +113,7 @@ public class GameGaelAngeles extends GameActivity{
         {
             tvStoryText.setText("You chose to go to a police station you stay there until back up arives. But there is a officer that wants to help. What should you do?");
 
-            ivStory.setImageResource(R.drawable.im_laborday_title);
+            ivStory.setImageResource(R.drawable.police_station_with_cars);
 
             setAllBtnsVisible();
             btn1.setText("Stay at the police station");
@@ -139,6 +139,8 @@ public class GameGaelAngeles extends GameActivity{
         private void officer()
         {
             tvStoryText.setText("You chose to talk to the officer. You find out the officer is corrupt and hates President Nixon and draws out his weapon and kill you and Nixon.");
+
+            ivStory.setImageResource(R.drawable.jfk_talking_to_a_police_offi);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -179,7 +181,7 @@ public class GameGaelAngeles extends GameActivity{
         {
             tvStoryText.setText("You see a harmless homeless guy seem nice. Then next to him there is a sketchy guy near him. Go up to one of them if they could help you out.");
 
-            ivStory.setImageResource(R.drawable.im_laborday_title);
+            ivStory.setImageResource(R.drawable.dark_alley_way_at_night);
 
             setAllBtnsVisible();
             btn1.setText("Go up to the Homeless Guy");
@@ -206,6 +208,8 @@ public class GameGaelAngeles extends GameActivity{
         {
             tvStoryText.setText("You chose to go up to the Homeless Guy. He asks for money, you refuse to give money. The homeless gets mad pulls out a gun and shoots you and President Nixon.");
 
+            ivStory.setImageResource(R.drawable.backalley_with_a_homeless_guy_nightti);
+
             setAllBtnsVisible();
             btn1.setText("Continue");
             btn2.setVisibility(View.INVISIBLE);
@@ -224,6 +228,8 @@ public class GameGaelAngeles extends GameActivity{
         private void sketchyGuy()
         {
             tvStoryText.setText("You chose to go up to the Sketchy Guy. He gives you fentanyl with out you knowing. You start to combolse and die of overdose and the homeless guy shoots President Nixon.");
+
+            ivStory.setImageResource(R.drawable.back_alley_with_a_sketchy_guy);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -244,7 +250,7 @@ public class GameGaelAngeles extends GameActivity{
         {
             tvStoryText.setText("You chose John F Kennedy protect him. Choose the right path and he lives");
 
-            ivStory.setImageResource(R.drawable.im_laborday_title);
+            ivStory.setImageResource(R.drawable.president_jfk);
 
             setAllBtnsVisible();
             btn1.setText("Go Through a nieghborhood");
@@ -270,6 +276,9 @@ public class GameGaelAngeles extends GameActivity{
         {
             tvStoryText.setText("You chose to go through a neighborhood. You Kennedy got shot in the head while driving down the ");
 
+            ivStory.setImageResource(R.drawable.car_driving_through_a_nieghborhood);
+
+
             setAllBtnsVisible();
             btn1.setText("Continue");
             btn2.setVisibility(View.INVISIBLE);
@@ -288,6 +297,9 @@ public class GameGaelAngeles extends GameActivity{
         private void city()
         {
             tvStoryText.setText("You chose the city path. Its crowded with many people. The presidnet and you blend with the people. You find a safe place and wait for escorts to be taken to the white house.");
+
+            ivStory.setImageResource(R.drawable.a_street_full_of_people);
+
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -308,7 +320,7 @@ public class GameGaelAngeles extends GameActivity{
         {
             tvStoryText.setText("You chose William McKinley protect him. A man walks up to the president he wants to shake his hand. Choose if the president should shake his hand or not.");
 
-            ivStory.setImageResource(R.drawable.im_laborday_title);
+            ivStory.setImageResource(R.drawable.president_mckinley);
 
             setAllBtnsVisible();
             btn1.setText("Shake the mans hand");
@@ -334,6 +346,8 @@ public class GameGaelAngeles extends GameActivity{
         {
             tvStoryText.setText("You tell the president not to shake his hand. The president turns his back on the man. You noticed something strange about the man you see him taking a gun out. He shoots you jump in front of the bullet saving the president.");
 
+            ivStory.setImageResource(R.drawable.mckinley_doesn_t_shake_someo);
+
             setAllBtnsVisible();
             btn1.setText("Continue");
             btn2.setVisibility(View.INVISIBLE);
@@ -353,6 +367,8 @@ public class GameGaelAngeles extends GameActivity{
         {
             tvStoryText.setText("You tell the president to shake his hand. The president shakes the mans hand and dies with 2 bullets in his chest.");
 
+            ivStory.setImageResource(R.drawable.mckinley_shaking_someones_han);
+
             setAllBtnsVisible();
             btn1.setText("Continue");
             btn2.setVisibility(View.INVISIBLE);
@@ -370,6 +386,10 @@ public class GameGaelAngeles extends GameActivity{
         private void defeat()
         {
 
+            setAllBtnsVisible();
+            btn3.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
+
             //run method when defeated
 
 
@@ -377,18 +397,44 @@ public class GameGaelAngeles extends GameActivity{
             numLives--;
 
             //clear console, display text, etc
-            System.out.println("...");
 
             //determine if player gets to play again
             if (numLives > 0)
             {
                 //if you still have lives, return to start()
                 start();
+
+                btn1.setText("Play again");
+                btn2.setText("Quit");
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        start()
+                    }
+                });
+
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(GameGaelAngeles.this, MainActivity.class));
+                    }
+                });
             }
             else
             {
                 //print game over message
-                System.out.println("!!!Womp Womp You Lose!!!");
+
+                tvStoryText.setText("!!!Womp Womp You Lose!!!");
+
+                btn1.setText("Leeave");
+
+                btn2.setVisibility(View.INVISIBLE);
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(GameGaelAngeles.this, MainActivity.class));
+                    }
+                });
             }
 
 
