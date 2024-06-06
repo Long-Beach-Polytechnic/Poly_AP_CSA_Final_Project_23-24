@@ -137,7 +137,17 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("They breached in through the walls your barricades did nothing and you died.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
     }
@@ -156,7 +166,17 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("You surrendered and they demanded the cure but you were to stubborn to hand it to them. They shot you.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
 
@@ -182,7 +202,17 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("You ran straight into a group of terrorist. You died.");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
 
@@ -190,10 +220,19 @@ public class GamePokJordan extends GameActivity {
             @Override
             public void onClick(View view) {
                 tvStoryText.setText("You called out for help and the terrorist heard you. You were whining and crying out for help like a baby. You died");
-                defeat();
+                setAllBtnVisible();
+                btn1.setText("Next");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        defeat();
+                    }
+                });
             }
         });
-
     }
 
     private void levels()
@@ -239,22 +278,6 @@ public class GamePokJordan extends GameActivity {
                         defeat();
                     }
                 });
-            }
-        });
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tvStoryText.setText("You tripped using the stairs and the terrorist heard you. You died from falling not from the terrorist.");
-                defeat();
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tvStoryText.setText("You tripped using the stairs and the terrorist heard you. You died from falling not from the terrorist.");
-                defeat();
             }
         });
     }
