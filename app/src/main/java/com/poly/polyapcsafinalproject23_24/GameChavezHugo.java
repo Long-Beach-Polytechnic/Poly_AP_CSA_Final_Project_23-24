@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ChooseYourOwnAdventureChavezHugo extends GameActivity {
+public class GameChavezHugo extends GameActivity {
 
     private TextView tvTitle, tvSubtitle, tvStoryText;
     private ImageView ivStory;
@@ -29,47 +29,26 @@ public class ChooseYourOwnAdventureChavezHugo extends GameActivity {
         tvTitle.setText("Attack The Titans");
         tvSubtitle.setText("Survive!!!");
 
+        tvStoryText.setText("The Great Titan Apocolypse");
+        tvStoryText.setText("In this game, you are living in a world were giant humanoid creatures attack your village. Your mission is very simple, JUST SURVIVE, and the decisions you make will decide if you live or you DIE!!!");
+
+
+
         numLives = 4;
         start();
     }
 
 
-private void setAllBtnsVisible()
-{
-    btn1.setVisibility(View.VISIBLE);
-    btn2.setVisibility(View.VISIBLE);
-    btn3.setVisibility(View.VISIBLE);
-}
-
-
-
-
-public class Adventure {
-
-    //instance variables
-    //   variables you plan to use throughout the adventure
-
-    private int numLives;
-    //private Player player; (optional)
-
-
-    public void run() {
-        //initialize number of lives
-        numLives = 5;
-        //create a scanner object for user input
-
-
-        //create a player object (optional)
-        //player = new Player(...)
-
-        //display project title and description
-
-        System.out.println("The Great Titan Apocolypse");
-        System.out.println("In this game, you are living in a world were giant humanoid creatures attack your village. Your mission is very simple, JUST SURVIVE, and the decisions you make will decide if you live or you DIE!!!");
-
-
-        start();
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
     }
+
+
+
+
 
     private void start() {
         isWon = false;
@@ -271,6 +250,7 @@ public class Adventure {
         btn2.setText("Keep Watching");
         btn3.setText("Watch Them More");
 
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { watchThem();
@@ -406,7 +386,7 @@ public class Adventure {
 
         tvStoryText.setText("You are looking for your family, how are you going to find them?");
 
-        ivStory.setImageResource(R.drawable.
+        ivStory.setImageResource(R.drawable.im_chavezhugo_runfamily);
 
 
         setAllBtnsVisible();
@@ -438,7 +418,7 @@ public class Adventure {
 
         tvStoryText.setText("You are searching for your family, where are you going to look for them?");
 
-        ivStory.setImageResource(R.drawable.
+        ivStory.setImageResource(R.drawable.im_chavezhugo_searchfamiily);
 
 
         setAllBtnsVisible();
@@ -468,7 +448,7 @@ public class Adventure {
 
         tvStoryText.setText("YOU LOST!!! They were to many buildings to search for, and got eaten before you could reach one");
 
-        ivStory.setImageResource(R.drawable.
+        ivStory.setImageResource(R.drawable.im_chavezhugo_searchbuilding);
 
         defeat();
     }
@@ -478,7 +458,7 @@ public class Adventure {
 
         tvStoryText.setText("You see people who resemble them, do you go and check?");
 
-        ivStory.setImageResource(R.drawable.
+        ivStory.setImageResource(R.drawable.im_chavezhugo_searchcrowdjpeg);
 
 
         setAllBtnsVisible();
@@ -508,7 +488,7 @@ public class Adventure {
 
         tvStoryText.setText("YOU WIN!!! Those people were your family, and you succesfully rescued them and survived");
 
-        ivStory.setImageResource(R.drawable.
+        ivStory.setImageResource(R.drawable.im_chavezhugo_checkfamily);
 
         start();
     }
@@ -518,7 +498,7 @@ public class Adventure {
 
         tvStoryText.setText("YOU LOST!!! Why woudln't you check? Like it doesnt hurt to double check");
 
-        ivStory.setImageResource(R.drawable.
+        ivStory.setImageResource(R.drawable.im_chavezhugo_defeat7);
 
         defeat();
     }
@@ -528,7 +508,7 @@ public class Adventure {
 
         tvStoryText.setText("YOU LOST!!! The strangers dont know how they look like, maybe you shouldve had friends");
 
-        ivStory.setImageResource(R.drawable.
+        ivStory.setImageResource(R.drawable.im_chavezhugo_defeat8);
 
         defeat();
     }
