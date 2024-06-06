@@ -102,7 +102,11 @@ public class GameTrujilloJose extends GameActivity {
     }
 
   private void leaveGalaxy() {
-    tvStoryText.setText(" After a longgggg time we finally left the galaxy\n" +
+
+      ivStory.setImageResource(R.drawable.a_spaceship_leaving_the_galaxy_with_flashing_stars_in_the_background_1000x1000_jpg);
+
+
+      tvStoryText.setText(" After a longgggg time we finally left the galaxy\n" +
             "    while checking our communications we see a distress\n" +
             "    call being made what should\n" +
             "    we do");
@@ -620,6 +624,8 @@ public class GameTrujilloJose extends GameActivity {
       }
   private void exploreUnknownPlanets()
   {
+
+      ivStory.setImageResource(R.drawable.a_cosmic_entity_in_front_of_us_on_a_unknown_planet);
       tvStoryText.setText("Landing on this unknown place, a strange  cosmic\n" +
               "    entity appears in front of you and gives you two\n" +
               "    choices");
