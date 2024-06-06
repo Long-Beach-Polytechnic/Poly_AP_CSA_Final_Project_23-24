@@ -226,7 +226,6 @@ public class GameTrujilloJose extends GameActivity {
 
   private void betrayThem()
   {
-    ivStory.setImageResource(R.drawable.);
       tvStoryText.setText("After obliterating the bandits you quickly take out the\n" +
               "    leader of this civilization and order them to serve under\n" +
               "    you with this power you can do anything");
