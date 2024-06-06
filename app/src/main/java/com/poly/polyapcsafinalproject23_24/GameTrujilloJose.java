@@ -103,7 +103,7 @@ public class GameTrujilloJose extends GameActivity {
 
   private void leaveGalaxy() {
 
-      ivStory.setImageResource(R.drawable.a_spaceship_leaving_the_galaxy_with_flashing_stars_in_the_background_1000x1000_jpg);
+      ivStory.setImageResource(R.drawable.inside_a_space_ship_with_a_big_alert_going_off_saying_distress_call_with_smaller_pictures);
 
 
       tvStoryText.setText(" After a longgggg time we finally left the galaxy\n" +
@@ -134,7 +134,7 @@ public class GameTrujilloJose extends GameActivity {
   }
 
   private void respond() {
-
+     ivStory.setImageResource(R.drawable.an_army_of_alien_ships_ready_to_attack);
     tvStoryText.setText("You and your team fly into action thinking someone is in\n" +
             "    trouble,....little did you think it was all a trap by an\n" +
             "    alien civilization what should we do");
@@ -161,6 +161,8 @@ public class GameTrujilloJose extends GameActivity {
 
   private void runAway()
     {
+
+        ivStory.setImageResource(R.drawable.an_army_of_alien_ships_ready_to_attack);
       tvStoryText.setText(" While making your best attemp to run your spaceship runs\n" +
               "      out of fuel and the bandits claim there new belongings");
       setupDefeat();
@@ -168,6 +170,9 @@ public class GameTrujilloJose extends GameActivity {
 
   private void fightBack()
   {
+
+
+      ivStory.setImageResource(R.drawable.a_space_ship_in_space_that_is_on_fire);
     tvStoryText.setText("  Our ship plunges into a maelstrom of laser fire and\n" +
             "    explosive chaos.After barely surviving that fight what\n" +
             "    nexts");
@@ -194,6 +199,7 @@ public class GameTrujilloJose extends GameActivity {
 
   private void seekHelp()
   {
+      ivStory.setImageResource(R.drawable.a_friendly_advanced_civilization_that_comes_to_our_rescue_in_space);
       tvStoryText.setText(" Using a distressed call an advaced alien civilization\n" +
               "    offers help in destroying these space bandits should we\n" +
               "    accept?");
@@ -220,11 +226,11 @@ public class GameTrujilloJose extends GameActivity {
 
   private void betrayThem()
   {
-    {
+    ivStory.setImageResource(R.drawable.);
       tvStoryText.setText("After obliterating the bandits you quickly take out the\n" +
               "    leader of this civilization and order them to serve under\n" +
               "    you with this power you can do anything");
-    }
+
   }
   private void destroybadGuys()
   {
