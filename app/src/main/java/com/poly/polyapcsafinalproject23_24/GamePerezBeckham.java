@@ -29,6 +29,14 @@ public class GameLaborDayAdventure extends GameActivity {
         tvSubtitle.setText("Be Carefull!");
 
         //create a scanner object for user input
+        private void setAllBtnsVisible()
+        {
+            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.Visible);
+            btn3.setVisibility(View.Visible);
+        }
+
+
 
         //create a player object (optional)
         //player = new Player(...)
@@ -45,12 +53,15 @@ public class GameLaborDayAdventure extends GameActivity {
     private void start()
     {
 
-        System.out.println("GET TO YOUR FRIENDS HOUSE SAFE!");
+        ivStory.setImageResource(R.drawable.im_laborday_title);
+        playAudio(R.raw.audio_bass);
 
-        System.out.println("\nLets head out, lets go!");
+        tvStoryText.setText("GET TO YOUR FRIENDS HOUSE SAFE!");
 
-        System.out.println("\nOn your way to the house you decide to eat a chocolate bar.What will you do with the wrapper?");
-        System.out.println("1.Throw wrapper in the trash\n2.Throw wrapper on the street\n3.Put wrapper in your pocket");
+
+
+        tvStoryText.setText("\nOn your way to the house you decide to eat a chocolate bar.What will you do with the wrapper?");
+        tvStoryText.setText("1.Throw wrapper in the trash\n2.Throw wrapper on the street\n3.Put wrapper in your pocket");
         int choice = Util.enterInt(1,3);
 
         if(choice == 1)
