@@ -47,13 +47,7 @@ public class GameTrujilloJose extends GameActivity {
     start();
 
   }
-    //initialize number of lives
-    numLives = 5;
-    //create a scanner object for user input
-    //create a player object (optional)
-    //player = new Player(...)
-    //display project title and description
-  }
+
 
   private void start()
   {
@@ -64,21 +58,28 @@ public class GameTrujilloJose extends GameActivity {
     btn2.setText("travel outside the galaxy");
     btn3.setText(" go inside a black hole");
 
-    btn1.setOnClickListener();new View.OnClickListener() {
+    btn1.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            exploreUnknownPlanets();
+        }
+    });
 
-      @Override
-      public void onClick(View v) { exploreUnknownPlanets(); }
+    btn2.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            leaveGalaxy();
+        }
+    });
 
-       btn2.setOnClickListner(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) { leaveGalaxy(); }
 
-        btn3.setOnClickListner(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) { enterBlackHole(); }
-            }
-  }
-      }
+    btn3.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            enterBlackHole();
+        }
+    });
+
     }
 
   private void leaveGalaxy() {
@@ -93,16 +94,18 @@ public class GameTrujilloJose extends GameActivity {
     btn3.setVisibility(View.INVISIBLE);
 
 
-    btn1.setOnClickListner(new View.OnClickListener() {
+
+      btn1.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              ignore();
+          }
+      });
+
+    btn2.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onClick(View v) {
-        (ignore);
-      }
-    });
-    btn2.setOnClickListner(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        (respond);
+      public void onClick(View view) {
+        respond();
       }
     });
   }
@@ -119,16 +122,16 @@ public class GameTrujilloJose extends GameActivity {
     //
     btn3.setVisibility(View.INVISIBLE);
 
-    btn1.setOnClickListner(new View.OnClickListener() {
+    btn1.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onClick(View v) {
-        (fightBack);
+      public void onClick(View view) {
+        fightBack();
       }
     });
-    btn2.setOnClickListner(new View.OnClickListener() {
+    btn2.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onClick(View v) {
-        (runAway);
+      public void onClick(View view) {
+          runAway ();
       }
     });
   }
@@ -152,16 +155,16 @@ public class GameTrujilloJose extends GameActivity {
     btn3.setVisibility(View.INVISIBLE);
 
 
-    btn1.setOnClickListner(new View.OnClickListener() {
+    btn1.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onClick(View v) {
-        (revenge);
+      public void onClick(View view) {
+        revenge();
       }
     });
-    btn2.setOnClickListner(new View.OnClickListener() {
+    btn2.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onClick(View v) {
-        (seekHelp);
+      public void onClick(View view) {
+        seekHelp();
       }
     });
   }
@@ -178,16 +181,16 @@ public class GameTrujilloJose extends GameActivity {
       btn3.setVisibility(View.INVISIBLE);
 
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (destroybadGuys);
+        public void onClick(View view) {
+          destroybadGuys();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (betrayThem);
+        public void onClick(View view) {
+          betrayThem();
         }
       });
     }
@@ -226,16 +229,16 @@ public class GameTrujilloJose extends GameActivity {
       btn3.setVisibility(View.INVISIBLE);
 
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (sendDistressCall);
+        public void onClick(View view) {
+          sendDistressCall();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (driftAway);
+          driftAway();
         }
       });
     }
@@ -258,16 +261,16 @@ public class GameTrujilloJose extends GameActivity {
       btn3.setVisibility(View.INVISIBLE);
 
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (accept);
+        public void onClick(View view) {
+          //accept();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (sayNo);
+        public void onClick(View view) {
+          sayNo();
         }
       });
     }
@@ -282,98 +285,50 @@ public class GameTrujilloJose extends GameActivity {
         btn3.setVisibility(View.INVISIBLE);
 
 
-        btn1.setOnClickListner(new View.OnClickListener() {
+          btn2.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  //();
+              }
+          });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
           @Override
-          public void onClick(View v) {
-            (attackThemBack);
-          }
-        });
-        btn2.setOnClickListner(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-            (bribeThem);
+          public void onClick(View view) {
+            //();
           }
         });
       }
       private void decline()
         {
 
-          {
-            tvStoryText.setText("Your team opens fire defensively and have a brutal\n" +
-                    "          fight to the death against these aliens your ship\n" +
-                    "          was heavily damaged so you decide to steal there’s");
+            {
+                tvStoryText.setText("Your team opens fire defensively and have a brutal\n" +
+                        "          fight to the death against these aliens your ship\n" +
+                        "          was heavily damaged so you decide to steal there’s");
 
-            setAllBtnsVisible();
-            btn1.setText("Attck back");
-            btn2.setText("Try to bribe them");
-            btn3.setVisibility(View.INVISIBLE);
-
-
-            btn1.setOnClickListner(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                (attackThemBack);
-              }
-            });
-            btn2.setOnClickListner(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                (bribeThem);
-              }
-            });
-          }
+                setAllBtnsVisible();
+                btn1.setText("Attck back");
+                btn2.setText("Try to bribe them");
+                btn3.setVisibility(View.INVISIBLE);
 
 
-
-
-
-
-
-
-
-
-
-
-
-          String text = """
-          Your team opens fire defensively and have a brutal
-          fight to the death against these aliens your ship
-          was heavily damaged so you decide to steal there’s
-
-          1.
-          2.
-            """;
-          System.out.println(text);
-          if (option == 1)
-          {
-            //();
-          }
-          else if (option == 2)
-          {
-            //bribeThem();
-          }
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //attackThemBack();
+                    }
+                });
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //bribeThem();
+                    }
+                });
+            }
       }
 
-  private void accept()
-  {
-    String text = """
-    The aliens welcome you to there planet with opens arms and
-    show you around, after staying for a while you decide to
 
-    1.Accept the offer
-    2.Delicne the offer
-      """;
-    System.out.println(text);
-    if (option == 1)
-    {
-      //accept();
-    }
-    else if (option == 2)
-    {
-      //decline();
-    }
-
-  }
   private void enterBlackHole()
   {
 
@@ -386,16 +341,16 @@ public class GameTrujilloJose extends GameActivity {
       btn3.setVisibility(View.INVISIBLE);
 
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (Left);
+          left();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (Right);
+          right();
         }
       });
     }
@@ -409,16 +364,16 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("Enslave them for more power by playing God");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (killThem);
+        public void onClick(View view) {
+          killThem();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (enslaveThem);
+          enslaveThem();
         }
       });
     }
@@ -433,16 +388,16 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("Build up your army");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (inVade);
+          inVade();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (buildUpArmy);
+        public void onClick(View view) {
+          buildUpArmy();
         }
       });
     }
@@ -456,16 +411,16 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("Go after the Gods");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (concur);
+        public void onClick(View view) {
+          concur();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-          (destroyGods);
+        public void onClick(View view) {
+          destroyGods();
         }
       });
     }
@@ -498,16 +453,16 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("Enslave them by playing God");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (keepGoing);
+          keepGoing();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (enslaveThem);
+          enslaveThem();
         }
       });
     }
@@ -529,17 +484,17 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("Be friendly");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (shootThem);
+          shootThem();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          (beFriendly);
-        }
+      btn2.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              beFriendly();
+          }
       });
     }
   private void beFriendly()
@@ -559,16 +514,16 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("flee the area");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (stealSpaceShip);
+          stealSpaceShip();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (flee);
+          flee();
         }
       });
     }
@@ -584,16 +539,16 @@ public class GameTrujilloJose extends GameActivity {
         btn2.setText("No");
         btn3.setVisibility(View.INVISIBLE);
 
-        btn1.setOnClickListner(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-            (yes);
+            yes();
           }
         });
-        btn2.setOnClickListner(new View.OnClickListener() {
+        btn2.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-            (no);
+            no();
           }
         });
       }
@@ -625,16 +580,16 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("Run away");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (stay);
+          stay();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (flee);
+          flee();
         }
       });
     }
@@ -655,16 +610,16 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("Dont play");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (play);
+          play();
         }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (DontPlay);
+          DontPlay();
         }
       });
     }
@@ -679,13 +634,12 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setVisibility(View.INVISIBLE);
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          (firstRiddle);
+          firstRiddle();
         }
       });
-      firstRiddle();
   }
   private void DontPlay()
   {
@@ -710,23 +664,23 @@ public class GameTrujilloJose extends GameActivity {
           btn2.setText("A joke");
           btn3.setText("A lie");
 
-          btn1.setOnClickListner(new View.OnClickListener() {
+          btn1.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                  (aSecret);
+                  aSecret();
               }
           });
-          btn2.setOnClickListner(new View.OnClickListener() {
+          btn2.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                  (aJoke);
+                  aJoke();
               }
           });
 
-          btn3.setOnClickListner(new View.OnClickListener() {
+          btn3.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                  (aLie);
+                  aLie();
               }
           });
 
@@ -762,23 +716,23 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("A road");
       btn3.setText("Footsteps");
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              (aMemmory);
+              aMemmory();
           }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              (aRoad);
+              aRoad();
           }
       });
 
-      btn3.setOnClickListner(new View.OnClickListener() {
+      btn3.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              (footSteps);
+              footSteps();
           }
       });
   }
@@ -811,23 +765,23 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("A photograph");
       btn3.setText("A mirror");
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              (aClock);
+              aClock();
           }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              (aPhotograph);
+              aPhotograph();
           }
       });
 
-      btn3.setOnClickListner(new View.OnClickListener() {
+      btn3.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              (aMirror);
+              aMirror();
           }
       });
   }
@@ -843,16 +797,16 @@ public class GameTrujilloJose extends GameActivity {
       btn2.setText("Leave and never return");
       btn3.setVisibility(View.INVISIBLE);
 
-      btn1.setOnClickListner(new View.OnClickListener() {
+      btn1.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              (knowledge);
+              knowledge();
           }
       });
-      btn2.setOnClickListner(new View.OnClickListener() {
+      btn2.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              (leave);
+              leave();
           }
       });
   }
@@ -886,24 +840,9 @@ public class GameTrujilloJose extends GameActivity {
   {
     //run method when defeated
 
-
     //lose a life
-    numLives--;
-
     //clear console, display text, etc
-    System.out.println(TextColor.RED + "YOU DIED");
-
-
+      tvStoryText.setText("YOU DIED");
     //determine if player gets to play again
-    if (numLives > 0)
-    {
-      //if you still have lives, return to start()
-      start();
-    }
-    else
-    {
-    System.out.println("GAME OVER");
-    }
 
-  }
 }
