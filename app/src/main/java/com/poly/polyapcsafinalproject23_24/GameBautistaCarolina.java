@@ -31,7 +31,7 @@ public class GameBautistaCarolina extends GameActivity
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
         btn3 = findViewById(R.id.btn_3);
-        btn4 = findViewById(R.id.btn_4);
+
 
         tvTitle.setText("DAILY LIFE CHORES");
         tvSubtitle.setText("HOUSE Edition");
@@ -45,20 +45,21 @@ public class GameBautistaCarolina extends GameActivity
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
-        btn4.setVisibility(View.VISIBLE);
+
     }
 
     private void start()
     {
         //start adventure here
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_title);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_title);
+        isWon = false;
 
-        tvStory.setText("You are in the chore life were you have three choices to decide on, what option would you like to choose for your first chore?");
+        tvStoryText.setText("You are in the chore life were you have three choices to decide on, what option would you like to choose for your first chore?");
 
         btn1.setText("Clean the restroom");
         btn2.setText("Cook dinner");
         btn3.setText("Clean the living room");
-        btn4.setVisibility(View.INVISIBLE);
+
 
 
 
@@ -104,17 +105,18 @@ public class GameBautistaCarolina extends GameActivity
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View view) {
                 cleanTub();
             }
-        }
+        });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-        }
-            public void onClick(View v) { cleanToilet();
+            public void onClick(View view) {
+                cleanToilet();
+            }
         });
+
     }
 
 
@@ -325,7 +327,7 @@ public class GameBautistaCarolina extends GameActivity
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)k{cookChicken();
+            public void onClick(View v) {cookChicken();
             }
         });
     }
@@ -351,7 +353,7 @@ public class GameBautistaCarolina extends GameActivity
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)k{useSalmon();
+            public void onClick(View v) {useSalmon();
             }
         });
     }
@@ -708,19 +710,29 @@ public class GameBautistaCarolina extends GameActivity
 
     private void cleanFloor()
     {
-        Util.clearConsole();
-        System.out.println("\nCLeaning the floor can be pretty easy but it canalso get messy really quickyly would you like to start of by choosing?");
-        System.out.println("1. Pick up some trash\n2. Pick up all the trash");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("CLeaning the floor can be pretty easy but it canalso get messy really quickyly would you like to start of by choosing?" );
 
-        if (choice ==1)
-        {
-            pickUpSomeTrash();
-        }
-        else if (choice ==2)
-        {
-            pickUpEverything();
-        }
+        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawer);
+
+        setAllBtnsVisible();
+        btn1.setText("pick up some trash");
+        btn2.setText("pick up everything");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pickUpSomeTrash();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pickUpEverything();
+            }
+        });
     }
 
     private void pickUpSomeTrash()
@@ -766,7 +778,7 @@ public class GameBautistaCarolina extends GameActivity
     }
 
 
-    private void defeat()
+    private void end()
     {
         if (isWon)
         {
@@ -796,12 +808,12 @@ public class GameBautistaCarolina extends GameActivity
             tvStoryText.setText("Chore life is over. Permenant Game over.");
             btn1.setText("Back to Home entrance");
 
-            ivStory.setImageResource(R.drawable.im_dailylifechores_over);
+            //ivStory.setImageResource(R.drawable.im_dailylifechores_over);
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(dailylifechores.this, MainActivity.class));
+                   // startActivity(new Intent(dailylifechores.this, MainActivity.class));
                 }
             });
         }
