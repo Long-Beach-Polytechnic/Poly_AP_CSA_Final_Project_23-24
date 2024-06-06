@@ -41,7 +41,7 @@ public class GameContrerasSarai extends GameActivity{
 
         public void start() {
             isWon = false;
-            ivStory.setImageResource(R.drawable.);
+            ivStory.setImageResource(R.drawable.im_contrerassarai_safarititle);
 
             tvStoryText.setText("While visiting the safari you will be met with different situations. Hopefully you make the right choices to make this visit fun!!");
             tvStoryText.setText("Now that you've entered the safari, you are introduced with your tour group. You are supposed to stay with them at all time during the visit. The guide lady asks - What animal section would you like to visit first?");
@@ -76,7 +76,7 @@ public class GameContrerasSarai extends GameActivity{
          //____LION PATH____
       private void goToLions()
       {
-          ivStory.setImageResource(R.drawable.);
+          ivStory.setImageResource(R.drawable.im_contrerassarai_lionsone);
           tvStoryText.setText("You chose the lions, you see a cute family laying by the water so you decide to take a picture with the cool lions!");
 
           setAllBtnsVisible();
@@ -102,7 +102,7 @@ public class GameContrerasSarai extends GameActivity{
          private void safePhoto()
          {
              tvStoryText.setText("You decide to just stay away, not wanting to risk it. Now how would you like this picture?");
-             ivStory.setImageResource(R.drawable.);
+             ivStory.setImageResource(R.drawable.im_contrerassarai_farlions);
 
              setAllBtnsVisible();
              btn1.setText("Take a selfie with them?");
@@ -127,7 +127,7 @@ public class GameContrerasSarai extends GameActivity{
 
     private void riskyPhoto()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_liontwo);
 
         tvStoryText.setText("You are now closer to the lions :o what would you decide?");
 
@@ -154,18 +154,18 @@ public class GameContrerasSarai extends GameActivity{
         {
             isWon = false;
             tvStoryText.setText("While trying to take the picture the bystanders around start walking by blocking your picture and making the lions walk away. Tough luck");
-            ivStory.setImageResource(R.drawable.);
+            ivStory.setImageResource(R.drawable.im_contrerassarai_blockedlions);
 
     private void lionsPic()
     {
         isWon = false;
         System.out.println("...Kind of a boring picture, I mean it would have been much cooler if you posted a selfie with lions. Boringgg Yawnnn!");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_lionyawn);
     }
 
     private void betterSelfie()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_lionselfie);
 
         tvStoryText.setText("Wow! Such a good picture! You'll definitely get a lot of likes. But obviously something had to happen");
         tvStoryText.setText("After you take your amazing picture, one of the lions unexpectedly roars making you jump and drop your phone in the process... so clumsy. But most importantly, what are you going to do?");
@@ -194,12 +194,12 @@ public class GameContrerasSarai extends GameActivity{
     {
         isWon = false;
         tvStoryText.setText("You decide to observe the lions but one seems to make straight eye contact with you... so nervous you don't think of looking away making it jump and launch at you. Rip!");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_lionlaunch);
     }
 
     private void rescuePhone()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_lostphone);
 
 
         tvStoryText.setText("You decide to go rescue your phone hopefully being saved from your mom's scolding. Thankfully the phone is not that close to the lions so how are you going to decide to approach the situation?");
@@ -227,14 +227,14 @@ public class GameContrerasSarai extends GameActivity{
         {
             isWon = false;
             tvStoryText.setText("Your group starts walking away and not wanting to be left behind you go follow them, leaving your phone with the dear lions and a big scolding from your mom when you get home");
-            ivStory.setImageResource(R.drawable.);
+            ivStory.setImageResource(R.drawable.im_contrerassarai_abandonedphone);
         }
 
         private void runToPhone()
         {
             isWon = false;
             tvStoryText.setText("You make a run for it making the lions go on mode alert to see what's the sudden movement, you don't even realize you are being chased until you feel a scratch on your leg... ouch!");
-            ivStory.setImageResource(R.drawable.);
+            ivStory.setImageResource(R.drawable.im_contrerassarai_lionattack);
         }
 
         private void slowToPhone()
@@ -242,12 +242,12 @@ public class GameContrerasSarai extends GameActivity{
          isWon = true;
          tvStoryText.setText("You take the safe way and move slowly towards your phone, always keeping your eye on the pride of lions a few feet away. Once you use your ninja skills to grab the phone and walk back slow and steady you make it back with your group safe and sound. Hooray!");
          System.out.println("Play Again??");
-         ivStory.setImageResource(R.drawable.);
+         ivStory.setImageResource(R.drawable.im_contrerassarai_lioncheer);
     }
      //ELEPHANTS!!!
             private void goToElephants()
 
-            ivStory.setImageResource(R.drawable.);
+            ivStory.setImageResource(R.drawable.im_contrerassarai_elephantsone);
 
             tvStoryText.setText("Your group decides to go visit the Elephants, how exciting! Your guide lets you know that you guys will be feeding the elephants and afterwards just observe while she gives fun facts. but she gives a warning... Will you remember it? Choose correctly");
 
@@ -272,7 +272,7 @@ public class GameContrerasSarai extends GameActivity{
 
     private void feedElephants()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_choosefood);
 
         tvStoryText.setText("You decide to go feed the elephants so the guide gives you two types of food - choose wisely, remember elephants are biggg animals");
 
@@ -299,7 +299,7 @@ public class GameContrerasSarai extends GameActivity{
         {
             isWon = true;
             tvStoryText.setText("You chose the correct answer congrats! You hold out the peanuts in your hand as the elephants slowly approaches you, he takes a sniff of it proceding to eat it with his trunk. You made the elephant happy and the guide congradulates you - Good Job!!");
-            ivStory.setImageResource(R.drawable.);
+            ivStory.setImageResource(R.drawable.im_contrerassarai_elephantspeanuts);
         }
 
     private void feedLemons()
@@ -307,12 +307,12 @@ public class GameContrerasSarai extends GameActivity{
 
         isWon = false;
         tvStoryText.setText("Wrong answer... The elephants takes the lemons in his trunks and after a few seconds he's running around the area like crazy, you move away being close to getting stomped. ELephants hate lemons! The guide gets you in trouble for not asking before feeding so now you're sad and the elephant is mad");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_wrongfood);
     }
 
     private void observeElephants()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_observeelephants);
 
         tvStoryText.setText("While standing and observing the amusing elephants you hear some people talking really loudly, actually more like screaming. Right when you turn around you see a monkey running at full speed with what seemed to be a purse in his hands. You see the poor stressed lady trying to get her purse back. What will you decide, be a hero or just act like you didn't see anything?");
 
@@ -339,20 +339,20 @@ public class GameContrerasSarai extends GameActivity{
     {
         isWon = false;
         tvStoryText.setText("You choose to chase the thief of that monkey, once you catch up taking the purse back, the monkey continues running scared. You go back to give the lady her purse but then get framed of being apart of it accussing you of stealing her money. It will be a veryyy long day");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_thiefmonkey);
     }
 
     private void stayObserving()
     {
         isWon = false;
-        tvStoryText.setText("You zone out and lose the group you were with, they ae no where is sight, you wasted so much time you didn't realize they left to other animal sections. After what felt forever you find the group but get in trouble with the guide...");
-        ivStory.setImageResource(R.drawable.);
+        tvStoryText.setText("You zone out and lose the group you were with, they are no where is sight, you wasted so much time you didn't realize they left to other animal sections. After what felt forever you find the group but get in trouble with the guide...");
+        ivStory.setImageResource(R.drawable.im_contrerassarai_upsetguide);
     }
 
     //GIRAFFES!!!
     private void goToGiraffes()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_giraffesone);
 
         tvStoryText.setText("Your guide takes you to the giraffe section, you see the tall giraffes eating leaves, how cute! The guide offers two options: participate in a giraffe quiz or decide to pass. What will you choose");
 
@@ -378,7 +378,7 @@ public class GameContrerasSarai extends GameActivity{
     private void takeQuiz()
     {
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_giraffequiz);
 
         tvStoryText.setText("You take the quiz, fun! Alright so there are two questions, which one do you want to take?");
 
@@ -405,7 +405,7 @@ public class GameContrerasSarai extends GameActivity{
     private void giraffeTongue()
     {
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_giraffetongue);
 
         tvStoryText.setText("You choose question number one: What color is a giraffe's tongue?");
 
@@ -433,7 +433,7 @@ public class GameContrerasSarai extends GameActivity{
     {
         isWon = true;
         tvStoryText.setText("You are 100% correct, their tongues are a purple black-ish color due to their diet. Congrats You Win!!");
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_purpleanswer);
     }
 
     private void pinkAnswer()
@@ -444,7 +444,7 @@ public class GameContrerasSarai extends GameActivity{
 
     private void giraffeYears()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_contrerassarai_giraffetwo);
 
         tvStoryText.setText("You choose question number two: In average how many years does a giraffe live?");
 
@@ -493,7 +493,7 @@ public class GameContrerasSarai extends GameActivity{
         {
             tvStoryText.setText("Its a safari trip miracle! You get to live the whole day over again!");
 
-            ivStory.setImageResource(R.drawable.);
+            ivStory.setImageResource(R.drawable.im_contrerassarai_giraffeage);
         }
         else
         {
@@ -514,7 +514,7 @@ public class GameContrerasSarai extends GameActivity{
         }
         else
         {
-            tvStoryText.setText("Safari trip is over. Permenant Game over.");
+            tvStoryText.setText("Safari trip is over. Permanent Game over.");
             btn1.setText("Back to menu");
 
         }
