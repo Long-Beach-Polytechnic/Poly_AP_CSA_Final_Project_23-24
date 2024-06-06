@@ -58,6 +58,7 @@ public class GameOfSengVisal extends GameActivity {
         tvMaxSquatVal = findViewById(R.id.tv_max_squat_val);
         tvMaxRunVal = findViewById(R.id.tv_max_run_val);
         etMain = findViewById(R.id.et_main);
+        ivMain = findViewById();
 
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
@@ -68,6 +69,10 @@ public class GameOfSengVisal extends GameActivity {
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
+
+        ivMain.setImageResource(R.drawable.im_sengvisal_muscleman);
+
+
 
         btn1.setText("Continue");
 
@@ -343,6 +348,8 @@ public class GameOfSengVisal extends GameActivity {
 
     private void gym() {
 
+
+
         tvMain.setText("What do you want to do at the gym?");
 
         btn1.setVisibility(View.VISIBLE);
@@ -512,6 +519,8 @@ public class GameOfSengVisal extends GameActivity {
 
             etMain.setInputType(InputType.TYPE_CLASS_NUMBER);
             etMain.setHint("");
+
+            ivMain.setImageResource(R.drawable.im_sengvisal_benchpress);
 
             btn1.setVisibility(View.INVISIBLE);
             btn2.setVisibility(View.INVISIBLE);
@@ -688,18 +697,39 @@ public class GameOfSengVisal extends GameActivity {
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
-        System.out.println("You have reached the deadline of your goal!");
-        System.out.println("Your final stats are:");
-        System.out.println(currentBodyType);
+        tvMain.setText("You have reached the deadline of your goal!\n Your final stats are:\n " + currentBodyType + "\n\n Your old stats are: ");
 
-        System.out.println("\nYour old stats are:");
         if (currentBodyType == bodyType1) {
-            System.out.println("Name: " + currentBodyType.getName() + "\nWeight: 200\nBody Fat %: 30.0\nLean Body Mass %: 70.0\nMax Bench: 150\nMax Squat: 170\nMax Run Distance: 1");
+            tvMain.setText("You have reached the deadline of your goal!\n Your final stats are:\n " + currentBodyType + "\n\n Your old stats are: Name: " + currentBodyType.getName() + "\nWeight: 200\nBody Fat %: 30.0\nLean Body Mass %: 70.0\nMax Bench: 150\nMax Squat: 170\nMax Run Distance: 1");
         } else if (currentBodyType == bodyType2) {
-            System.out.println("Name: " + currentBodyType.getName() + "\nWeight: 100\nBody Fat %: 10.0\nLean Body Mass %: 90.0\nMax Bench: 90\nMax Squat: 100\nMax Run Distance: 3");
+            tvMain.setText("You have reached the deadline of your goal!\n Your final stats are:\n " + currentBodyType + "\n\n Your old stats are: Name: " + currentBodyType.getName() + "\nWeight: 100\nBody Fat %: 10.0\nLean Body Mass %: 90.0\nMax Bench: 90\nMax Squat: 100\nMax Run Distance: 3");
         } else if (currentBodyType == bodyType3) {
-            System.out.println("Name: " + currentBodyType.getName() + "\nWeight: 140\nBody Fat %: 15.0\nLean Body Mass %: 75.0\nMax Bench: 120\nMax Squat: 140\nMax Run Distance: 2");
+            tvMain.setText("You have reached the deadline of your goal!\n Your final stats are:\n " + currentBodyType + "\n\n Your old stats are: Name: " + currentBodyType.getName() + "\nWeight: 140\nBody Fat %: 15.0\nLean Body Mass %: 75.0\nMax Bench: 120\nMax Squat: 140\nMax Run Distance: 2");
         }
+
+        etMain.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                continueVisibility();
+                btn4.setText("Continue");
+                btn4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        initialize();
+                    }
+                });
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
 
