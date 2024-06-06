@@ -28,6 +28,12 @@
         <activity android:name="gameChavezRanses" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameChavezRanses" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameChavezRanses2" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameReedTayshawn" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameLeangThong" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameRoyVidal" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameOntiverosMichael" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameCashawCharles" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameBinghamDaniel" />
     </application>
 
 </manifest>
