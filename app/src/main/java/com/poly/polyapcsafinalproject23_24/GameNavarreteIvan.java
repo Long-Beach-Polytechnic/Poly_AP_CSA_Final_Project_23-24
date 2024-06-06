@@ -59,6 +59,7 @@ public class GameNavarreteIvan extends GameActivity {
         // start adventure here
         isWon = false;
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_loadingscreen);
         tvTitle.setText("Fortnite OG MAP - SOLOS EDITION");
 
         tvStoryText.setText("\nIts time, lets go!\nWhere would you like to land?");
@@ -94,6 +95,8 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void saltySprings() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_salty);
+
         tvStoryText.setText("\n You decided to go to Salty Springs");
 
         tvStoryText.setText(" What house do you want to land at?");
@@ -118,6 +121,7 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void brickHouse() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_brickhouse);
         tvStoryText.setText("\n You've decided to land brick, you get contested, you have a shotgun");
 
         tvStoryText.setText(" Which of the following do you do?");
@@ -141,6 +145,7 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void fight() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_fight);
         tvStoryText.setText("\n You fight the player and kill him, you made it out of Salty Springs alive");
 
         tvStoryText.setText(" How do you want to get to the safe zone?");
@@ -166,6 +171,7 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void hide() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_hide);
         tvStoryText.setText("\n You decide to hide");
 
         tvStoryText.setText(" A player finds you and 200 pumps your face you died.");
@@ -197,6 +203,7 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void blueHouse() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_bluehouse);
         tvStoryText.setText(
                 "\nYou've decided to land blue house, you loot the whole house and have a blue tactical shotgun and gray AR with 50 shield");
 
@@ -245,22 +252,11 @@ public class GameNavarreteIvan extends GameActivity {
     // Pleasant Path
     private void pleasantPark() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_pleasant);
        tvStoryText.setText("\n You decided to land at Pleasant Park but what house do you want to land at?");
 
         btn1.setText(" Dog house");
         btn2.setText("Modern house");
-        btn3.setVisibility(View.INVISIBLE);
-    }
-
-    private void dogHouse() {
-
-       tvStoryText.setText(
-                "\nYou've decided to land at dog house, two people landed with you, you picked up a bolt action sniper.");
-
-       tvStoryText.setText("Which of the following do you do now?");
-
-        btn1.setText("Go to the gas station for more loot");
-        btn2.setText("Try to no scope the two players");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -272,6 +268,31 @@ public class GameNavarreteIvan extends GameActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {modernHouse();
+            }
+        });
+    }
+
+    private void dogHouse() {
+
+        ivStory.setImageResource(R.drawable.im_navarreteivan_doghouse);
+       tvStoryText.setText(
+                "\nYou've decided to land at dog house, two people landed with you, you picked up a bolt action sniper.");
+
+       tvStoryText.setText("Which of the following do you do now?");
+
+        btn1.setText("Go to the gas station for more loot");
+        btn2.setText("Try to no scope the two players");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {gasStation();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {noScope();
             }
         });
     }
@@ -296,7 +317,7 @@ public class GameNavarreteIvan extends GameActivity {
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {noScope();
+            public void onClick(View view) {youVsPleasant();
             }
         });
     }
@@ -331,6 +352,18 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText("Push the 10 remaining players left");
         btn2.setText("Camp in your 1x1 waiting for players to die");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {push();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {camp();
+            }
+        });
     }
 
     private void camp() {
@@ -353,6 +386,7 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void modernHouse() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_modernhouse);
        tvStoryText.setText("\n You decided to land modern house.");
 
        tvStoryText.setText(
@@ -361,6 +395,18 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText("Go to the roof and wait for him to come out");
         btn2.setText("Go inside the basement and try to kill him");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {roof();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {basement();
+            }
+        });
     }
 
     private void roof() {
@@ -404,6 +450,7 @@ public class GameNavarreteIvan extends GameActivity {
     // Tilted Path
     private void tiltedTowers() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_tilted);
        tvStoryText.setText("\n You decided to land at Tilted Towers");
 
        tvStoryText.setText(" Where in Tilted do you want to land?");
@@ -411,10 +458,23 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText("Clock Tower");
         btn2.setText(" Garage");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {clockTower();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {garage();
+            }
+        });
     }
 
     private void clockTower() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_clocktower);
        tvStoryText.setText("\n You decide to land at Clock Tower, You get both chests.");
 
        tvStoryText.setText(" You now have 50 shield from the big pot and a Green SMG.");
@@ -426,10 +486,23 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText("Loot Pawn Shop");
         btn2.setText("Loot the Park");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {pawnShop();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {lootPark();
+            }
+        });
     }
 
     private void garage() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_garage);
        tvStoryText.setText("\n You decided to land at garage.");
 
        tvStoryText.setText(" Someone lands with you.");
@@ -442,6 +515,7 @@ public class GameNavarreteIvan extends GameActivity {
     }
 
     private void pawnShop() {
+        ivStory.setImageResource(R.drawable.im_navarreteivan_pawnshop);
 
        tvStoryText.setText("\n You decide to rotate to Pawn Shop.");
 
@@ -456,6 +530,18 @@ public class GameNavarreteIvan extends GameActivity {
         btn1.setText("Hide in a cone a go pee");
         btn2.setText("keep playing");
         btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {pee();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {holdIt();
+            }
+        });
     }
 
     private void lootPark() {
@@ -473,6 +559,7 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void pee() {
 
+
        tvStoryText.setText("\n You decide to go pee IRL...");
 
        tvStoryText.setText("\n Someone came and killed you");
@@ -483,6 +570,7 @@ public class GameNavarreteIvan extends GameActivity {
     }
 
     private void holdIt() {
+        ivStory.setImageResource(R.drawable.im_navarreteivan_pee);
 
        tvStoryText.setText("\n You decided to Hold it in.");
 
