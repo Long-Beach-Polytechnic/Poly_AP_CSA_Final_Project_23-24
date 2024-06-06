@@ -71,6 +71,7 @@ public class GamePadilloDamien extends GameActivity {
 
     private void start()
     {
+        ivStory.setImageResource(R.drawable.im_padillodamien_title);
 
         if (playCount == 0)
         {
@@ -116,7 +117,7 @@ public class GamePadilloDamien extends GameActivity {
     {
         playCount++;
         //start adventure here
-
+        ivStory.setImageResource(R.drawable.im_padillodamien_landline);
         String text ="\n(Your name is Blake Heaven)" +
       "\nYou’re in your bedroom on a FaceTime call with your best friend Luxury. (Lux for short) Suddenly the landline rings from the kitchen. “Who the hell is calling the landline?” You ask her rhetorically. “People still use landlines?” Lux asks over the phone. What do you do?";
         tvStoryText.setText(text);
@@ -169,7 +170,7 @@ public class GamePadilloDamien extends GameActivity {
         //start adventure here
 
         String text = "Yeah… That’s not happening… Anyway, you decide to go investigate. You make it to the kitchen. “Who called?” She asked confused. “I don’t know, it’s an unknown number.” You say. What next?";
-
+        ivStory.setImageResource(R.drawable.im_padillodamien_investigate);
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -184,7 +185,7 @@ public class GamePadilloDamien extends GameActivity {
             @Override
             public void onClick(View view) {
 
-                leaveTheGame();
+                answerPhone2();
             }
         });
 
@@ -201,7 +202,7 @@ public class GamePadilloDamien extends GameActivity {
     private void answerPhone2()
     {
         //start adventure here
-
+        ivStory.setImageResource(R.drawable.im_padillodamien_landline);
         String text = "Hello?” You ask. No answer.“That’s a horrible sound.” Lux says through the phone.";
 
         tvStoryText.setText(text);
@@ -218,7 +219,7 @@ public class GamePadilloDamien extends GameActivity {
             @Override
             public void onClick(View view) {
 
-                answerPhone2();
+                askAgain2();
             }
         });
 
@@ -238,7 +239,7 @@ public class GamePadilloDamien extends GameActivity {
 
     private void dontAnswerPhone2() {
         //start adventure here
-
+        ivStory.setImageResource(R.drawable.im_padillodamien_landline);
         String text = "You hear a noise back in your room. “Who is that behind you?!” Lux asks.";
 
         tvStoryText.setText(text);
@@ -310,8 +311,9 @@ public class GamePadilloDamien extends GameActivity {
 
     private void hideInCabinet2() {
         //start adventure here
+        ivStory.setImageResource(R.drawable.im_padillodamien_investigate);
         String text = "You unlocked the Idiot Ending. The killer found you because they literally watched you go into the cabinet. Are you dumb? Just kidding, do you want to try again?";
-        ivStory.setImageResource(R.drawable.im_padillodamien_commondeath);
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -377,8 +379,8 @@ public class GamePadilloDamien extends GameActivity {
     private void attackLoser()
     {
         //start adventure here
-        String text = "You unlocked the Samantha Carpenter ending. “Where?” You ask. You sound upset, but not scared. “In your room! I saw them down the hallway!” She shouted. “Fun.” You say sarcastically, charging down the hall and into your room. A masked killer was there, not expecting you yet. You tackled him, took his knife, and stabbed him in the face. “Oh my god! Behind you.!” Feet away, the second killer was there. You grabbed his knife holding arm, and stabbed him with it. Lux screams over the phone at the sight of blood, and you survive.";
         ivStory.setImageResource(R.drawable.im_padillodamien_samantha);
+        String text = "You unlocked the Samantha Carpenter ending. “Where?” You ask. You sound upset, but not scared. “In your room! I saw them down the hallway!” She shouted. “Fun.” You say sarcastically, charging down the hall and into your room. A masked killer was there, not expecting you yet. You tackled him, took his knife, and stabbed him in the face. “Oh my god! Behind you.!” Feet away, the second killer was there. You grabbed his knife holding arm, and stabbed him with it. Lux screams over the phone at the sight of blood, and you survive.";
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -450,8 +452,8 @@ public class GamePadilloDamien extends GameActivity {
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
-        btn1.setText("Pick up the phone");
-        btn2.setText("Don't answer the phone");
+        btn1.setText("Get out of there");
+        btn2.setText("Fight that b!t%$");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -532,7 +534,7 @@ public class GamePadilloDamien extends GameActivity {
     private void checkTheCloset()
     {
         //start adventure here
-        ivStory.setImageResource(R.drawable.im_padillodamien_closet);
+        ivStory.setImageResource(R.drawable.im_padillodamien_closetreal);
         String text = "You looked at the closet across the room. “I just um…” Lux was squinting in confusion. “I thought someone was in here, and they…” You open the doors slowly, and the masked killer was still there. You screamed again, slamming the doors closed, and booking it. The killer charged out of your room, close behind.";
 
         tvStoryText.setText(text);
@@ -566,9 +568,9 @@ public class GamePadilloDamien extends GameActivity {
     private void island()
     {
         //start adventure here
-
-        String text = "You unlocked the Billie Eilish ending. The killer jumped onto, and over the kitchen island, shoving your head into the sink which was conveniently plugged, and full of water. You tried to scream… But your head was under water… Do you want to try again?.";
         ivStory.setImageResource(R.drawable.im_padillodamien_billie);
+        String text = "You unlocked the Billie Eilish ending. The killer jumped onto, and over the kitchen island, shoving your head into the sink which was conveniently plugged, and full of water. You tried to scream… But your head was under water… Do you want to try again?.";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -668,9 +670,9 @@ public class GamePadilloDamien extends GameActivity {
     private void fight1()
     {
         //start adventure here
-
-        String text = "Oh my god, run!” Lux shouts through the Facetime call. You panic, and decide to grab a pillow and tackle the killer with it. The pillow is too thick and large to stab through. He drops the knife.";
         ivStory.setImageResource(R.drawable.im_padillodamien_fight);
+        String text = "Oh my god, run!” Lux shouts through the Facetime call. You panic, and decide to grab a pillow and tackle the killer with it. The pillow is too thick and large to stab through. He drops the knife.";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -702,8 +704,9 @@ public class GamePadilloDamien extends GameActivity {
     private void run1()
     {
         //start adventure here
-        String text = "Get out of there!” Lux shouts through the Facetime call. You panic, and run out as quick as you can, the killer only steps behind. What do you do?";
         ivStory.setImageResource(R.drawable.im_padillodamien_run);
+        String text = "Get out of there!” Lux shouts through the Facetime call. You panic, and run out as quick as you can, the killer only steps behind. What do you do?";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -735,8 +738,9 @@ public class GamePadilloDamien extends GameActivity {
     private void leave3()
     {
         //start adventure here
+        ivStory.setImageResource(R.drawable.im_padillodamien_investigate);
         String text = "You unlocked the third party ending. On your way out the door, you run straight into the knife of the second killer. He was waiting for you outside. There are still more endings, would you like to try again?";
-        ivStory.setImageResource(R.drawable.im_padillodamien_commondeath);
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -802,8 +806,9 @@ public class GamePadilloDamien extends GameActivity {
     private void stayAndFight()
     {
         //start adventure here
-        String text = "You unlocked the Pam Hues ending. You had nothing to defend yourself with when the killer kicked the door down. You didn’t make it…";
         ivStory.setImageResource(R.drawable.im_padillodamien_pam);
+        String text = "You unlocked the Pam Hues ending. You had nothing to defend yourself with when the killer kicked the door down. You didn’t make it…";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -835,8 +840,9 @@ public class GamePadilloDamien extends GameActivity {
     private void bathroomWindow()
     {
         //start adventure here
-        String text = "You unlocked the Olivia Morris ending. You climbed out of the window, but were impaled by the knife of the second killer. They were waiting for you. There are still more endings. Would you like to try again?";
         ivStory.setImageResource(R.drawable.im_padillodamien_olovia);
+        String text = "You unlocked the Olivia Morris ending. You climbed out of the window, but were impaled by the knife of the second killer. They were waiting for you. There are still more endings. Would you like to try again?";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -868,8 +874,9 @@ public class GamePadilloDamien extends GameActivity {
     private void keepFighting()
     {
         //start adventure here
-        String text = "You unlocked the Sydney Prescott ending. You managed to grab his knife while he was down, and stab him through the eye of the mask. You noticed another masked killer outside, they tried to run but you got to them first…";
         ivStory.setImageResource(R.drawable.im_padillodamien_sydney);
+        String text = "You unlocked the Sydney Prescott ending. You managed to grab his knife while he was down, and stab him through the eye of the mask. You noticed another masked killer outside, they tried to run but you got to them first…";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -901,8 +908,9 @@ public class GamePadilloDamien extends GameActivity {
     private void seeWhosCallingYou()
     {
         //start adventure here
-        String text = "You make it to the kitchen. “Who is it?” She asked intrigued. “Unknown Caller ID.” You say. What do you do?…";
         ivStory.setImageResource(R.drawable.im_padillodamien_investigate);
+        String text = "You make it to the kitchen. “Who is it?” She asked intrigued. “Unknown Caller ID.” You say. What do you do?…";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -1002,13 +1010,14 @@ public class GamePadilloDamien extends GameActivity {
     private void cabinet2()
     {
         //start adventure here
-        String text = "You unlocked the Camper Ending. The killer never found you because they didn't think you had a reason to hide, the police arrested two masked men, one hiding in your closet, the other found wandering around the sides of your house. There are still more endings, would you like to play again?";
         ivStory.setImageResource(R.drawable.im_padillodamien_cabinet);
+        String text = "You unlocked the Camper Ending. The killer never found you because they didn't think you had a reason to hide, the police arrested two masked men, one hiding in your closet, the other found wandering around the sides of your house. There are still more endings, would you like to play again?";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
-        btn1.setText("Hide in an empty cabinet");
-        btn2.setText("Investigate");
+        btn1.setText("Yes");
+        btn2.setText("No");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
@@ -1035,8 +1044,9 @@ public class GamePadilloDamien extends GameActivity {
     private void investigate()
     {
         //start adventure here
-        String text = "You unlocked the White Girl ending. Before you even walked into your room, a masked killer ran out, and stabbed you. He was waiting for you. There are still more endings, would you like to try again?";
         ivStory.setImageResource(R.drawable.im_padillodamien_whitegirl);
+        String text = "You unlocked the White Girl ending. Before you even walked into your room, a masked killer ran out, and stabbed you. He was waiting for you. There are still more endings, would you like to try again?";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
@@ -1102,8 +1112,9 @@ public class GamePadilloDamien extends GameActivity {
     private void leaveCallPolice()
     {
         //start adventure here
-        String text = "You unlocked the Tobey Maguire ending. On your way out, the killer stabbed you in the back. He was waiting outside. There are still more endings, would you like to try again?";
         ivStory.setImageResource(R.drawable.im_padillodamien_tobeymaguire);
+        String text = "You unlocked the Tobey Maguire ending. On your way out, the killer stabbed you in the back. He was waiting outside. There are still more endings, would you like to try again?";
+
         tvStoryText.setText(text);
 
         setAllBtnsVisible();
