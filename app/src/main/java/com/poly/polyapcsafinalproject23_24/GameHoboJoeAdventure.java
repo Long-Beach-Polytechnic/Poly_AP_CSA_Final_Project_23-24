@@ -51,6 +51,7 @@ public class GameHoboJoeAdventure extends GameActivity {
             isWon = false;
 
             tvStoryText.setText("You are Hobo Joe decide what to do");
+            ivStory.setImageResource(R.drawable.homeless_black_anime);
 
             setAllBtnsVisible();
             btn1.setText("Fight another homeless person for their cheese pizza");
@@ -78,11 +79,10 @@ public class GameHoboJoeAdventure extends GameActivity {
                 }
             });
         }
-
-        //Cheese pizza path
+        //cheese pizza path
         private void cheesePizza() {
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
+            ivStory.setImageResource(R.drawable.homeless_with_cheese_pizza);
 
             tvStoryText.setText("You chose to fight another homeless man for the pizza what do you do");
 
@@ -111,7 +111,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //choice 1
         private void threeHit() {
 
-            ivStory.setImageResource(R.drawable.im_laborday_beach);
+            ivStory.setImageResource(R.drawable.homeless_black_threehit);
 
             tvStoryText.setText("Your attack was successful but it barely phased him You also remember you had white powder in your pocket what do you do");
 
@@ -139,8 +139,8 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void usePowder() {
 
                 isWon = false;
+                ivStory.setImageResource(R.drawable.homeless_usepowder);
                 tvStoryText.setText("You used the powder and gained powers you beat up the homeless and ate the pizza but it was laced with fentanyl you died");
-
 
 
                 setAllBtnsVisible();
@@ -161,6 +161,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void tradePowder() {
 
             isWon = true;
+            ivStory.setImageResource(R.drawable.homeless_trade_sugar);
             tvStoryText.setText("You decide to trade the powder for the pizza he gladly accepts nice you don't starve and made a new crack friend");
 
 
@@ -179,6 +180,8 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         //choice 2
         private void grabPizza() {
+
+            ivStory.setImageResource(R.drawable.homeless_running_away_with_pizza_in_hand);
 
             tvStoryText.setText("You rush in and grab his pizza what do you do next");
 
@@ -207,6 +210,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void keepRunning() {
 
             isWon = false;
+            ivStory.setImageResource(R.drawable.homeless_with_pizza_in_hand_running_away_pizza_deadend);
             tvStoryText.setText("You ran into a dead end and he catches up and you died");
 
             setAllBtnsVisible();
@@ -226,6 +230,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void throwFace() {
 
             isWon = false;
+            ivStory.setImageResource(R.drawable.homeless_with_pizza_in_hand_running_away_pizza_thrown_at_face);
             tvStoryText.setText("You successfully escape but you starve to death after");
 
 
@@ -250,6 +255,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //dumpster diving path
         private void dumpster() {
 
+                ivStory.setImageResource(R.drawable.homeless_dumpster_in_hood);
                 tvStoryText.setText("Dumpster diving what do you do");
 
                 setAllBtnsVisible();
@@ -278,8 +284,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //choice 1
 
         private void bellyFlop() {
-
-
+            ivStory.setImageResource(R.drawable.homeless_bellyflop_in_dumpster);
             tvStoryText.setText("You dive in and get cut up bad what do you do");
 
             setAllBtnsVisible();
@@ -307,6 +312,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void coverWound() {
 
             isWon = false;
+            ivStory.setImageResource(R.drawable.homeless_covered_in_rags_inside_dumpster);
             tvStoryText.setText("Rip you have Aids, Hiv, Stds and herpes worst than death");
 
 
@@ -329,13 +335,12 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         private void keepSearching() {
 
-
-
+            ivStory.setImageResource(R.drawable.homeless_with_cheese_pizza);
             tvStoryText.setText("You found a med kit and some white stuff what do you use");
 
             setAllBtnsVisible();
-            btn1.setText("Cover your wounds with dirty rags");
-            btn2.setText("Thug it out and keep searching");
+            btn1.setText("use the med kit");
+            btn2.setText("use the white stuff");
             btn3.setVisibility(View.INVISIBLE);
             btn4.setVisibility(View.INVISIBLE);
 
@@ -359,6 +364,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void useMedkit() {
 
                 isWon = false;
+            ivStory.setImageResource(R.drawable.homeless_with_cheese_pizza);
                 tvStoryText.setText("You used the med kit but it was dirty used for drugs you died");
 
 
@@ -383,6 +389,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void takeWhite() {
 
             isWon = false;
+            ivStory.setImageResource(R.drawable.homeless_holding_homeless_sugar_in_bag);
             tvStoryText.setText("You take the white stuff but later on you get more addicted to it and spend every last penny for more eventually you couldn't handle it and died");
 
 
@@ -407,8 +414,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //choice 2
         private void flipDumpster() {
 
-
-
+            ivStory.setImageResource(R.drawable.homeless_flip_over_dumpster);
                 tvStoryText.setText("You flipped the dumpster and see a glowing green rat and a honey bun pick one up");
 
                 setAllBtnsVisible();
@@ -437,6 +443,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void greenRat() {
 
             isWon = false;
+            ivStory.setImageResource(R.drawable.green_rat_coming_out_dumpster);
             tvStoryText.setText("The rat was radioactive and you picked it up and died");
 
 
@@ -459,7 +466,8 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         private void honeyBun() {
 
-            isWon = false;
+            isWon = true;
+            ivStory.setImageResource(R.drawable.homeless_man_lava);
             tvStoryText.setText("It was hot like a volcano you gain powers to create a domain iron coffin meter and you are able obliterated the city you mastered the homeless powers to its fullest");
 
 
@@ -483,8 +491,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //robbing path
         private void hoboRob() {
 
-
-
+            ivStory.setImageResource(R.drawable.hobo_ski_mask_black);
             tvStoryText.setText("Put on hobo ski mask what do you rob");
 
             setAllBtnsVisible();
@@ -512,8 +519,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         //choice 1
         private void robBank() {
 
-
-
+            ivStory.setImageResource(R.drawable.rob_bank_store);
             tvStoryText.setText("You get in the bank decide what you wanna do");
 
             setAllBtnsVisible();
@@ -541,6 +547,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void maskOff() {
 
             isWon = false;
+
             tvStoryText.setText("Your face is so hideous it breaks everything around you except the free money that was easy");
 
 
@@ -563,12 +570,11 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         private void rushVault(){
 
-
-
+            ivStory.setImageResource(R.drawable.homeless_man_covered_in_money_in_a_bank_by_himself);
             tvStoryText.setText("Who that dumb to leave the vault open but it closes shut on you what do you do");
 
             setAllBtnsVisible();
-            btn1.setText("Take out the white powder in your pocket and use");
+            btn1.setText("Take out the white powder and use");
             btn2.setText("Eat the money inside");
             btn3.setVisibility(View.INVISIBLE);
             btn4.setVisibility(View.INVISIBLE);
@@ -593,6 +599,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         {
 
             isWon = false;
+            ivStory.setImageResource(R.drawable.homeless_sugar_in_bank);
             tvStoryText.setText("You broke out with the strength but died after effects wore off");
 
 
@@ -618,6 +625,7 @@ public class GameHoboJoeAdventure extends GameActivity {
 
 
             isWon = false;
+            ivStory.setImageResource(R.drawable.homeless_man_eating_money_covered_in_money_in_a_bank_surrounded_by_poop);
             tvStoryText.setText("You ate the money but the cops arrested you but they believed you had a mental disability and let you go after you poop the money out light work no reaction easy money");
 
 
@@ -643,13 +651,13 @@ public class GameHoboJoeAdventure extends GameActivity {
         private void robCracked()
         {
 
-
+            ivStory.setImageResource(R.drawable.homeless_sugar_rob);
 
             tvStoryText.setText("You decide to rob the local crackhead what do you do");
 
             setAllBtnsVisible();
             btn1.setText("Do a hit and run grab the powder");
-            btn2.setText("Heat up a honey bun\"");
+            btn2.setText("Heat up a honey bun");
             btn3.setVisibility(View.INVISIBLE);
             btn4.setVisibility(View.INVISIBLE);
 
@@ -673,6 +681,7 @@ public class GameHoboJoeAdventure extends GameActivity {
         {
 
             isWon = false;
+            ivStory.setImageResource(R.drawable.homeless_black_punching);
             tvStoryText.setText("Rip it did not phase him and he channeled his crackhead energy into one attack and blasts you to oblivion");
 
 
@@ -695,9 +704,7 @@ public class GameHoboJoeAdventure extends GameActivity {
 
         private void hotHoneyBun()
         {
-
-
-
+            ivStory.setImageResource(R.drawable.homeless_super_hot_honeybun);
             tvStoryText.setText("The honey bun is steaming hot do something quick");
 
             setAllBtnsVisible();
