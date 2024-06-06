@@ -47,7 +47,7 @@ public class GameSanchezCristian extends GameActivity {
 
 
         tvTitle.setText("Will you survive! The Not so seemly Dangerous places but they are.");
-        numLives = 3;
+        numLives = 9;
         start();
     }
 
@@ -58,8 +58,8 @@ public class GameSanchezCristian extends GameActivity {
 
 
 
-        tvStoryText.setText("Its finally summer,lets get it ");
-
+        tvStoryText.setText("Its finally summer, lets get it ");
+         ivStory.setImageResource(R.drawable.park_and_school_and_church);
 
         setAllBtnsVisible();
        btn1.setText("Go to the park");
@@ -97,6 +97,8 @@ public class GameSanchezCristian extends GameActivity {
 
         tvStoryText.setText("How do you want to go to the Park?");
 
+
+
         setAllBtnsVisible();
         btn1.setText("Go Walking");
         btn2.setText("Go in the uber");
@@ -122,8 +124,8 @@ public class GameSanchezCristian extends GameActivity {
 
     private void goWalking()
     {
-        tvStoryText.setText("Do you want to take the shortcut 2. Do you want to take the longway");
-
+        tvStoryText.setText("Do you want to take the shortcut or Do you want to take the longway");
+        ivStory.setImageResource(R.drawable.someone_walking);
       setAllBtnsVisible();
         btn1.setText("Take shortcut");
         btn2.setText("Take longway");
@@ -151,7 +153,7 @@ public class GameSanchezCristian extends GameActivity {
     private void shortCut()
     {
 
-        tvStoryText.setText(" Sense you chose the shortcut this is the consequence There was gangmembers in and Ali and they got you");
+        tvStoryText.setText(" Sense you chose the shortcut this is the consequence. There was gangmembers in and Ali and they got you");
 
         defeat();
     }
@@ -166,7 +168,7 @@ public class GameSanchezCristian extends GameActivity {
     {
 
         tvStoryText.setText(" Sense you chose an uber what uber would you like to take to the park?");
-
+        ivStory.setImageResource(R.drawable.a_uber);
         setAllBtnsVisible();
         btn1.setText("Take nice car");
         btn2.setText("Take regular car");
@@ -241,7 +243,7 @@ public class GameSanchezCristian extends GameActivity {
     {
 
         tvStoryText.setText("How do you want to go to school?");
-
+        ivStory.setImageResource(R.drawable.bike_pictue_of_someone_riding_it);
         setAllBtnsVisible();
         btn1.setText("Take the side walk");
         btn2.setText("Take the road");
@@ -284,7 +286,7 @@ public class GameSanchezCristian extends GameActivity {
     {
 
         tvStoryText.setText("What type of car do you want to take?");
-
+        ivStory.setImageResource(R.drawable.nice_car_picture);
         setAllBtnsVisible();
         btn1.setText("Take the sports Car");
         btn2.setText("Take the old Car");
@@ -309,7 +311,7 @@ public class GameSanchezCristian extends GameActivity {
     }
     private void  sportCar()
     {
-        tvStoryText.setText("You go so fast and the breaks werent working that caused you to crash into a tree");
+        tvStoryText.setText("You go so fast and the breaks were not working that caused you to crash into a tree");
 
         defeat();
     }
@@ -326,7 +328,7 @@ public class GameSanchezCristian extends GameActivity {
     {
 
         tvStoryText.setText("What church do you want to go too ");
-
+        ivStory.setImageResource(R.drawable.church);
         setAllBtnsVisible();
         btn1.setText("Old Looking church");
         btn2.setText("Nice fancy looking church");
@@ -380,7 +382,7 @@ public class GameSanchezCristian extends GameActivity {
     {
 
         tvStoryText.setText("The pastor is fake and doesn't like the color red");
-
+        ivStory.setImageResource(R.drawable.some_one_waering_red);
         defeat();
     }
 
