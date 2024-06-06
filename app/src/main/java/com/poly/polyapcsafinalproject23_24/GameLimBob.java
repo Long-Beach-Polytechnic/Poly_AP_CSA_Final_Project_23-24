@@ -1,5 +1,10 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 public class GameLimBob extends GameActivity {
 
     private Worker player;
@@ -17,75 +22,133 @@ public class GameLimBob extends GameActivity {
 
     private void runWorker()
     {
-        beginWorker();
-        while (player.getHoursWorked() < 15 && player.getMoneySaved() < 4_000)
+        setContentView(R.layout.activity_lim_main);
+        if (player.getHoursWorked() < 15 && player.getMoneySaved() < 4_000)
         {
             displayStats();
             chooseOption();
         }
-        endOfWorker();
+        else {
+            endOfWorker();
+        }
     }
 
-    private void beginWorker()
-    {
-
-    }
 
     private void displayStats()
     {
-        TextView playerName = findViewById(R.id.player_name_prompt);
-        TextView playerHoursWorked = findViewById(R.id.player_hours_worked);
-        TextView playerMoneySaved = findViewById(R.id.player_money_saved);
-        TextView playerMoneyEarned = findViewById(R.id.player_money_earned);
-        TextView playerMoneySpend = findViewById(R.id.player_money_spend);
+        TextView tvHoursWorked = findViewById(R.id.tv_worked_val);
+        TextView tvMoneySaved = findViewById(R.id.tv_saved_val);
+        TextView tvMoneyEarned = findViewById(R.id.tv_earned_val);
+        TextView tvMoneySpent = findViewById(R.id.tv_spent_val);
+
+        tvHoursWorked.setText("  " + player.getHoursWorked()+ " hours");
+        tvMoneySaved.setText("  $" + player.getMoneySaved());
+        tvMoneyEarned.setText("  $" + player.getMoneyEarned());
+        tvMoneySpent.setText("  $" + player.getMoneySpent());
 
 
-
-
-        System.out.println(text);
 
     }
 
-    private void chooseOption(int option)
+    private void chooseOption()
     {
-        System.out.println("What do you want to do?\n1. Working\n2. Earn Money\n3. Spend Money");
-        if (option == 1)
-        {
-            player.hoursWorking();
-        }
-        else if (option == 2)
-        {
-            player.earnMoney();
-        }
-        else if (option == 3)
-        {
-            player.moneySpent();
-        }
+        TextView tvMain = findViewById(R.id.tv_main);
+        Button btn1 = findViewById(R.id.button1);
+        Button btn2 = findViewById(R.id.button2);
+        Button btn3 = findViewById(R.id.button3);
+
+        tvMain.setText("What do you want to do?");
+
+        btn1.setText("Work");
+        btn2.setText("Earn money");
+        btn3.setText("Spend money");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player.hoursWorking();
+                tvMain.setText("You will earn money when you work, so keep working!!");
+                runWorker();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player.earnMoney();
+                tvMain.setText("Your work paid off, now you can spend it.");
+                runWorker();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player.moneySpent();
+                tvMain.setText("SPEND YOUR MONEY");
+                runWorker();
+            }
+        });
 
     }
 
     private void endOfWorker()
     {
+        TextView tvMain = findViewById(R.id.tv_main);
+        Button btn1 = findViewById(R.id.button1);
+        Button btn2 = findViewById(R.id.button2);
+        Button btn3 = findViewById(R.id.button3);
 
         if (player.getMoneyEarned() >= 5_000)
         {
-            System.out.println("oh damn your bank is full!");
+
+            tvMain.setText("oh damn your bank is full!");
         }
         if (player.getHoursWorked() >= 15)
         {
-            System.out.println("You passed out because you worked too much.");
+            tvMain.setText("You passed out because you worked too much.");
         }
         if (player.getMoneySaved() < 1_500 || player.getMoneySpent() < 1_500)
         {
-            System.out.println("You are a spender");
+            tvMain.setText("You are a spender");
         }
-        System.out.println("Congratulation, you saved " + player.getMoneySaved() + " money!");
-        System.out.println("Try again?\n1. Yes\n2. No, I save too much");
-        if (option == 1)
-        {
-            player = new Worker(player.getName());
-            runWorker();
-        }
+
+        btn1.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setText("Continue");
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                tvMain.setText("Congratulation, you saved " + player.getMoneySaved() + " money!");
+
+                btn1.setVisibility(View.VISIBLE);
+                btn2.setVisibility(View.VISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setText("Work again");
+                btn2.setText("No, I saved too much");
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        player = new Worker(player.getName());
+                        runWorker();
+                    }
+                });
+
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(GameLimBob.this, MainActivity.class));
+                    }
+                });
+            }
+        });
+
+
     }
 
 }
