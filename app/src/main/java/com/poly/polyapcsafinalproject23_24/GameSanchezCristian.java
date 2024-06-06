@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,14 +32,14 @@ public class GameSanchezCristian extends GameActivity {
 
     public void run()
     {
-     setContentView(R.layout.activity_game_3_button);
-     tvTitle = findViewById(R.id.tv_title_txt);
-     tvSubtitle = findViewById(R.id.tv_subtitle);
-     tvStoryText = findViewById(R.id.tv_story);
-     ivStory = findViewById(R.id.iv_story);
-     btn1 = findViewById(R.id.btn_1);
-     btn2 = findViewById(R.id.btn_2);
-     btn3 = findViewById(R.id.btn_3);
+         setContentView(R.layout.activity_game_3_button);
+         tvTitle = findViewById(R.id.tv_title_txt);
+         tvSubtitle = findViewById(R.id.tv_subtitle);
+         tvStoryText = findViewById(R.id.tv_story);
+         ivStory = findViewById(R.id.iv_story);
+         btn1 = findViewById(R.id.btn_1);
+         btn2 = findViewById(R.id.btn_2);
+         btn3 = findViewById(R.id.btn_3);
 
 
 
@@ -47,6 +48,7 @@ public class GameSanchezCristian extends GameActivity {
 
 
         tvTitle.setText("Will you survive! The Not so seemly Dangerous places but they are.");
+        tvSubtitle.setText("Good Luck");
         numLives = 9;
         start();
     }
@@ -389,6 +391,20 @@ public class GameSanchezCristian extends GameActivity {
     private void blue()
     {
         tvStoryText.setText("You are the winner nice your a champ.");
+        ivStory.setImageResource(R.drawable.someone_wearin_blue_to_church);
+
+        btn1.setText("Back to menu");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GameSanchezCristian.this, MainActivity.class));
+            }
+        });
     }
 
     private void fancy()
@@ -443,17 +459,45 @@ public class GameSanchezCristian extends GameActivity {
 
     private void defeat()
     {
+        setAllBtnsVisible();
         numLives--;
-
-        tvStoryText.setText("...");
 
         if (numLives > 0)
         {
-            start();
+            btn1.setText("Play again");
+            btn2.setText("Quit");
+            btn3.setVisibility(View.INVISIBLE);
+
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(GameSanchezCristian.this, MainActivity.class));
+                }
+            });
         }
         else
         {
-            tvStoryText.setText("GAME OVER TRY AGAIN");
+            tvStoryText.setText("GAME OVER");
+
+            setAllBtnsVisible();
+            btn1.setText("Back to menu");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(GameSanchezCristian.this, MainActivity.class));
+                }
+            });
         }
     }
 }
