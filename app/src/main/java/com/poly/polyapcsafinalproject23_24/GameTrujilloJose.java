@@ -26,6 +26,25 @@ public class GameTrujilloJose extends GameActivity {
     btn3.setVisibility(View.VISIBLE);
   }
 
+  private void setupDefeat()
+  {
+      btn1.setVisibility(View.VISIBLE);
+      btn2.setVisibility(View.INVISIBLE);
+      btn3.setVisibility(View.INVISIBLE);
+      btn1.setText("Continue");
+
+
+
+      btn1.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              setupDefeat();
+
+          }
+      });
+      run();
+  }
+
 
   //private Player player; (optional)
 
@@ -37,10 +56,10 @@ public class GameTrujilloJose extends GameActivity {
     tvTitle = findViewById(R.id.tv_title_txt);
     tvSubTitle = findViewById(R.id.tv_subtitle);
     tvStoryText = findViewById(R.id.tv_story);
-    ivStory = findViewById((R.id.iv_story);
+    ivStory = findViewById(R.id.iv_story);
     btn1 = findViewById(R.id.btn_1);
     btn2 = findViewById(R.id.btn_2);
-    btn3 = findViewById((R.id.btn_3);
+    btn3 = findViewById(R.id.btn_3);
 
     tvTitle.setText("SPACE EXPLORATION");
     tvSubTitle.setText("Map out the endless void of space");
@@ -140,7 +159,7 @@ public class GameTrujilloJose extends GameActivity {
     {
       tvStoryText.setText(" While making your best attemp to run your spaceship runs\n" +
               "      out of fuel and the bandits claim there new belongings");
-                    defeat();
+      setupDefeat();
     }
 
   private void fightBack()
@@ -208,14 +227,14 @@ public class GameTrujilloJose extends GameActivity {
       tvStoryText.setText(" They help you take down these space bandits but in return\n" +
               "    they decided to enslave you not sure what you expedited\n" +
               "    was gonna happen");
-    defeat();
+      setupDefeat();
   }
   private void revenge()
   {
       tvStoryText.setText(" I don't know why going for revenge sounded like a great\n" +
               "    idea after barely surviving the first time, lets just say\n" +
               "    you didn't get so lucky the second time");
-    defeat();
+      setupDefeat();
   }
   private void ignore()
   {
@@ -248,7 +267,7 @@ public class GameTrujilloJose extends GameActivity {
 
       tvStoryText.setText(" After month of drifting in the endless void of space you\n" +
               "    guys crashed landed into a rogue moon killing you all");
-    defeat();
+      setupDefeat();
   }
   private void sendDistressCall()
   {
@@ -432,13 +451,13 @@ public class GameTrujilloJose extends GameActivity {
   private void destroyGods()
   {
       tvStoryText.setText("You enslaved small humans and thought you were powerfull enough to defeat the Gods.");
-    defeat();
+      setupDefeat();
   }
   private void inVade()
   {
       tvStoryText.setText("You got to cocky and decided to go straight into it like a\n" +
               "    horrible leader, everyone got killed");
-    defeat();
+      setupDefeat();
   }
 
   private void killThem()
@@ -471,7 +490,7 @@ public class GameTrujilloJose extends GameActivity {
 
       tvStoryText.setText(" After destroying an entire universe the Gods themselves\n" +
               "    couldn't let you leave with this going unseen");
-    defeat();
+      setupDefeat();
   }
 
   private void left()
@@ -501,7 +520,7 @@ public class GameTrujilloJose extends GameActivity {
   {
       tvStoryText.setText(" You try to be friendly to the unknown spacecraft, little did you\n" +
               "    these guys are the most wonted beings");
-    defeat();
+      setupDefeat();
   }
 
   private void shootThem()
@@ -558,14 +577,14 @@ public class GameTrujilloJose extends GameActivity {
                 "    from where you came from they didn't believe\n" +
                 "    anything you said and labeled you insane and ordered\n" +
                 "    to have you locked up for life");
-    defeat();
+        setupDefeat();
   }
   private void no()
     {
       tvStoryText.setText("You decide not to stop and get into a high speed\n" +
               "    chase with space cops and they had no choice but to\n" +
               "    shoot you down");
-    defeat();
+        setupDefeat();
   }
 
   private void stealSpaceShip()
@@ -597,7 +616,7 @@ public class GameTrujilloJose extends GameActivity {
       {
         tvStoryText.setText(" A HUGEEEEE alien spaceship comes out of a wormhole\n" +
                 "    and nuke you");
-        defeat();
+          setupDefeat();
       }
   private void exploreUnknownPlanets()
   {
@@ -646,7 +665,7 @@ public class GameTrujilloJose extends GameActivity {
       {
           tvStoryText.setText(" You chose not to play and this cosmic being\n" +
                   "    wasnt happy about it");
-          defeat();
+          setupDefeat();
       }
   }
 
@@ -689,7 +708,7 @@ public class GameTrujilloJose extends GameActivity {
   private void aSecret()
   {
       tvStoryText.setText(" Wrong ill tell you a secret about death");
-    defeat();
+      setupDefeat();
   }
 
   private void aJoke()
@@ -702,7 +721,7 @@ public class GameTrujilloJose extends GameActivity {
   private void aLie()
   {
       tvStoryText.setText("I would lie and say you were correct but you arnt\n");
-    defeat();
+      setupDefeat();
   }
 
   private void secondRiddle()
@@ -739,12 +758,12 @@ public class GameTrujilloJose extends GameActivity {
   private void aMemmory()
   {
       tvStoryText.setText(" I'll remember you in my memory");
-    defeat();
+      setupDefeat();
   }
   private void aRoad()
   {
       tvStoryText.setText("It’s the end of the road for you");
-    defeat();
+      setupDefeat();
   }
   private void footSteps()
   {
@@ -814,35 +833,35 @@ public class GameTrujilloJose extends GameActivity {
   {
       tvStoryText.setText(" A cosmic being mind shouldn’t be shared with a\n" +
               "    human, you dropped dead within seconds");
-    defeat();
+      setupDefeat();
   }
   private void leave()
   {
       tvStoryText.setText(" Congrats you survived");
-    defeat();
+      setupDefeat();
   }
 
   private void aPhotograph()
   {
 
       tvStoryText.setText("   Here is a picture of your finale momments alive");
-    defeat();
+      setupDefeat();
 
   }
   private void aMirror()
   {
       tvStoryText.setText(" I showed you a mirror and you died.");
-    defeat();
+      setupDefeat();
   }
 
 
-  private void defeat()
-  {
-    //run method when defeated
+  private void defeat() {
+      //run method when defeated
 
-    //lose a life
-    //clear console, display text, etc
+      //lose a life
+      //clear console, display text, etc
       tvStoryText.setText("YOU DIED");
-    //determine if player gets to play again
+      //determine if player gets to play again
+  }
 
 }
