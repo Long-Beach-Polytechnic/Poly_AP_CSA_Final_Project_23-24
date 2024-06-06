@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -49,7 +50,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         tvSubtitle.setText("");
         tvStoryText.setText("You see an hot person. You think they are really good looking and you want to get their number. What do you do?");
 
-
+        ivStory.setImageResource(R.drawable.im_mcguinnessmichael_girl);
 
          //util wuz hear
         start();
@@ -69,6 +70,7 @@ public class GameMcGuinnessMichael extends GameActivity {
 
         //set points = 0      ask mr burke
 
+        setAllBtnsVisible();
         tvStoryText.setText("What do you want to do?");
         btn1.setText("Use one of your top tier pickup lines");
         btn2.setText("Use Comedy");
@@ -104,6 +106,7 @@ public class GameMcGuinnessMichael extends GameActivity {
     private void smolder() {
          //util wuz hear
 
+        setAllBtnsVisible();
         tvStoryText.setText("How do you want to Smolder?");
         btn1.setText("Smolder into the distance");
         btn2.setText("Smolder at them");
@@ -114,12 +117,14 @@ public class GameMcGuinnessMichael extends GameActivity {
             public void onClick(View v) {
                 if (Math.random() > 0.5)
                 {
+                    ivStory.setImageResource(R.drawable.im_mcguinnessmichael_smolder1);
                     tvStoryText.setText("They think you are staring at them. They are not interested in a stalker");
                     points -= 15;
                     defeat();
                 }
                 else
                 {
+                    ivStory.setImageResource(R.drawable.im_mcguinnessmichael_smolder1);
                     tvStoryText.setText("They are into the smoldering. They give you their number and walk away");
                     points += 100;
                     success();
@@ -134,12 +139,14 @@ public class GameMcGuinnessMichael extends GameActivity {
             public void onClick(View v) {
                 if (Math.random() > 0.5)
                 {
+                    ivStory.setImageResource(R.drawable.im_mcguinnessmichael_smolder2);
                     tvStoryText.setText("They don't notice you. Fail.");
                     points -= 10;
                     defeat();
                 }
                 else
                 {
+                    ivStory.setImageResource(R.drawable.im_mcguinnessmichael_smolder2);
                     points += 50;
                     noticeYou();
 
@@ -152,7 +159,8 @@ public class GameMcGuinnessMichael extends GameActivity {
     }
 
     private void noticeYou() {
-        tvStoryText.setText("They notice you and they are intrigued by the smoldering. They aproach you. What do you do?");
+        setAllBtnsVisible();
+        tvStoryText.setText("They notice you and they are intrigued by the smoldering. They approach you. What do you do?");
         btn1.setText("Break the stance and ask for their number");
         btn2.setText("Say nothing. Smolder even harder");
         btn3.setVisibility(View.INVISIBLE);
@@ -170,7 +178,8 @@ public class GameMcGuinnessMichael extends GameActivity {
             @Override
             public void onClick(View v)
             {
-                tvStoryText.setText("You don't react to them approaching you. They are about to talk to you but get intimidated by the intensity of the look on your face. They are about to leave but suddenly you smolder harder. They fall apart and cant belive how powerful you look. They write down their number and stick it in your pocket and whisper 'call me' in your ear before walking away. ");
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_smolder3);
+                tvStoryText.setText("You don't react to them approaching you. They are about to talk to you but get intimidated by the intensity of the look on your face. They are about to leave but suddenly you smolder harder. They fall apart and cant believe how powerful you look. They write down their number and stick it in your pocket and whisper 'call me' in your ear before running away fantasizing. ");
                 points += 575;
                 success();
             }
@@ -181,7 +190,7 @@ public class GameMcGuinnessMichael extends GameActivity {
     //comedy path
     private void comedy() {
         //util wuz hear
-
+        setAllBtnsVisible();
         tvStoryText.setText("What joke do you want to use?");
         btn1.setText("I just got rid of my vacuum cleaner. It sucked.");
         btn2.setText("Cosmetic surgery use to be such a touchy subject. Now you talk about botox and nobody raises an eyebrow.");
@@ -190,6 +199,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_hoover);
                 points += 25;
                 weird();
             }
@@ -199,6 +209,7 @@ public class GameMcGuinnessMichael extends GameActivity {
             @Override
             public void onClick(View v) {
                 points += 50;
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_handsome);
                 if (Math.random() > 0.5) {
                     tvStoryText.setText("They think you are insulting their appearance. They yell at you for being misogynistic and superficial and walk away");
                     points -= 15;
@@ -218,8 +229,10 @@ public class GameMcGuinnessMichael extends GameActivity {
     private void botox() {
         tvStoryText.setText("They ask you if you think that they actually look like they have gotten work done. What do you respond? ");
         //util wuz hear
+        setAllBtnsVisible();
         btn1.setText("Tell them they look beautiful");
         btn2.setText("Tell them they look like Caitlyn Jenner");
+        btn3.setVisibility(View.INVISIBLE);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -232,6 +245,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_jenner);
                 tvStoryText.setText("They start yelling at you and start calling you terrible names and storm away in disgust. You probably meant Kylie or Kendall but now you blundered it");
                 points -= 30;
                 defeat();
@@ -243,9 +257,9 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     private void weird() {
         points += 10;
-
+        setAllBtnsVisible();
         tvStoryText.setText("They think you are trying to be funny and laugh a bit uncomfortably. This is your last chance, what do you say?");
-        btn1.setText("How does a hot dog show apreciation? It franks you");
+        btn1.setText("How does a hot dog show appreciation? It franks you");
         btn2.setText("When does Thor like pop rap? When it's hammer time.");
         btn3.setVisibility(View.INVISIBLE);
 
@@ -253,6 +267,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_dog);
                 tvStoryText.setText(" They feel bad for you and give you their number out of pity");
                 points += 3;
                 success();
@@ -262,6 +277,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_hammer);
                 tvStoryText.setText("They are visibly not interested. they tell you they have a boyfriend");
                 points += 8;
                 defeat();
@@ -274,53 +290,66 @@ public class GameMcGuinnessMichael extends GameActivity {
     //Pickup Lines path
     private void lines() {
          //util wuz hear
-
+        setAllBtnsVisible();
         tvStoryText.setText("Which of your top tier pickup lines do you want to use?");
-        btn1.setText("Do you live in a corn field? Beacuse I'm stalking you");
+        btn1.setText("Do you live in a corn field? Because I'm stalking you");
         btn2.setText("I just pooped in my bed, can I sleep in yours?");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { color();}
+            public void onClick(View v) {
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_stalking);
+                color();
+            }
         });
 
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_poop);
                 weird();
+
             }
         });
 
     }
 
     private void color() {
+        setAllBtnsVisible();
         tvStoryText.setText("They are kind of scared of you. They ask you what color their car is to see if you actually are stalking them. How do you respond?");
         btn1.setText("Blue");
         btn2.setText("Brown");
         btn3.setText("Ignore the question and try another pickup line");
 
-        btn3.setVisibility(View.VISIBLE);
-
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_prison);
                 tvStoryText.setText("OMG you guessed correct! They call the cops on you and you go to prison for a long time. YOU LOSE! You don't get another chance. GAME OVER!");
 
                 points -= 350;
                 numLives -=5;
                 tvStoryText.setText("You got " + points + " points");
 
-                btn1.setVisibility(View.INVISIBLE);
+                btn1.setVisibility(View.VISIBLE);
+                btn1.setText("GAME OVER GO AWAY");
                 btn2.setVisibility(View.INVISIBLE);
                 btn3.setVisibility(View.INVISIBLE);
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(GameMcGuinnessMichael.this, MainActivity.class));
+                    }
+                });
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 confuse();
             }
         });
@@ -328,7 +357,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ivStory.setImageResource(R.drawable.im_mcguinnessmichael_weird);
                 tvStoryText.setText("You ask them 'Are you a parking ticket? Because I want to jam you under a car windshield' ");
                 if (Math.random() > 0.75) {
                     tvStoryText.setText(" Fail. What did you think would happen with a line like that?");
@@ -336,7 +365,7 @@ public class GameMcGuinnessMichael extends GameActivity {
                     defeat();
                 }
                 else {
-                    tvStoryText.setText(" They like that? They give you their number? WHAT? What kind of idiot who has never talked to someone wrote this stupid quiz?");
+                    tvStoryText.setText(" They like that? They give you their number? WHAT? What kind of idiot who has never talked to someone made this stupid game?!");
                     points += 40;
                     success();
                 }
@@ -347,9 +376,11 @@ public class GameMcGuinnessMichael extends GameActivity {
     }
 
     private void confuse() {
+        setAllBtnsVisible();
         tvStoryText.setText("You are wrong and they are really confused. Last chance. What do you do?");
         btn1.setText("Cry");
         btn2.setText("Tell them you love them");
+        btn3.setVisibility(View.INVISIBLE);
         //util wuz hear
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -386,6 +417,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         //run method when defeated
 //lose a life
         numLives--;
+        ivStory.setImageResource(R.drawable.im_mcguinnessmichael_failure);
         //clear console, display text, etc
         tvSubtitle.setText("Failure. Try Again. " + numLives + " lives left");
         //determine if player gets to play again
@@ -403,7 +435,7 @@ public class GameMcGuinnessMichael extends GameActivity {
     }
 
     private void success() {
-
+        ivStory.setImageResource(R.drawable.im_mcguinnessmichael_success);
         tvSubtitle.setText("You successfully go their phone number, congratulations! You Win");
         tvStoryText.setText("You got " + points + " points");
          //util wuz hear
