@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -262,14 +263,14 @@ public class GameLaiNicholas extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) {goIceSkating();}
+            public void onClick(View v) {pay15();}
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v){
-                pay15(); }
+                sneakIn(); }
         });
 
     }
@@ -514,7 +515,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("You go inside, what happens next?");
 
-        ivStory.setImageResource(R.drawable.im_lainicholas_insidechristmaslights);
+        ivStory.setImageResource(R.drawable.im_lainicholas_houseonfire);
 
         setAllBtnsVisible();
         btn1.setText("The light catches on fire and you die, you lose.");
@@ -550,17 +551,52 @@ public class GameLaiNicholas extends GameActivity {
         //clear console, display text, etc
         tvStoryText.setText("Careful before you lose too many lives!");
 
+        setAllBtnsVisible();
+
 
         //determine if player gets to play again
         if (numLives > 0)
         {
             //if you still have lives, return to start()
-            start();
+            btn1.setText("Play again");
+            btn2.setText("Back to menu");
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    start();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(GameLaiNicholas.this, MainActivity.class));
+;                }
+            });
+
         }
         else
         {
             //print game over message
             tvStoryText.setText("GAME OVER");
+
+            btn1.setText("Play again");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(GameLaiNicholas.this, MainActivity.class));
+                }
+            });
+
+
+
+
+
         }
 
     }
