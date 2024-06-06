@@ -56,6 +56,7 @@ public class GamePokJordan extends GameActivity {
         tvSubtitle.setText("Protecting the container ");
         tvStoryText.setText("There are terrorist coming to your lab to come taking your cure for cancer trying to destroy it. They kill and destory all of the other labs looking for it. They then kill all the lights and it goes quiet inside the building and your the last one alive with the terrorist.");
 
+        //this is a change
         ivStory.setImageResource(R.drawable.im_pokjordan_raid);
         tvTitle.setText("Protect the cure.");
 
