@@ -66,7 +66,6 @@ public class GameSannAaron extends GameActivity {
 
 
 
-
             tvStoryText.setText(text);
 
 
