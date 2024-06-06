@@ -24,19 +24,30 @@ public class GameSannAaron extends GameActivity {
             btn1 = findViewById(R.id.btn_1);
             btn2 = findViewById(R.id.btn_2);
             btn3 = findViewById(R.id.btn_3);
+            ivStory = findViewById(R.id.iv_story);
 
             setAllBtnsVisible();
-            btn1.setText("Play!");
-            btn2.setVisibility(View.INVISIBLE);
+            btn1.setText("YES!");
+            btn2.setText("YESSSS!");
             btn3.setVisibility(View.INVISIBLE);
 
             tvTitle.setText("Pokemon RPG");
-            tvSubtitle.setText("Aaron Sann");
+            tvSubtitle.setText("Gotta Catch em All!");
 
-            String text = "";
+            ivStory.setImageResource(R.drawable.im_sannaaron_0);
+
+            String text = "Welcome to the World of Pokemon!\n \nWhere all Pokemon and Humans get along\n \nTell me... are you ready to be a Pokemon Master!";
+
             tvStoryText.setText(text);
 
             btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    choosePlayerStarter();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     choosePlayerStarter();
@@ -61,11 +72,13 @@ public class GameSannAaron extends GameActivity {
          */
         private void choosePlayerStarter()
         {
+            tvSubtitle.setText("Prof. Burke!!!!");
+            ivStory.setImageResource(R.drawable.im_sannaaron_11);
             String text = "\"Hello there! Welcome to the world of Pokemon! \n \nMy name is Burke! People call me the Pokemon Prof! This world is inhabited by creatures called Pokemon! \n" +
                     " \nFor some people, Pokemon are pets. Others use them for fights. Myself...I study Pokemon as a profession. \n \nNow this is the time you have been waiting for, choose your starter Pokemon!: ";
 
 
-
+            setAllBtnsVisible();
             tvStoryText.setText(text);
 
 
@@ -103,7 +116,8 @@ public class GameSannAaron extends GameActivity {
 
         public void start()
         {
-
+            tvSubtitle.setText("Pokemon Master!");
+            ivStory.setImageResource(R.drawable.im_sannaaron_2);
             String text5 = "Welcome to the world of Pokemon!\n \nYou have received a starter Pokemon: " + playerPokemon.getName() + "\n \nNow it is time to start your Pokemon adventure and become a Pokemon Master!";
 
             tvStoryText.setText(text5);
@@ -132,6 +146,8 @@ public class GameSannAaron extends GameActivity {
          */
         public void pathToPewterCityGym()
         {
+            tvSubtitle.setText("Viridian Forest");
+            ivStory.setImageResource(R.drawable.im_sannaaron_3);
             String text8 = "After receiving " + playerPokemon.getName() + "\n \nNow we need to make our way to Pewter City Gym, but we have to go through Viridian Forest";
             tvStoryText.setText(text8);
 
@@ -170,13 +186,20 @@ public class GameSannAaron extends GameActivity {
          */
         public void viridianForest()
         {
-            String text10 = "Brock, the Gym Leader of Pewter City, has really strong and high-leveled Pokemon\n \nLets go fight him!";
+            tvSubtitle.setText("BROCK!");
+            ivStory.setImageResource(R.drawable.im_sannaaron_4);
+            String text10 = "Brock, the Gym Leader of Pewter City, has really strong and high-leveled Pokemon\n \nWhat are you going to do?\n \nLets go fight him!\n \nWould you like to change Pokemon?";
 
             tvStoryText.setText(text10);
 
+            btn1.setVisibility(View.VISIBLE);
+
             btn1.setText("Battle Brock");
 
-            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.VISIBLE);
+
+            btn2.setText("Change current pokemon");
+
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -185,10 +208,19 @@ public class GameSannAaron extends GameActivity {
                 }
             });
 
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    choosePlayerStarter();
+                }
+            });
+
         }
 
         public void continueToBrock()
         {
+            tvSubtitle.setText("LETS GO!");
+            ivStory.setImageResource(R.drawable.im_sannaaron_5);
             String text34 = "You've decided to challenge Brock in the Pewter City Gym!\n \nContinue to Brock!";
             tvStoryText.setText(text34);
 
@@ -217,9 +249,13 @@ public class GameSannAaron extends GameActivity {
          * <br> Postconditions: The player may choose to challenge Brock or return to Viridian Forest.
          */
         public void pewterCityGym() {
-
+            tvSubtitle.setText("Are You Ready?");
+            ivStory.setImageResource(R.drawable.im_sannaaron_6);
             String text40 = "You enter the Pewter City Gym, and Brock is there waiting.\n \nHe says, 'Are you sure you want to face me right now?\n \n1. Yes\n \n2. No";
             tvStoryText.setText(text40);
+            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.VISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
 
             btn1.setText("Yes");
             btn2.setText("No");
@@ -241,21 +277,13 @@ public class GameSannAaron extends GameActivity {
 
         public void battleWithBrock()
         {
-            btn1.setText("Continue");
-            btn2.setVisibility(View.INVISIBLE);
-            btn3.setVisibility(View.INVISIBLE);
-            btn1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {;
-                    pewterCityGym();
-                }
-            });
-
-            String text1 = "1. Attack\n \n2. Forfeit";
+            tvSubtitle.setText("Be Ready!");
+            ivStory.setImageResource(R.drawable.im_sannaaron_8);
+            String text1 = "I am the strongest rock type gym leader. Be prepared to face my wrath! I shall exert my pressure to make you scared!\n \nWhat are you going to do?\n \n1. Attack\n \n2. Forfeit";
             tvStoryText.setText(text1);
 
-            btn1.setText("Yes");
-            btn2.setText("No");
+            btn1.setText("Attack");
+            btn2.setText("Forfeit");
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -273,6 +301,8 @@ public class GameSannAaron extends GameActivity {
         }
 
         public void brockLoses(){
+            tvSubtitle.setText("You Won!");
+            ivStory.setImageResource(R.drawable.im_sannaaron_10);
             btn1.setText("Continue");
             btn2.setVisibility(View.INVISIBLE);
             btn3.setVisibility(View.INVISIBLE);
@@ -282,11 +312,13 @@ public class GameSannAaron extends GameActivity {
                     pewterCityGym();
                 }
             });
-            String text1 = "Congrats you Won against Brock, so start getting ready for the next gym!";
+            String text1 = "Congrats you Won against Brock, you should go rematch him to level up!";
             tvStoryText.setText(text1);
         }
 
     public void youForfeit(){
+        tvSubtitle.setText("No You Lost!");
+        ivStory.setImageResource(R.drawable.im_sannaaron_9);
         btn1.setText("Continue");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
