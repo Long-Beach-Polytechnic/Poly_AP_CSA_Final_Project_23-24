@@ -716,7 +716,15 @@ public class GameSengSambat extends GameActivity
 
         tvStoryText.setText("You have won! Try again?");
 
-        start();
+        btn3.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+        btn1.setText("Continue");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start();
+            }
+        });
 
     }
 
@@ -739,6 +747,10 @@ public class GameSengSambat extends GameActivity
         btn2.setVisibility(View.INVISIBLE);
 
         btn3.setText("Continue");
+
+
+
+
 
 
 
