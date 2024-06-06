@@ -1,6 +1,7 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,7 +17,7 @@ public class GameChavezHugo extends GameActivity {
 
     @Override
     protected void run() {
-        setContentView(R.layout.activity_game_4_button);
+        setContentView(R.layout.activity_game_3_button);
 
         tvTitle = findViewById(R.id.tv_title_txt);
         tvSubtitle = findViewById(R.id.tv_subtitle);
@@ -38,6 +39,27 @@ public class GameChavezHugo extends GameActivity {
         start();
     }
 
+    private void restart() {
+        setAllBtnsVisible();
+        btn1.setText("Play again");
+        btn2.setText("Quit");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GameChavezHugo.this, MainActivity.class));
+            }
+        });
+    }
+
 
     private void setAllBtnsVisible()
     {
@@ -51,7 +73,7 @@ public class GameChavezHugo extends GameActivity {
 
 
     private void start() {
-        isWon = false;
+        isWon = true;
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_titans_attackt);
 
@@ -162,7 +184,7 @@ public class GameChavezHugo extends GameActivity {
         tvStoryText.setText("YOU LOST!!! You got eaten by the titan!. The titans chest are very resistant, and tough against attacks, try again...");
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_chest);
-        defeat();
+        restart();
     }
 
     private void head()
@@ -172,7 +194,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_head);
 
-        defeat();
+        restart();
     }
 
     private void neck()
@@ -214,7 +236,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_fullstrength);
 
-        start();
+        restart();
     }
 
     private void nostrength()
@@ -224,7 +246,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_defeat1);
 
-        defeat();
+        restart();
     }
 
     private void gun()
@@ -234,7 +256,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_deafeat_gun);
 
-        defeat();
+        restart();
     }
 
     private void watch()
@@ -283,7 +305,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_defeat2);
 
-        defeat();
+        restart();
     }
     private void keepWatching()
     {
@@ -291,16 +313,16 @@ public class GameChavezHugo extends GameActivity {
         tvStoryText.setText("YOU LOST!!! Why do you wanna watch them? you are just a sitting duck, try again...");
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_defeat3);
-        defeat();
+        restart();
     }
     private void watchThemMore()
     {
 
-        tvStoryText.setText("YOU LOST!!! Why the hell do you just wanna watcn them? you like how the look? Whats wrong with you, do something else, try again...");
+        tvStoryText.setText("YOU LOST!!! Why the hell do you just wanna watch them? you like how the look? Whats wrong with you, do something else, try again...");
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_defeat4);
 
-        defeat();
+        restart();
     }
 
     private void runAway()
@@ -315,6 +337,7 @@ public class GameChavezHugo extends GameActivity {
         setAllBtnsVisible();
         btn1.setText("Run as fast as possible");
         btn2.setText("Run to save your family");
+        btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -369,6 +392,8 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_defeat5);
 
+        restart();
+
     }
 
     private void hideTree()
@@ -378,7 +403,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_defeat6);
 
-        defeat();
+        restart();
     }
 
     private void runFamily()
@@ -450,7 +475,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_searchbuilding);
 
-        defeat();
+        restart();
     }
 
     private void searchCrowd()
@@ -490,7 +515,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_checkfamily);
 
-        start();
+        restart();
     }
 
     private void notCheck()
@@ -500,7 +525,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_defeat7);
 
-        defeat();
+        restart();
     }
 
     private void askFamily()
@@ -510,7 +535,7 @@ public class GameChavezHugo extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_chavezhugo_defeat8);
 
-        defeat();
+        restart();
     }
 
     private void defeat()
@@ -529,7 +554,7 @@ public class GameChavezHugo extends GameActivity {
             //if you still have lives, return to start()
             tvStoryText.setText("But you miracalously got saved, try again...");
 
-            start();
+            restart();
         }
         else
         {
