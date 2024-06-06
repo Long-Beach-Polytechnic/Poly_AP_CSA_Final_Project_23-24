@@ -46,11 +46,7 @@ public class GameMcGuinnessMichael extends GameActivity {
 
         //display project title and description
          //util wuz hear
-        tvTitle.setText("Hit On Hot Person");
-        tvSubtitle.setText("");
-        tvStoryText.setText("You see an hot person. You think they are really good looking and you want to get their number. What do you do?");
 
-        ivStory.setImageResource(R.drawable.im_mcguinnessmichael_girl);
 
          //util wuz hear
         start();
@@ -65,13 +61,19 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     private void start()
     {
+        tvTitle.setText("Hit On Hot Person");
+        tvSubtitle.setText("");
+        tvStoryText.setText("You see an hot person. You think they are really good looking and you want to get their number. What do you do?");
+
+        ivStory.setImageResource(R.drawable.im_mcguinnessmichael_girl);
+
         points = 0;
         //start adventure here
 
         //set points = 0      ask mr burke
 
         setAllBtnsVisible();
-        tvStoryText.setText("What do you want to do?");
+
         btn1.setText("Use one of your top tier pickup lines");
         btn2.setText("Use Comedy");
         btn3.setText("Smolder");
@@ -127,7 +129,12 @@ public class GameMcGuinnessMichael extends GameActivity {
                     ivStory.setImageResource(R.drawable.im_mcguinnessmichael_smolder1);
                     tvStoryText.setText("They are into the smoldering. They give you their number and walk away");
                     points += 100;
+                    setAllBtnsVisible();
+                    btn1.setText("Continue");
+                    btn2.setVisibility(View.INVISIBLE);
+                    btn3.setVisibility(View.INVISIBLE);
                     success();
+
                 }
             }
         });
@@ -181,6 +188,17 @@ public class GameMcGuinnessMichael extends GameActivity {
                 ivStory.setImageResource(R.drawable.im_mcguinnessmichael_smolder3);
                 tvStoryText.setText("You don't react to them approaching you. They are about to talk to you but get intimidated by the intensity of the look on your face. They are about to leave but suddenly you smolder harder. They fall apart and cant believe how powerful you look. They write down their number and stick it in your pocket and whisper 'call me' in your ear before running away fantasizing. ");
                 points += 575;
+                setAllBtnsVisible();
+                btn1.setText("Continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        success();
+                    }
+                });
                 success();
             }
         });
@@ -423,12 +441,31 @@ public class GameMcGuinnessMichael extends GameActivity {
         //determine if player gets to play again
         if (numLives > 0) {
             //if you still have lives, return to start()
-            start();
+            btn1.setVisibility(View.VISIBLE);
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setText("Try Again");
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start();
+                }
+            });
         }
         else {
             //print game over message
-            tvSubtitle.setText("GAME OVER!!");
-            tvStoryText.setText(points + " Points");
+            btn1.setVisibility(View.VISIBLE);
+            btn1.setText("GAME OVER");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(GameMcGuinnessMichael.this, MainActivity.class));
+                }
+            });
         }
 
         //no touchie
@@ -439,7 +476,20 @@ public class GameMcGuinnessMichael extends GameActivity {
         tvSubtitle.setText("You successfully go their phone number, congratulations! You Win");
         tvStoryText.setText("You got " + points + " points");
          //util wuz hear
-        start();
+
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setText("Try Again");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start();
+            }
+        });
+
     }
 
 
