@@ -50,6 +50,7 @@ public class GameSengSambat extends GameActivity
 
      tvStoryText.setText("\nTime: 11:07 PM Location: Somewhere in Alberta, Canada \n \nIt's getting dark and you're in the woods trying to get to a campsite. While navigating your way through the forest you hear a screech that creeps you out. What do you do?");
 
+     ivStory.setImageResource(R.drawable.im_forest);
 
 
      start();
@@ -104,7 +105,8 @@ public class GameSengSambat extends GameActivity
 
     private void goForward()
     {
-        tvStoryText.setText("You keep walking forward hoping to find a way out of the forest, but you see an eyeless monster, he notices your footsteps and walks towards you. What do you do?");
+        ivStory.setImageResource(R.drawable.a_man_and_an_eyeless_monster_in_a_forest_at_night);
+        tvStoryText.setText("You keep walking forward hoping to find a way out of the forest, but you see a blind monster, he notices your footsteps and walks towards you. What do you do?");
         setAllBtnsVisible();
         btn1.setText("Hide in a bush");
         btn2.setText("Keep walking forward");
@@ -235,6 +237,7 @@ public class GameSengSambat extends GameActivity
 
 
        tvStoryText.setText("After heading east you walk into a group of hikers and they take you somewhere safe. You lived");
+       ivStory.setImageResource(R.drawable.someone_walking_with_a_group_of_hikers_in_a_forest_at_night);
        btn3.setVisibility(View.INVISIBLE);
        btn2.setVisibility(View.INVISIBLE);
 
