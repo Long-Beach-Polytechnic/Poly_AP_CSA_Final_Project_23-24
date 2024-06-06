@@ -58,9 +58,9 @@ public class GameLaiNicholas extends GameActivity {
 
         isWon = false;
 
-        ivStory.setImageResource(R.drawable.im_christmasadventure_title);
+        ivStory.setImageResource(R.drawable.im_lainicholas_christmas);
 
-        tv.Story.Text.setText("It's Christmas! Let's go on a Christmas Adventure!");
+        tvStoryText.setText("It's Christmas! Let's go on a Christmas Adventure!");
 
         setAllBtnsVisible();
         btn1.setText("Go to the North Pole");
@@ -90,7 +90,7 @@ public class GameLaiNicholas extends GameActivity {
     private void goToNorthPole() {
         tvStoryText.setText("You decide to go to the North Pole.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_northpole);
 
         setAllBtnsVisible();
         btn1.setText("Go see Santa");
@@ -119,7 +119,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("Santa asks what you want for Christmas?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_christmas);
 
         setAllBtnsVisible();
         btn1.setText("Santa Hands You a Present");
@@ -166,7 +166,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("Santa turns around with the present, what happens next?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_santagivingpresetnts);
 
         setAllBtnsVisible();
         btn1.setText("Santa tosses you in the cold ocean");
@@ -252,7 +252,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("How would you like to get in?");
 
-        ivStory.setImageresource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_iceskating);
 
         setAllBtnsVisible();
         btn1.setText("Pay $15");
@@ -278,7 +278,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("You pay $15 and get into the ice skating rink, go get your skates!");
 
-        ivStory.setImageresource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_payingforskates);
 
         setAllBtnsVisible();
         btn1.setText("Go get your skates");
@@ -323,7 +323,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("You ask for your skates in your size, what happens next?");
 
-        ivStory.setImageresource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_gettingskates);
 
         setAllBtnsVisible();
         btn1.setText("They give you your skates");
@@ -388,7 +388,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("You sneak into the rink without paying, what happens next?");
 
-        ivStory.setImageresource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_sneakingintorink);
 
         setAllBtnsVisible();
         btn1.setText("Security catches you and throws you out, you lose");
@@ -415,7 +415,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("Would you like to see lights inside or outside?");
 
-        ivStory.setImageresource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_seeingchristmaslights);
 
         setAllBtnsVisible();
         btn1.setText("Go outside");
@@ -442,7 +442,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("You go outside, what happens next?");
 
-        ivStory.setImageresource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_outsidechristmaslights);
 
         setAllBtnsVisible();
         btn1.setText("It leads into a forest, follow it!");
@@ -467,9 +467,9 @@ public class GameLaiNicholas extends GameActivity {
 
     private void followForest()
     {
-        tvStoryText.setText("You foolow the forest, what happens next?");
+        tvStoryText.setText("You follow the forest, what happens next?");
 
-        ivStory.setImageresource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_followingforest);
 
         setAllBtnsVisible();
         btn1.setText("You see beautiful lights, you look at light for almost an hour!");
@@ -480,7 +480,7 @@ public class GameLaiNicholas extends GameActivity {
 
             @Override
             public void onClick(View v) {
-                lookAtlights();}
+                lookAtLights();}
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -514,7 +514,7 @@ public class GameLaiNicholas extends GameActivity {
     {
         tvStoryText.setText("You go inside, what happens next?");
 
-        ivStory.setImageresource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.im_lainicholas_insidechristmaslights);
 
         setAllBtnsVisible();
         btn1.setText("The light catches on fire and you die, you lose.");
@@ -548,9 +548,7 @@ public class GameLaiNicholas extends GameActivity {
         numLives--;
 
         //clear console, display text, etc
-        Util.clearConsole();
-        System.out.println("Careful before you lose too many lives!");
-        Util.pauseConsole();
+        tvStoryText.setText("Careful before you lose too many lives!");
 
 
         //determine if player gets to play again
@@ -562,7 +560,7 @@ public class GameLaiNicholas extends GameActivity {
         else
         {
             //print game over message
-            System.out.println("GAME OVER");
+            tvStoryText.setText("GAME OVER");
         }
 
     }
