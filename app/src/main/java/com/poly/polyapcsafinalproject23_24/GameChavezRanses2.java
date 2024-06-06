@@ -20,6 +20,8 @@ public class GameChavezRanses2 extends GameActivity {
     private ImageView ivStory;
     private Button btn1, btn2, btn3;
 
+    private boolean isWon;
+
     public void run()
 
     {
@@ -55,6 +57,7 @@ public class GameChavezRanses2 extends GameActivity {
 
     private void start()
     {
+        isWon = false;
 
         ivStory.setImageResource(R.drawable.im_chavezranses_blackguy);
 
@@ -154,6 +157,7 @@ public class GameChavezRanses2 extends GameActivity {
     }
     private void goMimis()  //DEFEAT
     {
+        isWon = false;
 
         ivStory.setImageResource(R.drawable.im_chavezranses_fatguy);
 
@@ -167,7 +171,7 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
@@ -203,7 +207,7 @@ public class GameChavezRanses2 extends GameActivity {
     }
     private void runToParents() //DEFEAT
     {
-
+        isWon = false;
         ivStory.setImageResource(R.drawable.im_chavezranses_beginning);
 
         //Util.clearConsole was here
@@ -219,17 +223,31 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
     private void hideBed()  //SAD VICTORY
     {
+        isWon = true;
+
         ivStory.setImageResource(R.drawable.im_chavezranses_thematrix);
 
         //Util.clearConsole was here
         tvStoryText.setText("You hide and close your eyes. Once you open them everything is white. You try recalling what had just happened yet cannot remember a single thing. Funny . Do I know you?");
         //Util.clearConsole was here
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
 
@@ -291,6 +309,8 @@ public class GameChavezRanses2 extends GameActivity {
 
     private void leftHook() //DEFEAT
     {
+        isWon = false;
+
         ivStory.setImageResource(R.drawable.im_chavezranses_knockedout);
 
         //Util.clearConsole was here
@@ -306,13 +326,15 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
 
     private void pushHim()  //SAD VICTORY
     {
+        isWon = true;
+
         ivStory.setImageResource(R.drawable.im_chavezranses_inblackhole);
 
         //Util.clearConsole was here
@@ -322,10 +344,24 @@ public class GameChavezRanses2 extends GameActivity {
 
         tvStoryText.setText("HAIL THAT WHO SEES ALL");
         //Util.clearConsole was here
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void runAway()
     {
+        isWon = false;
+
         ivStory.setImageResource(R.drawable.im_chavezranses_cryingboy);
 
         //Util.clearConsole was here
@@ -343,7 +379,7 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
@@ -412,6 +448,7 @@ public class GameChavezRanses2 extends GameActivity {
     }
     private void deal() //DEFEAT
     {
+        isWon=false;
         ivStory.setImageResource(R.drawable.im_chavezranses_doordash);
 
         tvStoryText.setText("Without reading any contracts you make this deal and realize, you made a deal with doordash...");
@@ -426,7 +463,7 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
@@ -460,6 +497,7 @@ public class GameChavezRanses2 extends GameActivity {
     }
     private void bob() //DEFEAT
     {
+        isWon=false;
 
         ivStory.setImageResource(R.drawable.im_chavezranses_bob);
 
@@ -480,13 +518,14 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
 
     private void matrixMan()  //VICTORY
     {
+        isWon=true;
 
         ivStory.setImageResource(R.drawable.im_chavezranses_kingmatrix);
 
@@ -497,6 +536,17 @@ public class GameChavezRanses2 extends GameActivity {
 
         tvStoryText.setText("HAIL PAPA MATRIX");
         //Util.clearConsole was here
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void preachingWeirdo() //_____PREACHING CHOICE____
@@ -529,6 +579,8 @@ public class GameChavezRanses2 extends GameActivity {
 
     private void malls() //DEFEAT
     {
+        isWon=false;
+
         ivStory.setImageResource(R.drawable.im_chavezranses_loser);
 
         //Util.clearConsole was here
@@ -546,13 +598,14 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
 
     private void youAreWeird()  //SAD VICTORY
     {
+        isWon=true;
         ivStory.setImageResource(R.drawable.im_chavezranses_matrixworld);
 
         //Util.clearConsole was here
@@ -562,7 +615,17 @@ public class GameChavezRanses2 extends GameActivity {
 
         tvStoryText.setText("WW3 begins and everyone now live questioning everything.");
 
-        //Util.clearConsole was here
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
 
@@ -628,6 +691,8 @@ public class GameChavezRanses2 extends GameActivity {
     }
     private void underground()  //SAD VICTORY
     {
+        isWon=true;
+
         ivStory.setImageResource(R.drawable.im_chavezranses_boomba);
 
         //Util.clearConsole was here
@@ -637,7 +702,17 @@ public class GameChavezRanses2 extends GameActivity {
 
         tvStoryText.setText("Yous a proud brotha.");
 
-        //Util.clearConsole was here
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void jumpFence()
@@ -698,6 +773,8 @@ public class GameChavezRanses2 extends GameActivity {
     }
     private void blackHole()  //VICTORY
     {
+        isWon=true;
+
         ivStory.setImageResource(R.drawable.im_chavezranses_multiverse);
 
         //Util.clearConsole was here
@@ -706,10 +783,22 @@ public class GameChavezRanses2 extends GameActivity {
         tvStoryText.setText("You behold the power to travel between multiverses.");
 
         tvStoryText.setText("jjM4M8XtE4ChAEdXv9F5hg==");
-        //Util.clearConsole was here
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
     private void noTouch() //DEFEAT
     {
+        isWon=false;
         ivStory.setImageResource(R.drawable.im_chavezranses_testdummy);
 
         //Util.clearConsole was here
@@ -727,13 +816,14 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
 
     private void wallHugger() //DEFEAT
     {
+        isWon=false;
         ivStory.setImageResource(R.drawable.im_chavezranses_wallhugger);
 
         //Util.clearConsole was here
@@ -751,7 +841,7 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
@@ -786,6 +876,7 @@ public class GameChavezRanses2 extends GameActivity {
 
     private void direct()  //VICTORY
     {
+        isWon = true;
         ivStory.setImageResource(R.drawable.im_chavezranses_matrixtate);
 
         //Util.clearConsole was here
@@ -794,7 +885,18 @@ public class GameChavezRanses2 extends GameActivity {
         tvStoryText.setText("You join his undercover team and become one of the Tate's.");
 
         tvStoryText.setText("God bless the future...");
-        //Util.clearConsole was here
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void indirect() //SAD DEFEAT
@@ -827,6 +929,7 @@ public class GameChavezRanses2 extends GameActivity {
 
     private void money() //DEFEAT
     {
+        isWon = false;
         ivStory.setImageResource(R.drawable.im_chavezranses_strongtate);
 
         //Util.clearConsole was here
@@ -844,12 +947,13 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });
     }
     private void pushups() //DEFEAT
     {
+        isWon=false;
         ivStory.setImageResource(R.drawable.im_chavezranses_fatloser);
 
         //Util.clearConsole was here
@@ -869,36 +973,46 @@ public class GameChavezRanses2 extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                defeat();
+                end();
             }
         });;
     }
 
     //VENTURING OUT PATH COMPLETED
-    private void defeat()
+    private void end()
     {
-        //run method when defeated
-
-
-        //lose a life
-        numLives--;
-
-        //clear console, display text, etc
-
-        tvStoryText.setText("Maybe next time");
-
-        //determine if player gets to play again
-        if (numLives > 0)
+        if (isWon)
         {
-            //if you still have lives, return to start()
-            start();
+            tvStoryText.setText("THE MATRIX CRUMBLES AGAINST YOU!");
         }
         else
         {
-            //print game over message
-            tvStoryText.setText("WOMP WOMP GAME OVER");
-
+            numLives--;
+            String text = "You wasted a life. GET UP.";
+            tvStoryText.setText(text);
         }
 
+        if (numLives > 0)
+        {
+            btn1.setText("Play again!");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start();
+                }
+            });
+        }
+        else
+        {
+            tvStoryText.setText("YOU LOST. WOMP WOMP!");
+            btn1.setText("Back to menu");
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(GameChavezRanses2.this, MainActivity.class));
+                }
+            });
+        }
     }
 }
