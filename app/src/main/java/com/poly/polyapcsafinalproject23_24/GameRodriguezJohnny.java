@@ -58,7 +58,7 @@ public class GameRodriguezJohnny extends GameActivity {
     {
 
 
-        while (player.getHealth() > 0)
+        if (player.getHealth() > 0)
         {
             displayStats();
             chooseOptions();
@@ -82,30 +82,43 @@ public class GameRodriguezJohnny extends GameActivity {
     private void displayStats()
     {
 
-        System.out.println("name:\t\t\t\t" + player.getName());
-        System.out.println("health:\t\t\t\t" + player.getHealth());
-        System.out.println("poisoned Status:\t" + player.isPoisoned());
-        System.out.println("Days Survived:\t" + daysSurvived);
+        tvNameVal.setText(player.getName());
+        tvHealthVal.setText(""+player.getHealth());
+        tvStatusVal.setText(""+player.isPoisoned());
+        tvDaysSurvived.setText(""+ daysSurvived());
+
 
     }
 
-    private void chooseOptions()
-    {
-        System.out.println("\nWhat would you like to do today on your farm, " + player.getName() + "?");
-        System.out.println("1. Plant a Crop \n2. Eat a crop \n3. nothing");
+    private void chooseOptions() {
+        tvGame.setText("What would you like to do today on your farm, " + player.getName() + "?");
 
-       setAllBtnsVisible();
-       btn1.setText("Plant");
-       btn2.setText("Eat");
-       btn3.setText("Nothing");
+        btn1.setText("Plant");
+        btn2.setText("Eat");
+        btn3.setText("Nothing");
 
-       btn1.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               player.plant();
-               farm();
-           }
-       });
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                plant();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player.eatCrop();
+                eat();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nothing();
+            }
+        });
+    }
 
 
 
@@ -116,12 +129,65 @@ public class GameRodriguezJohnny extends GameActivity {
 
         if (crops.size() < 3)
         {
-            Scanner scan = new Scanner(System.in);
+            btn1.setText("carrot");
+            btn2.setText("potato");
+            btn3.setText("apple");
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int daysOld = (int) (0 + Math.random() * 6);
+                    boolean isRipe = (daysOld > 5);
+                    RodriguezJohnnyCrop crop = new RodriguezJohnnyCrop("carrot",category,isRipe, daysOld, 20);
+                    crops.add(crop);
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int daysOld = (int) (0 + Math.random() * 6);
+                    boolean isRipe = (daysOld > 5);
+                    RodriguezJohnnyCrop crop = new RodriguezJohnnyCrop("potato",category,isRipe, daysOld, 20);
+                    crops.add(crop);
+                }
+            });
+
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int daysOld = (int) (0 + Math.random() * 6);
+                    boolean isRipe = (daysOld > 5);
+                    RodriguezJohnnyCrop crop = new RodriguezJohnnyCrop("apple",category,isRipe,daysOld, 20);
+
+                }
+            });
+        }
             ivMain.setImageResource(R.drawable.im_rodriguezjohnny_farmerplantscrop);
             System.out.println("What crop would you like to plant today?");
             String name = scan.nextLine();
             System.out.println("Is this crop a vegetable or a fruit?");
+            crops.add(crops);
             String category = scan.nextLine();
+
+            btn1.setText("vegetable");
+            btn2.setText("fruit");
+            btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RodriguezJohnnyCrop crop = new RodriguezJohnnyCrop(name,"vegetable",isRipe,daysOld, 20);
+                crops.add(crop);
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RodriguezJohnnyCrop crop = new RodriguezJohnnyCrop(name,"fruit",isRipe, daysOld, 20);
+                crops.add(crop);
+            }
+        });
+
 
             int daysOld = (int) (0 + Math.random() * 6);
             boolean isRipe = (daysOld > 5);
@@ -221,7 +287,7 @@ public class GameRodriguezJohnny extends GameActivity {
 
     private void gameOver()
     {
-        System.out.println(TextColor.GREEN + player.getName() + " Has died from hunger on his farm. Game Over!" + TextColor.RESET);
+        System.out.println(player.getName() + " Has died from hunger on his farm. Game Over!" +);
         System.out.println(player.getName() + " survived " + daysSurvived + " days!");
         ivMain.setImageResource(R.drawable.im_rodriguezjohnny_farmerdies);
 
