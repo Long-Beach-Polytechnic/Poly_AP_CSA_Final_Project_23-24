@@ -31,6 +31,7 @@ public class GameBautistaCarolina extends GameActivity
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
         btn3 = findViewById(R.id.btn_3);
+        btn4.setVisibility(View.INVISIBLE);
 
 
         tvTitle.setText("DAILY LIFE CHORES");
@@ -45,6 +46,7 @@ public class GameBautistaCarolina extends GameActivity
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
     }
 
@@ -59,6 +61,7 @@ public class GameBautistaCarolina extends GameActivity
         btn1.setText("Clean the restroom");
         btn2.setText("Cook dinner");
         btn3.setText("Clean the living room");
+        btn4.setVisibility(View.INVISIBLE);
 
 
 
@@ -93,7 +96,7 @@ public class GameBautistaCarolina extends GameActivity
     //CLEAN THE RESTROOM
     private void cleanRestroom()
     {
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanRestroom);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleaningrestroom);
 
         tvStoryText.setText("You picked to clean the restroom and it is really dirty, but you need to clean it so you can do your hygiene!");
 
@@ -122,25 +125,25 @@ public class GameBautistaCarolina extends GameActivity
 
     private void cleanTub()
     {
-        //tvStoryText.setText("You chosed to clean the tub, what cleaner would you like to use?");
+        tvStoryText.setText("You chose to clean the tub, what cleaner would you like to use?");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanTub);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleaningthetub);
 
         setAllBtnsVisible();
-        btn1.setText("Usebleach");
-        btn2.setText("fabuloso");
+        btn1.setText("usebleach");
+        btn2.setText("usefabuloso");
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { useFabuloso();}
+            public void onClick(View v) { useBleach();}
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                useBleach();
+                useFabuloso();
             }
         });
 
@@ -150,7 +153,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("You went with cleaning the toilet which is the messiest part of the restroom what would you like to choose?" );
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanToilet);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleanthetoilet);
 
         setAllBtnsVisible();
         btn1.setText("useHands");
@@ -177,7 +180,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("You want to use the safe cleaner, but it did not make the toilet shine, sucks");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_useBleach);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_usebleach);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -198,7 +201,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("You chose the wrong cleaner and you just ruined the toilet, not great");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_useFabuloso);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_usefabuloso);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -218,7 +221,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("You chose to use gloves to clean the toilet, but while using them they go diry, what would you like to do now?" );
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_useGloves);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_usegloves);
 
         setAllBtnsVisible();
         btn1.setText("newGloves");
@@ -246,7 +249,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("You decided to go and use your hands to clean the toilet, but your hands got so much germs and you gave up, your no longer allowed to clean the restroom, you suck loser!!");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_useHands);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_usehands);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -268,7 +271,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = true;
         tvStoryText.setText("Yayyy!!! you decided to go get new gloves and  you are ready to clean the rest of the restroom, you win");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_useGloves);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_newgloves);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -289,7 +292,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("DANGGGG, you were to lazy to go get new gloves now you cant clean the rest of the toilet because the other gloves are too dirty");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_dirtyGloves);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_dirtygloves);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -310,7 +313,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("nCooking dinner is not easy but you are willing to give it a try for one of your chores, what are you going to cook first?\");System.out.println(\"1. Make sushi\\n2. Cook Chicken?");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cookDinner);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cookdinner);
 
         setAllBtnsVisible();
         btn1.setText("makeSushi");
@@ -336,7 +339,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("Making sushi can be a bit hard, you do not really like raw things so you have to be careful in making the sushi the correct way");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_makeSushi);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_makesushi);
 
         setAllBtnsVisible();
         btn1.setText("useVeggies");
@@ -363,7 +366,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = true;
         tvStoryText.setText("AMAZINGGGG, you were hungry and made no mistakes, you can eat the suhi already");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_useVeggies);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_useveggies);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -383,7 +386,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("You chose to add salmon on your sushi now but remembering you are alergic to raw things what are you going to do next?");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_useSalmon);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_usesalmon);
 
         setAllBtnsVisible();
         btn1.setText("SalmonRaw");
@@ -409,7 +412,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("ohhh noooo, you chose the raw salmon and you ate it all raw, you got sick and made a bad choice");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_salmonRaw);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_salmonraw);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -430,7 +433,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = true;
         tvStoryText.setText("You ate good today by cooking the right way, you know how to make dinner now and you can prove it to your family, YOU WINNNN");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cookSalmon);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cooksalmon);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -450,7 +453,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("You want to cook chicken but not sure how to make it" );
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cookChicken);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cookchicken);
 
         setAllBtnsVisible();
         btn1.setText("chickenPlain");
@@ -478,7 +481,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("WOWWWW this does not have any flavor your chicken does not taste like nothing and its not good YUCK!");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_chickenPlain);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_chickenplain);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -498,7 +501,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("You went with seasoning the chicken so it can taste good, once seasoning the chicken how would you like to cook it?" );
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_seasonChicken);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_seasonchicken);
 
         setAllBtnsVisible();
         btn1.setText("cookChickenFully");
@@ -526,7 +529,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("Its amazing that you cooked the chicken correctly but it would have been better if you over cooked it a bit so it can come out crispy and crunchy");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cookChickenFully);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cookchickenfully);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -547,7 +550,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("The chicken was left half raw and we have to remeber that we do not like raw things, you got disgusted and threw the chicken, you ruined tonights dinner");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cookChickenHalf);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cookchickenhalfway);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -568,7 +571,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("Cleaning the living roombecause it is the biggest part of the house and it could get pretty messy where would you like to start off cleaning?" );
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanTheLivingRoom);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleanlivingroom);
 
         setAllBtnsVisible();
         btn1.setText("cleanDrawer");
@@ -595,7 +598,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("You are now cleaning the drawers but having a hard time and not sure how to start off" );
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawer);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleandrawer);
 
         setAllBtnsVisible();
         btn1.setText("cleanDrawerHowever");
@@ -623,7 +626,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("Bad choice you decided to be lazy and clean the drawer with important paper inside the drawer and unfortunately you ruined them");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawersHowever);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleandrawerhowever);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -643,7 +646,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("You are now cleaning the drawers but having a hard time and not sure how to start off" );
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawer);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_empty_drawer);
 
         setAllBtnsVisible();
         btn1.setText("cleanDrawerCompletly");
@@ -671,7 +674,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = true;
         tvStoryText.setText("You have cleaned all the drawers and have left them shining, Once you are done cleaning all the drawers you can put everything back to its place, you have accomplished");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawersCompletely);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleandrawerscompletely);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -692,7 +695,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("This is a bad decision to clean it half way but you made the choice and its very disapointing, you definetly do not know how to clean");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawerHalfWay);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleandrawerhalfway);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -712,7 +715,7 @@ public class GameBautistaCarolina extends GameActivity
     {
         tvStoryText.setText("CLeaning the floor can be pretty easy but it canalso get messy really quickyly would you like to start of by choosing?" );
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_cleanDrawer);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_cleanfloor);
 
         setAllBtnsVisible();
         btn1.setText("pick up some trash");
@@ -740,7 +743,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = false;
         tvStoryText.setText("Yes cleaning can be somewhat easy, but not picking up everything from the floor can make it a bit tricky and that what you chose, you are not ready to clean up yet until you choose to do the right thing");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_pickUpSomeTrash);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_pickupsometrash);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -761,7 +764,7 @@ public class GameBautistaCarolina extends GameActivity
         isWon = true;
         tvStoryText.setText("You are doing great so far by picking up everything which will make cleaning a bit easier and faster once you are done cleaning the floor you are free to do whatever you want, CONGRADULATIONSSSS!!!!");
 
-        //ivStory.setImageResource(R.drawable.im_dailylifechores_pickUpEverything);
+        ivStory.setImageResource(R.drawable.im_bautistacarolina_clean_everything);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -784,7 +787,7 @@ public class GameBautistaCarolina extends GameActivity
         {
             tvStoryText.setText("Cleaning has to be done again You can go again to redo your chores");
 
-            ivStory.setImageResource(R.drawable.im_laborday_miracle);
+            ivStory.setImageResource(R.drawable.im_bautistacarolina_end);
         }
         else
         {
