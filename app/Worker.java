@@ -1,94 +1,3 @@
-package com.poly.polyapcsafinalproject23_24;
-
-public class GameLimBob extends GameActivity {
-
-    private Worker player;
-
-    public void run()
-    {
-        createPlayer();
-        runWorker();
-    }
-
-    private void createPlayer()
-    {
-        player = new Worker("Bob");
-    }
-
-    private void runWorker()
-    {
-        beginWorker();
-        while (player.getHoursWorked() < 15 && player.getMoneySaved() < 4_000)
-        {
-            displayStats();
-            chooseOption();
-        }
-        endOfWorker();
-    }
-
-    private void beginWorker()
-    {
-
-    }
-
-    private void displayStats()
-    {
-        TextView playerName = findViewById(R.id.player_name_prompt);
-        TextView playerHoursWorked = findViewById(R.id.player_hours_worked);
-        TextView playerMoneySaved = findViewById(R.id.player_money_saved);
-        TextView playerMoneyEarned = findViewById(R.id.player_money_earned);
-        TextView playerMoneySpend = findViewById(R.id.player_money_spend);
-
-
-
-
-        System.out.println(text);
-
-    }
-
-    private void chooseOption(int option)
-    {
-        System.out.println("What do you want to do?\n1. Working\n2. Earn Money\n3. Spend Money");
-        if (option == 1)
-        {
-            player.hoursWorking();
-        }
-        else if (option == 2)
-        {
-            player.earnMoney();
-        }
-        else if (option == 3)
-        {
-            player.moneySpent();
-        }
-
-    }
-
-    private void endOfWorker()
-    {
-
-        if (player.getMoneyEarned() >= 5_000)
-        {
-            System.out.println("oh damn your bank is full!");
-        }
-        if (player.getHoursWorked() >= 15)
-        {
-            System.out.println("You passed out because you worked too much.");
-        }
-        if (player.getMoneySaved() < 1_500 || player.getMoneySpent() < 1_500)
-        {
-            System.out.println("You are a spender");
-        }
-        System.out.println("Congratulation, you saved " + player.getMoneySaved() + " money!");
-        System.out.println("Try again?\n1. Yes\n2. No, I save too much");
-        if (option == 1)
-        {
-            player = new Worker(player.getName());
-            runWorker();
-        }
-    }
-
-}
 
 /**
  *Worker for a working game
@@ -96,7 +5,7 @@ public class GameLimBob extends GameActivity {
  *Since 1/22/24
  *Version 1.0
  */
-class Worker {
+public class Worker {
     /**
      *Workers name
      */
@@ -127,8 +36,8 @@ class Worker {
     private static int numWorkers;
 
     /**
-     *default constructor
-     *<br>Post conditions: Worker with name as empty string,
+     *defult constructor
+     *<br>Postconditions: Worker with name as empty string,
      *    hoursWorked, moneySaved, moneyEarned, moneySpent  set to 0, ID assigned
      */
     public Worker()
@@ -143,9 +52,9 @@ class Worker {
     }
 
     /**
-     *Constructor that initialize name
+     *Constructor that initialoze name
      * <br>Preconditions:  name must be nonnull
-     * <br>Post conditions: worker with given name;
+     * <br>Postconditions: worker with given name;
      *     hoursWorked, moneySaved, moneyEarned, moneySpent set to 0, ID assigned
      *@param name     name of worker
      */
@@ -163,7 +72,7 @@ class Worker {
     /**
      *Constructor that initializes all attributes
      *<br>Preconditions name must be nonnull, all other values must be non-negative
-     *<br>Post conditions: worker with given name,
+     *<br>Postconditions: worker with given name,
      hoursWorked, moneySaved, moneyEarned, moneySpent, ID assigned
      *@param name         name of worker
      *@param hoursWorked  number of hours worked ( >= 0)
@@ -195,7 +104,7 @@ class Worker {
     /**
      *sets the worker's name
      *<br>Preconditions: newName is a non-empty string
-     *<br>Post conditions: name set to newName
+     *<br>Postconditions: name set to newName
      *@param  newName   new name for the worker
      */
     public void setName(String newName)
@@ -215,7 +124,7 @@ class Worker {
     /**
      *sets the number of hours worked
      *<br>Preconditions: numHours greater than or equal to 0
-     *<br>Post conditions: hoursWorked set
+     *<br>Postconditions: hoursWorked set
      *@param  numHours   number of hours worked (>=0)
      */
     public void setHoursWorked(int numHoursWorked)
@@ -235,7 +144,7 @@ class Worker {
     /**
      *sets the amount of money saved
      *<br>Preconditions: numMoney greater than or equal to 0
-     *<br>Post conditions: moneySaved set
+     *<br>Postconditions: moneySaved set
      *@param numMoney     number of money saved (>=0)
      */
     public void setMoneySaved(int amount)
@@ -255,7 +164,7 @@ class Worker {
     /**
      *set the amount of money earned
      *<br>Preconditions: numMoney greater than or equal to 0
-     *<br>Post conditions: moneyEarned set
+     *<br>Postconditions: moneyEarned set
      *@param num money   number of money earned (>=0)
      */
     public void setMoneyEarned(int numMoneyEarned)
@@ -274,7 +183,7 @@ class Worker {
 
     /**
      *set the amount of money spent
-     *<br>Pre conditions: numMoney greater than or equal to 0
+     *<br>Precondtions: numMoney greater than or equal to 0
      *<br>PostConditions: moneySpent set
      *@param num money    number of money spent (>=0)
      */
@@ -299,7 +208,7 @@ class Worker {
     }
 
     /**
-     *returns true if all attributes match between two contestants
+     *returns true if all attributes match betweentwo contestants
      *<br>Preconditions : anotherWorker must be non-null
      *@param    anotherWorker    anotherWorker object
      *@return   true if workers are equal
@@ -321,8 +230,8 @@ class Worker {
     }
 
     /**
-     *run this method when the worker is working
-     *<br>Post conditions:
+     *run this method whne the worker is working
+     *<br>Postconditions:
      *<br>hoursWorked increase by 1
      *<br>moneyEarned increase by 50
      *<br>moneySaved increase by 25
