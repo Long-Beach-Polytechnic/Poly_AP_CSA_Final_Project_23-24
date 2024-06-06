@@ -54,7 +54,7 @@ public class GamePerezAdan extends GameActivity {
     {
         tvTitle.setText("GRADUATED");
         tvSubtitle.setText("HIGH SCHOOL EDITION");
-        ivStory.setImageResource(R.drawable.im_perezadan_graduated_highschool);
+        ivStory.setImageResource(R.drawable.im_perezadan_graduated_high_school);
 
         String text = "We graduated high school, lets go!" +
                 "Where would you like to go?";
@@ -149,7 +149,7 @@ public class GamePerezAdan extends GameActivity {
     private void loseMotivation()
     {
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_lose_motivation);
         tvStoryText.setText("You are losing motivation and struggling");
 
         setAllBtnsVisible();
@@ -180,7 +180,7 @@ public class GamePerezAdan extends GameActivity {
     private void graduate()
     {
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_graduated);
         tvStoryText.setText("Congrats,you graduated! What do you want to do");
 
         setAllBtnsVisible();
@@ -214,7 +214,7 @@ public class GamePerezAdan extends GameActivity {
 
     private void struggle()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_struggle_in_classes);
         tvStoryText.setText("You are struggling and thinking of dropping out...");
 
         setAllBtnsVisible();
@@ -242,7 +242,7 @@ public class GamePerezAdan extends GameActivity {
 
     private void keepTrying()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_keep_trying);
         tvStoryText.setText("You keep on trying does it end up paying off?");
 
         setAllBtnsVisible();
@@ -272,7 +272,7 @@ public class GamePerezAdan extends GameActivity {
 
     private void dropOut()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_dropped_out);
         tvStoryText.setText("You dropped out of college, what do you do now?");
 
         setAllBtnsVisible();
@@ -300,7 +300,7 @@ public class GamePerezAdan extends GameActivity {
 
     private void getJob()
     {
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_getting_job);
         tvStoryText.setText("Where would you like to work at?");
 
         setAllBtnsVisible();
@@ -329,7 +329,7 @@ public class GamePerezAdan extends GameActivity {
     private void homeJob()
     {
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_home_job);
         tvStoryText.setText("You get a big opportunity at the job do you take it?");
 
         setAllBtnsVisible();
@@ -361,8 +361,8 @@ public class GamePerezAdan extends GameActivity {
     private void badJob()
     {
 
-        ivStory.setImageResource(R.drawable.);
-        tvStoryText.setText("You start your job but things aren't looking for nthe best what do you do?");
+        ivStory.setImageResource(R.drawable.im_perezadan_bad_job);
+        tvStoryText.setText("You start your job but things aren't looking the best what do you do?");
 
         setAllBtnsVisible();
         btn1.setText("Get fired for being lazy on the job");
@@ -391,7 +391,7 @@ public class GamePerezAdan extends GameActivity {
     private void bigOpportunity()
     {
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_big_opportunity);
         tvStoryText.setText("You took it and make a lot of money,but are you smart with it?");
 
         setAllBtnsVisible();
@@ -485,7 +485,7 @@ public class GamePerezAdan extends GameActivity {
     private void helpWithHouse()
     {
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_cooking_dinner);
         tvStoryText.setText("You help out with the house but do you also cook dinner? ");
 
         setAllBtnsVisible();
@@ -577,7 +577,7 @@ public class GamePerezAdan extends GameActivity {
     private void parentsFedUp()
     {
 
-        ivStory.setImageResource(R.drawable.);
+        ivStory.setImageResource(R.drawable.im_perezadan_parents_fed_up);
         tvStoryText.setText("Do you change your mind about helping with the house or do you continue to be lazy?");
 
         setAllBtnsVisible();
