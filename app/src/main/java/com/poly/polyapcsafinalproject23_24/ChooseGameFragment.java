@@ -49,23 +49,20 @@ public class ChooseGameFragment extends Fragment {
         gameList.add(new ModelGame("Roy", "Vidal", "Amazon Trip Planner", new GameRoyVidal()));
         gameList.add(new ModelGame("Michael", "Ontiveros", "Wake Up Game", new GameOntiverosMichael()));
         gameList.add(new ModelGame("Charles", "Cashaw", "Gymhead", new GameCashawCharles()));
-        gameList.add(new ModelGame("Mr.", "Burke", "Labor Day Weekend", new GameLaborDayAdventure()));
-        gameList.add(new ModelGame("Mr.", "Burke", "Hot Dog Eating Contest", new GameHotDogEatingContest()));
         gameList.add(new ModelGame("Jose", "Trujillo", "Space Exploration", new GameTrujilloJose()));
         gameList.add(new ModelGame("Adan", "Perez", "Life after Graduation", new GamePerezAdan()));
-        gameList.add(new ModelGame("Tayshawn", "Reed", "Portal of Entries", new GameReedTayshawn());
+        gameList.add(new ModelGame("Tayshawn", "Reed", "Portal of Entries", new GameReedTayshawn()));
         gameList.add(new ModelGame("Vanessa", "Miranda", "Choose Your Superpower", new GameMirandaVanessa()));
         gameList.add(new ModelGame("Ranses", "Chavez", "The Matrix", new GameChavezRanses2()));
         gameList.add(new ModelGame("Carolina", "Bautista", "Daily Life Chores", new GameBautistaCarolina()));
-        gameList.add(new ModelGame("Tayshawn", "Reed", "Portal of Entries", new GameReedTayshawn());
         gameList.add(new ModelGame("Jordan", "Pok", "Protect The Cure", new GamePokJordan()));
-        gameList.add(new ModelGame("Tayshawn", "Reed", "Portal of Entries", new GameReedTayshawn());
         gameList.add(new ModelGame("Damien", "Padillo", "Don't Scream", new GamePadilloDamien()));
         gameList.add(new ModelGame("Cristian", "Sanchez", "Try to find a way out!", new GameSanchezCristian()));
         gameList.add(new ModelGame("Bob", "Lim", "Working Game", new GameLimBob()));
         gameList.add(new ModelGame("Hugo", "Chavez", "Attack on Titan", new GameChavezHugo()));
         gameList.add(new ModelGame("Aaron.", "Sann", "Pokemon RPG", new GameSannAaron()));
-        gameList.add(new ModelGame("Tayshawn", "Reed", "Portal of Entries", new GameReedTayshawn());
+        gameList.add(new ModelGame("Mr.", "Burke", "Labor Day Weekend", new GameLaborDayAdventure()));
+        gameList.add(new ModelGame("Mr.", "Burke", "Hot Dog Eating Contest", new GameHotDogEatingContest()));
 
         RecyclerViewAdapterGame adapter = new RecyclerViewAdapterGame(this.context, this.gameList);
         this.recyclerView.setAdapter(adapter);
