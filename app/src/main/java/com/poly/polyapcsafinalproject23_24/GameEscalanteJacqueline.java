@@ -139,14 +139,14 @@ public class GameEscalanteJacqueline extends GameActivity {
     private void gotoEdd()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_enginerringclass);
-        tvStoryText.setText("You go to EDD with Ms.Echerri but you can't draw.You fail the class.");
+        tvStoryText.setText("You go to EDD with Ms. Echerri but you can't draw.You fail the class.");
 
         defeat();
     }
     private void gotoIntrotoDesign()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_introtodesign);
-        tvStoryText.setText("You go to Intro to Design with Ms.Mulvaney, She loves you! but you never do the work.");
+        tvStoryText.setText("You go to Intro to Design with Ms. Mulvaney, She loves you! but you never do the work.");
 
         defeat();
     }
@@ -177,14 +177,14 @@ public class GameEscalanteJacqueline extends GameActivity {
     private void gotoIntroToCS()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_introtocompsci);
-        tvStoryText.setText("You go to Intro to Computer Science with Mr.LaVecchio. You hate doing scratch and never attend class.");
+        tvStoryText.setText("You go to Intro to Computer Science with Mr. LaVecchio. You hate doing scratch and never attend class.");
 
         defeat();
     }
     private void gotoAPCSA()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_compsciclass);
-        tvStoryText.setText("Your in AP CSA with Mr.Burke. You dont want to do the Choose you adventure project, so he calls Campus Security to kick you out.");
+        tvStoryText.setText("Your in AP CSA with Mr. Burke. You dont want to do the Choose you adventure project, so he calls Campus Security to kick you out.");
 
         defeat();
     }
@@ -242,14 +242,14 @@ public class GameEscalanteJacqueline extends GameActivity {
     private void gotoIntrotoVideo()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_introtovidclass);
-        tvStoryText.setText("You go to Intro to Video with Ms.Stringer, but you don't own a camera.");
+        tvStoryText.setText("You go to Intro to Video with Ms. Stringer, but you don't own a camera.");
 
         defeat();
     }
     private void gotoTheatreArts()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_classdrama);
-        tvStoryText.setText("You go to Theatre Arts with Ms.Bon but dont like improv.");
+        tvStoryText.setText("You go to Theatre Arts with Ms. Bon but dont like improv.");
 
         defeat();
     }
@@ -258,8 +258,8 @@ public class GameEscalanteJacqueline extends GameActivity {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_digitalartsclass);
         tvStoryText.setText("\nYou have a choice, what do you do?");
 
-        btn1.setText("Go to Ms.Vang");
-        btn2.setText("Go to Ms.Laztin");
+        btn1.setText("Go to Ms. Vang");
+        btn2.setText("Go to Ms. Laztin");
         btn3.setVisibility(View.INVISIBLE);
 
 
@@ -343,7 +343,7 @@ public class GameEscalanteJacqueline extends GameActivity {
     private void gotoHCE()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_healthcarecareerex);
-        tvStoryText.setText("You are in Health and Career Exploration, but Mr.Gray wants you to leave because your a class clown." );
+        tvStoryText.setText("You are in Health and Career Exploration, but Mr. Gray wants you to leave because your a class clown." );
 
         defeat();
     }
@@ -389,7 +389,7 @@ public class GameEscalanteJacqueline extends GameActivity {
     private void gotoMO()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_medicalocc);
-        tvStoryText.setText("Welcome to Medical Occupation! You are working with Ms.Sawyer to get your CNA certifcate but you dropped out." );
+        tvStoryText.setText("Welcome to Medical Occupation! You are working with Ms. Sawyer to get your CNA certifcate but you dropped out." );
 
         defeat();
     }
