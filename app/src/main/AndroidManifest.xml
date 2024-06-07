@@ -26,6 +26,9 @@
         <activity android:name="com.poly.polyapcsafinalproject23_24.MainActivity" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameHotDogEatingContest" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameSanchezCristian" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameLimBob" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameChavezHugo" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameSannAaron" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameReedTayshawn" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameLeangThong" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameRoyVidal" />
