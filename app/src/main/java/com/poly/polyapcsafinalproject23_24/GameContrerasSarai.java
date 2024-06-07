@@ -37,7 +37,6 @@ public class GameContrerasSarai extends GameActivity {
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
-        btn4.setVisibility(View.VISIBLE);
     }
 
     public void start() {
@@ -218,7 +217,20 @@ public class GameContrerasSarai extends GameActivity {
         isWon = false;
         tvStoryText.setText("You decide to observe the lions but one seems to make straight eye contact with you... so nervous you don't think of looking away making it jump and launch at you. Rip!");
         ivStory.setImageResource(R.drawable.im_contrerassarai_lionlaunch);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
+
 
     private void rescuePhone() {
         ivStory.setImageResource(R.drawable.im_contrerassarai_lostphone);
@@ -249,12 +261,34 @@ public class GameContrerasSarai extends GameActivity {
         isWon = false;
         tvStoryText.setText("Your group starts walking away and not wanting to be left behind you go follow them, leaving your phone with the dear lions and a big scolding from your mom when you get home");
         ivStory.setImageResource(R.drawable.im_contrerassarai_abandonedphone);
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void runToPhone() {
         isWon = false;
         tvStoryText.setText("You make a run for it making the lions go on mode alert to see what's the sudden movement, you don't even realize you are being chased until you feel a scratch on your leg... ouch!");
         ivStory.setImageResource(R.drawable.im_contrerassarai_lionattack);
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void slowToPhone() {
@@ -262,6 +296,17 @@ public class GameContrerasSarai extends GameActivity {
         tvStoryText.setText("You take the safe way and move slowly towards your phone, always keeping your eye on the pride of lions a few feet away. Once you use your ninja skills to grab the phone and walk back slow and steady you make it back with your group safe and sound. Hooray!");
         System.out.println("Play Again??");
         ivStory.setImageResource(R.drawable.im_contrerassarai_lioncheer);
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     //ELEPHANTS!!!
@@ -318,6 +363,19 @@ public class GameContrerasSarai extends GameActivity {
         isWon = true;
         tvStoryText.setText("You chose the correct answer congrats! You hold out the peanuts in your hand as the elephants slowly approaches you, he takes a sniff of it proceding to eat it with his trunk. You made the elephant happy and the guide congradulates you - Good Job!!");
         ivStory.setImageResource(R.drawable.im_contrerassarai_elephantspeanuts);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
+
     }
 
     private void feedLemons() {
@@ -325,6 +383,18 @@ public class GameContrerasSarai extends GameActivity {
         isWon = false;
         tvStoryText.setText("Wrong answer... The elephants takes the lemons in his trunks and after a few seconds he's running around the area like crazy, you move away being close to getting stomped. ELephants hate lemons! The guide gets you in trouble for not asking before feeding so now you're sad and the elephant is mad");
         ivStory.setImageResource(R.drawable.im_contrerassarai_wrongfood);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void observeElephants() {
@@ -355,12 +425,34 @@ public class GameContrerasSarai extends GameActivity {
         isWon = false;
         tvStoryText.setText("You choose to chase the thief of that monkey, once you catch up taking the purse back, the monkey continues running scared. You go back to give the lady her purse but then get framed of being apart of it accussing you of stealing her money. It will be a veryyy long day");
         ivStory.setImageResource(R.drawable.im_contrerassarai_thiefmonkey);
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void stayObserving() {
         isWon = false;
         tvStoryText.setText("You zone out and lose the group you were with, they are no where is sight, you wasted so much time you didn't realize they left to other animal sections. After what felt forever you find the group but get in trouble with the guide...");
         ivStory.setImageResource(R.drawable.im_contrerassarai_upsetguide);
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     //GIRAFFES!!!
@@ -444,7 +536,19 @@ public class GameContrerasSarai extends GameActivity {
         isWon = true;
         tvStoryText.setText("You are 100% correct, their tongues are a purple black-ish color due to their diet. Congrats You Win!!");
         ivStory.setImageResource(R.drawable.im_contrerassarai_purpleanswer);
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
+
 
     private void pinkAnswer() {
         isWon = false;
@@ -528,6 +632,17 @@ public class GameContrerasSarai extends GameActivity {
         isWon = true;
         System.out.println("Correct!! According to google usually giraffes live around 25 years. Sadly not thattt long");
         ivStory.setImageResource(R.drawable.im_contrerassarai_giraffetwo);
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void end() {
