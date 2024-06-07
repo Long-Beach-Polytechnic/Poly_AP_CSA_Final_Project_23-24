@@ -26,6 +26,17 @@
         <activity android:name="com.poly.polyapcsafinalproject23_24.MainActivity" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameHotDogEatingContest" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GamePerezAdan" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameMirandaVanessa" />
+        <activity android:name="gameChavezRanses" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameChavezRanses" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameChavezRanses2" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameBautistaCarolina" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GamePokJordan" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GamePadilloDamien" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameSanchezCristian" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameLimBob" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameChavezHugo" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameSannAaron" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameReedTayshawn" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameLeangThong" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameRoyVidal" />
