@@ -30,8 +30,8 @@ public class GameMirandaVanessa extends GameActivity{
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
         btn3 = findViewById(R.id.btn_3);
-        tvTitle.setText("Choose your superpower.");
-
+        tvTitle.setText("Choose Your Superpower.");
+        tvSubtitle.setText("Choose Power.");
         numLives = 5;
 
         start();
@@ -55,9 +55,9 @@ public class GameMirandaVanessa extends GameActivity{
         tvStoryText.setText("Which power are you willing to choose between these three?");
 
         setAllBtnsVisible();
-        btn1.setText("Ice powers");
-        btn2.setText("Fire powers");
-        btn3.setText("Electric powers");
+        btn1.setText("Ice Powers.");
+        btn2.setText("Fire Powers.");
+        btn3.setText("Electric Powers.");
 
         btn1.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -82,10 +82,11 @@ public class GameMirandaVanessa extends GameActivity{
         ivStory.setImageResource(R.drawable.im_mirandavanessa_ice_powers);
 
         tvStoryText.setText("What are you doing with your powers?");
+        tvSubtitle.setText("Ice Abilities.");
 
         setAllBtnsVisible();
-        btn1.setText("stay in your room");
-        btn2.setText("go with your friend to the store");
+        btn1.setText("Stay in your room.");
+        btn2.setText("Go with your friend to the store.");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -142,7 +143,7 @@ public class GameMirandaVanessa extends GameActivity{
         ivStory.setImageResource(R.drawable.im_mirandavanessa_cold_ice_cream);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -158,12 +159,12 @@ public class GameMirandaVanessa extends GameActivity{
     private void slushieDrinks()
     {
 
-        tvStoryText.setText("Your friend chugs the drinks and gets a bad brain freeze. They need to go the hospital. You loose.");
+        tvStoryText.setText("Your friend chugs the drinks and gets a bad brain freeze. They need to go the hospital. You lost.");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_brain_freeze);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -182,7 +183,7 @@ public class GameMirandaVanessa extends GameActivity{
         ivStory.setImageResource(R.drawable.im_mirandavanessa_a_bedroom);
 
         setAllBtnsVisible();
-        btn1.setText("Blast them with snow and make them fall");
+        btn1.setText("Blast them with snow and make them fall.");
         btn2.setText("Wait and see who it is.");
         btn3.setVisibility(View.INVISIBLE);
 
@@ -205,12 +206,12 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = false;
-        tvStoryText.setText("It was your sibling and you made them hit the wall. You loose.");
+        tvStoryText.setText("It was your sibling and you made them hit the wall. You lost.");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_sibling);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -230,7 +231,7 @@ public class GameMirandaVanessa extends GameActivity{
         ivStory.setImageResource(R.drawable.im_mirandavanessa_just_a_ball);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -247,12 +248,13 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         tvStoryText.setText("Yo you chose fire! What are you doing first?");
+        tvSubtitle.setText("Fire Abilities.");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_fire_powers);
 
         setAllBtnsVisible();
-        btn1.setText("You go outside and sit on the grass");
-        btn2.setText("You go to a flower shop");
+        btn1.setText("You go outside and sit on the grass.");
+        btn2.setText("You go to a flower shop.");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -273,7 +275,7 @@ public class GameMirandaVanessa extends GameActivity{
     private void sitOnGrass()
     {
 
-        tvStoryText.setText("You are now sitting on the grass, but you see a dog get chased by a snake! Wha do you do? ");
+        tvStoryText.setText("You are now sitting on the grass, but you see a dog get chased by a snake! What do you do? ");
 
         ivStory.setImageResource(R.drawable._im_mirandavanessa_sitting_on_grass);
 
@@ -301,12 +303,12 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = true;
-        tvStoryText.setText("The snake follows you instead and it bites you, you lose");
+        tvStoryText.setText("The snake follows you instead and it bites you, you lost.");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa__snake_person);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -322,12 +324,12 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = false;
-        tvStoryText.setText("You blast a small fire ball at the snake and killed it. You accidentally burned the dog though, you lose.");
+        tvStoryText.setText("You blast a small fire ball at the snake and killed it. You accidentally burned the dog though, you lost.");
         ivStory.setImageResource(R.drawable.im_mirandavanessa_fire_at_snake);
 
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -345,14 +347,14 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = false;
-        tvStoryText.setText("you made it inside the flower shop! You want to buy a few flowers for your house. Which ones do you pick?");
+        tvStoryText.setText("You made it inside the flower shop! You want to buy a few flowers for your house. Which ones do you pick?");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_flower_shop);
 
 
         setAllBtnsVisible();
-        btn1.setText("Vase flowers");
-        btn2.setText("fresh flowers");
+        btn1.setText("Vase flowers.");
+        btn2.setText("Fresh flowers.");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -374,12 +376,12 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = true;
-        tvStoryText.setText("you pay for the flowers and you walk out safely, you win!");
+        tvStoryText.setText("You pay for the flowers and you walk out safely, you win!");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_flowers_in_vase);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -395,12 +397,12 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = false;
-        tvStoryText.setText("As soon as you touched the flowers you burned them, you lose");
+        tvStoryText.setText("As soon as you touched the flowers you burned them, you lost.");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa__burned_flowers);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -415,13 +417,14 @@ public class GameMirandaVanessa extends GameActivity{
     private void electricPowers()
     {
 
-        tvStoryText.setText("Damn you're trying to be like Thor, that's cool! What are you trying to tho?");
+        tvStoryText.setText("Damn you're trying to be like Thor, that's cool! What are you trying to do though?");
+        tvSubtitle.setText("Electric Abilities.");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_electric_powers);
 
         setAllBtnsVisible();
-        btn1.setText("Take a walk in the night");
-        btn2.setText("play with the little kids and scare them");
+        btn1.setText("Take a walk in the night.");
+        btn2.setText("Play with the little kids and scare them.");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -449,8 +452,8 @@ public class GameMirandaVanessa extends GameActivity{
 
 
         setAllBtnsVisible();
-        btn1.setText("You just use your superpowers");
-        btn2.setText("you decide to just use the flashlight of your phone");
+        btn1.setText("You just use your superpowers.");
+        btn2.setText("You decide to just use the flashlight of your phone.");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -471,12 +474,12 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = true;
-        tvStoryText.setText("ayye you turned on all of the lights, you win!!");
+        tvStoryText.setText("Ayye you turned on all of the lights, you win!!");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_alley_with_lights);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -496,7 +499,7 @@ public class GameMirandaVanessa extends GameActivity{
         ivStory.setImageResource(R.drawable.im_mirandavanessa_dead_phone);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -515,8 +518,8 @@ public class GameMirandaVanessa extends GameActivity{
         ivStory.setImageResource(R.drawable.im_mirandavanessa_scaring_kids);
 
         setAllBtnsVisible();
-        btn1.setText("Cut off the lights");
-        btn2.setText("use a mask and make the lights flicker");
+        btn1.setText("Cut off the lights.");
+        btn2.setText("use a mask and make the lights flicker.");
         btn3.setVisibility(View.INVISIBLE);
 
 
@@ -540,12 +543,12 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = false;
-        tvStoryText.setText("All of the kids are scared and they started crying, you lost");
+        tvStoryText.setText("All of the kids are scared and they started crying, you lost.");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_kids_scared_by_person);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -561,12 +564,12 @@ public class GameMirandaVanessa extends GameActivity{
     {
 
         isWon = true;
-        tvStoryText.setText("They started to scram and wow, you even made one of them pee their pants");
+        tvStoryText.setText("They started to scream and wow, you even made one of them pee their pants.");
 
         ivStory.setImageResource(R.drawable.im_mirandavanessa_kids_screaming_crying_peed);
 
         setAllBtnsVisible();
-        btn1.setText("Next");
+        btn1.setText("Next.");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
 
@@ -590,7 +593,7 @@ public class GameMirandaVanessa extends GameActivity{
         else
         {
             numLives--;
-            String text = "You have " + numLives + " as you attempting to survive.";
+            String text = "You have " + numLives + " lives left as you attempt to survive.";
             tvStoryText.setText(text);
         }
 
@@ -606,15 +609,15 @@ public class GameMirandaVanessa extends GameActivity{
         }
         else
         {
-            tvStoryText.setText("your lives are over.");
-            btn1.setText("Back to menu");
+            tvStoryText.setText("It seems like you wouldn't survive with any of these abilities. Game Over.");
+            btn1.setText("Back to menu.");
 
             ivStory.setImageResource(R.drawable._im_mirandavanessa_you_lost);
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //startActivity(new Intent(GameLaborDayAdventure.this, MainActivity.class));
+                    startActivity(new Intent(GameMirandaVanessa.this, MainActivity.class));
                 }
             });
         }
