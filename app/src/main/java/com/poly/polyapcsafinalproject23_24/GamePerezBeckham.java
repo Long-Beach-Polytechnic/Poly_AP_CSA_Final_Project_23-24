@@ -1,19 +1,24 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
-
-
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class GameLaborDayAdventure extends GameActivity {
 
     //instance variables
     //   variables you plan to use throughout the adventure
 
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+    private Button btn1, btn2, btn3, btn4;
+    private boolean isWon;
     private int numLives;
-    //private Player player; (optional)
 
-
-    public void run() {
+    @Override
+    protected void run() {
         setContentView(R.layout.activity_game_4_button);
 
         tvTitle = findViewById(R.id.tv_title_txt);
@@ -23,18 +28,23 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
         btn3 = findViewById(R.id.btn_3);
-        btn4 = findViewById(R.id.btn_4);
 
-        tvTitle.setText("Make it to your Bros Home");
-        tvSubtitle.setText("Be Carefull!");
 
-        //create a scanner object for user input
-        private void setAllBtnsVisible()
-        {
-            btn1.setVisibility(View.VISIBLE);
-            btn2.setVisibility(View.Visible);
-            btn3.setVisibility(View.Visible);
-        }
+        tvTitle.setText("Get To Friend House Safe");
+        tvSubtitle.setText("Make it to your friends house safe");
+
+        numLives = 4;
+        start();
+    }
+
+
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+
+    }
 
 
 
@@ -43,103 +53,123 @@ public class GameLaborDayAdventure extends GameActivity {
 
         //display project title and description
 
-        System.out.println("Get To Friend House Safe");
-        System.out.println("Make it to your friends house safe");
 
 
-        start();
-    }
 
     private void start()
     {
 
-        ivStory.setImageResource(R.drawable.im_laborday_title);
-        playAudio(R.raw.audio_bass);
+
 
         tvStoryText.setText("GET TO YOUR FRIENDS HOUSE SAFE!");
 
 
 
         tvStoryText.setText("\nOn your way to the house you decide to eat a chocolate bar.What will you do with the wrapper?");
-        tvStoryText.setText("1.Throw wrapper in the trash\n2.Throw wrapper on the street\n3.Put wrapper in your pocket");
-        int choice = Util.enterInt(1,3);
 
-        if(choice == 1)
-        {
-            throwWrapperInTrash();
-        }
-        else if (choice == 2)
-        {
-            throwWrapperOnStreet();
-        }
-        else if (choice == 3)
-        {
-            putWrapperInPocket();
-        }
+
+        setAllBtnsVisible();
+        btn1.setText("Throw wrapper in trash");
+        btn2.setText("Throw wrapper on the street");
+        btn3.setText(" Put wrapper in your pocket");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){throwWrapperInTrash();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){throwWrapperOnStreet();}
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){putWrapperInPocket();}
+        });
+
+
+
+
     }
 
     private void throwWrapperInTrash()
     {
 
-        System.out.println("THROW WRAPPER IN TRASH");
+        tvStoryText.setText("THROW WRAPPER IN TRASH");
 
-        System.out.println("\n!");
+        tvStoryText.setText("\n!");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Give homeless man money\n2.Miss the trash entirely");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            giveHome();
-        }
-        else if (choice == 2)
-        {
-            missTrash();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Give homless man money");
+        btn2.setText("Miss the Trash can entirely");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){giveHome();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){missTrash();}
+        });
+
+
     }
 
     private void putWrapperInPocket()
     {
 
-        System.out.println("You put the wrapper in your pocket");
+        tvStoryText.setText("You put the wrapper in your pocket");
 
-        System.out.println("\n! A Wild lion that just escaped the zoo smells the wrapper in you pocket and charges straight at you");
+        tvStoryText.setText("\n! A Wild lion that just escaped the zoo smells the wrapper in you pocket and charges straight at you");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Run \n2.Stand your ground");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            runFromLion();
-        }
-        else if (choice == 2)
-        {
-            standGround();
-        }
+        btn1.setText("Run from Lion");
+        btn2.setText("Stand your ground");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){runFromLion();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {standGround();}
+        });
+
+
     }
 
 
     private void runFromLion()
     {
 
-        System.out.println("You Ran from lion");
+        tvStoryText.setText("You Ran from lion");
 
-        System.out.println("\n! The lion  is chasing you as you approach a big wall");
+        tvStoryText.setText("\n! The lion  is chasing you as you approach a big wall");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Attempt to jump the wall \n2.Run around wall");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            jumpWall();
-        }
-        else if (choice == 2)
-        {
-            aroundWall();
-        }
+        btn1.setText("Jump over wall");
+        btn2.setText("Go around the wall");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {jumpWall();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {aroundWall();}
+        });
+
+
+
+
     }
 
     private void aroundWall()
@@ -159,22 +189,28 @@ public class GameLaborDayAdventure extends GameActivity {
     private void jumpWall()
     {
 
-        System.out.println("You jumped the wall");
+        tvStoryText.setText("You jumped the wall");
 
-        System.out.println("\n! The lion scratches you on your way over the wall leaving you with a big wound on you leg");
+        tvStoryText.setText("\n! The lion scratches you on your way over the wall leaving you with a big wound on you leg");
 
-        System.out.println("\n What will you do next ?");
-        System.out.println("1.Get medical treatment \n2.Keep on walking to the house");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\n What will you do next ?");
 
-        if(choice == 1)
-        {
-            getTreatmentMedical();
-        }
-        else if (choice == 2)
-        {
-            keepWalking();
-        }
+        btn1.setText("Go get medical treatment");
+        btn2.setText("Walk it off");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {getTreatmentMedical();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {keepWalking();}
+        });
+
+
+
+
     }
 
     private void getTreatmentMedical()
@@ -211,32 +247,38 @@ public class GameLaborDayAdventure extends GameActivity {
     private void standGround()
     {
 
-        System.out.println("You stood your ground");
+        tvStoryText.setText("You stood your ground");
 
-        System.out.println("\n! The lions Bites you right were your pocket is leaving you a flesh wound");
+        tvStoryText.setText("\n! The lions Bites you right were your pocket is leaving you a flesh wound");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Go to the hospital \n2.Sit in pain and yell");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            goToHospital();
-        }
-        else if (choice == 2)
-        {
-            sitInPain();
-        }
+        btn1.setText("Go to the hospital");
+        btn2.setText("Sit there moaning in pain");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {goToHospital();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {sitInPain();}
+        });
+
+
+
+
     }
 
     private void sitInPain()
     {
 
-        System.out.println("You sat in pain");
+        tvStoryText.setText("You sat in pain");
 
 
-        System.out.println("You sat in pain until you bleed out! ");
-        System.out.println();
+        tvStoryText.setText("You sat in pain until you bleed out! ");
+        tvStoryText.setText();
         defeat();
     }
 
@@ -244,49 +286,53 @@ public class GameLaborDayAdventure extends GameActivity {
     private void goToHospital()
     {
 
-        System.out.println("You go to the hospital");
+        tvStoryText.setText("You go to the hospital");
 
-        System.out.println("\n! The doctors inform you, you got a bad infection from the lion bite");
+        tvStoryText.setText("\n! The doctors inform you, you got a bad infection from the lion bite");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.amputate your leg \n2.Walk it off\n3.Deny all medical assistance becuase you dont trust the goverment");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            amputateLeg();
-        }
-        else if (choice == 2)
-        {
-            walkItOff();
-        }
-        else if (choice == 3)
-        {
-            denyMedical();
-        }
+        btn1.setText("Cut off your Leg");
+        btn2.setText("Try to walk it off");
+        btn3.setText("Deny any medical care");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {amputateLeg();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {walkItOff();}
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {denyMedical();}
+        });
+
+
     }
 
     private void denyMedical()
     {
 
-        System.out.println("you denied any medical assistance");
+        tvStoryText.setText("you denied any medical assistance");
 
         Util.clearConsole();
-        System.out.println("You Died due to the infection and blood loss! ");
-        System.out.println();
+        tvStoryText.setText("You Died due to the infection and blood loss! ");
+
         defeat();
     }
 
     private void walkItOff()
     {
 
-        System.out.println("You Walk it off");
+        tvStoryText.setText("You Walk it off");
 
-        System.out.println("\n! Somehow walking helped and you were cured!! ");
-        System.out.println();
+        tvStoryText.setText("\n! Somehow walking helped and you were cured!! ");
 
 
-        System.out.println("YOU WIN");
+
+        tvStoryText.setText("YOU WIN");
 
         start();
     }
@@ -296,11 +342,11 @@ public class GameLaborDayAdventure extends GameActivity {
     private void amputateLeg()
     {
 
-        System.out.println(" You cut off your leg");
+        tvStoryText.setText(" You cut off your leg");
 
 
-        System.out.println("The procedure went worng!!");
-        System.out.println();
+        tvStoryText.setText("The procedure went worng!!");
+        tvStoryText.setText();
         defeat();
     }
 
@@ -316,47 +362,55 @@ public class GameLaborDayAdventure extends GameActivity {
     private void throwWrapperOnStreet()
     {
 
-        System.out.println("Throw wrapper on Street");
+        tvStoryText.setText("Throw wrapper on Street");
 
-        System.out.println("\n! You threw the wrapper on the street and the Sheriff saw you ");
+        tvStoryText.setText("\n! You threw the wrapper on the street and the Sheriff saw you ");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Run from the Sheriff\n2.Hide in a bush\n3 Stay and talk to the sheriff ");
-        int choice = Util.enterInt(1,3);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            runFromSheriff();
-        }
-        else if (choice == 2)
-        {
-            hideInBush();
-        }
-        else if (choice == 3)
-        {
-            talkWithSheriff();
-        }
+        btn1.setText("Run from the Sherrif");
+        btn2.setText("hide in a bush");
+        btn3.setText("Talk to the sheriff");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {runFromSheriff();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {hideInBush();}
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {talkWithSheriff();}
+        });
+
+
     }
 
     private void runFromSheriff()
     {
 
-        System.out.println("You run from the sheriff");
+        tvStoryText.setText("You run from the sheriff");
 
-        System.out.println("\n!You find a weapon with blood on it");
+        tvStoryText.setText("\n!You find a weapon with blood on it");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Grab the weapon and hand it the officer  \n2.leave it alone");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            grabWeapon();
-        }
-        else if (choice == 2)
-        {
-            noTouchWeapon();
-        }
+        btn1.setText("Grab the weapon");
+        btn2.setText("Dont touch the weapon");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {grabWeapon();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {noTouchWeapon();}
+        });
+
+
+
     }
     private void hideInBush()
     {
@@ -370,44 +424,51 @@ public class GameLaborDayAdventure extends GameActivity {
     private void talkWithSheriff()
     {
 
-        System.out.println("You stayed and Talked with the sheriff");
+        tvStoryText.setText("You stayed and Talked with the sheriff");
 
-        System.out.println("\n! He try's to put you in hand cuffs");
+        tvStoryText.setText("\n! He try's to put you in hand cuffs");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Run\n2.Stay and allow him to arrest you");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            runForFreedom();
-        }
-        else if (choice == 2)
-        {
-            getArrested();
-        }
+        btn1.setText("Run for freedom");
+        btn2.setText("Allow youself to be arrested");
+        btn3.setVisibility(View.INVISIBLE);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {runForFreedom();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {getArrested();}
+        });
+
+
+
     }
 
 
     private void runForFreedom()
     {
 
-        System.out.println("You Ran");
+        tvStoryText.setText("You Ran");
 
-        System.out.println("\n! There is a fence in front of your escape route with a yard on the other side");
+        tvStoryText.setText("\n! There is a fence in front of your escape route with a yard on the other side");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Jump over fence and cut acroos yard\n2.Go arounf fence and yard");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
+        btn1.setText("Jump over fence");
+        btn2.setText("avoid fence by going around");
+        btn3.setVisibility(View.INVISIBLE);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {jumpFence();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {aroundFence();}
+        });
 
-        if(choice == 1)
-        {
-            jumpFence();
-        }
-        else if (choice == 2)
-        {
-            aroundFence();
-        }
+
+
     }
 
     private void jumpFence()
@@ -425,22 +486,25 @@ public class GameLaborDayAdventure extends GameActivity {
     private void aroundFence()
     {
 
-        System.out.println("You ran around the fence");
+        tvStoryText.setText("You ran around the fence");
 
-        System.out.println("\n! You escaped the police and see a penny on the ground");
+        tvStoryText.setText("\n! You escaped the police and see a penny on the ground");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Grab the penny \n2.Leave the penny on the ground");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
+        btn1.setText("Pick up the penny");
+        btn2.setText("Leave the penny on the ground");
+        btn3.setVisibility(View.INVISIBLE);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {pickUpPenny();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {leavePenny();}
+        });
 
-        if(choice == 1)
-        {
-            pickUpPenny();
-        }
-        else if (choice == 2)
-        {
-            leavePenny();
-        }
+
+
     }
 
     private void leavePenny()
@@ -517,63 +581,75 @@ public class GameLaborDayAdventure extends GameActivity {
     private void giveHome()
     {
 
-        System.out.println("Give homeless man money");
+        tvStoryText.setText("Give homeless man money");
 
-        System.out.println("\n! A homless man asks for 5 dollars and you refuse then he starts to square up.");
+        tvStoryText.setText("\n! A homless man asks for 5 dollars and you refuse then he starts to square up.");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.call your friend \n2.Fight");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
+        btn1.setText("Fight Him");
+        btn2.setText("Call the homie to help");
+        btn3.setVisibility(View.INVISIBLE);
 
-        if(choice == 1)
-        {
-            fight();
-        }
-        else if (choice == 2)
-        {
-            callFriend();
-        }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {fight();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {callFriend();}
+        });
+
+
+
+
+
     }
 
     private void missTrash()
     {
 
-        System.out.println("THROW WRAPPER IN TRASH");
+        tvStoryText.setText("THROW WRAPPER IN TRASH");
 
-        System.out.println("\n! You miss the trash and hear sirens ");
+        tvStoryText.setText("\n! You miss the trash and hear sirens ");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Talk to police\n2.Run from police");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
+        btn1.setText("Talk to the police officers");
+        btn2.setText("Run from police");
+        btn3.setVisibility(View.INVISIBLE);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {talkToPolice();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {runFromPolice();}
+        });
 
-        if(choice == 1)
-        {
-            talkToPolice();
-        }
-        else if (choice == 2)
-        {
-            runFromPolice();
-        }
+
     }
     private void talkToPolice()
     {
 
-        System.out.println("You Talk to police");
+        tvStoryText.setText("You Talk to police");
 
-        System.out.println("\n! While talking to police you notice some white stuff on the ground ");
+        tvStoryText.setText("\n! While talking to police you notice some white stuff on the ground ");
 
-        System.out.println("\nOn What will you do next ?");
-        System.out.println("1.Touch the white stuff\n2.leave the white stuff alone");
-        int choice = Util.enterInt(1,2);
+        tvStoryText.setText("\nOn What will you do next ?");
 
-        if(choice == 1)
-        {
-            touchStuff();
-        }
-        else if (choice == 2)
-        {
-            dontTouchStuff();
-        }
+        btn1.setText("Touch the stuff");
+        btn2.setText("choose not to touch it");
+        btn3.setVisibility(View.INVISIBLE);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {touchStuff();}
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {dontTouchStuff();}
+        });
+
+
+
     }
 
 
