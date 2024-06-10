@@ -176,29 +176,56 @@ public class GameNavarreteIvan extends GameActivity {
 
         tvStoryText.setText(" A player finds you and 200 pumps your face you died.");
 
-        defeat();
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void sprint() {
 
-        tvStoryText.setText("\n You decide to sprint to the safe zone all the way in Haunted hills");
+        ivStory.setImageResource(R.drawable.im_navarreteivan_sprint);
 
-        tvStoryText.setText(" You died to storm.");
+        tvStoryText.setText("\n You decide to sprint to the safe zone all the way in Haunted hills. \nYou died to storm. \nThink next time.");
 
-        tvStoryText.setText("Think next time");
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void rift() {
+        ivStory.setImageResource(R.drawable.im_navarreteivan_rift);
 
-        tvStoryText.setText("\n You rift to zone, there is 1 player left");
+        isWon = true;
+        tvStoryText.setText("\n You rift to zone, there is 1 player left. \nYou kill him with a shotgun! VICTORY ROYALE! \nYOUR PARENTS ARE FINALLY PROUD OF YOU.");
 
-        tvStoryText.setText(" You kill him with a shotgun! VICTORY ROYALE");
 
-        tvStoryText.setText(" YOUR PARENT ARE FINALLY PROUD OF YOU");
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        start();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void blueHouse() {
@@ -228,25 +255,40 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void clearSalty() {
 
-       tvStoryText.setText("\n You killed 3 players but were low hp.");
+        ivStory.setImageResource(R.drawable.im_navarreteivan_clearsalty);
 
-       tvStoryText.setText(" You get third partied after the third kill");
+       tvStoryText.setText("\n You killed 3 players but were low hp. \nYou get third partied after the third kill.  \nA controller player sprays into your box and kills you.");
 
-       tvStoryText.setText(" A controller player sprays into your box and kills you.");
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void rotateDusty() {
 
-       tvStoryText.setText(
-                "\n While gliding to Dusty Divot you get headshot sniped mid air by a pro player and he dances on you");
+        ivStory.setImageResource(R.drawable.im_navarreteivan_rotatedusty);
 
-       tvStoryText.setText("You get mad and brake your monitor.");
+       tvStoryText.setText("\n While gliding to Dusty Divot you get headshot sniped mid air by a pro player and he dances on you. \nYou get mad and brake your monitor. \nLOSER");
 
-       tvStoryText.setText("LOSER");
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     // Pleasant Path
@@ -299,6 +341,7 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void gasStation() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_gasstation);
        tvStoryText.setText("\n You go to the gas station, a chest luckily spawned");
 
        tvStoryText.setText("YOU GOT A PURPLE PUMP FROM THE CHEST and MINIS!");
@@ -324,25 +367,45 @@ public class GameNavarreteIvan extends GameActivity {
 
     private void noScope() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_noscope);
        tvStoryText.setText("\n You decide to no scope the other players");
 
        tvStoryText.setText("YOU DIE BACK TO THE LOBBY LOSER");
 
-        defeat();
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void runHide() {
+        ivStory.setImageResource(R.drawable.im_navarreteivan_bush);
 
-       tvStoryText.setText(
-                "\n You decide to run and hide from the players, while looking for a place to hide you encounter a bush, you decide to hide in it.");
+       tvStoryText.setText(" \n You decide to run and hide from the players, while looking for a place to hide you encounter a bush, you decide to hide in it. \n While hiding in the bush someone saw your big head and sniped you.");
 
-       tvStoryText.setText(" While hiding in the bush someone saw your big head and sniped you.");
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void youVsPleasant() {
 
+        ivStory.setImageResource(R.drawable.im_navarreteivan_youvspleasant);
        tvStoryText.setText(
                 "\n You wipe all of the players in Pleasant, you now have all the best loot, Scar, chug jug, you name it.");
 
@@ -367,26 +430,46 @@ public class GameNavarreteIvan extends GameActivity {
     }
 
     private void camp() {
+        ivStory.setImageResource(R.drawable.im_navarreteivan_camp);
 
-       tvStoryText.setText("\n You decide to camp in your 1x1");
+       tvStoryText.setText(" \n You decide to camp in your 1x1. \nyou get focused by the lobby and every player remaining wants you dead. YOU DIE");
 
-       tvStoryText.setText(" you get focused by the lobby and every player remaining wants you dead. YOU DIE");
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void push() {
+        ivStory.setImageResource(R.drawable.im_navarreteivan_push);
 
-       tvStoryText.setText("\n You decide to Push everyone in the lobby because your good at the game.");
+        isWon = true;
+        tvStoryText.setText("\n You decide to Push everyone in the lobby because your good at the game. \nyou kill 5 out of the 10 players remaining and get the VICTORY ROYALE.");
 
-       tvStoryText.setText("you kill 5 out of the 10 players remaining and get the VICTORY ROYALE.");
 
-        start();
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void modernHouse() {
 
-        ivStory.setImageResource(R.drawable.im_navarreteivan_modernhouse);
+        ivStory.setImageResource(R.drawable.im_navarreteivan_modernhouseclear);
        tvStoryText.setText("\n You decided to land modern house.");
 
        tvStoryText.setText(
@@ -410,21 +493,40 @@ public class GameNavarreteIvan extends GameActivity {
     }
 
     private void roof() {
+        ivStory.setImageResource(R.drawable.im_navarreteivan_roof);
 
-       tvStoryText.setText("\n You decide to wait on top of the roof for the player to come out.");
 
-       tvStoryText.setText("\n You got sniped by a player at tree house.");
+       tvStoryText.setText("\n You decide to wait on top of the roof for the player to come out. \n You got sniped by a player at tree house.");
 
-        defeat();
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void basement() {
+        ivStory.setImageResource(R.drawable.im_navarreteivan_roof);
 
-       tvStoryText.setText("\n You decide to push the guy in the basement");
+       tvStoryText.setText("\n You decide to push the guy in the basement. \nYou got 200 pumped by a purple pump.  \nYOU DIED");
 
-       tvStoryText.setText("\n You got 200 pumped by a purple pump, YOU DIED");
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void defeat() {
@@ -505,13 +607,22 @@ public class GameNavarreteIvan extends GameActivity {
         ivStory.setImageResource(R.drawable.im_navarreteivan_garage);
        tvStoryText.setText("\n You decided to land at garage.");
 
-       tvStoryText.setText(" Someone lands with you.");
 
-       tvStoryText.setText(" You didn't get the chest...");
 
-       tvStoryText.setText("YOU DIED BACK TO THE LOBBY!");
+       tvStoryText.setText(" \nSomeone lands with you. \nYou didn't get the chest... \nYOU DIED BACK TO THE LOBBY!");
 
-        defeat();
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
+
     }
 
     private void pawnShop() {
@@ -545,7 +656,7 @@ public class GameNavarreteIvan extends GameActivity {
     }
 
     private void lootPark() {
-
+        ivStory.setImageResource(R.drawable.im_navarreteivan_lootpark);
        tvStoryText.setText("\n You decided to land at garage.");
 
        tvStoryText.setText(" Someone lands with you.");
@@ -554,33 +665,58 @@ public class GameNavarreteIvan extends GameActivity {
 
        tvStoryText.setText("YOU DIED BACK TO THE LOBBY!");
 
-        defeat();
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void pee() {
 
-
+        ivStory.setImageResource(R.drawable.im_navarreteivan_peeirl);
        tvStoryText.setText("\n You decide to go pee IRL...");
 
-       tvStoryText.setText("\n Someone came and killed you");
+        isWon = true;
+        tvStoryText.setText("Someone came and killed you. You didn't win the game but you feel better rather than holding it.");
 
-       tvStoryText.setText("\n You didn't win the game but you feel better rather than holding it.");
 
-        start();
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     private void holdIt() {
         ivStory.setImageResource(R.drawable.im_navarreteivan_pee);
 
-       tvStoryText.setText("\n You decided to Hold it in.");
 
-       tvStoryText.setText(" While fighting someone you have to go so bad.");
+       tvStoryText.setText(" \nYou decided to Hold it in.\n While fighting someone you have to go so bad. \nYou pee your pants. \nYou Died and you peed yourself.");
 
-       tvStoryText.setText(" You pee your pants");
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-       tvStoryText.setText(" You Died and you peed yourself.");
-
-        defeat();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
 }
