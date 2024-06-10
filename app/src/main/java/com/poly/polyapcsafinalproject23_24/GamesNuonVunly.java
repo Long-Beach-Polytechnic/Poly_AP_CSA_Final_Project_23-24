@@ -1,5 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -108,6 +109,7 @@ public class GamesNuonVunly extends GameActivity {
 
 
         tvStoryText.setText("You decided to stay home and play games. Moment later, Your uncle shown up and want to give you an early present for your birth. But He can't decide.");
+        setAllBtnsVisible();
         btn1.setText("$1,000");
         btn2.setText("a blaster and a spaceship from starwar");
         btn3.setVisibility(View.INVISIBLE);
@@ -119,6 +121,8 @@ public class GamesNuonVunly extends GameActivity {
                 tvStoryText.setText("You get $1,000 from your uncle, Now you have $" + player.getMoney());
 
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -137,6 +141,8 @@ public class GamesNuonVunly extends GameActivity {
                 tvStoryText.setText("You get $1,000 from your uncle, Now you have $" + player.getMoney());
 
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -269,6 +275,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("*you continue to shoot it* Little did you know...The monster slowly stand up and walk toward you...all its blood start to faint out. With just a blink of an eye, it jump to you...");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -312,6 +320,8 @@ public class GamesNuonVunly extends GameActivity {
                 tvStoryText.setText("The moment you turn, You see a light shine upward coming from a \"place\". fortunately, The monster is still stationary, allowing to get to there. It's a shop");
 
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -334,6 +344,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You decided to continue forward, but it's seem like you have been running on a straight line forever. About 2 minute later, see somthing...behind you...and it's approaching you fast. *As It get closer and closer you realized* It's the monster. In a flash, It already catch up to you and then... ");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -459,6 +471,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("As you about to slashing it, Jeff's right hand was able to move then proceed to grab your head and crush it ");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -496,6 +510,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You were able to block the attack, but its superstrength enable it to left kick you at the stomach and start comboing you.");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -517,6 +533,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -545,6 +563,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("It's a battle of time. But You Won...You piered him in a throat and kill it. \nCongratulation YOU WIN");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -559,6 +579,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("\nYou dodged right but Jeff swing around, back slapping you and...");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -573,6 +595,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You're rushing at him back and even dodge the attack. but as you about to swing, Jeff using sacrifice its left hand to successfully block the light Saber. then proceed grap you by the neck, and choking you to .... ");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -666,6 +690,8 @@ public class GamesNuonVunly extends GameActivity {
 
         tvStoryText.setText("You see a portal and run into it. \n\"CONGRATULATION YOU WIN\" \nYou wake up in your bed and don't remeber anything");
         btn1.setText("continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -681,6 +707,8 @@ public class GamesNuonVunly extends GameActivity {
     {
         tvStoryText.setText("\nAs you continue to run straight, A message pop up \n \"Opp!!! The games haven’t yet so this is a bug\" \nWe going to send you back to nearly the start");
         btn1.setText("continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -698,6 +726,8 @@ public class GamesNuonVunly extends GameActivity {
 
         tvStoryText.setText("As you continue to run, There is a deadend and a door infront... \nAs you approach to the door, It need password to open. (This is a dlc path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
         btn1.setText("continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -718,6 +748,8 @@ public class GamesNuonVunly extends GameActivity {
 
         tvStoryText.setText("+1 Gun, +5 Mag \nYou shoot the monster finished 1st Mag. However, AS you try to shoot try to it, The monster's regeneration power getting more stronger and stronger, to the point of bullet become useless...");
         btn1.setText("continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -761,6 +793,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You open the trigger and rush to the monster....");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -775,6 +809,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You throw it to the monster....It dodged.....");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -808,6 +844,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("The moment you turn, You see a light shine upward coming from a \"place\". unfortunately, you're too slow and the \"thing\" catch up to you....");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -822,6 +860,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You decided to continue forward, but what you don't realized is how fast the \"monster\" is. In a flash, It already catch up to you and then...");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -850,6 +890,8 @@ public class GamesNuonVunly extends GameActivity {
 
             tvStoryText.setText("A sign placed there for a reason.... You then proceed to fall off a climb");
             btn1.setText("continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -863,6 +905,8 @@ public class GamesNuonVunly extends GameActivity {
 
             tvStoryText.setText("WOW, NO WAY!! You actually so lucky. Congrat, You won");
             btn1.setText("continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -881,6 +925,8 @@ public class GamesNuonVunly extends GameActivity {
 
         tvStoryText.setText("\"You're at the starting line\" \nTurn out there a barrier at a starting line, unfortunate...");
         btn1.setText("continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -908,6 +954,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You're at a starting line");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -950,6 +998,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText(" wall is too close to slide in and too small to roll over. which allow the monster to catch up");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -978,6 +1028,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You dropped all the planks down and not realized they connect to a big rock above. dropping the plank meaning that a big rock also fall down and it fail on the monster, knocking it out for a moment ");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -994,6 +1046,8 @@ public class GamesNuonVunly extends GameActivity {
                 tvStoryText.setText("When you threw that crowber, It hit its throat which is a jekpot (because it's the monster's weak point), knocking the monster out for a mmonet");
 
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1043,6 +1097,8 @@ public class GamesNuonVunly extends GameActivity {
 
             tvStoryText.setText("Oh oh! wrong key...");
             btn1.setText("continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -1056,6 +1112,8 @@ public class GamesNuonVunly extends GameActivity {
 
             tvStoryText.setText("*Door unlocked*");
             btn1.setText("continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -1083,6 +1141,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("\nAnd then the door crack a huge hole. with no time less, You hurry and go through ");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1098,6 +1158,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You try charging toward the monster but he just launch to you and grab by the head first. and crushing it.");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1126,6 +1188,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("Correct");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1141,6 +1205,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("WRONG");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1156,6 +1222,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("Close but WRONG");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1185,6 +1253,8 @@ public class GamesNuonVunly extends GameActivity {
                 tvStoryText.setText("As you continue to run, There is a deadend and a door infront...\nAs you approach to the door, It need password to open. (This is a DLC path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
 
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1200,6 +1270,8 @@ public class GamesNuonVunly extends GameActivity {
             public void onClick(View v) {
                 tvStoryText.setText("You see a portal and run into it. \n\"CONGRATULATION YOU WIN\" \nYou wake up in your bed and don't remeber anything ");
                 btn1.setText("continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1242,6 +1314,8 @@ public class GamesNuonVunly extends GameActivity {
             //if you still have lives, return to start()
             tvStoryText.setText("YOU DIE");
             btn1.setText("continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -1254,6 +1328,15 @@ public class GamesNuonVunly extends GameActivity {
         else
         {
             tvStoryText.setText("GAME OVER");
+
+            btn1.setText("Back to menu");
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(GamesNuonVunly.this, MainActivity.class));
+                }
+            });
         }
 
     }
