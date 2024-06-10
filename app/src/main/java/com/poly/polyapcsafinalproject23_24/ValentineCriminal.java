@@ -230,24 +230,18 @@ public class ValentineCriminal
     {
         this.money += (25 + Math.random() * 476);
         this.wantedLvl += 0.1;
-        System.out.println("You rob a house. Classic B&E, nobody hears you. You grab your items and leave the house. It's a shame though, the house was really nice when you arrived. Too bad you left it a mess...");
     }
 
     public void turnInCriminal(ValentineCriminal target) {
         moralLvl--;
         money += 500;
         wantedLvl -= .5;
-        System.out.println("You decide to backstab your fellow criminals. You turn one in to the police, somehow unseen. You made sure to leave a note attatched saying 'from: " + name + "\t to: the police ;)\t The criminal looks at you with a dirty look, but you back away giggling.");
     }
 
     public void turnYourselfIn() {
         moralLvl++;
         setMoney(0.00);
         setWantedLvl(0.00);
-        System.out.println("You cave. Whether it was from stress, internal conflict, influence from a peer, or whatever, you turn yourself in knowing that you would recieve the consequences. You lose all your money, but on the bright side, you are at a peaceful state knowing full well that you did the right thing.");
-        System.out.println("Congrats, you got the good ending! You ended with: \n\nName: " + name + "\nMoney: " + money + "\nWanted Level: " + wantedLvl + "\nMoral Level: " + moralLvl);
-        System.out.println("Restart?");
-
     }
 
 
