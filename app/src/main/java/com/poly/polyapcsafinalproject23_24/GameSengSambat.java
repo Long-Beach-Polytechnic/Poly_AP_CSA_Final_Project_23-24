@@ -746,7 +746,7 @@ public class GameSengSambat extends GameActivity
     {
         numAttempts--;
 
-        tvStoryText.setText("You failed to survive, you now have " + numAttempts + " attempts left");
+        tvStoryText.setText("You failed to survive");
         ivStory.setImageResource(R.drawable.game_over);
         btn3.setVisibility(View.INVISIBLE);
         btn2.setVisibility(View.INVISIBLE);
