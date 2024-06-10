@@ -55,7 +55,7 @@ public class GameEscalanteJacqueline extends GameActivity {
 
     private void start()
     {
-        tvStoryText.setText(" PATHWAYS -  POLY EDITION\nIts Choice Fair day, lets go!\nWhat pathway would you like to go to?");
+        tvStoryText.setText("PATHWAYS -  POLY EDITION\nIts Choice Fair day, lets go!\nWhat pathway would you like to go to?");
 
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_choicefair);
         setAllBtnsVisible();
@@ -91,7 +91,7 @@ public class GameEscalanteJacqueline extends GameActivity {
     {
       ivStory.setImageResource(R.drawable.im_escalantejacqueline_beachpathway);
         tvStoryText.setText("\nWhat Beach Strand would you like to enroll in?");
-       btn1.setText(" Enroll in Engineering");
+       btn1.setText("Enroll in Engineering");
        btn2.setText("Enroll in Computer Science");
        btn3.setVisibility(View.INVISIBLE);
 
@@ -115,7 +115,7 @@ public class GameEscalanteJacqueline extends GameActivity {
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_engineering);
         tvStoryText.setText("\nYou have a choice, what do you do?");
-        btn1.setText("  Go to EDD");
+        btn1.setText("Go to EDD");
         btn2.setText("Go to Intro to design");
         btn3.setVisibility(View.INVISIBLE);
 
@@ -287,7 +287,7 @@ public class GameEscalanteJacqueline extends GameActivity {
     private void gotoCeramics()
     {
         ivStory.setImageResource(R.drawable.im_escalantejacqueline_ceramics);
-        tvStoryText.setText("Welcome to Ceramics with Laztin, You suck at Pottery...BYEEEEE FELISHAAAA." );
+        tvStoryText.setText("Welcome to Ceramics with Laztin, you suck at Pottery...BYEEEEE FELISHAAAA." );
 
         defeat();
     }
