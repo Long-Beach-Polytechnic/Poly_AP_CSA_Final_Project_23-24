@@ -44,6 +44,7 @@ public class ChooseGameFragment extends Fragment {
         this.recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
         gameList = new ArrayList<ModelGame>();
+        gameList.add(new ModelGame("Yzabela", "Manalo", "A Pathetic Soulmate Quest", new GameManaloYzabela()));
         gameList.add(new ModelGame("Daniel", "Bingham", "Summer Vacation in Japan", new GameBinghamDaniel()));
         gameList.add(new ModelGame("Andrew", "Leang", "Pills", new GameLeangThong()));
         gameList.add(new ModelGame("Roy", "Vidal", "Amazon Trip Planner", new GameRoyVidal()));

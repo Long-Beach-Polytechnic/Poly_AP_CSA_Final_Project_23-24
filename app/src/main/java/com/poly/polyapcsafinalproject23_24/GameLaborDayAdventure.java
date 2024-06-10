@@ -43,6 +43,7 @@ public class GameLaborDayAdventure extends GameActivity {
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
     }
+    // hello
 
 
     public void start()
