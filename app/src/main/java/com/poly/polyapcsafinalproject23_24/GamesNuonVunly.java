@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 
 
-public class GameNuonVunly extends GameActivity {
+public class GamesNuonVunly extends GameActivity {
 
     //instance variables
     //   variables you plan to use throughout the adventure
@@ -1240,7 +1240,7 @@ public class GameNuonVunly extends GameActivity {
         if (numLives > 0)
         {
             //if you still have lives, return to start()
-            tvStoryText.setText(TextColor.RED_BOLD + "YOU DIE");
+            tvStoryText.setText("YOU DIE");
             btn1.setText("continue");
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -1253,7 +1253,7 @@ public class GameNuonVunly extends GameActivity {
         }
         else
         {
-            tvStoryText.setText(TextColor.RED_BACKGROUND_BRIGHT + "GAME OVER");
+            tvStoryText.setText("GAME OVER");
         }
 
     }
