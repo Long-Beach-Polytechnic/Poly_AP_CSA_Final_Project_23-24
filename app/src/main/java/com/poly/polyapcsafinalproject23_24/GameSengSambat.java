@@ -764,7 +764,6 @@ public class GameSengSambat extends GameActivity
 
 
 
-
         //determine if player gets to play again
         if (numAttempts > 0)
         {
