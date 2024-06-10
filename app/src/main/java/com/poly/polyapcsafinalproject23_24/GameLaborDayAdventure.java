@@ -11,27 +11,28 @@ public class GameLaborDayAdventure extends GameActivity {
 
     private TextView tvTitle, tvSubtitle, tvStoryText;
     private ImageView ivStory;
-    private Button btn1, btn2, btn3, btn4;
+    private Button btn1, btn2, btn3;
     private boolean isWon;
     private int numLives;
 
     @Override
     protected void run() {
-        setContentView(R.layout.activity_game_4_button);
+        setContentView(R.layout.activity_game_3_button);
 
         tvTitle = findViewById(R.id.tv_title_txt);
+
         tvSubtitle = findViewById(R.id.tv_subtitle);
         tvStoryText = findViewById(R.id.tv_story);
         ivStory = findViewById(R.id.iv_story);
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
         btn3 = findViewById(R.id.btn_3);
-        btn4 = findViewById(R.id.btn_4);
 
-        tvTitle.setText("LABOR DAY");
-        tvSubtitle.setText("High School Edition");
 
-        numLives = 4;
+        tvTitle.setText("REST DAY");
+        tvSubtitle.setText("HALLOWEEN Edition");
+
+        numLives = 5;
         start();
     }
 
@@ -41,7 +42,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
-        btn4.setVisibility(View.VISIBLE);
     }
 
 
@@ -58,17 +58,21 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Go to the beach");
         btn2.setText("Go to the park");
         btn3.setText("Go to a restaurant");
-        btn4.setVisibility(View.INVISIBLE);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 goToBeach();
             }
         });
+
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 goToPark();
             }
         });
@@ -76,6 +80,7 @@ public class GameLaborDayAdventure extends GameActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 goToRestaurant();
             }
         });
@@ -96,11 +101,12 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Go Swimming");
         btn2.setText("Lay out and tan");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
+
 
          btn1.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
+
                  goSwimming();
              }
          });
@@ -125,7 +131,7 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Call the lifeguard");
         btn2.setText("Punch it in the nose");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,7 +161,7 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,7 +183,7 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,7 +204,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("20 minutes");
         btn2.setText("5 hours");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,7 +232,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -248,7 +252,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -271,7 +274,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Go play soccer");
         btn2.setText("Go on the slide");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -299,7 +301,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Call the mom");
         btn2.setText("Don't call the mom");
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -328,7 +329,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -351,7 +351,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -375,7 +374,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -409,7 +407,6 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
