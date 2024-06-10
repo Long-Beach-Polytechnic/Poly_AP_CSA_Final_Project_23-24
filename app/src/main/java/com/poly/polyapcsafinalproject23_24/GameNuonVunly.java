@@ -5,8 +5,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.poly.polyapcsafinalproject23_24.GameActivity;
-
 import java.util.Scanner;
 
 
@@ -44,8 +42,12 @@ public class GameNuonVunly extends GameActivity {
         btn3 = findViewById(R.id.btn_3);
 
 
+        ivStory.setImageResource(R.drawable.im_nuonvunly_1);
+
+
         tvTitle.setText("It's HALLOWEEN!");
         tvSubtitle.setText("For some reason in your universe, Halloween is a holiday!. You have nothing to do but play video game");
+
 
         //display project title and description
 
@@ -59,6 +61,9 @@ public class GameNuonVunly extends GameActivity {
     }
 
     private void start() {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_2);
+
         tvStoryText.setText("So....Where do you want to do?");
 
         setAllBtnsVisible();
@@ -98,6 +103,10 @@ public class GameNuonVunly extends GameActivity {
 
 
     public void chooseAPresent() {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_3);
+
+
         tvStoryText.setText("You decided to stay home and play games. Moment later, Your uncle shown up and want to give you an early present for your birth. But He can't decide.");
         btn1.setText("$1,000");
         btn2.setText("a blaster and a spaceship from starwar");
@@ -142,6 +151,9 @@ public class GameNuonVunly extends GameActivity {
 
 
     private void gamingTime() {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_4);
+
         tvStoryText.setText("After that, you hop on a new game...similar to detroit become human. \nHowever! AS soon as you open it, Your Monitor START FLASHIN-----");
 
         glichingMetrex();
@@ -149,6 +161,8 @@ public class GameNuonVunly extends GameActivity {
 
 
     private void glichingMetrex() {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_5);
 
         tvStoryText.setText("You now have " + numLives + " lives left \nThis is the moment when you realizing that your're now stuck in a game. when you respawn back, you see right in front of you two paths:");
 
@@ -177,7 +191,10 @@ public class GameNuonVunly extends GameActivity {
 
 
     private void right() {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_6);
+
         tvStoryText.setText("As soon as you turn right, You see 3 three path:");
+
 
         setAllBtnsVisible();
         btn1.setText("A small alleyway to your left");
@@ -210,6 +227,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void itemDrop() {
 
+        ivStory.setImageResource(R.drawable.im_nuonvunly_7);
+
         tvStoryText.setText("*DING* you recieved: \n+1 Dessert Engle, +2 magazine (30 ammos) \nAs soon as you pick up the items, The monster is about 30 feet away and going to charge on you");
 
         setAllBtnsVisible();
@@ -235,6 +254,8 @@ public class GameNuonVunly extends GameActivity {
 
 
     private void continueToShoot() {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_8);
 
         tvStoryText.setText("*BANG* *BANG* *BANG* *BANG*..... \nYou shot the \"Monster\" until you ran out of the 1st magazine. but It's seem to work because it has that thing SCREAMING screaming. While it stay still and screaming and bleeding, what would you do next?");
 
@@ -275,6 +296,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void runAway()
     {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_9);
 
         tvStoryText.setText("You decided not to shoot it because you thought that you might miss it \nAfter you took about 4 steps, you see a left turn next to you. What would you do?");
 
@@ -329,6 +352,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void lightSaberAndShip()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_9);
+
         tvStoryText.setText("\" You got a starter pack. a light saber and a spaceship. but you can only choose one of these. SO? \"");
 
         setAllBtnsVisible();
@@ -361,6 +386,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void bossFight()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_10);
+
         String text = ("*+1 light saber*   *change scene to arena* *telepot Jeff* \n Jeff, the Monster appear to have human-like body with superhuman-strength. Its right arm is long and big hand, similar to the normal devil arm usually see in game, skinny and flesh skin, and small left arm \nFIGHT\n Immediately, Jeff approach at you in fast pace and about to swing right \n1. block \n2. dodge ");
 
         btn1.setText("block");
@@ -390,6 +417,8 @@ public class GameNuonVunly extends GameActivity {
     private void piercingIt()
     {
 
+        ivStory.setImageResource(R.drawable.im_nuonvunly_11);
+
         btn1.setText("stab");
         btn2.setText("move");
         btn3.setVisibility(View.INVISIBLE);
@@ -413,6 +442,10 @@ public class GameNuonVunly extends GameActivity {
 
     private void stabJeff()
     {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_12);
+
+
         tvStoryText.setText("You stabbed it in the stomach, lashing out a loud scream. \n*see the opportunity to hit it again...* \n1. pull out and slash it \n2. dodge back");
 
 
@@ -449,6 +482,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void backward()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_11);
+
         tvStoryText.setText("*Take steps back to give more space* not even a second later, Jeff rushing at you about swing right again, but this time slower and seem weaker than last time....however it still fast.");
 
         setAllBtnsVisible();
@@ -497,6 +532,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void dodgeAgain()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_13);
+
         System.out.println("\nYou dodge and try to do like time, but this time your aim for the neck. At the same time, Jeff's left hand was about to swing. \n1. risk it \n2. dodge \n3. change aim to the left hand");
         setAllBtnsVisible();
         btn1.setText("Risk it");
@@ -553,7 +590,9 @@ public class GameNuonVunly extends GameActivity {
 
     private void store()
     {
-         tvStoryText.setText("You 3 options:");
+        ivStory.setImageResource(R.drawable.im_nuonvunly_14);
+
+        tvStoryText.setText("You 3 options:");
         setAllBtnsVisible();
         btn1.setText("speed potions ($1050)");
         btn2.setText("ak-47 ($600)");
@@ -585,6 +624,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void speedPotion()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_15);
+
         tvStoryText.setText("The potion give you insane speed and immortality for 1:30min. skipping most of the obstacle. *TIME SKIP TO WHERE THE AFFECT STOP* You stop and face three paths.");
 
         setAllBtnsVisible();
@@ -621,6 +662,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void leftPath()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_16);
+
         tvStoryText.setText("You see a portal and run into it. \n\"CONGRATULATION YOU WIN\" \nYou wake up in your bed and don't remeber anything");
         btn1.setText("continue");
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -650,6 +693,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void inBetween()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_17);
+
 
         tvStoryText.setText("As you continue to run, There is a deadend and a door infront... \nAs you approach to the door, It need password to open. (This is a dlc path, it's should not be appear right now)...So that mean you stuck here, waiting for dead");
         btn1.setText("continue");
@@ -669,6 +714,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void ak_47()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_18);
+
         tvStoryText.setText("+1 Gun, +5 Mag \nYou shoot the monster finished 1st Mag. However, AS you try to shoot try to it, The monster's regeneration power getting more stronger and stronger, to the point of bullet become useless...");
         btn1.setText("continue");
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -700,6 +747,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void grenade()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_19);
+
         System.out.println("wow...one single grenade...\n1. end yourself \n2. throw to the monster");
 
         setAllBtnsVisible();
@@ -745,6 +794,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void continueToRun()
     {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_21);
 
         tvStoryText.setText("You decided not to shoot it because you thought that you might miss it \nAfter you took about 4 steps, you see a left turn next to you. What would you do? \n1. turn left \n2. continue straight");
         setAllBtnsVisible();
@@ -795,6 +846,8 @@ public class GameNuonVunly extends GameActivity {
         int chances = (int) (Math.random() * 5) + 1;
         if (chances == 1 || chances == 2 || chances == 4 || chances == 5)
         {
+            ivStory.setImageResource(R.drawable.im_nuonvunly_22);
+
             tvStoryText.setText("A sign placed there for a reason.... You then proceed to fall off a climb");
             btn1.setText("continue");
             btn1.setOnClickListener(new View.OnClickListener() {
@@ -806,6 +859,8 @@ public class GameNuonVunly extends GameActivity {
         }
         else
         {
+            ivStory.setImageResource(R.drawable.im_nuonvunly_23 );
+
             tvStoryText.setText("WOW, NO WAY!! You actually so lucky. Congrat, You won");
             btn1.setText("continue");
             btn1.setOnClickListener(new View.OnClickListener() {
@@ -822,6 +877,7 @@ public class GameNuonVunly extends GameActivity {
 
     private void rightToDead()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_24);
 
         tvStoryText.setText("\"You're at the starting line\" \nTurn out there a barrier at a starting line, unfortunate...");
         btn1.setText("continue");
@@ -839,6 +895,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void left()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_25);
+
         System.out.println("You took left and then see a split way again, Which way you going? ");
         setAllBtnsVisible();
         btn1.setText("Left");
@@ -872,6 +930,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void firstObstacle()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_26);
+
         tvStoryText.setText("\nAs soon as you turned, You see: \n1. A fence that you might able to jump over \n2. A wall with broken bottom part");
         setAllBtnsVisible();
         btn1.setText("A fence that you might able to jump over");
@@ -905,6 +965,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void secondObstacle()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_27);
+
         System.out.println("\nAfter jump across, the road getting smaller, barely fit two person. and there is a do-- \n *quick time event*");
         setAllBtnsVisible();
         btn1.setText("dropping planks on your right to block way...");
@@ -946,6 +1008,9 @@ public class GameNuonVunly extends GameActivity {
 
     private void door()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_28);
+
+
         System.out.print("\nThis giving you time to rush to the door. beside you there: \n1. A key \n2. An axe");
         setAllBtnsVisible();
         btn1.setText("A key");
@@ -974,6 +1039,8 @@ public class GameNuonVunly extends GameActivity {
         int chances = (int) (Math.random() * 4) + 1;
         if (chances == 1 || chances == 2 || chances == 4 )
         {
+            ivStory.setImageResource(R.drawable.im_nuonvunly_29);
+
             tvStoryText.setText("Oh oh! wrong key...");
             btn1.setText("continue");
             btn1.setOnClickListener(new View.OnClickListener() {
@@ -985,6 +1052,8 @@ public class GameNuonVunly extends GameActivity {
         }
         else
         {
+            ivStory.setImageResource(R.drawable.im_nuonvunly_17);
+
             tvStoryText.setText("*Door unlocked*");
             btn1.setText("continue");
             btn1.setOnClickListener(new View.OnClickListener() {
@@ -1001,6 +1070,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void anAxe()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_10);
+
         System.out.println("\nYou pick up the axe and immediately axing the door viciously. after 30second of cutting the door, The monster wake up. and you start panicking \n1. continue \n2. facing the monster");
         setAllBtnsVisible();
         btn1.setText("continue");
@@ -1042,6 +1113,8 @@ public class GameNuonVunly extends GameActivity {
 
     private void triviaQuestions()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_30);
+
         tvStoryText.setText("*TRIVIA TIME* TIME REMAIN STOP UNTIL YOU ANSWER THE QUESTION. \nWhat was the first Disney animated feature movie that was not based on an already existing story? ");
         setAllBtnsVisible();
         btn1.setText("Lion King");
@@ -1097,6 +1170,9 @@ public class GameNuonVunly extends GameActivity {
 
     private void finalDestination()
     {
+
+        ivStory.setImageResource(R.drawable.im_nuonvunly_31);
+
         tvStoryText.setText("After answer the question and go to the door, you see see two path. \n1. right lane \n2. diagonal line to the right");
         setAllBtnsVisible();
         btn1.setText("right lane");
@@ -1147,21 +1223,10 @@ public class GameNuonVunly extends GameActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     private void defeatGame()
     {
+        ivStory.setImageResource(R.drawable.im_nuonvunly_999);
+
         //run method when defeated
 
 
@@ -1198,45 +1263,4 @@ public class GameNuonVunly extends GameActivity {
 
 
 
-
-    private String image()
-    {
-        return
-                "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@@@@&@&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@%&@@%&&%%@@@@@@@@@@@@@@@@@@@@@@@&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@&%@@&&%#&@@@@@@@@@@@@@@@@@@#(#(*,,...*(%&@@@@&%@@@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@@%%&&%&%%@@@@@@@@@@@@@@(                  ,/&@@@&@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@@@%#%&%&%@@@@@@@@@@#.                       ,/&@@@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@@@&#%%%&##&@@@@@@,                          .*/&@@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@@@@%%(##@@@@@@@,                              ((#@@@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@&@@@@@@@@@%((#@@@@@@/                 .               ../@@@@@@@@@@@@@@@@\n" +
-                        "      @@@@@@@&&@@@@@@@@@@@&@@@@@@/                        .****,,     ,(@@@&&@@@@@@@@@\n" +
-                        "      @@@@@@@%@@@@@@@@@@@@@@@@@@@*                       .*&%  .&@/     .#@@#%@@@@@@@@\n" +
-                        "      @@@@@@@%&@@@@@@@@@@@@@@@@@@     ,*#%&%(.            %&  /  %,      .(@@&@@@@@@@@\n" +
-                        "      @@@@@@@%@@@@@@@@@@@@@@@@@@@(   **@& %( (.            /%##/.         .#@@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@@@@@@@@@@@@@@@@    .&@&##%(.          .........         ,%@@@@@@@@@\n" +
-                        "      @@@@@@@@@@@@@@@@@@@@@@@@@@@&     ..........    ..                    ./@@@@@@@,%\n" +
-                        "      @@@@@@@@@@@@@@@@@@@@@@@@@@@/        ....                             .*#@@@@@&. \n" +
-                        "      @@@@@@@@@@@@@@@@@@@@@@@@@@@,                                          .,&@@@@@  \n" +
-                        "      @@@@@@@@@@@@@@@@@@@@@@@@@@@/                                   ,((.     (@@@@@  \n" +
-                        "      @@@@@@@@@@@@@@@&@@@@@@@@@@@@,                               *%&%/.     .#@@@@@. \n" +
-                        "      @@@@@@@@@&&@@@@@@@@@@@@@@@@@@(     .//.                 .*(#%#(,       *@@@@@@. \n" +
-                        "      @@@@@@@@@&&%&@@&&@@@@@@@@@@@@@@*     ,/#%(. .**,..       ,%%#*        *@@@@@@(  \n" +
-                        "      @@@@@@@@@&&&%%@@@@@@@@@@@@@@@@@@&,    ./(#%, ..       ,/###(*.     .,/@@@@@@@/  \n" +
-                        "      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@&/,   .*(##///.,(/*,/,/#(,. .   ,/(@@@,@@@%,  \n" +
-                        "      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@//@(@% ,%*.. .(%%#..    /%(#%/(**,.,(#%@@@./*@@%,. \n" +
-                        "      @@@@@@@@@@@@@@@@&, .%@@@@@@@@*,%&#@.   /&%#,/%%&%#%%%%%&#&&/,.,*&@@@@@..,*&#/...";
-
-
-    }
-
-    private String image1()
-    {
-        return "   / \\      / \\      / \\      / \\  | | | | | | | | | | | | | | | | | | |\n" +
-                "  / _ \\    / _ \\    / _ \\    / _ \\ | |_| | |_| | |_| | |_| | |_| | |_| |\n" +
-                " / ___ \\  / ___ \\  / ___ \\  / ___ \\|  _  |  _  |  _  |  _  |  _  |  _  |\n" +
-                "/_/   \\_\\/_/   \\_\\/_/   \\_\\/_/   \\_\\_| |_|_| |_|_| |_|_| |_|_| |_|_| |_|";
-    }
 }
