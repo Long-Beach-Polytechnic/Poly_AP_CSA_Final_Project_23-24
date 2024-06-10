@@ -58,7 +58,7 @@ public class GameOfSengVisal extends GameActivity {
         tvMaxSquatVal = findViewById(R.id.tv_max_squat_val);
         tvMaxRunVal = findViewById(R.id.tv_max_run_val);
         etMain = findViewById(R.id.et_main);
-        ivMain = findViewById();
+        ivMain = findViewById(R.id.iv_main);
 
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
@@ -74,14 +74,7 @@ public class GameOfSengVisal extends GameActivity {
 
 
 
-        btn1.setText("Continue");
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                welcomeScreen();
-            }
-        });
+        welcomeScreen();
 
 
 
@@ -113,6 +106,7 @@ public class GameOfSengVisal extends GameActivity {
 
         tvSubtitle.setText("Welcome to the body improvement simulator!");
 
+        statsInvisibile();
         tvMain.setText("You can choose between 3 body types\n There are some exercises you can perform, your maxes are recorded and you can increase them by pushing your limits bit by bit\n Diet is important too! There are several foods you can eat to manipulate your body's appearance\n Good luck!");
 
         btn1.setText("Continue");
@@ -262,9 +256,9 @@ public class GameOfSengVisal extends GameActivity {
 
         if (day <= numDays) {
 
-
+            statsVisibile();
             tvMain.setText("You have " + numDays + " days to fulfill your goals, " + currentBodyType.getName() + ". What do you want to do?");
-
+            ivMain.setImageResource(R.drawable.im_sengvisal_muscleman);
             tvNameVal.setText(""+currentBodyType.getName());
             tvWeightVal.setText(""+currentBodyType.getWeight());
             tvBodyFatVal.setText(""+currentBodyType.getFatPercentage());
@@ -319,7 +313,7 @@ public class GameOfSengVisal extends GameActivity {
 
     private void rest() {
         tvMain.setText("You rested for the day.");
-
+        ivMain.setImageResource(R.drawable.im_sengvisal_rest);
         currentBodyType.setConsecutiveWorkoutDays(0);
         currentBodyType.addFatPercentage(- 0.5);
         currentBodyType.addLbmPercentage(+ 0.5);
@@ -351,6 +345,7 @@ public class GameOfSengVisal extends GameActivity {
 
 
         tvMain.setText("What do you want to do at the gym?");
+        ivMain.setImageResource(R.drawable.im_sengvisal_gym);
 
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
@@ -402,8 +397,21 @@ public class GameOfSengVisal extends GameActivity {
                     currentBodyType.addWeight(+ 5);
                     currentBodyType.addFatPercentage(- 0.5);
                     currentBodyType.addLbmPercentage(+ 0.5);
-                    numDays--;
-                    options();
+
+                    tvMain.setText("Weight increased by 5\n Fat percentage decreased by 0.5\n Lbm percentage increased by 0.5");
+                    continueVisibility();
+                    etMain.setVisibility(View.INVISIBLE);
+                    ivMain.setImageResource(R.drawable.im_sengvisal_chicken);
+
+                    btn4.setText("Continue");
+                    btn4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            numDays--;
+                            options();
+                        }
+                    });
+
 
                 }
             });
@@ -412,8 +420,20 @@ public class GameOfSengVisal extends GameActivity {
                 @Override
                 public void onClick(View view) {
                     currentBodyType.addWeight(- 3);
-                    numDays--;
-                    options();
+                    tvMain.setText("Weight decreased by 5");
+                    continueVisibility();
+                    etMain.setVisibility(View.INVISIBLE);
+                    ivMain.setImageResource(R.drawable.im_sengvisal_salad);
+
+                    btn4.setText("Continue");
+                    btn4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            numDays--;
+                            options();
+                        }
+                    });
+
 
                 }
             });
@@ -421,12 +441,23 @@ public class GameOfSengVisal extends GameActivity {
             btn3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    currentBodyType.addWeight(+ 10);
-                    currentBodyType.addFatPercentage(+ 0.7);
-                    currentBodyType.addLbmPercentage(- 0.7);
-                    numDays--;
-                    options();
+                    currentBodyType.addWeight(+10);
+                    currentBodyType.addFatPercentage(+0.7);
+                    currentBodyType.addLbmPercentage(-0.7);
 
+                    tvMain.setText("Weight increased by 5\n Fat percentage increased by 0.7\n Lbm percentage decreased by 0.7");
+                    continueVisibility();
+                    etMain.setVisibility(View.INVISIBLE);
+                    ivMain.setImageResource(R.drawable.im_sengvisal_hamburger);
+
+                    btn4.setText("Continue");
+                    btn4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            numDays--;
+                            options();
+                        }
+                    });
                 }
             });
         }
@@ -434,6 +465,8 @@ public class GameOfSengVisal extends GameActivity {
         private void goForRun() {
 
             tvMain.setText("Enter how much miles you want to run.");
+            ivMain.setImageResource(R.drawable.im_sengvisal_treadmill);
+            etMain.setText("");
 
             etMain.setInputType(InputType.TYPE_CLASS_NUMBER);
             etMain.setHint("");
@@ -476,7 +509,7 @@ public class GameOfSengVisal extends GameActivity {
 
                         }
 
-                        if (miles > currentBodyType.getMaxRunDistance() - 1) {
+                        if ((miles > currentBodyType.getMaxRunDistance() - 1) && !(miles > currentBodyType.getMaxRunDistance() + 1)) {
                             currentBodyType.setMaxRunDistance(miles);
                             tvMain.setText("Your max distance has increased to " + currentBodyType.getMaxRunDistance() + "!");
                         }
@@ -519,6 +552,8 @@ public class GameOfSengVisal extends GameActivity {
 
             etMain.setInputType(InputType.TYPE_CLASS_NUMBER);
             etMain.setHint("");
+            etMain.setText("");
+
 
             ivMain.setImageResource(R.drawable.im_sengvisal_benchpress);
 
@@ -604,11 +639,15 @@ public class GameOfSengVisal extends GameActivity {
 
         etMain.setInputType(InputType.TYPE_CLASS_NUMBER);
         etMain.setHint("");
+        etMain.setText("");
+        ivMain.setImageResource(R.drawable.im_sengvisal_squat);
 
         btn1.setVisibility(View.INVISIBLE);
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
+
+
 
         etMain.setVisibility(View.VISIBLE);
 
@@ -681,7 +720,29 @@ public class GameOfSengVisal extends GameActivity {
 
     }
 
+    private void statsInvisibile()
+    {
+        tvNameVal.setVisibility(View.INVISIBLE);
+        tvWeightVal.setVisibility(View.INVISIBLE);
+        tvBodyFatVal.setVisibility(View.INVISIBLE);
+        tvBodyMassVal.setVisibility(View.INVISIBLE);
+        tvMaxBenchVal.setVisibility(View.INVISIBLE);
+        tvMaxSquatVal.setVisibility(View.INVISIBLE);
+        tvMaxRunVal.setVisibility(View.INVISIBLE);
 
+    }
+
+    private void statsVisibile()
+    {
+        tvNameVal.setVisibility(View.VISIBLE);
+        tvWeightVal.setVisibility(View.VISIBLE);
+        tvBodyFatVal.setVisibility(View.VISIBLE);
+        tvBodyMassVal.setVisibility(View.VISIBLE);
+        tvMaxBenchVal.setVisibility(View.VISIBLE);
+        tvMaxSquatVal.setVisibility(View.VISIBLE);
+        tvMaxRunVal.setVisibility(View.VISIBLE);
+
+    }
 
 
     /**
@@ -696,6 +757,8 @@ public class GameOfSengVisal extends GameActivity {
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
         btn4.setVisibility(View.INVISIBLE);
+        etMain.setVisibility(View.INVISIBLE);
+        ivMain.setImageResource(R.drawable.im_sengvisal_win);
 
         tvMain.setText("You have reached the deadline of your goal!\n Your final stats are:\n " + currentBodyType + "\n\n Your old stats are: ");
 
@@ -706,6 +769,18 @@ public class GameOfSengVisal extends GameActivity {
         } else if (currentBodyType == bodyType3) {
             tvMain.setText("You have reached the deadline of your goal!\n Your final stats are:\n " + currentBodyType + "\n\n Your old stats are: Name: " + currentBodyType.getName() + "\nWeight: 140\nBody Fat %: 15.0\nLean Body Mass %: 75.0\nMax Bench: 120\nMax Squat: 140\nMax Run Distance: 2");
         }
+
+        continueVisibility();
+
+
+        btn4.setText("Play again?");
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                etMain.setVisibility(View.INVISIBLE);
+                welcomeScreen();
+            }
+        });
 
         etMain.addTextChangedListener(new TextWatcher() {
             @Override
@@ -720,7 +795,7 @@ public class GameOfSengVisal extends GameActivity {
                 btn4.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        initialize();
+                        welcomeScreen();
                     }
                 });
             }
