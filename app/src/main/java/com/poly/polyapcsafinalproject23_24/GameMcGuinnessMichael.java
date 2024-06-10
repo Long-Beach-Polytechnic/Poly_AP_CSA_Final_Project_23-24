@@ -377,16 +377,29 @@ public class GameMcGuinnessMichael extends GameActivity {
             public void onClick(View v) {
                 ivStory.setImageResource(R.drawable.im_mcguinnessmichael_weird);
                 tvStoryText.setText("You ask them 'Are you a parking ticket? Because I want to jam you under a car windshield' ");
-                if (Math.random() > 0.75) {
-                    tvStoryText.setText(" Fail. What did you think would happen with a line like that?");
-                    points -= 8;
-                    defeat();
-                }
-                else {
-                    tvStoryText.setText(" They like that? They give you their number? WHAT? What kind of idiot who has never talked to someone made this stupid game?!");
-                    points += 40;
-                    success();
-                }
+
+                setAllBtnsVisible();
+                btn1.setText("Continue");
+                btn2.setVisibility(View.INVISIBLE);
+                btn3.setVisibility(View.INVISIBLE);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (Math.random() > 0.75) {
+                            tvStoryText.setText(" Fail. What did you think would happen with a line like that?");
+                            points -= 8;
+                            defeat();
+                        }
+                        else {
+                            tvSubtitle.setText(" They like that? They give you their number? WHAT? What kind of idiot who has never talked to someone made this stupid game?!");
+                            points += 40;
+                            success();
+                        }
+                    }
+                });
+
+
             }
         });
 
@@ -404,7 +417,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvStoryText.setText("You start crying. They take pity on you and give you their number.");
+                tvSubtitle.setText("You start crying. They take pity on you and give you their number.");
                 points += 7;
                 success();
             }
@@ -437,7 +450,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         numLives--;
         ivStory.setImageResource(R.drawable.im_mcguinnessmichael_failure);
         //clear console, display text, etc
-        tvSubtitle.setText("Failure. Try Again. " + numLives + " lives left");
+        tvSubtitle.setText("Failure. Try Again. " + numLives + " lives left\n\t\t\t\t\t\t\t\t\t\t" +points + " points");
         //determine if player gets to play again
         if (numLives > 0) {
             //if you still have lives, return to start()
@@ -473,8 +486,8 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     private void success() {
         ivStory.setImageResource(R.drawable.im_mcguinnessmichael_success);
-        tvSubtitle.setText("You successfully go their phone number, congratulations! You Win");
-        tvStoryText.setText("You got " + points + " points");
+        //tvSubtitle.setText("You successfully got their phone number, congratulations! You Win");
+        tvStoryText.setText("You successfully got their phone number, congratulations! You Win\n\t\t\t\t\t\tYou got " + points + " points");
          //util wuz hear
 
         btn1.setVisibility(View.VISIBLE);
