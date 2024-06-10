@@ -594,8 +594,7 @@ public class GamePinedaJavier extends GameActivity {
     private void defeat()
     {
 
-        if (isWon)
-        {
+        if (isWon) {
             tvStoryText.setText("Thanks for playing your FIFA career :)");
 
             ivStory.setImageResource(R.drawable.im_pinedajavier_end);
