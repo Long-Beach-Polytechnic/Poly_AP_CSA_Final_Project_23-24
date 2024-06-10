@@ -7,9 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GameGaelAngeles extends GameActivity{
-    import java.util.Scanner;
-
-    public class Adventure{
 
         private TextView tvTitle, tvSubtitle, tvStoryText;
         private ImageView ivStory;
@@ -409,7 +406,7 @@ public class GameGaelAngeles extends GameActivity{
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        start()
+                        start();
                     }
                 });
 
@@ -442,4 +439,5 @@ public class GameGaelAngeles extends GameActivity{
 
         }
     }
-}
+
+
