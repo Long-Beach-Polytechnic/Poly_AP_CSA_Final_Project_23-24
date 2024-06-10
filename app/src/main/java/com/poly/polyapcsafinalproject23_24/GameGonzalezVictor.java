@@ -79,7 +79,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("Mars");
         btn2.setText("Venus");
         btn3.setText("Pluto");
-
+        ivStory.setImageResource(R.drawable.start);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +119,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("Land east");
         btn2.setText("Land west");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.mars);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,7 +144,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("The CANYON!!");
         btn2.setText("The river");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.rivercanyon);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,7 +172,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("Say hi to them");
         btn2.setText("Shoot them");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.alien);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,7 +199,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setVisibility(View.INVISIBLE);
         btn2.setVisibility(View.INVISIBLE);
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.jawas);
         defeat();
     }
 
@@ -213,7 +213,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("Say hi to them");
         btn2.setText("Shoot them");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.alien);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -240,7 +240,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("accept request");
         btn2.setText("decline request");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.alien);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -264,7 +264,7 @@ GameGonzalezVictor extends GameActivity{
     {
         //COME BACK TO DEFEAT
         tvStoryText.setText("They saw your hesitation. A laser gun is aimed to your head :(");
-
+        ivStory.setImageResource(R.drawable.alien);
         defeat();
 
     }
@@ -277,7 +277,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("Venus");
         btn2.setText("Pluto");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.ship);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -301,7 +301,7 @@ GameGonzalezVictor extends GameActivity{
     {
         //COME BACK TO DEFEATS MESSASGE
         tvStoryText.setText("They don't like you. Pew pew!!");
-
+        ivStory.setImageResource(R.drawable.alien);
         defeat();
 
 
@@ -317,7 +317,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("Pajamas");
         btn2.setText("Space suit");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.pajamas);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -340,7 +340,7 @@ GameGonzalezVictor extends GameActivity{
 
         tvStoryText.setText("It's too cold, you froze.");
         defeat();
-
+        ivStory.setImageResource(R.drawable.pajamas);
     }
 
     private void pajamas()
@@ -352,7 +352,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("YESSS");
         btn2.setText("HELL NAH");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.pluto);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -377,7 +377,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("Fine I'll go in");
         btn2.setText("No I don't wanna go in");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.pluto);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -405,7 +405,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("check the fridge");
         btn2.setText("check the microwave");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.fridge);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -432,7 +432,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("go back to ship");
         btn2.setText("check the microwave");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.key);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -467,7 +467,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("Mars");
         btn2.setText("Venus");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.pluto);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -514,7 +514,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("explore cave");
         btn2.setText("explore volcano");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.volcano);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -538,7 +538,7 @@ GameGonzalezVictor extends GameActivity{
 
         tvStoryText.setText("You found the treasure chest. IT'S HUGE!");
         tvStoryText.setText("Unlock with a key.");
-
+        ivStory.setImageResource(R.drawable.treasure);
 
 
         if (points >= 1)
@@ -548,6 +548,7 @@ GameGonzalezVictor extends GameActivity{
             btn1.setText("Victory Royale");
             btn2.setVisibility(View.INVISIBLE);
             btn3.setVisibility(View.INVISIBLE);
+            ivStory.setImageResource(R.drawable.can);
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -565,6 +566,7 @@ GameGonzalezVictor extends GameActivity{
             btn1.setText("continue");
             btn2.setVisibility(View.INVISIBLE);
             btn3.setVisibility(View.INVISIBLE);
+
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -583,7 +585,7 @@ GameGonzalezVictor extends GameActivity{
         btn1.setText("run to cave");
         btn2.setText("take high ground on mountain");
         btn3.setVisibility(View.INVISIBLE);
-
+        ivStory.setImageResource(R.drawable.runfromvolcano);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -686,6 +688,7 @@ GameGonzalezVictor extends GameActivity{
                     startActivity(new Intent(GameGonzalezVictor.this, MainActivity.class));
                 }
             });
+            ivStory.setImageResource(R.drawable.gameover);
 
             //print game over message
         }
