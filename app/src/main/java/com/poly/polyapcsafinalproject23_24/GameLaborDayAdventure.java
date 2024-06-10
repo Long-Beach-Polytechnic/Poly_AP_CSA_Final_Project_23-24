@@ -63,12 +63,16 @@ public class GameLaborDayAdventure extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 goToBeach();
             }
         });
+
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 goToPark();
             }
         });
@@ -76,6 +80,7 @@ public class GameLaborDayAdventure extends GameActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 goToRestaurant();
             }
         });
@@ -101,6 +106,7 @@ public class GameLaborDayAdventure extends GameActivity {
          btn1.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
+
                  goSwimming();
              }
          });
