@@ -27,7 +27,7 @@ public class GameMcGuinnessMichael extends GameActivity {
 
     public void run()
     {
-        setContentView(R.layout.activity_game_3_button);
+        setContentView(R.layout.activity_mcguinnessmichael_main);
 
         tvTitle = findViewById(R.id.tv_title_txt);
         tvSubtitle = findViewById(R.id.tv_subtitle);
@@ -392,7 +392,7 @@ public class GameMcGuinnessMichael extends GameActivity {
                             defeat();
                         }
                         else {
-                            tvSubtitle.setText(" They like that? They give you their number? WHAT? What kind of idiot who has never talked to someone made this stupid game?!");
+                            tvStoryText.setText(" They like that? They give you their number? WHAT? What kind of idiot who has never talked to someone made this stupid game?!");
                             points += 40;
                             success();
                         }
@@ -417,7 +417,7 @@ public class GameMcGuinnessMichael extends GameActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvSubtitle.setText("You start crying. They take pity on you and give you their number.");
+                tvStoryText.setText("You start crying. They take pity on you and give you their number.");
                 points += 7;
                 success();
             }
@@ -487,7 +487,7 @@ public class GameMcGuinnessMichael extends GameActivity {
     private void success() {
         ivStory.setImageResource(R.drawable.im_mcguinnessmichael_success);
         //tvSubtitle.setText("You successfully got their phone number, congratulations! You Win");
-        tvStoryText.setText("You successfully got their phone number, congratulations! You Win\n\t\t\t\t\t\tYou got " + points + " points");
+        tvSubtitle.setText("You successfully got their phone number, congratulations! You Win\n\t\t\t\t\t\tYou got " + points + " points");
          //util wuz hear
 
         btn1.setVisibility(View.VISIBLE);
