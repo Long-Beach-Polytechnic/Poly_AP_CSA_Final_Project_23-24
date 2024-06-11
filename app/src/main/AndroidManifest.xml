@@ -25,6 +25,8 @@
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameLaborDayAdventure" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.MainActivity" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameHotDogEatingContest" />
+        <activity android:name="com.poly.polyapcsafinalproject23_24.GameRodriguezJohnny"
+            android:screenOrientation="landscape"/>
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameNavarreteIvan" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GameSengSambat" />
         <activity android:name="com.poly.polyapcsafinalproject23_24.GamePinedaJavier" />
