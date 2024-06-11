@@ -18,7 +18,7 @@ public class ValentineCriminal
      * Decrease by inactivity
      * Increase by activity
      */
-    private double wantedLvl;
+    private int wantedLvl;
     /**
      * Morality of the criminal
      * Options will depend on how high or low your morality is, and whether they are "good" or "bad" would depend on morality
@@ -79,7 +79,7 @@ public class ValentineCriminal
      * @param wantedLvl    the odds of cops coming and ending the game (maxes out at ten)
      * @param moralLvl     how morally strong the criminal is
      */
-    public ValentineCriminal(String name, double money, double wantedLvl, int moralLvl)
+    public ValentineCriminal(String name, double money, int wantedLvl, int moralLvl)
     {
         this.name = name;
         this.money = money;
@@ -103,7 +103,7 @@ public class ValentineCriminal
      * gets the wanted level of the criminal
      * @return wantedLvl
      */
-    public double getWantedLvl()
+    public int getWantedLvl()
     {
         return wantedLvl;
     }
@@ -171,7 +171,7 @@ public class ValentineCriminal
      * <br> precondition: must not be an empty int; must have a positive value
      * <br> postcondition: give the criminal a new wanted level
      */
-    public void setWantedLvl(double newWantedLvl)
+    public void setWantedLvl(int newWantedLvl)
     {
         this.wantedLvl = newWantedLvl;
     }
@@ -229,19 +229,22 @@ public class ValentineCriminal
     public void rob()
     {
         this.money += (25 + Math.random() * 476);
-        this.wantedLvl += 0.1;
+        this.wantedLvl += 1;
     }
 
     public void turnInCriminal(ValentineCriminal target) {
         moralLvl--;
         money += 500;
-        wantedLvl -= .5;
+        wantedLvl -= 5;
+        if (wantedLvl < 0) {
+            wantedLvl = 0;
+        }
     }
 
     public void turnYourselfIn() {
         moralLvl++;
         setMoney(0.00);
-        setWantedLvl(0.00);
+        setWantedLvl(0);
     }
 
 

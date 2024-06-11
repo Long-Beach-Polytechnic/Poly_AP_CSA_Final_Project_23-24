@@ -64,9 +64,12 @@ public class GameValentineBenjaminA extends GameActivity {
 
 
 
+
+
         tvText.setText("You wake up in a strange place. You don't know where or who you are, but you walk out of the alley way you woke up in and see that the city is bright. You find yourself a cheap house with the insignificant amount of money that you had woken up with, and you ultimately decide to live a life of crime. After all, you don't have anything to live for... right?");
         tvText.setText("What is your name?");
-        ValentineCriminal player1 = new ValentineCriminal("Rob Earght");
+        player = new ValentineCriminal("Rob Earght");
+        startRobbing();
     }
 
     public void startRobbing()
@@ -75,7 +78,19 @@ public class GameValentineBenjaminA extends GameActivity {
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
 
-        if (player.getMoney() > 0)
+        if (player.getMoney() >= 1000000) {
+            tvText.setText("You won the game, and you were able to buy your way out of the city. Using your sheer power, you manage to corrupt the cops with your silver tongue, and they escort you to the local airport. As you leave, you smile thinking about how you managed to be the greatest criminal in modern times. You got the true ending!");
+            end();
+        }
+        else if (player.getWantedLvl() >= 10) {
+            tvText.setText("The police caught up to your scandals and you ended up going to jail. Sucks to suck!");
+            end();
+        }
+        else if (player.getMoralLvl() <= 0) {
+            tvText.setText("You get so insane that the police find you in a corner of an alleyway hugging your knees. Without even knowing what's happened, you get captured and then admitted into a mental institution.");
+            end();
+        }
+        else
         {
             displayStats();
 
@@ -91,9 +106,7 @@ public class GameValentineBenjaminA extends GameActivity {
                     player.rob();
                     tvText.setText("You rob a house. Classic B&E, nobody hears you. You grab your items and leave the house. It's a shame though, the house was really nice when you arrived. Too bad you left it a mess...");
                     startRobbing();
-                    if (tvMoneyVal.equals(1000000)) {
-                        tvText.setText("You won the game, and you were able to buy your way out of the city. Using your sheer power, you manage to corrupt the cops with your silver tongue, and they escort you to the local airport. As you leave, you smile thinking about how you managed to be the greatest criminal in modern times. You got the true ending!");
-                    }
+
                 }
             });
 
@@ -118,30 +131,14 @@ public class GameValentineBenjaminA extends GameActivity {
                     pastActions.add(0,"Turn self in");
 
                     displayStats();
-
-                    btn1.setVisibility(View.INVISIBLE);
-                    btn2.setText("Restart");
-                    btn3.setText("Back to menu");
-
-                    btn2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            run();
-                        }
-                    });
+                    end();
                 }
             });
-
-                    btn3.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            startActivity(new Intent(GameValentineBenjaminA.this, MainActivity.class));
-                        }
-                    });
 
 
 
         }
+
 
     }
 
@@ -151,17 +148,46 @@ public class GameValentineBenjaminA extends GameActivity {
         tvMoneyVal.setText(""+player.getMoney());
         tvDriverId.setText(""+player.getID());
 
-        pbWantedLevel.setMin(0);
         pbWantedLevel.setMax(10);
-        pbWantedLevel.setProgress((int) player.getWantedLvl());
+        pbWantedLevel.setProgress( player.getWantedLvl());
 
-        pbMoralLevel.setMin(0);
         pbMoralLevel.setMax(10);
         pbMoralLevel.setProgress(player.getMoralLvl());
 
         for (int indexHistory = 0; indexHistory < 8; indexHistory++) {
-            tvHistory[indexHistory].setText(pastActions.get(indexHistory));
+            if (indexHistory >= pastActions.size()) {
+                tvHistory[indexHistory].setText("");
+            } else {
+                tvHistory[indexHistory].setText(pastActions.get(indexHistory));
+            }
+
         }
+    }
+
+    private void end() {
+
+        btn2.setText("Play again");
+        btn3.setText("Back to menu");
+
+        btn1.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+
+
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                run();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GameValentineBenjaminA.this, MainActivity.class));
+            }
+        });
     }
 
 }
