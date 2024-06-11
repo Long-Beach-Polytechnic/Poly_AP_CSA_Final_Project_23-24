@@ -155,7 +155,7 @@ public class RodriguezJohnnyCrop {
      */
     public boolean isRipe()
     {
-        return isRipe;
+        return daysOld >= 2;
     }
 
     public void getIsRipe(boolean newIsRipe)
@@ -182,6 +182,11 @@ public class RodriguezJohnnyCrop {
     public void setHealthBoost(int numHealthBoost)
     {
         this.healthBoost = numHealthBoost;
+    }
+
+
+    public void addDay() {
+        daysOld++;
     }
 
     /**
