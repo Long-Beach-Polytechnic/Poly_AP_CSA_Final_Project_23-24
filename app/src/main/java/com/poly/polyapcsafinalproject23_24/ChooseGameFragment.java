@@ -64,6 +64,7 @@ public class ChooseGameFragment extends Fragment {
         gameList.add(new ModelGame("Aaron.", "Sann", "Pokemon RPG", new GameSannAaron()));
         gameList.add(new ModelGame("Mr.", "Burke", "Labor Day Weekend", new GameLaborDayAdventure()));
         gameList.add(new ModelGame("Mr.", "Burke", "Hot Dog Eating Contest", new GameHotDogEatingContest()));
+        gameList.add(new ModelGame("Beckham", "Perez", "Getting to Your Friend's House Safely", new GamePerezBeckham()));
         gameList.add(new ModelGame("Jeremy", "Chin", "Hobo Joe", new GameChinJeremyAdventure()));
         gameList.add(new ModelGame("Benjamine", "Valentine", "Criminal Simulator", new GameValentineBenjaminA()));
         gameList.add(new ModelGame("Johnny", "Rodriguez", "Farming Sim", new GameRodriguezJohnny()));
